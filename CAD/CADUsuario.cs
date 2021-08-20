@@ -27,17 +27,29 @@ namespace CAD
             }
         }
 
+        public static bool UsuarioExiste(string IDUsuario)
+        {
+            if (adaptador.UsuarioExiste(IDUsuario) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
         public static CADUsuario UsuarioGetUsuarioByIDUsuario(string IDUsuario)
         {
             CADUsuario miUsuario = null;
-            DSMiAppComercial.UsuarioDataTable miTabla = adaptador.UsuarioGetUsuarioByIDUsuario(IDUsuario);
+            DSCAD.UsuarioDataTable miTabla = adaptador.UsuarioGetUsuarioByIDUsuario(IDUsuario);
             if (miTabla.Rows.Count == 0)
             {
                 return miUsuario;
             }
             else
             {
-                DSMiAppComercial.UsuarioRow miRegistro = (DSMiAppComercial.UsuarioRow)miTabla.Rows[0];
+                DSCAD.UsuarioRow miRegistro = (DSCAD.UsuarioRow)miTabla.Rows[0];
                 miUsuario = new CADUsuario();
                 miUsuario.Apellido = miRegistro.Apellido;
                 miUsuario.Clave = miRegistro.Clave;

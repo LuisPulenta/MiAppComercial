@@ -14,7 +14,7 @@ namespace Win
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtUsuario.Text = "luis";
-            txtClave.Text = "123";
+            txtClave.Text = "Espora2052";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -53,6 +53,16 @@ namespace Win
             miForm.UsuarioLogueado = CADUsuario.UsuarioGetUsuarioByIDUsuario(txtUsuario.Text);
             miForm.Show();
             this.Hide();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

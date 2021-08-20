@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CADUsuario.cs" />
-    <Compile Include="DSMiAppComercial.Designer.cs">
+    <Compile Include="DSCAD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DSMiAppComercial.xsd</DependentUpon>
+      <DependentUpon>DSCAD.xsd</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -56,16 +56,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="DSMiAppComercial.xsc">
-      <DependentUpon>DSMiAppComercial.xsd</DependentUpon>
+    <None Include="DSCAD.xsc">
+      <DependentUpon>DSCAD.xsd</DependentUpon>
     </None>
-    <None Include="DSMiAppComercial.xsd">
+    <None Include="DSCAD.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSMiAppComercial.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSCAD.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DSMiAppComercial.xss">
-      <DependentUpon>DSMiAppComercial.xsd</DependentUpon>
+    <None Include="DSCAD.xss">
+      <DependentUpon>DSCAD.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

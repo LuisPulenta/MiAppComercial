@@ -1,6 +1,7 @@
 ﻿using CAD;
 using System;
 using System.Windows.Forms;
+using Win.Maestros;
 
 namespace Win
 {
@@ -32,6 +33,19 @@ namespace Win
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             nombresUsuarioToolStripStatusLabel.Text = "Usuario: " + usuarioLogueado.Nombre + " " + usuarioLogueado.Apellido;
+        }
+
+        private void cambioDeUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmUsuarios miForm = new frmUsuarios();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
         }
     }
 }
