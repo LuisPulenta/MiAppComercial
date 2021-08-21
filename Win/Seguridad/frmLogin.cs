@@ -13,7 +13,7 @@ namespace Win
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtUsuario.Text = "luis";
+            txtUsuario.Text = "lnunez";
             txtClave.Text = "Espora2052";
         }
 

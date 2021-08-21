@@ -20,15 +20,22 @@ namespace Win
             InitializeComponent();
         }
 
-        private void frmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult opcion;
+            opcion = MessageBox.Show("¿Realmente desea salir de la aplicación?", "Salir del Sistema", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (opcion == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
+
+        private void frmPrincipal_FormClosing(object sender, EventArgs e)
+        {
+                Application.Exit();
+        }
+
+
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
@@ -43,6 +50,14 @@ namespace Win
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmUsuarios miForm = new frmUsuarios();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void categoríasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategorias miForm = new frmCategorias();
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();

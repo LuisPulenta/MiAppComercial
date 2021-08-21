@@ -78,6 +78,7 @@ namespace Win.Maestros
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancelItem = new System.Windows.Forms.ToolStripButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnExcel = new System.Windows.Forms.Button();
             iDUsuarioLabel1 = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
@@ -198,6 +199,7 @@ namespace Win.Maestros
             // tableAdapterManager1
             // 
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.CategoriaTableAdapter = null;
             this.tableAdapterManager1.RolTableAdapter = this.rolTableAdapter;
             this.tableAdapterManager1.UpdateOrder = Win.DSMiAppComercialTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager1.UsuarioTableAdapter = this.usuarioTableAdapter;
@@ -224,12 +226,12 @@ namespace Win.Maestros
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dgvDatos.DataSource = this.usuarioBindingSource;
-            this.dgvDatos.Location = new System.Drawing.Point(-8, 181);
+            this.dgvDatos.Location = new System.Drawing.Point(0, 181);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(1272, 618);
+            this.dgvDatos.Size = new System.Drawing.Size(1108, 411);
             this.dgvDatos.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1
@@ -406,7 +408,7 @@ namespace Win.Maestros
             this.usuarioBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.usuarioBindingNavigator.Name = "usuarioBindingNavigator";
             this.usuarioBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.usuarioBindingNavigator.Size = new System.Drawing.Size(1262, 27);
+            this.usuarioBindingNavigator.Size = new System.Drawing.Size(1108, 27);
             this.usuarioBindingNavigator.TabIndex = 17;
             this.usuarioBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -539,18 +541,29 @@ namespace Win.Maestros
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(983, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(870, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(130, 130);
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.Location = new System.Drawing.Point(1056, 130);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(40, 40);
+            this.btnExcel.TabIndex = 19;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1262, 791);
+            this.ClientSize = new System.Drawing.Size(1108, 595);
+            this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.usuarioBindingNavigator);
             this.Controls.Add(correoLabel1);
@@ -575,7 +588,7 @@ namespace Win.Maestros
             this.MinimizeBox = false;
             this.Name = "frmUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Usuarios";
+            this.Text = "---Usuarios---";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -631,5 +644,6 @@ namespace Win.Maestros
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancelItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExcel;
     }
 }

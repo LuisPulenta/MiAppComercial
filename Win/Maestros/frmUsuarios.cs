@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 using System.Windows.Forms;
-
+using Win.Clases;
 
 namespace Win.Maestros
 {
@@ -125,6 +125,20 @@ namespace Win.Maestros
                     return false;
                 }
 
+                if (iDUsuarioTextBox.Text.Length <6)
+                {
+                    errorProvider1.SetError(iDUsuarioTextBox, "El IDUsuario debe ser de al menos 6 caracteres");
+                    iDUsuarioTextBox.Focus();
+                    return false;
+                }
+
+                if (iDUsuarioTextBox.Text.Length >12)
+                {
+                    errorProvider1.SetError(iDUsuarioTextBox, "El IDUsuario no puede tener más de 12 caracteres");
+                    iDUsuarioTextBox.Focus();
+                    return false;
+                }
+
                 if (CADUsuario.UsuarioExiste(iDUsuarioTextBox.Text))
                 {
                     errorProvider1.SetError(iDUsuarioTextBox, "Este IDUsuario ya existe");
@@ -147,9 +161,23 @@ namespace Win.Maestros
                 return false;
             }
 
+            if (nombreTextBox.Text.Length > 30)
+            {
+                errorProvider1.SetError(nombreTextBox, "El nombre no puede tener más de 30 caracteres");
+                nombreTextBox.Focus();
+                return false;
+            }
+
             if (apellidoTextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(apellidoTextBox, "Debe ingresar un Apellido");
+                apellidoTextBox.Focus();
+                return false;
+            }
+
+            if (apellidoTextBox.Text.Length > 30)
+            {
+                errorProvider1.SetError(apellidoTextBox, "El apellido no puede tener más de 30 caracteres");
                 apellidoTextBox.Focus();
                 return false;
             }
@@ -164,6 +192,13 @@ namespace Win.Maestros
             if (claveTextBox.Text.Length < 8)
             {
                 errorProvider1.SetError(claveTextBox, "La Clave debe ser de al menos 8 caracteres");
+                claveTextBox.Focus();
+                return false;
+            }
+
+            if (claveTextBox.Text.Length > 50)
+            {
+                errorProvider1.SetError(claveTextBox, "La Clave no puede tener más de 20 caracteres");
                 claveTextBox.Focus();
                 return false;
             }
@@ -211,6 +246,13 @@ namespace Win.Maestros
                 return false;
             }
 
+            if (correoTextBox.Text.Length > 100)
+            {
+                errorProvider1.SetError(correoTextBox, "El correo no puede tener más de 100 caracteres");
+                correoTextBox.Focus();
+                return false;
+            }
+
             RegexUtilities regexUtilities = new RegexUtilities();
             if (!regexUtilities.IsValidEmail(correoTextBox.Text))
             {
@@ -222,5 +264,9 @@ namespace Win.Maestros
             return true;
         }
 
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            ExportarDatosAExcel.ExportarDatos(dgvDatos);
+        }
     }
 }
