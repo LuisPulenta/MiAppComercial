@@ -31,6 +31,13 @@ namespace Win.Maestros
 
             confirmacionTextBox.Text = claveTextBox.Text;
             dgvDatos.AutoResizeColumns();
+            this.toolTip1.SetToolTip(this.iDUsuarioTextBox, "Ingrese Usuario, debe tener entre 6 y 12 caracteres.");
+            this.toolTip1.SetToolTip(this.iDRolComboBox, "Seleccione un Rol.");
+            this.toolTip1.SetToolTip(this.nombreTextBox, "Ingrese Nombre (máximo 30 caracteres).");
+            this.toolTip1.SetToolTip(this.apellidoTextBox, "Ingrese Apellido (máximo 30 caracteres).");
+            this.toolTip1.SetToolTip(this.claveTextBox, "Ingrese Clave, debe tener entre 8 y 20 caracteres y contener al menos una mayúscula, una minúscula y un número.");
+            this.toolTip1.SetToolTip(this.confirmacionTextBox, "Repita la Clave.");
+            this.toolTip1.SetToolTip(this.correoTextBox, "Ingrese un Correo válido (máximo 100 caracteres).");
         }
 
         private void bindingNavigatorEditItem_Click(object sender, EventArgs e)

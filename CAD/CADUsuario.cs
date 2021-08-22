@@ -42,14 +42,14 @@ namespace CAD
         public static CADUsuario UsuarioGetUsuarioByIDUsuario(string IDUsuario)
         {
             CADUsuario miUsuario = null;
-            DSCAD.UsuarioDataTable miTabla = adaptador.UsuarioGetUsuarioByIDUsuario(IDUsuario);
+            DSMiAppComercial.UsuarioDataTable miTabla = adaptador.UsuarioGetUsuarioByIDUsuario(IDUsuario);
             if (miTabla.Rows.Count == 0)
             {
                 return miUsuario;
             }
             else
             {
-                DSCAD.UsuarioRow miRegistro = (DSCAD.UsuarioRow)miTabla.Rows[0];
+                DSMiAppComercial.UsuarioRow miRegistro = (DSMiAppComercial.UsuarioRow)miTabla.Rows[0];
                 miUsuario = new CADUsuario();
                 miUsuario.Apellido = miRegistro.Apellido;
                 miUsuario.Clave = miRegistro.Clave;

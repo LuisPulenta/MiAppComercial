@@ -32,6 +32,7 @@ namespace Win.Maestros
         {
             categoriaTableAdapter.Fill(dSMiAppComercial.Categoria);
             dgvDatos.AutoResizeColumns();
+            this.toolTip1.SetToolTip(this.descripcionTextBox, "Ingrese una descripción (máximo 50 caracteres)." );
         }
 
         private void categoriaDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -115,7 +116,7 @@ namespace Win.Maestros
 
             if (descripcionTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(descripcionTextBox, "Debe ingresar una  descripción para el Departamento");
+                errorProvider1.SetError(descripcionTextBox, "Debe ingresar una  descripción para la Categoría");
                 descripcionTextBox.Focus();
                 return false;
             }

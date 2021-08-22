@@ -15,6 +15,8 @@ namespace Win
         {
             txtUsuario.Text = "lnunez";
             txtClave.Text = "Espora2052";
+            this.toolTip1.SetToolTip(this.txtUsuario, "Ingrese su Usuario");
+            this.toolTip1.SetToolTip(this.txtClave, "Ingrese su Clave");
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

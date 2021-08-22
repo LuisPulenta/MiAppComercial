@@ -1,7 +1,7 @@
 ﻿
 namespace Win.Maestros
 {
-    partial class frmCategorias
+    partial class frmUnidades
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,16 @@ namespace Win.Maestros
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label iDCategoriaLabel;
+            System.Windows.Forms.Label iDUnidadLabel;
             System.Windows.Forms.Label descripcionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategorias));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUnidades));
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaTableAdapter = new Win.DSMiAppComercialTableAdapters.CategoriaTableAdapter();
+            this.unidadBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unidadTableAdapter = new Win.DSMiAppComercialTableAdapters.UnidadTableAdapter();
             this.tableAdapterManager = new Win.DSMiAppComercialTableAdapters.TableAdapterManager();
-            this.categoriaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.unidadBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -51,78 +51,81 @@ namespace Win.Maestros
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancelItem = new System.Windows.Forms.ToolStripButton();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDCategoriaTextBox = new System.Windows.Forms.TextBox();
+            this.iDUnidadTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnExcel = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            iDCategoriaLabel = new System.Windows.Forms.Label();
+            iDUnidadLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingNavigator)).BeginInit();
-            this.categoriaBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unidadBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unidadBindingNavigator)).BeginInit();
+            this.unidadBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // iDCategoriaLabel
+            // iDUnidadLabel
             // 
-            iDCategoriaLabel.AutoSize = true;
-            iDCategoriaLabel.Location = new System.Drawing.Point(22, 48);
-            iDCategoriaLabel.Name = "iDCategoriaLabel";
-            iDCategoriaLabel.Size = new System.Drawing.Size(86, 17);
-            iDCategoriaLabel.TabIndex = 0;
-            iDCategoriaLabel.Text = "IDCategoria:";
+            iDUnidadLabel.AutoSize = true;
+            iDUnidadLabel.Location = new System.Drawing.Point(22, 45);
+            iDUnidadLabel.Name = "iDUnidadLabel";
+            iDUnidadLabel.Size = new System.Drawing.Size(70, 17);
+            iDUnidadLabel.TabIndex = 2;
+            iDUnidadLabel.Text = "IDUnidad:";
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(22, 76);
+            descripcionLabel.Location = new System.Drawing.Point(6, 73);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(86, 17);
-            descripcionLabel.TabIndex = 2;
-            descripcionLabel.Text = "Descripción:";
+            descripcionLabel.TabIndex = 4;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // dSMiAppComercial
             // 
             this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
             this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // categoriaBindingSource
+            // unidadBindingSource
             // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.dSMiAppComercial;
+            this.unidadBindingSource.DataMember = "Unidad";
+            this.unidadBindingSource.DataSource = this.dSMiAppComercial;
             // 
-            // categoriaTableAdapter
+            // unidadTableAdapter
             // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
+            this.unidadTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = this.categoriaTableAdapter;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
             this.tableAdapterManager.RolTableAdapter = null;
-            this.tableAdapterManager.UnidadTableAdapter = null;
+            this.tableAdapterManager.UnidadTableAdapter = this.unidadTableAdapter;
             this.tableAdapterManager.UpdateOrder = Win.DSMiAppComercialTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // categoriaBindingNavigator
+            // unidadBindingNavigator
             // 
-            this.categoriaBindingNavigator.AddNewItem = null;
-            this.categoriaBindingNavigator.BindingSource = this.categoriaBindingSource;
-            this.categoriaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.categoriaBindingNavigator.DeleteItem = null;
-            this.categoriaBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.categoriaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.unidadBindingNavigator.AddNewItem = null;
+            this.unidadBindingNavigator.BindingSource = this.unidadBindingSource;
+            this.unidadBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.unidadBindingNavigator.DeleteItem = null;
+            this.unidadBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.unidadBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -137,16 +140,16 @@ namespace Win.Maestros
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorCancelItem});
-            this.categoriaBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.categoriaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.categoriaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.categoriaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.categoriaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.categoriaBindingNavigator.Name = "categoriaBindingNavigator";
-            this.categoriaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.categoriaBindingNavigator.Size = new System.Drawing.Size(485, 27);
-            this.categoriaBindingNavigator.TabIndex = 0;
-            this.categoriaBindingNavigator.Text = "bindingNavigator1";
+            this.unidadBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.unidadBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.unidadBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.unidadBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.unidadBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.unidadBindingNavigator.Name = "unidadBindingNavigator";
+            this.unidadBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.unidadBindingNavigator.Size = new System.Drawing.Size(485, 27);
+            this.unidadBindingNavigator.TabIndex = 0;
+            this.unidadBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -239,17 +242,6 @@ namespace Win.Maestros
             this.bindingNavigatorAddNewItem.ToolTipText = "Agregar nuevo Registro";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
-            this.bindingNavigatorDeleteItem.Text = "Eliminar";
-            this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar el Registro actual";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
             // bindingNavigatorSaveItem
             // 
             this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -260,6 +252,17 @@ namespace Win.Maestros
             this.bindingNavigatorSaveItem.Text = "Guardar datos";
             this.bindingNavigatorSaveItem.ToolTipText = "Guardar cambios";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.bindingNavigatorSaveItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar el Registro actual";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorCancelItem
             // 
@@ -279,35 +282,25 @@ namespace Win.Maestros
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvDatos.DataSource = this.categoriaBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Location = new System.Drawing.Point(0, 162);
+            this.dgvDatos.DataSource = this.unidadBindingSource;
+            this.dgvDatos.Location = new System.Drawing.Point(0, 174);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(485, 266);
-            this.dgvDatos.TabIndex = 4;
-            this.dgvDatos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.categoriaDataGridView_CellContentClick);
+            this.dgvDatos.Size = new System.Drawing.Size(485, 250);
+            this.dgvDatos.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDCategoria";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDUnidad";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Unidad";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -322,46 +315,43 @@ namespace Win.Maestros
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // iDCategoriaTextBox
+            // iDUnidadTextBox
             // 
-            this.iDCategoriaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "IDCategoria", true));
-            this.iDCategoriaTextBox.Location = new System.Drawing.Point(114, 45);
-            this.iDCategoriaTextBox.Name = "iDCategoriaTextBox";
-            this.iDCategoriaTextBox.ReadOnly = true;
-            this.iDCategoriaTextBox.Size = new System.Drawing.Size(100, 22);
-            this.iDCategoriaTextBox.TabIndex = 1;
+            this.iDUnidadTextBox.BackColor = System.Drawing.Color.Aquamarine;
+            this.iDUnidadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unidadBindingSource, "IDUnidad", true));
+            this.iDUnidadTextBox.Location = new System.Drawing.Point(98, 42);
+            this.iDUnidadTextBox.Name = "iDUnidadTextBox";
+            this.iDUnidadTextBox.ReadOnly = true;
+            this.iDUnidadTextBox.Size = new System.Drawing.Size(63, 22);
+            this.iDUnidadTextBox.TabIndex = 3;
             // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.BackColor = System.Drawing.Color.Aquamarine;
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(114, 73);
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unidadBindingSource, "Descripcion", true));
+            this.descripcionTextBox.Location = new System.Drawing.Point(98, 70);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.ReadOnly = true;
-            this.descripcionTextBox.Size = new System.Drawing.Size(242, 22);
-            this.descripcionTextBox.TabIndex = 3;
+            this.descripcionTextBox.Size = new System.Drawing.Size(200, 22);
+            this.descripcionTextBox.TabIndex = 5;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(393, 30);
+            this.pictureBox1.Location = new System.Drawing.Point(393, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(433, 116);
+            this.btnExcel.Location = new System.Drawing.Point(433, 120);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
-            this.btnExcel.TabIndex = 7;
+            this.btnExcel.TabIndex = 8;
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
@@ -369,7 +359,7 @@ namespace Win.Maestros
             // 
             this.toolTip1.IsBalloon = true;
             // 
-            // frmCategorias
+            // frmUnidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -379,26 +369,26 @@ namespace Win.Maestros
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.descripcionTextBox);
-            this.Controls.Add(iDCategoriaLabel);
-            this.Controls.Add(this.iDCategoriaTextBox);
+            this.Controls.Add(iDUnidadLabel);
+            this.Controls.Add(this.iDUnidadTextBox);
             this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.categoriaBindingNavigator);
+            this.Controls.Add(this.unidadBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCategorias";
+            this.Name = "frmUnidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "---Categorías---";
-            this.Load += new System.EventHandler(this.frmCategoria_Load);
+            this.Text = "---Unidades---";
+            this.Load += new System.EventHandler(this.frmUnidades_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingNavigator)).EndInit();
-            this.categoriaBindingNavigator.ResumeLayout(false);
-            this.categoriaBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.unidadBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unidadBindingNavigator)).EndInit();
+            this.unidadBindingNavigator.ResumeLayout(false);
+            this.unidadBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,11 +396,10 @@ namespace Win.Maestros
 
         #endregion
 
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.BindingNavigator unidadBindingNavigator;
+        private System.Windows.Forms.BindingSource unidadBindingSource;
         private DSMiAppComercial dSMiAppComercial;
-        private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private DSMiAppComercialTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
-        private DSMiAppComercialTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator categoriaBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -420,19 +409,20 @@ namespace Win.Maestros
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.TextBox iDCategoriaTextBox;
+        private DSMiAppComercialTableAdapters.UnidadTableAdapter unidadTableAdapter;
+        private DSMiAppComercialTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox descripcionTextBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox iDUnidadTextBox;
+        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSaveItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancelItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.ToolTip toolTip1;
     }
 }
