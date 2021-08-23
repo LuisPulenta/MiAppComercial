@@ -53,6 +53,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSWin.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Maestros\frmAlmacenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmAlmacenes.Designer.cs">
+      <DependentUpon>frmAlmacenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmConceptos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmConceptos.Designer.cs">
+      <DependentUpon>frmConceptos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmIVAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmIVAs.Designer.cs">
+      <DependentUpon>frmIVAs.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +82,12 @@
     </Compile>
     <Compile Include="Maestros\frmCategoria.Designer.cs">
       <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmTiposDocumento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmTiposDocumento.Designer.cs">
+      <DependentUpon>frmTiposDocumento.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestros\frmUnidades.cs">
       <SubType>Form</SubType>
@@ -85,11 +109,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
+      <DependentUpon>frmAlmacenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmConceptos.resx">
+      <DependentUpon>frmConceptos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmIVAs.resx">
+      <DependentUpon>frmIVAs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmTiposDocumento.resx">
+      <DependentUpon>frmTiposDocumento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmUnidades.resx">
       <DependentUpon>frmUnidades.cs</DependentUpon>

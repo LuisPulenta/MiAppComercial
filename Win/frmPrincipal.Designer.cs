@@ -198,9 +198,12 @@ namespace Win
             // 
             // almacenesToolStripMenuItem1
             // 
+            this.almacenesToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("almacenesToolStripMenuItem1.Image")));
+            this.almacenesToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.almacenesToolStripMenuItem1.Name = "almacenesToolStripMenuItem1";
             this.almacenesToolStripMenuItem1.Size = new System.Drawing.Size(243, 38);
             this.almacenesToolStripMenuItem1.Text = "&Almacenes";
+            this.almacenesToolStripMenuItem1.Click += new System.EventHandler(this.almacenesToolStripMenuItem1_Click);
             // 
             // clientesToolStripMenuItem1
             // 
@@ -210,9 +213,12 @@ namespace Win
             // 
             // conceptosToolStripMenuItem1
             // 
+            this.conceptosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("conceptosToolStripMenuItem1.Image")));
+            this.conceptosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.conceptosToolStripMenuItem1.Name = "conceptosToolStripMenuItem1";
             this.conceptosToolStripMenuItem1.Size = new System.Drawing.Size(243, 38);
             this.conceptosToolStripMenuItem1.Text = "C&onceptos";
+            this.conceptosToolStripMenuItem1.Click += new System.EventHandler(this.conceptosToolStripMenuItem1_Click);
             // 
             // productosToolStripMenuItem1
             // 
@@ -230,20 +236,23 @@ namespace Win
             this.categoríasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("categoríasToolStripMenuItem.Image")));
             this.categoríasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
-            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(175, 38);
             this.categoríasToolStripMenuItem.Text = "&Categorías";
             this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
             // 
             // iVAsToolStripMenuItem
             // 
+            this.iVAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("iVAsToolStripMenuItem.Image")));
+            this.iVAsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iVAsToolStripMenuItem.Name = "iVAsToolStripMenuItem";
-            this.iVAsToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.iVAsToolStripMenuItem.Size = new System.Drawing.Size(175, 38);
             this.iVAsToolStripMenuItem.Text = "&IVAs";
+            this.iVAsToolStripMenuItem.Click += new System.EventHandler(this.iVAsToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem2
             // 
             this.productosToolStripMenuItem2.Name = "productosToolStripMenuItem2";
-            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(236, 38);
+            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(175, 38);
             this.productosToolStripMenuItem2.Text = "&Productos";
             // 
             // unidadesToolStripMenuItem
@@ -251,7 +260,7 @@ namespace Win
             this.unidadesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("unidadesToolStripMenuItem.Image")));
             this.unidadesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
-            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(175, 38);
             this.unidadesToolStripMenuItem.Text = "&Unidades";
             this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
             // 
@@ -263,9 +272,12 @@ namespace Win
             // 
             // tiposDeDocumentoToolStripMenuItem1
             // 
+            this.tiposDeDocumentoToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("tiposDeDocumentoToolStripMenuItem1.Image")));
+            this.tiposDeDocumentoToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tiposDeDocumentoToolStripMenuItem1.Name = "tiposDeDocumentoToolStripMenuItem1";
             this.tiposDeDocumentoToolStripMenuItem1.Size = new System.Drawing.Size(243, 38);
             this.tiposDeDocumentoToolStripMenuItem1.Text = "&Tipos de Documento";
+            this.tiposDeDocumentoToolStripMenuItem1.Click += new System.EventHandler(this.tiposDeDocumentoToolStripMenuItem1_Click);
             // 
             // usuariosToolStripMenuItem1
             // 

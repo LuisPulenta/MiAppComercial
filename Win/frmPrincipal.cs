@@ -70,5 +70,37 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void almacenesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAlmacenes miForm = new frmAlmacenes();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void conceptosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConceptos miForm = new frmConceptos();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void iVAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIVAs miForm = new frmIVAs();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tiposDeDocumentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmTiposDocumento miForm = new frmTiposDocumento();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
     }
 }

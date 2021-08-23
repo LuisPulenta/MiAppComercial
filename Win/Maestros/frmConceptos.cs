@@ -3,9 +3,9 @@ using System;
 using System.Windows.Forms;
 using Win.Clases;
 
-namespace Win.Maestros
+namespace Win
 {
-    public partial class frmCategorias : Form
+    public partial class frmConceptos : Form
     {
         private CADUsuario usuarioLogueado;
 
@@ -15,25 +15,26 @@ namespace Win.Maestros
             set => usuarioLogueado = value;
         }
 
-        public frmCategorias()
+        public frmConceptos()
         {
             InitializeComponent();
         }
 
-        private void categoriaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void conceptoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             Validate();
-            categoriaBindingSource.EndEdit();
+            conceptoBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(dSMiAppComercial);
 
         }
 
-        private void frmCategoria_Load(object sender, EventArgs e)
+        private void frmConceptos_Load(object sender, EventArgs e)
         {
-            categoriaTableAdapter.Fill(dSMiAppComercial.Categoria);
+            conceptoTableAdapter.Fill(dSMiAppComercial.Concepto);
             dgvDatos.AutoResizeColumns();
-            this.toolTip1.SetToolTip(this.descripcionTextBox, "Ingrese una descripción (máximo 50 caracteres)." );
+            this.toolTip1.SetToolTip(this.descripcionTextBox, "Ingrese una descripción (máximo 50 caracteres).");
         }
+
         private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
         {
             Habilitar(true);
@@ -42,8 +43,21 @@ namespace Win.Maestros
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             Habilitar(true);
-            categoriaBindingSource.AddNew();
+            conceptoBindingSource.AddNew();
             descripcionTextBox.Focus();
+        }
+
+        private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            if (!Validarcampos())
+            {
+                return;
+            }
+
+            Validate();
+            conceptoBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(dSMiAppComercial);
+            Habilitar(false);
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -61,26 +75,13 @@ namespace Win.Maestros
             }
 
             Validate();
-            categoriaBindingSource.RemoveAt(categoriaBindingSource.Position);
+            conceptoBindingSource.RemoveAt(conceptoBindingSource.Position);
             tableAdapterManager.UpdateAll(dSMiAppComercial);
-        }
-
-        private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            if (!Validarcampos())
-            {
-                return;
-            }
-
-            Validate();
-            categoriaBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
-            Habilitar(false);
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)
         {
-            categoriaBindingSource.CancelEdit();
+            conceptoBindingSource.CancelEdit();
             errorProvider1.Clear();
             Habilitar(false);
         }
@@ -110,7 +111,7 @@ namespace Win.Maestros
 
             if (descripcionTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(descripcionTextBox, "Debe ingresar una  descripción para la Categoría");
+                errorProvider1.SetError(descripcionTextBox, "Debe ingresar una  descripción para el Concepto");
                 descripcionTextBox.Focus();
                 return false;
             }

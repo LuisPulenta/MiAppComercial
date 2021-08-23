@@ -1,7 +1,7 @@
 ﻿
-namespace Win.Maestros
+namespace Win
 {
-    partial class frmCategorias
+    partial class frmConceptos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,16 +30,16 @@ namespace Win.Maestros
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label iDCategoriaLabel;
+            System.Windows.Forms.Label iDConceptoLabel;
             System.Windows.Forms.Label descripcionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCategorias));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConceptos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dSMiAppComercial = new Win.DSMiAppComercial();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriaTableAdapter = new Win.DSMiAppComercialTableAdapters.CategoriaTableAdapter();
+            this.conceptoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.conceptoTableAdapter = new Win.DSMiAppComercialTableAdapters.ConceptoTableAdapter();
             this.tableAdapterManager = new Win.DSMiAppComercialTableAdapters.TableAdapterManager();
-            this.categoriaBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.conceptoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -57,39 +57,39 @@ namespace Win.Maestros
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDCategoriaTextBox = new System.Windows.Forms.TextBox();
+            this.iDConceptoTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnExcel = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            iDCategoriaLabel = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            iDConceptoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingNavigator)).BeginInit();
-            this.categoriaBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.conceptoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conceptoBindingNavigator)).BeginInit();
+            this.conceptoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // iDCategoriaLabel
+            // iDConceptoLabel
             // 
-            iDCategoriaLabel.AutoSize = true;
-            iDCategoriaLabel.Location = new System.Drawing.Point(22, 48);
-            iDCategoriaLabel.Name = "iDCategoriaLabel";
-            iDCategoriaLabel.Size = new System.Drawing.Size(86, 17);
-            iDCategoriaLabel.TabIndex = 0;
-            iDCategoriaLabel.Text = "IDCategoria:";
+            iDConceptoLabel.AutoSize = true;
+            iDConceptoLabel.Location = new System.Drawing.Point(17, 44);
+            iDConceptoLabel.Name = "iDConceptoLabel";
+            iDConceptoLabel.Size = new System.Drawing.Size(85, 17);
+            iDConceptoLabel.TabIndex = 2;
+            iDConceptoLabel.Text = "IDConcepto:";
             // 
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(22, 76);
+            descripcionLabel.Location = new System.Drawing.Point(16, 72);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(86, 17);
-            descripcionLabel.TabIndex = 2;
+            descripcionLabel.TabIndex = 4;
             descripcionLabel.Text = "Descripción:";
             // 
             // dSMiAppComercial
@@ -97,35 +97,35 @@ namespace Win.Maestros
             this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
             this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // categoriaBindingSource
+            // conceptoBindingSource
             // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.dSMiAppComercial;
+            this.conceptoBindingSource.DataMember = "Concepto";
+            this.conceptoBindingSource.DataSource = this.dSMiAppComercial;
             // 
-            // categoriaTableAdapter
+            // conceptoTableAdapter
             // 
-            this.categoriaTableAdapter.ClearBeforeFill = true;
+            this.conceptoTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
             this.tableAdapterManager.AlmacenTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CategoriaTableAdapter = this.categoriaTableAdapter;
-            this.tableAdapterManager.ConceptoTableAdapter = null;
+            this.tableAdapterManager.CategoriaTableAdapter = null;
+            this.tableAdapterManager.ConceptoTableAdapter = this.conceptoTableAdapter;
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.RolTableAdapter = null;
             this.tableAdapterManager.UnidadTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = Win.DSMiAppComercialTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuarioTableAdapter = null;
             // 
-            // categoriaBindingNavigator
+            // conceptoBindingNavigator
             // 
-            this.categoriaBindingNavigator.AddNewItem = null;
-            this.categoriaBindingNavigator.BindingSource = this.categoriaBindingSource;
-            this.categoriaBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.categoriaBindingNavigator.DeleteItem = null;
-            this.categoriaBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.categoriaBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.conceptoBindingNavigator.AddNewItem = null;
+            this.conceptoBindingNavigator.BindingSource = this.conceptoBindingSource;
+            this.conceptoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.conceptoBindingNavigator.DeleteItem = null;
+            this.conceptoBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.conceptoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -140,16 +140,16 @@ namespace Win.Maestros
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorCancelItem});
-            this.categoriaBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.categoriaBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.categoriaBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.categoriaBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.categoriaBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.categoriaBindingNavigator.Name = "categoriaBindingNavigator";
-            this.categoriaBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.categoriaBindingNavigator.Size = new System.Drawing.Size(485, 27);
-            this.categoriaBindingNavigator.TabIndex = 0;
-            this.categoriaBindingNavigator.Text = "bindingNavigator1";
+            this.conceptoBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.conceptoBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.conceptoBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.conceptoBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.conceptoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.conceptoBindingNavigator.Name = "conceptoBindingNavigator";
+            this.conceptoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.conceptoBindingNavigator.Size = new System.Drawing.Size(485, 27);
+            this.conceptoBindingNavigator.TabIndex = 0;
+            this.conceptoBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
@@ -282,17 +282,17 @@ namespace Win.Maestros
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F);
             this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2});
-            this.dgvDatos.DataSource = this.categoriaBindingSource;
+            this.dgvDatos.DataSource = this.conceptoBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -303,12 +303,12 @@ namespace Win.Maestros
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(485, 265);
-            this.dgvDatos.TabIndex = 4;
+            this.dgvDatos.Size = new System.Drawing.Size(485, 264);
+            this.dgvDatos.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDCategoria";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IDConcepto";
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -324,24 +324,34 @@ namespace Win.Maestros
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // iDCategoriaTextBox
+            // iDConceptoTextBox
             // 
-            this.iDCategoriaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "IDCategoria", true));
-            this.iDCategoriaTextBox.Location = new System.Drawing.Point(114, 45);
-            this.iDCategoriaTextBox.Name = "iDCategoriaTextBox";
-            this.iDCategoriaTextBox.ReadOnly = true;
-            this.iDCategoriaTextBox.Size = new System.Drawing.Size(100, 22);
-            this.iDCategoriaTextBox.TabIndex = 1;
+            this.iDConceptoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.conceptoBindingSource, "IDConcepto", true));
+            this.iDConceptoTextBox.Location = new System.Drawing.Point(108, 41);
+            this.iDConceptoTextBox.Name = "iDConceptoTextBox";
+            this.iDConceptoTextBox.ReadOnly = true;
+            this.iDConceptoTextBox.Size = new System.Drawing.Size(100, 22);
+            this.iDConceptoTextBox.TabIndex = 3;
             // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.BackColor = System.Drawing.Color.Aquamarine;
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.categoriaBindingSource, "Descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(114, 73);
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.conceptoBindingSource, "Descripcion", true));
+            this.descripcionTextBox.Location = new System.Drawing.Point(108, 69);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.ReadOnly = true;
             this.descripcionTextBox.Size = new System.Drawing.Size(242, 22);
-            this.descripcionTextBox.TabIndex = 3;
+            this.descripcionTextBox.TabIndex = 5;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.Location = new System.Drawing.Point(433, 116);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(40, 40);
+            this.btnExcel.TabIndex = 9;
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // pictureBox1
             // 
@@ -350,28 +360,18 @@ namespace Win.Maestros
             this.pictureBox1.Location = new System.Drawing.Point(393, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(433, 116);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(40, 40);
-            this.btnExcel.TabIndex = 7;
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
             // 
-            // frmCategorias
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // frmConceptos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -381,23 +381,22 @@ namespace Win.Maestros
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.descripcionTextBox);
-            this.Controls.Add(iDCategoriaLabel);
-            this.Controls.Add(this.iDCategoriaTextBox);
+            this.Controls.Add(iDConceptoLabel);
+            this.Controls.Add(this.iDConceptoTextBox);
             this.Controls.Add(this.dgvDatos);
-            this.Controls.Add(this.categoriaBindingNavigator);
+            this.Controls.Add(this.conceptoBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "frmCategorias";
+            this.Name = "frmConceptos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "---Categorías---";
-            this.Load += new System.EventHandler(this.frmCategoria_Load);
+            this.Text = "---Conceptos---";
+            this.Load += new System.EventHandler(this.frmConceptos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingNavigator)).EndInit();
-            this.categoriaBindingNavigator.ResumeLayout(false);
-            this.categoriaBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.conceptoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.conceptoBindingNavigator)).EndInit();
+            this.conceptoBindingNavigator.ResumeLayout(false);
+            this.conceptoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -409,10 +408,10 @@ namespace Win.Maestros
         #endregion
 
         private DSMiAppComercial dSMiAppComercial;
-        private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private DSMiAppComercialTableAdapters.CategoriaTableAdapter categoriaTableAdapter;
+        private System.Windows.Forms.BindingSource conceptoBindingSource;
+        private DSMiAppComercialTableAdapters.ConceptoTableAdapter conceptoTableAdapter;
         private DSMiAppComercialTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator categoriaBindingNavigator;
+        private System.Windows.Forms.BindingNavigator conceptoBindingNavigator;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
@@ -423,18 +422,18 @@ namespace Win.Maestros
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.DataGridView dgvDatos;
-        private System.Windows.Forms.TextBox iDCategoriaTextBox;
+        private System.Windows.Forms.TextBox iDConceptoTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancelItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
