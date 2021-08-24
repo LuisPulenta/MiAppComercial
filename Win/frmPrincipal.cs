@@ -102,5 +102,18 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmClientes miForm = new frmClientes();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbClientes_Click(object sender, EventArgs e)
+        {
+            clientesToolStripMenuItem1_Click(sender, e);
+        }
     }
 }

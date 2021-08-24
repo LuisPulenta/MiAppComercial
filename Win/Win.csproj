@@ -59,6 +59,12 @@
     <Compile Include="Maestros\frmAlmacenes.Designer.cs">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestros\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestros\frmConceptos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmConceptos.resx">
       <DependentUpon>frmConceptos.cs</DependentUpon>
