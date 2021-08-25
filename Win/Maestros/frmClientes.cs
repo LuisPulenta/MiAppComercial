@@ -1,6 +1,7 @@
 ﻿using CAD;
 using System;
 using System.Windows.Forms;
+using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Maestros
@@ -33,6 +34,18 @@ namespace Win.Maestros
             tipoDocumentoTableAdapter.Fill(dSMiAppComercial.TipoDocumento);
             clienteTableAdapter.Fill(dSMiAppComercial.Cliente);
             dgvDatos.AutoResizeColumns();
+            
+            this.toolTip1.SetToolTip(this.iDTipoDocumentoComboBox, "Seleccione un Tipo de Documento.");
+            this.toolTip1.SetToolTip(this.documentoTextBox, "Ingrese un N° de Documento (máximo 20 caracteres).");
+            this.toolTip1.SetToolTip(this.nombreComercialTextBox, "Ingrese un Nombre Comercial (máximo 50 caracteres).");
+            this.toolTip1.SetToolTip(this.nombreContactoTextBox, "Ingrese un Nombre de Contacto (máximo 50 caracteres).");
+            this.toolTip1.SetToolTip(this.apellidoContactoTextBox, "Ingrese un Apellido de Contacto (máximo 50 caracteres).");
+            this.toolTip1.SetToolTip(this.direccionTextBox, "Ingrese una dirección (máximo 100 caracteres).");
+            this.toolTip1.SetToolTip(this.telefonoTextBox, "Ingrese un Teléfono (máximo 20 caracteres).");
+            this.toolTip1.SetToolTip(this.celularTextBox, "Ingrese un Celular (máximo 50 caracteres).");
+            this.toolTip1.SetToolTip(this.correoTextBox, "Ingrese un Corre (máximo 100 caracteres).");
+            this.toolTip1.SetToolTip(this.notasTextBox, "Ingrese notas.");
+            this.toolTip1.SetToolTip(this.aniversarioDateTimePicker, "Ingrese fecha de aniversario.");
         }
 
         private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
@@ -249,6 +262,15 @@ namespace Win.Maestros
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExportarDatosAExcel.ExportarDatos(dgvDatos);
+        }
+
+        private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
+        {
+            frmBusquedaClientes miBusqueda = new frmBusquedaClientes();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            int position = clienteBindingSource.Find("IDCliente", miBusqueda.IDElegido);
+            clienteBindingSource.Position = position;
         }
     }
 }

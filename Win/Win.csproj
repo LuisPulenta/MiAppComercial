@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda\frmBusquedaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBusquedaClientes.Designer.cs">
+      <DependentUpon>frmBusquedaClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Clases\ExportarDatosAExcel.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="DSWin.Designer.cs">
@@ -115,6 +121,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Busqueda\frmBusquedaClientes.resx">
+      <DependentUpon>frmBusquedaClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
     </EmbeddedResource>

@@ -32,7 +32,6 @@ namespace Win.Maestros
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label iDClienteLabel;
             System.Windows.Forms.Label iDTipoDocumentoLabel;
-            System.Windows.Forms.Label nombreComercialLabel;
             System.Windows.Forms.Label nombreContactoLabel;
             System.Windows.Forms.Label apellidoContactoLabel;
             System.Windows.Forms.Label direccionLabel;
@@ -42,10 +41,11 @@ namespace Win.Maestros
             System.Windows.Forms.Label notasLabel;
             System.Windows.Forms.Label aniversarioLabel;
             System.Windows.Forms.Label documentoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label nombreComercialLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
@@ -68,13 +68,10 @@ namespace Win.Maestros
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancelItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearchItem = new System.Windows.Forms.ToolStripButton();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.tipoDocumentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iDClienteTextBox = new System.Windows.Forms.TextBox();
             this.iDTipoDocumentoComboBox = new System.Windows.Forms.ComboBox();
-            this.nombreComercialTextBox = new System.Windows.Forms.TextBox();
             this.nombreContactoTextBox = new System.Windows.Forms.TextBox();
             this.apellidoContactoTextBox = new System.Windows.Forms.TextBox();
             this.direccionTextBox = new System.Windows.Forms.TextBox();
@@ -86,9 +83,10 @@ namespace Win.Maestros
             this.btnExcel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.documentoTextBox = new System.Windows.Forms.TextBox();
+            this.nombreComercialTextBox = new System.Windows.Forms.TextBox();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,10 +94,10 @@ namespace Win.Maestros
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             iDClienteLabel = new System.Windows.Forms.Label();
             iDTipoDocumentoLabel = new System.Windows.Forms.Label();
-            nombreComercialLabel = new System.Windows.Forms.Label();
             nombreContactoLabel = new System.Windows.Forms.Label();
             apellidoContactoLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -109,14 +107,15 @@ namespace Win.Maestros
             notasLabel = new System.Windows.Forms.Label();
             aniversarioLabel = new System.Windows.Forms.Label();
             documentoLabel = new System.Windows.Forms.Label();
+            nombreComercialLabel1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).BeginInit();
             this.clienteBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // iDClienteLabel
@@ -136,15 +135,6 @@ namespace Win.Maestros
             iDTipoDocumentoLabel.Size = new System.Drawing.Size(116, 17);
             iDTipoDocumentoLabel.TabIndex = 2;
             iDTipoDocumentoLabel.Text = "Tipo Documento:";
-            // 
-            // nombreComercialLabel
-            // 
-            nombreComercialLabel.AutoSize = true;
-            nombreComercialLabel.Location = new System.Drawing.Point(11, 132);
-            nombreComercialLabel.Name = "nombreComercialLabel";
-            nombreComercialLabel.Size = new System.Drawing.Size(128, 17);
-            nombreComercialLabel.TabIndex = 6;
-            nombreComercialLabel.Text = "Nombre Comercial:";
             // 
             // nombreContactoLabel
             // 
@@ -228,6 +218,15 @@ namespace Win.Maestros
             documentoLabel.Text = "Documento:";
             documentoLabel.Click += new System.EventHandler(this.documentoLabel_Click);
             // 
+            // nombreComercialLabel1
+            // 
+            nombreComercialLabel1.AutoSize = true;
+            nombreComercialLabel1.Location = new System.Drawing.Point(12, 132);
+            nombreComercialLabel1.Name = "nombreComercialLabel1";
+            nombreComercialLabel1.Size = new System.Drawing.Size(128, 17);
+            nombreComercialLabel1.TabIndex = 6;
+            nombreComercialLabel1.Text = "Nombre Comercial:";
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -290,7 +289,6 @@ namespace Win.Maestros
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorCancelItem,
-            this.toolStripButton1,
             this.bindingNavigatorSearchItem});
             this.clienteBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.clienteBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -299,14 +297,14 @@ namespace Win.Maestros
             this.clienteBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clienteBindingNavigator.Name = "clienteBindingNavigator";
             this.clienteBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clienteBindingNavigator.Size = new System.Drawing.Size(1282, 27);
+            this.clienteBindingNavigator.Size = new System.Drawing.Size(1302, 27);
             this.clienteBindingNavigator.TabIndex = 0;
             this.clienteBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 28);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -316,7 +314,7 @@ namespace Win.Maestros
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
@@ -325,13 +323,13 @@ namespace Win.Maestros
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -346,7 +344,7 @@ namespace Win.Maestros
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -354,7 +352,7 @@ namespace Win.Maestros
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             // 
             // bindingNavigatorMoveLastItem
@@ -363,13 +361,13 @@ namespace Win.Maestros
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorEditItem
             // 
@@ -377,7 +375,7 @@ namespace Win.Maestros
             this.bindingNavigatorEditItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEditItem.Image")));
             this.bindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorEditItem.Name = "bindingNavigatorEditItem";
-            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorEditItem.Text = "toolStripButton1";
             this.bindingNavigatorEditItem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.bindingNavigatorEditItem.ToolTipText = "Edita el Registro actual";
@@ -389,7 +387,7 @@ namespace Win.Maestros
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.ToolTipText = "Agregar nuevo Registro";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
@@ -400,7 +398,7 @@ namespace Win.Maestros
             this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
             this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
-            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorSaveItem.Text = "Guardar datos";
             this.bindingNavigatorSaveItem.ToolTipText = "Guardar cambios";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.bindingNavigatorSaveItem_Click);
@@ -411,7 +409,7 @@ namespace Win.Maestros
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
             this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar el Registro actual";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
@@ -423,19 +421,10 @@ namespace Win.Maestros
             this.bindingNavigatorCancelItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancelItem.Image")));
             this.bindingNavigatorCancelItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorCancelItem.Name = "bindingNavigatorCancelItem";
-            this.bindingNavigatorCancelItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorCancelItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorCancelItem.Text = "toolStripButton2";
             this.bindingNavigatorCancelItem.ToolTipText = "Cancelar cambios en  el Registro actual";
             this.bindingNavigatorCancelItem.Click += new System.EventHandler(this.bindingNavigatorCancelItem_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(29, 24);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // bindingNavigatorSearchItem
             // 
@@ -443,48 +432,10 @@ namespace Win.Maestros
             this.bindingNavigatorSearchItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearchItem.Image")));
             this.bindingNavigatorSearchItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorSearchItem.Name = "bindingNavigatorSearchItem";
-            this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorSearchItem.Text = "toolStripButton3";
             this.bindingNavigatorSearchItem.ToolTipText = "Buscar un Registro";
-            // 
-            // dgvDatos
-            // 
-            this.dgvDatos.AllowUserToAddRows = false;
-            this.dgvDatos.AllowUserToDeleteRows = false;
-            this.dgvDatos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatos.AutoGenerateColumns = false;
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.Documento,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn11});
-            this.dgvDatos.DataSource = this.clienteBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDatos.Location = new System.Drawing.Point(0, 259);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.ReadOnly = true;
-            this.dgvDatos.RowHeadersWidth = 51;
-            this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(1282, 393);
-            this.dgvDatos.TabIndex = 24;
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // tipoDocumentoBindingSource
             // 
@@ -513,16 +464,6 @@ namespace Win.Maestros
             this.iDTipoDocumentoComboBox.Size = new System.Drawing.Size(289, 24);
             this.iDTipoDocumentoComboBox.TabIndex = 3;
             this.iDTipoDocumentoComboBox.ValueMember = "IDTipoDocumento";
-            // 
-            // nombreComercialTextBox
-            // 
-            this.nombreComercialTextBox.BackColor = System.Drawing.Color.Aquamarine;
-            this.nombreComercialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NombreComercial", true));
-            this.nombreComercialTextBox.Location = new System.Drawing.Point(145, 129);
-            this.nombreComercialTextBox.Name = "nombreComercialTextBox";
-            this.nombreComercialTextBox.ReadOnly = true;
-            this.nombreComercialTextBox.Size = new System.Drawing.Size(289, 22);
-            this.nombreComercialTextBox.TabIndex = 7;
             // 
             // nombreContactoTextBox
             // 
@@ -631,6 +572,55 @@ namespace Win.Maestros
             this.documentoTextBox.TabIndex = 5;
             this.documentoTextBox.TextChanged += new System.EventHandler(this.documentoTextBox_TextChanged);
             // 
+            // nombreComercialTextBox
+            // 
+            this.nombreComercialTextBox.BackColor = System.Drawing.Color.Aquamarine;
+            this.nombreComercialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "NombreComercial", true));
+            this.nombreComercialTextBox.Location = new System.Drawing.Point(145, 129);
+            this.nombreComercialTextBox.Name = "nombreComercialTextBox";
+            this.nombreComercialTextBox.ReadOnly = true;
+            this.nombreComercialTextBox.Size = new System.Drawing.Size(289, 22);
+            this.nombreComercialTextBox.TabIndex = 7;
+            // 
+            // dgvDatos
+            // 
+            this.dgvDatos.AllowUserToAddRows = false;
+            this.dgvDatos.AllowUserToDeleteRows = false;
+            this.dgvDatos.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDatos.AutoGenerateColumns = false;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn12});
+            this.dgvDatos.DataSource = this.clienteBindingSource;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDatos.Location = new System.Drawing.Point(0, 248);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.ReadOnly = true;
+            this.dgvDatos.RowHeadersWidth = 51;
+            this.dgvDatos.RowTemplate.Height = 24;
+            this.dgvDatos.Size = new System.Drawing.Size(1302, 424);
+            this.dgvDatos.TabIndex = 28;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IDCliente";
@@ -654,24 +644,14 @@ namespace Win.Maestros
             this.dataGridViewTextBoxColumn2.ValueMember = "IDTipoDocumento";
             this.dataGridViewTextBoxColumn2.Width = 125;
             // 
-            // Documento
-            // 
-            this.Documento.DataPropertyName = "Documento";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.Documento.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Documento.HeaderText = "Documento";
-            this.Documento.MinimumWidth = 6;
-            this.Documento.Name = "Documento";
-            this.Documento.ReadOnly = true;
-            this.Documento.Width = 125;
-            // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombreComercial";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre Comercial";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Documento";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Documento";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -679,8 +659,8 @@ namespace Win.Maestros
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NombreContacto";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre Contacto";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NombreComercial";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre Comercial";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -688,8 +668,8 @@ namespace Win.Maestros
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "ApellidoContacto";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Apellido Contacto";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "NombreContacto";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Nombre Contacto";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
@@ -697,8 +677,8 @@ namespace Win.Maestros
             // 
             // dataGridViewTextBoxColumn6
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Direccion";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Dirección";
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ApellidoContacto";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Apellido Contacto";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -706,8 +686,8 @@ namespace Win.Maestros
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Telefono";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Teléfono";
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Direccion";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Dirección";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -715,8 +695,8 @@ namespace Win.Maestros
             // 
             // dataGridViewTextBoxColumn8
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Celular";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Celular";
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Telefono";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Teléfono";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -724,28 +704,40 @@ namespace Win.Maestros
             // 
             // dataGridViewTextBoxColumn9
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Correo";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Correo";
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Celular";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Celular";
             this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Width = 125;
             // 
-            // dataGridViewTextBoxColumn11
+            // dataGridViewTextBoxColumn10
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Aniversario";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Aniversario";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Width = 125;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Correo";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Correo";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Aniversario";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Aniversario";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Width = 125;
             // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1282, 653);
+            this.ClientSize = new System.Drawing.Size(1302, 672);
+            this.Controls.Add(this.dgvDatos);
+            this.Controls.Add(nombreComercialLabel1);
+            this.Controls.Add(this.nombreComercialTextBox);
             this.Controls.Add(documentoLabel);
             this.Controls.Add(this.documentoTextBox);
             this.Controls.Add(this.btnExcel);
@@ -766,13 +758,10 @@ namespace Win.Maestros
             this.Controls.Add(this.apellidoContactoTextBox);
             this.Controls.Add(nombreContactoLabel);
             this.Controls.Add(this.nombreContactoTextBox);
-            this.Controls.Add(nombreComercialLabel);
-            this.Controls.Add(this.nombreComercialTextBox);
             this.Controls.Add(iDTipoDocumentoLabel);
             this.Controls.Add(this.iDTipoDocumentoComboBox);
             this.Controls.Add(iDClienteLabel);
             this.Controls.Add(this.iDClienteTextBox);
-            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.clienteBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -788,9 +777,9 @@ namespace Win.Maestros
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).EndInit();
             this.clienteBindingNavigator.ResumeLayout(false);
             this.clienteBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -822,10 +811,8 @@ namespace Win.Maestros
         private System.Windows.Forms.TextBox direccionTextBox;
         private System.Windows.Forms.TextBox apellidoContactoTextBox;
         private System.Windows.Forms.TextBox nombreContactoTextBox;
-        private System.Windows.Forms.TextBox nombreComercialTextBox;
         private System.Windows.Forms.ComboBox iDTipoDocumentoComboBox;
         private System.Windows.Forms.TextBox iDClienteTextBox;
-        private System.Windows.Forms.DataGridView dgvDatos;
         private DSMiAppComercialTableAdapters.TipoDocumentoTableAdapter tipoDocumentoTableAdapter;
         private System.Windows.Forms.BindingSource tipoDocumentoBindingSource;
         private System.Windows.Forms.Button btnExcel;
@@ -835,12 +822,12 @@ namespace Win.Maestros
         private System.Windows.Forms.ToolStripButton bindingNavigatorSaveItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancelItem;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSearchItem;
         private System.Windows.Forms.TextBox documentoTextBox;
+        private System.Windows.Forms.DataGridView dgvDatos;
+        private System.Windows.Forms.TextBox nombreComercialTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Documento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -848,6 +835,7 @@ namespace Win.Maestros
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
     }
 }

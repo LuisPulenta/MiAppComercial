@@ -32,7 +32,7 @@ namespace Win.Clases
                 }
                 excel.Visible = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("No hay Registros a Exportar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
