@@ -1,12 +1,11 @@
 ﻿using CAD;
 using System;
 using System.Windows.Forms;
-using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Maestros
 {
-    public partial class frmClientes : Form
+    public partial class frmProveedores : Form
     {
         private CADUsuario usuarioLogueado;
 
@@ -16,36 +15,16 @@ namespace Win.Maestros
             set => usuarioLogueado = value;
         }
 
-        public frmClientes()
+        public frmProveedores()
         {
             InitializeComponent();
         }
 
-        private void clienteBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void frmProveedores_Load(object sender, EventArgs e)
         {
-            Validate();
-            clienteBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
-
-        }
-
-        private void frmClientes_Load(object sender, EventArgs e)
-        {
-            tipoDocumentoTableAdapter.Fill(dSMiAppComercial.TipoDocumento);
-            clienteTableAdapter.Fill(dSMiAppComercial.Cliente);
+            this.tipoDocumentoTableAdapter.Fill(this.dSMiAppComercial.TipoDocumento);
+            this.proveedorTableAdapter.Fill(this.dSMiAppComercial.Proveedor);
             dgvDatos.AutoResizeColumns();
-            
-            this.toolTip1.SetToolTip(this.iDTipoDocumentoComboBox, "Seleccione un Tipo de Documento.");
-            this.toolTip1.SetToolTip(this.documentoTextBox, "Ingrese un N° de Documento (máximo 20 caracteres).");
-            this.toolTip1.SetToolTip(this.nombreComercialTextBox, "Ingrese un Nombre Comercial (máximo 50 caracteres).");
-            this.toolTip1.SetToolTip(this.nombreContactoTextBox, "Ingrese un Nombre de Contacto (máximo 50 caracteres).");
-            this.toolTip1.SetToolTip(this.apellidoContactoTextBox, "Ingrese un Apellido de Contacto (máximo 50 caracteres).");
-            this.toolTip1.SetToolTip(this.direccionTextBox, "Ingrese una dirección (máximo 100 caracteres).");
-            this.toolTip1.SetToolTip(this.telefonoTextBox, "Ingrese un Teléfono (máximo 20 caracteres).");
-            this.toolTip1.SetToolTip(this.celularTextBox, "Ingrese un Celular (máximo 50 caracteres).");
-            this.toolTip1.SetToolTip(this.correoTextBox, "Ingrese un Corre (máximo 100 caracteres).");
-            this.toolTip1.SetToolTip(this.notasTextBox, "Ingrese notas.");
-            this.toolTip1.SetToolTip(this.aniversarioDateTimePicker, "Ingrese fecha de aniversario.");
         }
 
         private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
@@ -56,24 +35,33 @@ namespace Win.Maestros
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             Habilitar(true);
-            aniversarioDateTimePicker.Value = DateTime.Now;
-            clienteBindingSource.AddNew();
+            proveedorBindingSource.AddNew();
             iDTipoDocumentoComboBox.Focus();
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             DialogResult rta = MessageBox.Show(
-            "¿Está seguro de borrar el Registro actual?",
-            "Confirmación",
-            MessageBoxButtons.YesNo,
-            MessageBoxIcon.Question,
-            MessageBoxDefaultButton.Button2);
+               "¿Está seguro de borrar el Registro actual?",
+               "Confirmación",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question,
+               MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;
 
+            //if (CADCompra.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
+            //{
+            //    MessageBox.Show(
+            //        "No se puede borrar Proveedor porque tiene movimientos",
+            //        "Error",
+            //        MessageBoxButtons.OK,
+            //        MessageBoxIcon.Error);
+            //    return;
+            //}
+
             this.Validate();
-            this.clienteBindingSource.RemoveAt(clienteBindingSource.Position);
+            this.proveedorBindingSource.RemoveAt(proveedorBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSMiAppComercial);
         }
 
@@ -81,7 +69,7 @@ namespace Win.Maestros
         {
             if (!Validarcampos()) return;
             this.Validate();
-            this.clienteBindingSource.EndEdit();
+            this.proveedorBindingSource.EndEdit();
             try
             {
                 this.tableAdapterManager.UpdateAll(this.dSMiAppComercial);
@@ -94,30 +82,22 @@ namespace Win.Maestros
                 return;
             }
             Habilitar(false);
-        }
-
-        private void documentoLabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void documentoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
+            //VerificarPermisos();
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)
         {
-            this.clienteBindingSource.CancelEdit();
+            this.proveedorBindingSource.CancelEdit();
             errorProvider1.Clear();
             Habilitar(false);
+            //VerificarPermisos();
         }
 
         private void Habilitar(bool campo)
         {
             iDTipoDocumentoComboBox.Enabled = campo;
             documentoTextBox.ReadOnly = !campo;
-            nombreComercialTextBox.ReadOnly = !campo;
+            nombreTextBox.ReadOnly = !campo;
             nombreContactoTextBox.ReadOnly = !campo;
             apellidoContactoTextBox.ReadOnly = !campo;
             direccionTextBox.ReadOnly = !campo;
@@ -125,7 +105,6 @@ namespace Win.Maestros
             celularTextBox.ReadOnly = !campo;
             correoTextBox.ReadOnly = !campo;
             notasTextBox.ReadOnly = !campo;
-            aniversarioDateTimePicker.Enabled = campo;
 
             bindingNavigatorEditItem.Enabled = !campo;
             bindingNavigatorAddNewItem.Enabled = !campo;
@@ -167,17 +146,17 @@ namespace Win.Maestros
                 return false;
             }
 
-            if (nombreComercialTextBox.Text == string.Empty)
+            if (nombreTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(nombreComercialTextBox, "Debe ingresar un Nombre de Cliente");
-                nombreComercialTextBox.Focus();
+                errorProvider1.SetError(nombreTextBox, "Debe ingresar un Nombre de Proveedor");
+                nombreTextBox.Focus();
                 return false;
             }
 
-            if (nombreComercialTextBox.Text.Length > 50)
+            if (nombreTextBox.Text.Length > 50)
             {
-                errorProvider1.SetError(nombreComercialTextBox, "El Nombre Comercial no puede tener más de 50 caracteres");
-                nombreComercialTextBox.Focus();
+                errorProvider1.SetError(nombreTextBox, "El Nombre Comercial no puede tener más de 50 caracteres");
+                nombreTextBox.Focus();
                 return false;
             }
 
@@ -239,7 +218,6 @@ namespace Win.Maestros
                 }
             }
 
-
             if (correoTextBox.Text != string.Empty)
             {
                 RegexUtilities regexUtilities = new RegexUtilities();
@@ -257,21 +235,13 @@ namespace Win.Maestros
                     return false;
                 }
             }
+
             return true;
         }
 
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExportarDatosAExcel.ExportarDatos(dgvDatos);
-        }
-
-        private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
-        {
-            frmBusquedaClientes miBusqueda = new frmBusquedaClientes();
-            miBusqueda.ShowDialog();
-            if (miBusqueda.IDElegido == 0) return;
-            int position = clienteBindingSource.Find("IDCliente", miBusqueda.IDElegido);
-            clienteBindingSource.Position = position;
         }
     }
 }

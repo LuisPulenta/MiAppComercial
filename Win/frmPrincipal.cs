@@ -115,5 +115,18 @@ namespace Win
         {
             clientesToolStripMenuItem1_Click(sender, e);
         }
+
+        private void proveedoresToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmProveedores miForm = new frmProveedores();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbProveedores_Click(object sender, EventArgs e)
+        {
+            proveedoresToolStripMenuItem1_Click(sender, e);
+        }
     }
 }
