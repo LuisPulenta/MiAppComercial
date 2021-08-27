@@ -414,6 +414,7 @@ namespace Win.Maestros
             this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorSearchItem.Text = "toolStripButton3";
             this.bindingNavigatorSearchItem.ToolTipText = "Buscar un Registro";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // iDProveedorTextBox
             // 

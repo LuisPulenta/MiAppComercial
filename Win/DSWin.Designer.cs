@@ -8625,12 +8625,25 @@ SELECT IDProveedor, IDTipoDocumento, Documento, Nombre, NombreContacto, Apellido
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IDProveedor, IDTipoDocumento, Documento, Nombre, NombreContacto, ApellidoC" +
                 "ontacto, Direccion, Telefono, Celular, Correo, Notas FROM dbo.Proveedor";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT IDProveedor, IDTipoDocumento, Documento, Nombre, NombreContacto, ApellidoContacto, Direccion, Telefono, Celular, Correo, Notas FROM dbo.Proveedor
+WHERE Documento LIKE @Documento 
+AND Nombre LIKE @Nombre 
+AND NombreContacto LIKE @NombreContacto 
+AND ApellidoContacto LIKE @ApellidoContacto
+";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Documento", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Documento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombre", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Nombre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreContacto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NombreContacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApellidoContacto", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "ApellidoContacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8655,6 +8668,43 @@ SELECT IDProveedor, IDTipoDocumento, Documento, Nombre, NombreContacto, Apellido
             DSMiAppComercial.ProveedorDataTable dataTable = new DSMiAppComercial.ProveedorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DSMiAppComercial.ProveedorDataTable dataTable, string Documento, string Nombre, string NombreContacto, string ApellidoContacto) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((Documento == null)) {
+                throw new global::System.ArgumentNullException("Documento");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Documento));
+            }
+            if ((Nombre == null)) {
+                throw new global::System.ArgumentNullException("Nombre");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Nombre));
+            }
+            if ((NombreContacto == null)) {
+                throw new global::System.ArgumentNullException("NombreContacto");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(NombreContacto));
+            }
+            if ((ApellidoContacto == null)) {
+                throw new global::System.ArgumentNullException("ApellidoContacto");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(ApellidoContacto));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

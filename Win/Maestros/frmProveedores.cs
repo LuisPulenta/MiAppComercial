@@ -1,6 +1,7 @@
 ﻿using CAD;
 using System;
 using System.Windows.Forms;
+using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Maestros
@@ -242,6 +243,15 @@ namespace Win.Maestros
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExportarDatosAExcel.ExportarDatos(dgvDatos);
+        }
+
+        private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProveedor miBusqueda = new frmBusquedaProveedor();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            int position = proveedorBindingSource.Find("IDProveedor", miBusqueda.IDElegido);
+            proveedorBindingSource.Position = position;
         }
     }
 }

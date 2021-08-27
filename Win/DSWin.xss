@@ -15,7 +15,7 @@
     <Shape ID="DesignTable:IVA" ZOrder="6" X="752" Y="173" Height="158" Width="191" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
     <Shape ID="DesignTable:TipoDocumento" ZOrder="5" X="267" Y="326" Height="135" Width="282" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:Cliente" ZOrder="4" X="29" Y="323" Height="388" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
-    <Shape ID="DesignTable:Proveedor" ZOrder="2" X="583" Y="340" Height="342" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
+    <Shape ID="DesignTable:Proveedor" ZOrder="2" X="583" Y="340" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_Usuario_Rol" ZOrder="12" LineWidth="11">
