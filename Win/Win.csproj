@@ -71,6 +71,12 @@
     <Compile Include="Maestros\frmAlmacenes.Designer.cs">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestros\frmBarras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmBarras.Designer.cs">
+      <DependentUpon>frmBarras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestros\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,18 @@
     </Compile>
     <Compile Include="Maestros\frmCategoria.Designer.cs">
       <DependentUpon>frmCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmParametrosAlmacen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmParametrosAlmacen.Designer.cs">
+      <DependentUpon>frmParametrosAlmacen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestros\frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestros\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestros\frmProveedores.cs">
       <SubType>Form</SubType>
@@ -142,6 +160,9 @@
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmBarras.resx">
+      <DependentUpon>frmBarras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmParametrosAlmacen.resx">
+      <DependentUpon>frmParametrosAlmacen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestros\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>

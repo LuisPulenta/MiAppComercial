@@ -128,5 +128,18 @@ namespace Win
         {
             proveedoresToolStripMenuItem1_Click(sender, e);
         }
+
+        private void productosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmProductos miForm = new frmProductos();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbProductos_Click(object sender, EventArgs e)
+        {
+            productosToolStripMenuItem2_Click(sender, e);
+        }
     }
 }
