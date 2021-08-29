@@ -203,7 +203,7 @@ namespace Win.Maestros
                 return false;
             }
 
-            if (claveTextBox.Text.Length > 50)
+            if (claveTextBox.Text.Length > 20)
             {
                 errorProvider1.SetError(claveTextBox, "La Clave no puede tener más de 20 caracteres");
                 claveTextBox.Focus();

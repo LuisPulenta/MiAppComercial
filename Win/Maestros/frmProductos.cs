@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Windows.Forms;
+using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Maestros
@@ -338,6 +339,16 @@ namespace Win.Maestros
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExportarDatosAExcel.ExportarDatos(dgvDatos);
+        }
+
+        private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            int position = productoBindingSource.Find("Codigo", miBusqueda.IDElegido);
+            productoBindingSource.Position = position;
+            CargarImagen();
         }
     }
 }

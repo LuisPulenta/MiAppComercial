@@ -16,7 +16,7 @@
     <Shape ID="DesignTable:TipoDocumento" ZOrder="14" X="267" Y="326" Height="135" Width="282" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:Cliente" ZOrder="13" X="29" Y="323" Height="388" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
     <Shape ID="DesignTable:Proveedor" ZOrder="11" X="583" Y="340" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
-    <Shape ID="DesignTable:Producto" ZOrder="4" X="399" Y="738" Height="319" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
+    <Shape ID="DesignTable:Producto" ZOrder="4" X="399" Y="738" Height="342" Width="270" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:Barra" ZOrder="5" X="664" Y="750" Height="158" Width="204" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:AlmacenProducto" ZOrder="3" X="32" Y="739" Height="273" Width="295" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
   </Shapes>
@@ -64,12 +64,16 @@
     <Connector ID="DesignRelation:FK_Barra_Producto" ZOrder="9" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>631</X>
-          <Y>817</Y>
+          <X>669</X>
+          <Y>925</Y>
         </Point>
         <Point>
-          <X>664</X>
-          <Y>817</Y>
+          <X>686</X>
+          <Y>925</Y>
+        </Point>
+        <Point>
+          <X>686</X>
+          <Y>908</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -96,7 +100,7 @@
           <Y>755</Y>
         </Point>
         <Point>
-          <X>631</X>
+          <X>669</X>
           <Y>755</Y>
         </Point>
       </RoutePoints>
@@ -112,7 +116,7 @@
           <Y>763</Y>
         </Point>
         <Point>
-          <X>631</X>
+          <X>669</X>
           <Y>763</Y>
         </Point>
       </RoutePoints>

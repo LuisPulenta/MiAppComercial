@@ -62,5 +62,14 @@ namespace CAD
                 return miUsuario;
             }
         }
+
+        public static void UsuarioUpdateClave(
+            string Clave,
+            string IDUsuario
+            )
+        {
+            adaptador.UsuarioUpdateClave(Clave, DateTime.Now, IDUsuario);
+        }
+
     }
 }

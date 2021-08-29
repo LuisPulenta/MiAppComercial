@@ -247,7 +247,7 @@ namespace Win
             this.categoríasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("categoríasToolStripMenuItem.Image")));
             this.categoríasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.categoríasToolStripMenuItem.Name = "categoríasToolStripMenuItem";
-            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.categoríasToolStripMenuItem.Size = new System.Drawing.Size(175, 38);
             this.categoríasToolStripMenuItem.Text = "&Categorías";
             this.categoríasToolStripMenuItem.Click += new System.EventHandler(this.categoríasToolStripMenuItem_Click);
             // 
@@ -256,7 +256,7 @@ namespace Win
             this.iVAsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("iVAsToolStripMenuItem.Image")));
             this.iVAsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iVAsToolStripMenuItem.Name = "iVAsToolStripMenuItem";
-            this.iVAsToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.iVAsToolStripMenuItem.Size = new System.Drawing.Size(175, 38);
             this.iVAsToolStripMenuItem.Text = "&IVAs";
             this.iVAsToolStripMenuItem.Click += new System.EventHandler(this.iVAsToolStripMenuItem_Click);
             // 
@@ -265,7 +265,7 @@ namespace Win
             this.productosToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem2.Image")));
             this.productosToolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productosToolStripMenuItem2.Name = "productosToolStripMenuItem2";
-            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(236, 38);
+            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(175, 38);
             this.productosToolStripMenuItem2.Text = "&Productos";
             this.productosToolStripMenuItem2.Click += new System.EventHandler(this.productosToolStripMenuItem2_Click);
             // 
@@ -274,7 +274,7 @@ namespace Win
             this.unidadesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("unidadesToolStripMenuItem.Image")));
             this.unidadesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.unidadesToolStripMenuItem.Name = "unidadesToolStripMenuItem";
-            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.unidadesToolStripMenuItem.Size = new System.Drawing.Size(175, 38);
             this.unidadesToolStripMenuItem.Text = "&Unidades";
             this.unidadesToolStripMenuItem.Click += new System.EventHandler(this.unidadesToolStripMenuItem_Click);
             // 
@@ -312,6 +312,8 @@ namespace Win
             // 
             // cambioDeUsuarioToolStripMenuItem1
             // 
+            this.cambioDeUsuarioToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("cambioDeUsuarioToolStripMenuItem1.Image")));
+            this.cambioDeUsuarioToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cambioDeUsuarioToolStripMenuItem1.Name = "cambioDeUsuarioToolStripMenuItem1";
             this.cambioDeUsuarioToolStripMenuItem1.Size = new System.Drawing.Size(243, 38);
             this.cambioDeUsuarioToolStripMenuItem1.Text = "C&ambio de Usuario";
@@ -319,9 +321,12 @@ namespace Win
             // 
             // cambioDeClaveToolStripMenuItem
             // 
+            this.cambioDeClaveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cambioDeClaveToolStripMenuItem.Image")));
+            this.cambioDeClaveToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.cambioDeClaveToolStripMenuItem.Name = "cambioDeClaveToolStripMenuItem";
             this.cambioDeClaveToolStripMenuItem.Size = new System.Drawing.Size(243, 38);
             this.cambioDeClaveToolStripMenuItem.Text = "Cam&bio de Clave";
+            this.cambioDeClaveToolStripMenuItem.Click += new System.EventHandler(this.cambioDeClaveToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 

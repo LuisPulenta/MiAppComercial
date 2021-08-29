@@ -10968,7 +10968,7 @@ SELECT Codigo, Descripcion, IDCategoria, IDIVA, Precio, Notas, Imagen, IDUnidad,
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Codigo, Descripcion, IDCategoria, IDIVA, Precio, Notas, Imagen, IDUnidad, " +
@@ -10979,6 +10979,14 @@ SELECT Codigo, Descripcion, IDCategoria, IDIVA, Precio, Notas, Imagen, IDUnidad,
             this._commandCollection[1].CommandText = "SELECT Codigo, Descripcion, IDCategoria, IDIVA, Precio, Notas, Imagen, IDUnidad, " +
                 "Medida FROM dbo.Producto\r\nORDER BY Descripcion";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT Codigo, Descripcion, IDCategoria, IDIVA, Precio, Notas, Imagen, IDUnidad, " +
+                "Medida FROM dbo.Producto\r\nWHERE Codigo LIKE @Codigo\r\nAND Descripcion LIKE @Descr" +
+                "ipcion \r\n";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codigo", global::System.Data.SqlDbType.NVarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "Codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Descripcion", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11011,6 +11019,31 @@ SELECT Codigo, Descripcion, IDCategoria, IDIVA, Precio, Notas, Imagen, IDUnidad,
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy(DSMiAppComercial.ProductoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DSMiAppComercial.ProductoDataTable dataTable, string Codigo, string Descripcion) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((Codigo == null)) {
+                throw new global::System.ArgumentNullException("Codigo");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Codigo));
+            }
+            if ((Descripcion == null)) {
+                throw new global::System.ArgumentNullException("Descripcion");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Descripcion));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

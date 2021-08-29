@@ -46,13 +46,13 @@ namespace Win.Maestros
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
@@ -105,7 +105,13 @@ namespace Win.Maestros
             this.gbxBodegas = new System.Windows.Forms.GroupBox();
             this.btnAgregarBodega = new System.Windows.Forms.Button();
             this.almacenesDataGridView = new System.Windows.Forms.DataGridView();
+            this.iDAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Minimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Maximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiasReposicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacenProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbxBarras = new System.Windows.Forms.GroupBox();
             this.btnEliminarBarra = new System.Windows.Forms.Button();
@@ -118,12 +124,6 @@ namespace Win.Maestros
             this.btnBuscarImagen = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
-            this.iDAlmacenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Minimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Maximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiasReposicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadMinima = new System.Windows.Forms.DataGridViewTextBoxColumn();
             codigoLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             iDCategoriaLabel = new System.Windows.Forms.Label();
@@ -459,6 +459,7 @@ namespace Win.Maestros
             this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorSearchItem.Text = "toolStripButton3";
             this.bindingNavigatorSearchItem.ToolTipText = "Buscar un Registro";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // bindingNavigatorPrint
             // 
@@ -789,10 +790,84 @@ namespace Win.Maestros
             this.almacenesDataGridView.Size = new System.Drawing.Size(785, 143);
             this.almacenesDataGridView.TabIndex = 1;
             // 
+            // iDAlmacenDataGridViewTextBoxColumn
+            // 
+            this.iDAlmacenDataGridViewTextBoxColumn.DataPropertyName = "IDAlmacen";
+            this.iDAlmacenDataGridViewTextBoxColumn.DataSource = this.almacenBindingSource;
+            this.iDAlmacenDataGridViewTextBoxColumn.DisplayMember = "Descripcion";
+            this.iDAlmacenDataGridViewTextBoxColumn.HeaderText = "Almacén";
+            this.iDAlmacenDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDAlmacenDataGridViewTextBoxColumn.Name = "iDAlmacenDataGridViewTextBoxColumn";
+            this.iDAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDAlmacenDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.iDAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.iDAlmacenDataGridViewTextBoxColumn.ValueMember = "IDAlmacen";
+            this.iDAlmacenDataGridViewTextBoxColumn.Width = 125;
+            // 
             // almacenBindingSource
             // 
             this.almacenBindingSource.DataMember = "Almacen";
             this.almacenBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.Stock.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Stock.HeaderText = "Stock";
+            this.Stock.MinimumWidth = 6;
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            this.Stock.Width = 125;
+            // 
+            // Minimo
+            // 
+            this.Minimo.DataPropertyName = "Minimo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.Minimo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Minimo.HeaderText = "Mínimo";
+            this.Minimo.MinimumWidth = 6;
+            this.Minimo.Name = "Minimo";
+            this.Minimo.ReadOnly = true;
+            this.Minimo.Width = 125;
+            // 
+            // Maximo
+            // 
+            this.Maximo.DataPropertyName = "Maximo";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.Maximo.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Maximo.HeaderText = "Máximo";
+            this.Maximo.MinimumWidth = 6;
+            this.Maximo.Name = "Maximo";
+            this.Maximo.ReadOnly = true;
+            this.Maximo.Width = 125;
+            // 
+            // DiasReposicion
+            // 
+            this.DiasReposicion.DataPropertyName = "DiasReposicion";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.DiasReposicion.DefaultCellStyle = dataGridViewCellStyle5;
+            this.DiasReposicion.HeaderText = "Días Reposición";
+            this.DiasReposicion.MinimumWidth = 6;
+            this.DiasReposicion.Name = "DiasReposicion";
+            this.DiasReposicion.ReadOnly = true;
+            this.DiasReposicion.Width = 125;
+            // 
+            // CantidadMinima
+            // 
+            this.CantidadMinima.DataPropertyName = "CantidadMinima";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.CantidadMinima.DefaultCellStyle = dataGridViewCellStyle6;
+            this.CantidadMinima.HeaderText = "Cant. Mínima";
+            this.CantidadMinima.MinimumWidth = 6;
+            this.CantidadMinima.Name = "CantidadMinima";
+            this.CantidadMinima.ReadOnly = true;
+            this.CantidadMinima.Width = 125;
             // 
             // almacenProductoBindingSource
             // 
@@ -902,80 +977,6 @@ namespace Win.Maestros
             // almacenTableAdapter
             // 
             this.almacenTableAdapter.ClearBeforeFill = true;
-            // 
-            // iDAlmacenDataGridViewTextBoxColumn
-            // 
-            this.iDAlmacenDataGridViewTextBoxColumn.DataPropertyName = "IDAlmacen";
-            this.iDAlmacenDataGridViewTextBoxColumn.DataSource = this.almacenBindingSource;
-            this.iDAlmacenDataGridViewTextBoxColumn.DisplayMember = "Descripcion";
-            this.iDAlmacenDataGridViewTextBoxColumn.HeaderText = "Almacén";
-            this.iDAlmacenDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDAlmacenDataGridViewTextBoxColumn.Name = "iDAlmacenDataGridViewTextBoxColumn";
-            this.iDAlmacenDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDAlmacenDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.iDAlmacenDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.iDAlmacenDataGridViewTextBoxColumn.ValueMember = "IDAlmacen";
-            this.iDAlmacenDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.Stock.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Stock.HeaderText = "Stock";
-            this.Stock.MinimumWidth = 6;
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            this.Stock.Width = 125;
-            // 
-            // Minimo
-            // 
-            this.Minimo.DataPropertyName = "Minimo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.Minimo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Minimo.HeaderText = "Mínimo";
-            this.Minimo.MinimumWidth = 6;
-            this.Minimo.Name = "Minimo";
-            this.Minimo.ReadOnly = true;
-            this.Minimo.Width = 125;
-            // 
-            // Maximo
-            // 
-            this.Maximo.DataPropertyName = "Maximo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.Maximo.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Maximo.HeaderText = "Máximo";
-            this.Maximo.MinimumWidth = 6;
-            this.Maximo.Name = "Maximo";
-            this.Maximo.ReadOnly = true;
-            this.Maximo.Width = 125;
-            // 
-            // DiasReposicion
-            // 
-            this.DiasReposicion.DataPropertyName = "DiasReposicion";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.DiasReposicion.DefaultCellStyle = dataGridViewCellStyle5;
-            this.DiasReposicion.HeaderText = "Días Reposición";
-            this.DiasReposicion.MinimumWidth = 6;
-            this.DiasReposicion.Name = "DiasReposicion";
-            this.DiasReposicion.ReadOnly = true;
-            this.DiasReposicion.Width = 125;
-            // 
-            // CantidadMinima
-            // 
-            this.CantidadMinima.DataPropertyName = "CantidadMinima";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.CantidadMinima.DefaultCellStyle = dataGridViewCellStyle6;
-            this.CantidadMinima.HeaderText = "Cant. Mínima";
-            this.CantidadMinima.MinimumWidth = 6;
-            this.CantidadMinima.Name = "CantidadMinima";
-            this.CantidadMinima.ReadOnly = true;
-            this.CantidadMinima.Width = 125;
             // 
             // frmProductos
             // 
