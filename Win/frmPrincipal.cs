@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Win.Maestros;
+using Win.Movimientos;
 using Win.Seguridad;
 
 namespace Win
@@ -166,6 +167,32 @@ namespace Win
             frmCambioClave miForm = new frmCambioClave();
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.ShowDialog();
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras miForm = new frmCompras();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbCompras_Click(object sender, EventArgs e)
+        {
+            comprasToolStripMenuItem_Click(sender, e);
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVentas miForm = new frmVentas();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbVentas_Click(object sender, EventArgs e)
+        {
+            ventasToolStripMenuItem_Click(sender, e);
         }
     }
 }

@@ -43,7 +43,14 @@
   <ItemGroup>
     <Compile Include="CADAlmacenProducto.cs" />
     <Compile Include="CADBarra.cs" />
+    <Compile Include="CADCompra.cs" />
+    <Compile Include="CADCompraDetalle.cs" />
+    <Compile Include="CADIVA.cs" />
+    <Compile Include="CADKardex.cs" />
+    <Compile Include="CADProducto.cs" />
     <Compile Include="CADUsuario.cs" />
+    <Compile Include="CADVenta.cs" />
+    <Compile Include="CADVentaDetalle.cs" />
     <Compile Include="DSCAD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

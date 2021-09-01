@@ -242,7 +242,7 @@ namespace Win.Maestros
         private void btnBuscarImagen_Click(object sender, EventArgs e)
         {
             openFileDialog1.ShowDialog();
-            imagenTextBox.Text = openFileDialog1.FileName;
+            imagenTextBox.Text = openFileDialog1.SafeFileName;
             CargarImagen();
         }
 
@@ -254,9 +254,9 @@ namespace Win.Maestros
             }
             else
             {
-                if (File.Exists(imagenTextBox.Text))
+                if (File.Exists("Images\\" + imagenTextBox.Text))
                 {
-                    pbxImagen.Load(imagenTextBox.Text);
+                    pbxImagen.Load("Images\\" + imagenTextBox.Text);
                 }
             }
         }
@@ -345,7 +345,7 @@ namespace Win.Maestros
         {
             frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
             miBusqueda.ShowDialog();
-            if (miBusqueda.IDElegido == 0) return;
+            if (miBusqueda.IDElegido == "") return;
             int position = productoBindingSource.Find("Codigo", miBusqueda.IDElegido);
             productoBindingSource.Position = position;
             CargarImagen();

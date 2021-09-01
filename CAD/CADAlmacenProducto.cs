@@ -55,5 +55,10 @@ namespace CAD
                 adaptador.AlmacenProductoUpdate(Minimo, Maximo, DiasReposicion, CantidadMinima, IDAlmacen, Codigo);
             }
         }
+
+        public static void AlmacenProductoActualizaStock(float Cantidad, int IDAlmacen, string Codigo)
+        {
+            adaptador.AlmacenProductoActualizaStock(Cantidad, IDAlmacen, Codigo);
+        }
     }
 }

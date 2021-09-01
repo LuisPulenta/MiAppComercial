@@ -6,9 +6,9 @@ namespace Win.Busqueda
 {
     public partial class frmBusquedaProducto : Form
     {
-        private int idElegido;
+        private string idElegido;
 
-        public int IDElegido { get => idElegido; }
+        public string IDElegido { get => idElegido; }
 
         public frmBusquedaProducto()
         {
@@ -71,7 +71,7 @@ namespace Win.Busqueda
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            idElegido = 0;
+            idElegido = "";
             this.Close();
         }
 
@@ -79,15 +79,15 @@ namespace Win.Busqueda
         {
             if (dgvDatos.Rows.Count == 0)
             {
-                idElegido = 0;
+                idElegido = "";
             }
             else if (dgvDatos.SelectedRows.Count != 0)
             {
-                idElegido = Convert.ToInt32(dgvDatos.SelectedRows[0].Cells[0].Value);
+                idElegido = dgvDatos.SelectedRows[0].Cells[0].Value.ToString();
             }
             else
             {
-                idElegido = Convert.ToInt32(dgvDatos.Rows[0].Cells[0].Value);
+                idElegido = dgvDatos.Rows[0].Cells[0].Value.ToString();
             }
             this.Close();
         }
