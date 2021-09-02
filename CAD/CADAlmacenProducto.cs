@@ -60,5 +60,10 @@ namespace CAD
         {
             adaptador.AlmacenProductoActualizaStock(Cantidad, IDAlmacen, Codigo);
         }
+
+        public static DSMiAppComercial.AlmacenProductoDataTable GetData()
+        {
+            return adaptador.GetData();
+        }
     }
 }
