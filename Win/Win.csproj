@@ -67,7 +67,12 @@
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\DetalleCompra.cs" />
+    <Compile Include="Clases\DetalleSalida.cs" />
     <Compile Include="Clases\DetalleVenta.cs" />
+    <Compile Include="Clases\DevolucionClienteDevuelto.cs" />
+    <Compile Include="Clases\DevolucionClienteDisponible.cs" />
+    <Compile Include="Clases\DevolucionProveedorDevuelto.cs" />
+    <Compile Include="Clases\DevolucionProveedorDisponible.cs" />
     <Compile Include="Clases\ExportarDatosAExcel.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="DSWin.Designer.cs">
@@ -165,6 +170,24 @@
     <Compile Include="Movimientos\frmConsultaKardex.Designer.cs">
       <DependentUpon>frmConsultaKardex.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\frmDevolucionClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmDevolucionClientes.Designer.cs">
+      <DependentUpon>frmDevolucionClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmDevolucionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmDevolucionProveedores.Designer.cs">
+      <DependentUpon>frmDevolucionProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmSalidas.Designer.cs">
+      <DependentUpon>frmSalidas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimientos\frmVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +267,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmConsultaKardex.resx">
       <DependentUpon>frmConsultaKardex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmDevolucionClientes.resx">
+      <DependentUpon>frmDevolucionClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmDevolucionProveedores.resx">
+      <DependentUpon>frmDevolucionProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmSalidas.resx">
+      <DependentUpon>frmSalidas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmVentas.resx">
       <DependentUpon>frmVentas.cs</DependentUpon>

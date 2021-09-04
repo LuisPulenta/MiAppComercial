@@ -19,9 +19,9 @@ namespace CAD
             adaptador.VentaDetalleInsert(IDVenta, Codigo, Descripcion, Costo, Cantidad, IDKardex, PorcentajeIVA, PorcentajeDescuento);
         }
 
-        //public static DSMiAppComercial.VentaDetalleDataTable VentaDetalleGetVentaDetalleByIDVenta(int IDVenta)
-        //{
-        //    return adaptador.VentaDetalleGetVentaDetalleByIDVenta(IDVenta);
-        //}
+        public static DSMiAppComercial.VentaDetalleDataTable VentaDetalleGetVentaDetalleByIDVenta(int IDVenta)
+        {
+            return adaptador.VentaDetalleGetVentaDetalleByIDVenta(IDVenta);
+        }
     }
 }

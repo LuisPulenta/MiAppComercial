@@ -216,5 +216,49 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void salidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSalidas miForm = new frmSalidas();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbSalidas_Click(object sender, EventArgs e)
+        {
+            salidasToolStripMenuItem_Click (sender, e);
+        }
+
+        private void tsbKardex_Click(object sender, EventArgs e)
+        {
+            kardexToolStripMenuItem_Click(sender, e);
+        }
+
+        private void deClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucionClientes miForm = new frmDevolucionClientes();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void aProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDevolucionProveedores miForm = new frmDevolucionProveedores();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbDevolucionClientes_Click(object sender, EventArgs e)
+        {
+            deClientesToolStripMenuItem_Click(sender, e);
+        }
+
+        private void tsbDevolucionProveedores_Click(object sender, EventArgs e)
+        {
+            aProveedoresToolStripMenuItem_Click(sender, e);
+        }
     }
 }

@@ -18,5 +18,10 @@ namespace CAD
         {
             adaptador.CompraDetalleInsert(IDCompra, Codigo, Descripcion, Costo, Cantidad, IDKardex, PorcentajeIVA, PorcentajeDescuento);
         }
+
+        public static DSMiAppComercial.CompraDetalleDataTable CompraDetalleGetCompraDetalleByIDCompra(int IDCompra)
+        {
+            return adaptador.CompraDetalleGetCompraDetalleByIDCompra(IDCompra);
+        }
     }
 }

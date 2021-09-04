@@ -20,25 +20,25 @@ namespace CAD
             return (int)adaptador.VentaInsert(Fecha, IDCliente, IDAlmacen);
         }
 
-        //public static CADVenta VentasGetVentaByIDVenta(int IDVenta)
-        //{
-        //    CADVenta miVenta = null;
-        //    DSMiAppComercial.VentaDataTable miTabla = adaptador.VentasGetVentaByIDVenta(IDVenta);
-        //    if (miTabla.Rows.Count == 0)
-        //    {
-        //        return miVenta;
-        //    }
-        //    else
-        //    {
-        //        DSMiAppComercial.VentaRow miRegistro = (DSMiAppComercial.VentaRow)miTabla.Rows[0];
-        //        miVenta = new CADVenta();
-        //        miVenta.Fecha = miRegistro.Fecha;
-        //        miVenta.IDCliente = miRegistro.IDCliente;
-        //        miVenta.IDAlmacen = miRegistro.IDAlmacen;
-        //        miVenta.IDVenta = miRegistro.IDVenta;
-        //        return miVenta;
-        //    }
-        //}
+        public static CADVenta VentasGetVentaByIDVenta(int IDVenta)
+        {
+            CADVenta miVenta = null;
+            DSMiAppComercial.VentaDataTable miTabla = adaptador.VentasGetVentaByIDVenta(IDVenta);
+            if (miTabla.Rows.Count == 0)
+            {
+                return miVenta;
+            }
+            else
+            {
+                DSMiAppComercial.VentaRow miRegistro = (DSMiAppComercial.VentaRow)miTabla.Rows[0];
+                miVenta = new CADVenta();
+                miVenta.Fecha = miRegistro.Fecha;
+                miVenta.IDCliente = miRegistro.IDCliente;
+                miVenta.IDAlmacen = miRegistro.IDAlmacen;
+                miVenta.IDVenta = miRegistro.IDVenta;
+                return miVenta;
+            }
+        }
 
         //public static bool ProveedorTieneCompras(int IDProveedor)
         //{
