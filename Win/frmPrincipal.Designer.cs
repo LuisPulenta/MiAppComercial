@@ -96,12 +96,13 @@ namespace Win
             this.tsbKardex = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCompras = new System.Windows.Forms.ToolStripButton();
-            this.tsbVentas = new System.Windows.Forms.ToolStripButton();
-            this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
-            this.tsbDevolucionClientes = new System.Windows.Forms.ToolStripButton();
             this.tsbDevolucionProveedores = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbVentas = new System.Windows.Forms.ToolStripButton();
+            this.tsbDevolucionClientes = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
+            this.tsbTraslados = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -395,7 +396,7 @@ namespace Win
             this.deClientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("deClientesToolStripMenuItem.Image")));
             this.deClientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deClientesToolStripMenuItem.Name = "deClientesToolStripMenuItem";
-            this.deClientesToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.deClientesToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.deClientesToolStripMenuItem.Text = "De &Clientes";
             this.deClientesToolStripMenuItem.Click += new System.EventHandler(this.deClientesToolStripMenuItem_Click);
             // 
@@ -404,7 +405,7 @@ namespace Win
             this.aProveedoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aProveedoresToolStripMenuItem.Image")));
             this.aProveedoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.aProveedoresToolStripMenuItem.Name = "aProveedoresToolStripMenuItem";
-            this.aProveedoresToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.aProveedoresToolStripMenuItem.Size = new System.Drawing.Size(200, 38);
             this.aProveedoresToolStripMenuItem.Text = "A &Proveedores";
             this.aProveedoresToolStripMenuItem.Click += new System.EventHandler(this.aProveedoresToolStripMenuItem_Click);
             // 
@@ -467,9 +468,12 @@ namespace Win
             // 
             // trasladosToolStripMenuItem
             // 
+            this.trasladosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("trasladosToolStripMenuItem.Image")));
+            this.trasladosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.trasladosToolStripMenuItem.Name = "trasladosToolStripMenuItem";
             this.trasladosToolStripMenuItem.Size = new System.Drawing.Size(315, 38);
             this.trasladosToolStripMenuItem.Text = "&Traslados";
+            this.trasladosToolStripMenuItem.Click += new System.EventHandler(this.trasladosToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
@@ -617,7 +621,8 @@ namespace Win
             this.tsbVentas,
             this.tsbDevolucionClientes,
             this.toolStripSeparator4,
-            this.tsbSalidas});
+            this.tsbSalidas,
+            this.tsbTraslados});
             this.toolStrip1.Location = new System.Drawing.Point(0, 40);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 39);
@@ -693,41 +698,6 @@ namespace Win
             this.tsbCompras.ToolTipText = "Compras";
             this.tsbCompras.Click += new System.EventHandler(this.tsbCompras_Click);
             // 
-            // tsbVentas
-            // 
-            this.tsbVentas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbVentas.Image = ((System.Drawing.Image)(resources.GetObject("tsbVentas.Image")));
-            this.tsbVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbVentas.Name = "tsbVentas";
-            this.tsbVentas.Size = new System.Drawing.Size(36, 36);
-            this.tsbVentas.Text = "Ventas";
-            this.tsbVentas.Click += new System.EventHandler(this.tsbVentas_Click);
-            // 
-            // tsbSalidas
-            // 
-            this.tsbSalidas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbSalidas.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalidas.Image")));
-            this.tsbSalidas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbSalidas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSalidas.Name = "tsbSalidas";
-            this.tsbSalidas.Size = new System.Drawing.Size(36, 36);
-            this.tsbSalidas.Text = "Salidas";
-            this.tsbSalidas.ToolTipText = "Salidas";
-            this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
-            // 
-            // tsbDevolucionClientes
-            // 
-            this.tsbDevolucionClientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsbDevolucionClientes.Image = ((System.Drawing.Image)(resources.GetObject("tsbDevolucionClientes.Image")));
-            this.tsbDevolucionClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsbDevolucionClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbDevolucionClientes.Name = "tsbDevolucionClientes";
-            this.tsbDevolucionClientes.Size = new System.Drawing.Size(36, 36);
-            this.tsbDevolucionClientes.Text = "toolStripButton1";
-            this.tsbDevolucionClientes.ToolTipText = "Devolución de Clientes";
-            this.tsbDevolucionClientes.Click += new System.EventHandler(this.tsbDevolucionClientes_Click);
-            // 
             // tsbDevolucionProveedores
             // 
             this.tsbDevolucionProveedores.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -745,10 +715,57 @@ namespace Win
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
+            // tsbVentas
+            // 
+            this.tsbVentas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbVentas.Image = ((System.Drawing.Image)(resources.GetObject("tsbVentas.Image")));
+            this.tsbVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbVentas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbVentas.Name = "tsbVentas";
+            this.tsbVentas.Size = new System.Drawing.Size(36, 36);
+            this.tsbVentas.Text = "Ventas";
+            this.tsbVentas.Click += new System.EventHandler(this.tsbVentas_Click);
+            // 
+            // tsbDevolucionClientes
+            // 
+            this.tsbDevolucionClientes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbDevolucionClientes.Image = ((System.Drawing.Image)(resources.GetObject("tsbDevolucionClientes.Image")));
+            this.tsbDevolucionClientes.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbDevolucionClientes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbDevolucionClientes.Name = "tsbDevolucionClientes";
+            this.tsbDevolucionClientes.Size = new System.Drawing.Size(36, 36);
+            this.tsbDevolucionClientes.Text = "toolStripButton1";
+            this.tsbDevolucionClientes.ToolTipText = "Devolución de Clientes";
+            this.tsbDevolucionClientes.Click += new System.EventHandler(this.tsbDevolucionClientes_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 39);
+            // 
+            // tsbSalidas
+            // 
+            this.tsbSalidas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbSalidas.Image = ((System.Drawing.Image)(resources.GetObject("tsbSalidas.Image")));
+            this.tsbSalidas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbSalidas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSalidas.Name = "tsbSalidas";
+            this.tsbSalidas.Size = new System.Drawing.Size(36, 36);
+            this.tsbSalidas.Text = "Salidas";
+            this.tsbSalidas.ToolTipText = "Salidas";
+            this.tsbSalidas.Click += new System.EventHandler(this.tsbSalidas_Click);
+            // 
+            // tsbTraslados
+            // 
+            this.tsbTraslados.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbTraslados.Image = ((System.Drawing.Image)(resources.GetObject("tsbTraslados.Image")));
+            this.tsbTraslados.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbTraslados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbTraslados.Name = "tsbTraslados";
+            this.tsbTraslados.Size = new System.Drawing.Size(36, 36);
+            this.tsbTraslados.Text = "Traslados";
+            this.tsbTraslados.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.tsbTraslados.Click += new System.EventHandler(this.tsbTraslados_Click);
             // 
             // frmPrincipal
             // 
@@ -853,5 +870,6 @@ namespace Win
         private System.Windows.Forms.ToolStripButton tsbDevolucionProveedores;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton tsbTraslados;
     }
 }

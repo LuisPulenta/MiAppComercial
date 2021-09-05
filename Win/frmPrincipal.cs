@@ -260,5 +260,18 @@ namespace Win
         {
             aProveedoresToolStripMenuItem_Click(sender, e);
         }
+
+        private void trasladosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTraslados miForm = new frmTraslados();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbTraslados_Click(object sender, EventArgs e)
+        {
+            trasladosToolStripMenuItem_Click(sender, e);
+        }
     }
 }

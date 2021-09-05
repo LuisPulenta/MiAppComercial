@@ -54,6 +54,8 @@
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADSalida.cs" />
     <Compile Include="CADSalidaDetalle.cs" />
+    <Compile Include="CADTraslado.cs" />
+    <Compile Include="CADTrasladoDetalle.cs" />
     <Compile Include="CADUsuario.cs" />
     <Compile Include="CADVenta.cs" />
     <Compile Include="CADVentaDetalle.cs" />
