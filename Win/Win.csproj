@@ -75,6 +75,7 @@
     <Compile Include="Clases\DevolucionProveedorDevuelto.cs" />
     <Compile Include="Clases\DevolucionProveedorDisponible.cs" />
     <Compile Include="Clases\ExportarDatosAExcel.cs" />
+    <Compile Include="Clases\ProductoAInventariar.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="DSWin.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -183,6 +184,12 @@
     <Compile Include="Movimientos\frmDevolucionProveedores.Designer.cs">
       <DependentUpon>frmDevolucionProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\frmInventarioFisicoPaso1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmInventarioFisicoPaso1.Designer.cs">
+      <DependentUpon>frmInventarioFisicoPaso1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimientos\frmSalidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmDevolucionProveedores.resx">
       <DependentUpon>frmDevolucionProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmInventarioFisicoPaso1.resx">
+      <DependentUpon>frmInventarioFisicoPaso1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmSalidas.resx">
       <DependentUpon>frmSalidas.cs</DependentUpon>

@@ -49,9 +49,12 @@
     <Compile Include="CADDevolucionClienteDetalle.cs" />
     <Compile Include="CADDevolucionProveedor.cs" />
     <Compile Include="CADDevolucionProveedorDetalle.cs" />
+    <Compile Include="CADInventario.cs" />
+    <Compile Include="CADInventarioDetalle.cs" />
     <Compile Include="CADIVA.cs" />
     <Compile Include="CADKardex.cs" />
     <Compile Include="CADProducto.cs" />
+    <Compile Include="CADProductosAInventariar.cs" />
     <Compile Include="CADSalida.cs" />
     <Compile Include="CADSalidaDetalle.cs" />
     <Compile Include="CADTraslado.cs" />

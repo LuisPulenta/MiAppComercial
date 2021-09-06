@@ -418,43 +418,48 @@ namespace Win
             this.paso4IngresarCOnteoFinalToolStripMenuItem,
             this.toolStripMenuItem4,
             this.cancelarInventariosNoTerminadosToolStripMenuItem});
+            this.inventariosFísicosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("inventariosFísicosToolStripMenuItem1.Image")));
+            this.inventariosFísicosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.inventariosFísicosToolStripMenuItem1.Name = "inventariosFísicosToolStripMenuItem1";
             this.inventariosFísicosToolStripMenuItem1.Size = new System.Drawing.Size(315, 38);
             this.inventariosFísicosToolStripMenuItem1.Text = "Inventarios Físicos";
             // 
             // paso1ToolStripMenuItem
             // 
+            this.paso1ToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("paso1ToolStripMenuItem.Image")));
+            this.paso1ToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.paso1ToolStripMenuItem.Name = "paso1ToolStripMenuItem";
-            this.paso1ToolStripMenuItem.Size = new System.Drawing.Size(383, 26);
+            this.paso1ToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
             this.paso1ToolStripMenuItem.Text = "Paso 1: Programar &Inventario";
+            this.paso1ToolStripMenuItem.Click += new System.EventHandler(this.paso1ToolStripMenuItem_Click);
             // 
             // paso2IngresarPrimerConteoToolStripMenuItem
             // 
             this.paso2IngresarPrimerConteoToolStripMenuItem.Name = "paso2IngresarPrimerConteoToolStripMenuItem";
-            this.paso2IngresarPrimerConteoToolStripMenuItem.Size = new System.Drawing.Size(383, 26);
+            this.paso2IngresarPrimerConteoToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
             this.paso2IngresarPrimerConteoToolStripMenuItem.Text = "Paso 2: Ingresar &Primer Conteo";
             // 
             // paso3IngresarSegundoConteoToolStripMenuItem
             // 
             this.paso3IngresarSegundoConteoToolStripMenuItem.Name = "paso3IngresarSegundoConteoToolStripMenuItem";
-            this.paso3IngresarSegundoConteoToolStripMenuItem.Size = new System.Drawing.Size(383, 26);
+            this.paso3IngresarSegundoConteoToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
             this.paso3IngresarSegundoConteoToolStripMenuItem.Text = "Paso 3: Ingresar &Segundo Conteo";
             // 
             // paso4IngresarCOnteoFinalToolStripMenuItem
             // 
             this.paso4IngresarCOnteoFinalToolStripMenuItem.Name = "paso4IngresarCOnteoFinalToolStripMenuItem";
-            this.paso4IngresarCOnteoFinalToolStripMenuItem.Size = new System.Drawing.Size(383, 26);
+            this.paso4IngresarCOnteoFinalToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
             this.paso4IngresarCOnteoFinalToolStripMenuItem.Text = "Paso 4: Ingresar Conteo &Final y hacer Ajustes";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(380, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(392, 6);
             // 
             // cancelarInventariosNoTerminadosToolStripMenuItem
             // 
             this.cancelarInventariosNoTerminadosToolStripMenuItem.Name = "cancelarInventariosNoTerminadosToolStripMenuItem";
-            this.cancelarInventariosNoTerminadosToolStripMenuItem.Size = new System.Drawing.Size(383, 26);
+            this.cancelarInventariosNoTerminadosToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
             this.cancelarInventariosNoTerminadosToolStripMenuItem.Text = "&Cancelar Inventarios no terminados";
             // 
             // salidasToolStripMenuItem
