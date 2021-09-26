@@ -281,5 +281,13 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void paso2IngresarPrimerConteoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventarioFisicoPaso2 miForm = new frmInventarioFisicoPaso2();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
     }
 }

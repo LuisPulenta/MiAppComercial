@@ -94,9 +94,11 @@ namespace Win.Movimientos
 
             DateTime fecha = fechaDateTimePicker.Value;
             int IDAlmacen = (int)almacenComboBox.SelectedValue;
+            String CategoriaSeleccionada = "";
 
             if (radioButton1.Checked)
             {
+                CategoriaSeleccionada = "Todas";
                 CAD.DSMiAppComercial.ProductosAInventariarDataTable miTabla = CADProductosAInventariar.ProductosAInventariarByIDBodega((int)almacenComboBox.SelectedValue);
                 foreach (CAD.DSMiAppComercial.ProductosAInventariarRow miRegistro in miTabla.Rows)
                 {
@@ -109,6 +111,7 @@ namespace Win.Movimientos
             }
             else
             {
+                CategoriaSeleccionada = CAD.CADCategoria.CategoriaDescripcion((int)categoriaComboBox.SelectedValue);
                 CAD.DSMiAppComercial.ProductosAInventariarDataTable miTabla = CADProductosAInventariar.ProductosAInventariarByIDBodegaAndIDDepartamento((int)almacenComboBox.SelectedValue, (int)categoriaComboBox.SelectedValue);
                 foreach (CAD.DSMiAppComercial.ProductosAInventariarRow miRegistro in miTabla.Rows)
                 {
@@ -122,9 +125,13 @@ namespace Win.Movimientos
 
             //Grabamos la Cabecera del Inventario
 
+
+
+
             int IDInventario = CADInventario.InventarioInsert(
                 fecha,
-                IDAlmacen);
+                IDAlmacen,
+                CategoriaSeleccionada);
 
             //Grabamos el Detalle del Inventario
             //Hay que obtener la lista de productos y guardarla en InventarioDetalle

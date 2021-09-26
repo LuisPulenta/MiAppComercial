@@ -18,5 +18,20 @@ namespace CAD
         {
             adaptador.InventarioDetalleInsert(IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Conteo3, Ajuste);
         }
+
+        public static void InventarioDetalleUpDateConteo1(double Conteo1,int IDLinea)
+        {
+            adaptador.InventarioDetalleUpdateConteo1(Conteo1,IDLinea);
+        }
+
+        public static void InventarioDetalleUpDateConteo2(double Conteo2, int IDLinea)
+        {
+            adaptador.InventarioDetalleUpdateConteo1(Conteo2, IDLinea);
+        }
+
+        public static void InventarioDetalleUpDateConteo3(double Conteo3, int IDLinea)
+        {
+            adaptador.InventarioDetalleUpdateConteo1(Conteo3, IDLinea);
+        }
     }
 }

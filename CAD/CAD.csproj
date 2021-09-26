@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CADAlmacenProducto.cs" />
     <Compile Include="CADBarra.cs" />
+    <Compile Include="CADCategoria.cs" />
     <Compile Include="CADCompra.cs" />
     <Compile Include="CADCompraDetalle.cs" />
     <Compile Include="CADDevolucionCliente.cs" />
@@ -53,6 +54,7 @@
     <Compile Include="CADInventarioDetalle.cs" />
     <Compile Include="CADIVA.cs" />
     <Compile Include="CADKardex.cs" />
+    <Compile Include="CADMaterialAContar.cs" />
     <Compile Include="CADProducto.cs" />
     <Compile Include="CADProductosAInventariar.cs" />
     <Compile Include="CADSalida.cs" />

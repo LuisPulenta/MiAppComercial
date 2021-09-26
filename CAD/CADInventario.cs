@@ -9,9 +9,15 @@ namespace CAD
 
         public static int InventarioInsert(
             DateTime Fecha,
-            int IDAlmacen)
+            int IDAlmacen,
+            string Categoría)
         {
-            return (int)adaptador.InventarioInsert(Fecha, 1, IDAlmacen);
+            return (int)adaptador.InventarioInsert(Fecha, 1, IDAlmacen,Categoría);
+        }
+
+        public static void InventarioUpDatePaso(int Paso, int IDInventario)
+        {
+            adaptador.InventarioUpdatePaso(Paso, IDInventario);
         }
     }
 }

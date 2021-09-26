@@ -34,7 +34,10 @@ namespace Win.Movimientos
             this.label1 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
+            this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.categoriaComboBox = new System.Windows.Forms.ComboBox();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -42,15 +45,12 @@ namespace Win.Movimientos
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dSMiAppComercial = new Win.DSMiAppComercial();
-            this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriaTableAdapter = new Win.DSMiAppComercialTableAdapters.CategoriaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,6 +80,16 @@ namespace Win.Movimientos
             this.almacenComboBox.TabIndex = 21;
             this.almacenComboBox.ValueMember = "IDAlmacen";
             // 
+            // almacenBindingSource
+            // 
+            this.almacenBindingSource.DataMember = "Almacen";
+            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // dSMiAppComercial
+            // 
+            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
+            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // categoriaComboBox
             // 
             this.categoriaComboBox.DataSource = this.categoriaBindingSource;
@@ -91,6 +101,11 @@ namespace Win.Movimientos
             this.categoriaComboBox.Size = new System.Drawing.Size(260, 24);
             this.categoriaComboBox.TabIndex = 22;
             this.categoriaComboBox.ValueMember = "IDCategoria";
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "Categoria";
+            this.categoriaBindingSource.DataSource = this.dSMiAppComercial;
             // 
             // label3
             // 
@@ -115,9 +130,9 @@ namespace Win.Movimientos
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(152, 106);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(141, 21);
+            this.radioButton2.Size = new System.Drawing.Size(120, 21);
             this.radioButton2.TabIndex = 24;
-            this.radioButton2.Text = "Un Departamento";
+            this.radioButton2.Text = "Una Categoría";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -165,24 +180,9 @@ namespace Win.Movimientos
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dSMiAppComercial
-            // 
-            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
-            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // almacenBindingSource
-            // 
-            this.almacenBindingSource.DataMember = "Almacen";
-            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
-            // 
             // almacenTableAdapter
             // 
             this.almacenTableAdapter.ClearBeforeFill = true;
-            // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "Categoria";
-            this.categoriaBindingSource.DataSource = this.dSMiAppComercial;
             // 
             // categoriaTableAdapter
             // 
@@ -212,10 +212,10 @@ namespace Win.Movimientos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---Inventario Físico Paso 1: Programar Inventario---";
             this.Load += new System.EventHandler(this.frmInventarioFisicoPaso1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -435,9 +435,12 @@ namespace Win
             // 
             // paso2IngresarPrimerConteoToolStripMenuItem
             // 
+            this.paso2IngresarPrimerConteoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("paso2IngresarPrimerConteoToolStripMenuItem.Image")));
+            this.paso2IngresarPrimerConteoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.paso2IngresarPrimerConteoToolStripMenuItem.Name = "paso2IngresarPrimerConteoToolStripMenuItem";
             this.paso2IngresarPrimerConteoToolStripMenuItem.Size = new System.Drawing.Size(395, 38);
             this.paso2IngresarPrimerConteoToolStripMenuItem.Text = "Paso 2: Ingresar &Primer Conteo";
+            this.paso2IngresarPrimerConteoToolStripMenuItem.Click += new System.EventHandler(this.paso2IngresarPrimerConteoToolStripMenuItem_Click);
             // 
             // paso3IngresarSegundoConteoToolStripMenuItem
             // 
