@@ -31,10 +31,10 @@ namespace Win.Movimientos
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDevolucionProveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDevolverTodo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.eliminarTodoButton = new System.Windows.Forms.Button();
@@ -53,9 +53,10 @@ namespace Win.Movimientos
             this.dgvDatosDisponible = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
+            this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorComboBox = new System.Windows.Forms.ComboBox();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
-            this.compraComboBox = new System.Windows.Forms.ComboBox();
             this.compraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaTextBox = new System.Windows.Forms.TextBox();
             this.btnBuscarCompra = new System.Windows.Forms.Button();
@@ -65,18 +66,17 @@ namespace Win.Movimientos
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.compraTableAdapter = new Win.DSMiAppComercialTableAdapters.CompraTableAdapter();
             this.productoTableAdapter = new Win.DSMiAppComercialTableAdapters.ProductoTableAdapter();
-            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorTableAdapter = new Win.DSMiAppComercialTableAdapters.ProveedorTableAdapter();
-            this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
+            this.compraTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosDevuelto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosDisponible)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDevolverTodo
@@ -215,18 +215,18 @@ namespace Win.Movimientos
             // 
             this.dgvDatosDevuelto.AllowUserToAddRows = false;
             this.dgvDatosDevuelto.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatosDevuelto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatosDevuelto.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatosDevuelto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosDevuelto.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosDevuelto.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatosDevuelto.Location = new System.Drawing.Point(14, 428);
             this.dgvDatosDevuelto.Name = "dgvDatosDevuelto";
             this.dgvDatosDevuelto.ReadOnly = true;
@@ -246,18 +246,18 @@ namespace Win.Movimientos
             // 
             this.dgvDatosDisponible.AllowUserToAddRows = false;
             this.dgvDatosDisponible.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatosDisponible.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatosDisponible.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDatosDisponible.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatosDisponible.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatosDisponible.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDatosDisponible.Location = new System.Drawing.Point(14, 148);
             this.dgvDatosDisponible.Name = "dgvDatosDisponible";
             this.dgvDatosDisponible.ReadOnly = true;
@@ -287,6 +287,11 @@ namespace Win.Movimientos
             this.almacenComboBox.TabIndex = 56;
             this.almacenComboBox.ValueMember = "IDAlmacen";
             // 
+            // almacenBindingSource
+            // 
+            this.almacenBindingSource.DataMember = "Almacen";
+            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
+            // 
             // proveedorComboBox
             // 
             this.proveedorComboBox.DataSource = this.proveedorBindingSource;
@@ -299,6 +304,11 @@ namespace Win.Movimientos
             this.proveedorComboBox.TabIndex = 54;
             this.proveedorComboBox.ValueMember = "IDProveedor";
             // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataMember = "Proveedor";
+            this.proveedorBindingSource.DataSource = this.dSMiAppComercial;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -307,18 +317,6 @@ namespace Win.Movimientos
             this.label2.Size = new System.Drawing.Size(104, 17);
             this.label2.TabIndex = 49;
             this.label2.Text = "Fecha Compra:";
-            // 
-            // compraComboBox
-            // 
-            this.compraComboBox.DataSource = this.compraBindingSource;
-            this.compraComboBox.DisplayMember = "Compra";
-            this.compraComboBox.FormattingEnabled = true;
-            this.compraComboBox.Location = new System.Drawing.Point(130, 12);
-            this.compraComboBox.Name = "compraComboBox";
-            this.compraComboBox.Size = new System.Drawing.Size(525, 24);
-            this.compraComboBox.TabIndex = 47;
-            this.compraComboBox.ValueMember = "IDCompra";
-            this.compraComboBox.SelectedIndexChanged += new System.EventHandler(this.compraComboBox_SelectedIndexChanged);
             // 
             // compraBindingSource
             // 
@@ -335,12 +333,13 @@ namespace Win.Movimientos
             // 
             // btnBuscarCompra
             // 
-            this.btnBuscarCompra.Location = new System.Drawing.Point(689, 12);
+            this.btnBuscarCompra.Location = new System.Drawing.Point(252, 13);
             this.btnBuscarCompra.Name = "btnBuscarCompra";
             this.btnBuscarCompra.Size = new System.Drawing.Size(45, 24);
             this.btnBuscarCompra.TabIndex = 48;
             this.btnBuscarCompra.Text = "...";
             this.btnBuscarCompra.UseVisualStyleBackColor = true;
+            this.btnBuscarCompra.Click += new System.EventHandler(this.btnBuscarCompra_Click);
             // 
             // label1
             // 
@@ -376,23 +375,21 @@ namespace Win.Movimientos
             // 
             this.productoTableAdapter.ClearBeforeFill = true;
             // 
-            // proveedorBindingSource
-            // 
-            this.proveedorBindingSource.DataMember = "Proveedor";
-            this.proveedorBindingSource.DataSource = this.dSMiAppComercial;
-            // 
             // proveedorTableAdapter
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
             // 
-            // almacenBindingSource
-            // 
-            this.almacenBindingSource.DataMember = "Almacen";
-            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
-            // 
             // almacenTableAdapter
             // 
             this.almacenTableAdapter.ClearBeforeFill = true;
+            // 
+            // compraTextBox
+            // 
+            this.compraTextBox.Location = new System.Drawing.Point(130, 13);
+            this.compraTextBox.Name = "compraTextBox";
+            this.compraTextBox.Size = new System.Drawing.Size(93, 22);
+            this.compraTextBox.TabIndex = 69;
+            this.compraTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.compraTextBox_Validating);
             // 
             // frmDevolucionProveedores
             // 
@@ -401,6 +398,7 @@ namespace Win.Movimientos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1298, 649);
+            this.Controls.Add(this.compraTextBox);
             this.Controls.Add(this.btnDevolverTodo);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.eliminarTodoButton);
@@ -419,7 +417,6 @@ namespace Win.Movimientos
             this.Controls.Add(this.almacenComboBox);
             this.Controls.Add(this.proveedorComboBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.compraComboBox);
             this.Controls.Add(this.fechaTextBox);
             this.Controls.Add(this.btnBuscarCompra);
             this.Controls.Add(this.label1);
@@ -436,10 +433,10 @@ namespace Win.Movimientos
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosDevuelto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosDisponible)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,7 +461,6 @@ namespace Win.Movimientos
         private System.Windows.Forms.ComboBox almacenComboBox;
         private System.Windows.Forms.ComboBox proveedorComboBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox compraComboBox;
         private System.Windows.Forms.TextBox fechaTextBox;
         private System.Windows.Forms.Button btnBuscarCompra;
         private System.Windows.Forms.Label label1;
@@ -480,5 +476,6 @@ namespace Win.Movimientos
         private DSMiAppComercialTableAdapters.ProveedorTableAdapter proveedorTableAdapter;
         private System.Windows.Forms.BindingSource almacenBindingSource;
         private DSMiAppComercialTableAdapters.AlmacenTableAdapter almacenTableAdapter;
+        private System.Windows.Forms.TextBox compraTextBox;
     }
 }
