@@ -1,6 +1,7 @@
 ﻿using CAD;
 using System;
 using System.Windows.Forms;
+using Win.Consultas;
 using Win.Maestros;
 using Win.Movimientos;
 using Win.Seguridad;
@@ -309,6 +310,14 @@ namespace Win
         private void cancelarInventariosNoTerminadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCancelarInventariosNoTerminados miForm = new frmCancelarInventariosNoTerminados();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultaCompras miForm = new frmConsultaCompras();
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();

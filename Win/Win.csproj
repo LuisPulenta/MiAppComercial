@@ -90,6 +90,12 @@
     <Compile Include="Clases\MaterialAContar.cs" />
     <Compile Include="Clases\ProductoAInventariar.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
+    <Compile Include="Consultas\frmConsultaCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaCompras.Designer.cs">
+      <DependentUpon>frmConsultaCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSWin.cs">
       <DependentUpon>DSWin.xsd</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBusquedaVentas.resx">
       <DependentUpon>frmBusquedaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaCompras.resx">
+      <DependentUpon>frmConsultaCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>

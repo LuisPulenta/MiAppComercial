@@ -77,6 +77,14 @@ namespace Win
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.movimientosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolucionesDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolucionesAProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventariosFísicosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salidasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.trasladosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -514,7 +522,8 @@ namespace Win
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kardexToolStripMenuItem,
-            this.stockToolStripMenuItem});
+            this.stockToolStripMenuItem,
+            this.movimientosToolStripMenuItem1});
             this.consultasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasToolStripMenuItem.Image")));
             this.consultasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
@@ -526,15 +535,74 @@ namespace Win
             this.kardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kardexToolStripMenuItem.Image")));
             this.kardexToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
-            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(150, 38);
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
             this.kardexToolStripMenuItem.Text = "&Kardex";
             this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
             // 
             // stockToolStripMenuItem
             // 
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(150, 38);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
             this.stockToolStripMenuItem.Text = "&Stock";
+            // 
+            // movimientosToolStripMenuItem1
+            // 
+            this.movimientosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.comprasToolStripMenuItem1,
+            this.devolucionesDeClientesToolStripMenuItem,
+            this.devolucionesAProveedoresToolStripMenuItem,
+            this.inventariosFísicosToolStripMenuItem,
+            this.salidasToolStripMenuItem1,
+            this.trasladosToolStripMenuItem1,
+            this.ventasToolStripMenuItem2});
+            this.movimientosToolStripMenuItem1.Name = "movimientosToolStripMenuItem1";
+            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
+            this.movimientosToolStripMenuItem1.Text = "&Movimientos";
+            // 
+            // comprasToolStripMenuItem1
+            // 
+            this.comprasToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("comprasToolStripMenuItem1.Image")));
+            this.comprasToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.comprasToolStripMenuItem1.Name = "comprasToolStripMenuItem1";
+            this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(291, 38);
+            this.comprasToolStripMenuItem1.Text = "&Compras";
+            this.comprasToolStripMenuItem1.Click += new System.EventHandler(this.comprasToolStripMenuItem1_Click);
+            // 
+            // devolucionesDeClientesToolStripMenuItem
+            // 
+            this.devolucionesDeClientesToolStripMenuItem.Name = "devolucionesDeClientesToolStripMenuItem";
+            this.devolucionesDeClientesToolStripMenuItem.Size = new System.Drawing.Size(291, 38);
+            this.devolucionesDeClientesToolStripMenuItem.Text = "&Devoluciones de Clientes";
+            // 
+            // devolucionesAProveedoresToolStripMenuItem
+            // 
+            this.devolucionesAProveedoresToolStripMenuItem.Name = "devolucionesAProveedoresToolStripMenuItem";
+            this.devolucionesAProveedoresToolStripMenuItem.Size = new System.Drawing.Size(291, 38);
+            this.devolucionesAProveedoresToolStripMenuItem.Text = "D&evoluciones a Proveedores";
+            // 
+            // inventariosFísicosToolStripMenuItem
+            // 
+            this.inventariosFísicosToolStripMenuItem.Name = "inventariosFísicosToolStripMenuItem";
+            this.inventariosFísicosToolStripMenuItem.Size = new System.Drawing.Size(291, 38);
+            this.inventariosFísicosToolStripMenuItem.Text = "&Inventarios Físicos";
+            // 
+            // salidasToolStripMenuItem1
+            // 
+            this.salidasToolStripMenuItem1.Name = "salidasToolStripMenuItem1";
+            this.salidasToolStripMenuItem1.Size = new System.Drawing.Size(291, 38);
+            this.salidasToolStripMenuItem1.Text = "&Salidas";
+            // 
+            // trasladosToolStripMenuItem1
+            // 
+            this.trasladosToolStripMenuItem1.Name = "trasladosToolStripMenuItem1";
+            this.trasladosToolStripMenuItem1.Size = new System.Drawing.Size(291, 38);
+            this.trasladosToolStripMenuItem1.Text = "&Traslados";
+            // 
+            // ventasToolStripMenuItem2
+            // 
+            this.ventasToolStripMenuItem2.Name = "ventasToolStripMenuItem2";
+            this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(291, 38);
+            this.ventasToolStripMenuItem2.Text = "&Ventas";
             // 
             // listadosToolStripMenuItem
             // 
@@ -888,5 +956,13 @@ namespace Win
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsbTraslados;
+        private System.Windows.Forms.ToolStripMenuItem movimientosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem devolucionesDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem devolucionesAProveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inventariosFísicosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem trasladosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem2;
     }
 }
