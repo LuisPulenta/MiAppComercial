@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Movimientos
@@ -30,7 +31,7 @@ namespace Win.Movimientos
             this.clienteTableAdapter.Fill(this.dSMiAppComercial.Cliente);
             this.productoTableAdapter.Fill(this.dSMiAppComercial.Producto);
             this.ventaTableAdapter.Fill(this.dSMiAppComercial.Venta);
-            ventaComboBox.SelectedIndex = -1;
+            ventaTextBox.Text = String.Empty;
             clienteComboBox.SelectedIndex = -1;
             almacenComboBox.SelectedIndex = -1;
             productoComboBox.SelectedIndex = -1;
@@ -39,44 +40,6 @@ namespace Win.Movimientos
             dgvDatosDevuelto.DataSource = misDevueltos;
             PersonalizarDisponibles();
             PersonalizarDevueltos();
-        }
-
-        private void ventaComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ventaComboBox.SelectedValue == null) return;
-            CADVenta miVenta = CADVenta.VentasGetVentaByIDVenta((int)ventaComboBox.SelectedValue);
-            fechaTextBox.Text = miVenta.Fecha.ToString();
-            clienteComboBox.SelectedValue = miVenta.IDCliente;
-            almacenComboBox.SelectedValue = miVenta.IDAlmacen;
-            misDisponibles.Clear();
-            misDevueltos.Clear();
-            productoComboBox.SelectedIndex = -1;
-
-            CAD.DSMiAppComercial.VentaDetalleDataTable miTabla = CADVentaDetalle.VentaDetalleGetVentaDetalleByIDVenta(miVenta.IDVenta);
-            foreach (CAD.DSMiAppComercial.VentaDetalleRow miRegistro in miTabla.Rows)
-            {
-                DevolucionClienteDisponible miDisponible = new DevolucionClienteDisponible();
-                miDisponible.CantidadDevuelta = (float)CADDevolucionClienteDetalle.DevolucionClienteGetHistoria(miRegistro.IDVenta, miRegistro.Codigo);
-                miDisponible.CantidadOriginal = (float)miRegistro.Cantidad;
-                miDisponible.Descripcion = miRegistro.Descripcion;
-                miDisponible.Codigo = miRegistro.Codigo;
-                miDisponible.PorcentajeDescuento = (float)miRegistro.PorcentajeDescuento;
-                miDisponible.PorcentajeIVA = (float)miRegistro.PorcentajeIVA;
-                miDisponible.Precio = miRegistro.Precio;
-                misDisponibles.Add(miDisponible);
-            }
-            dgvDatosDisponible.DataSource = null;
-            dgvDatosDisponible.DataSource = misDisponibles;
-            PersonalizarDisponibles();
-            PersonalizarDevueltos();
-
-            productoComboBox.DataSource = null;
-            productoComboBox.DataSource = misDisponibles;
-            productoComboBox.DisplayMember = "Descripcion";
-            productoComboBox.ValueMember = "Codigo";
-            productoComboBox.SelectedIndex = -1;
-
-            dgvDatosDisponible.AutoResizeColumns();
         }
 
         private void PersonalizarDisponibles()
@@ -249,10 +212,10 @@ namespace Win.Movimientos
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             errorProvider1.Clear();
-            if (ventaComboBox.SelectedIndex == -1)
+            if (ventaTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(ventaComboBox, "Debe seleccionar una Venta");
-                ventaComboBox.Focus();
+                errorProvider1.SetError(ventaTextBox, "Debe seleccionar una Venta");
+                ventaTextBox.Focus();
                 return;
             }
 
@@ -272,7 +235,7 @@ namespace Win.Movimientos
 
             if (rta == DialogResult.No) return;
 
-            int IDVenta = (int)ventaComboBox.SelectedValue;
+            int IDVenta = Convert.ToInt32(ventaTextBox.Text);
             int IDAlmacen = (int)almacenComboBox.SelectedValue;
             DateTime fecha = fechaDevolucionDateTimePicker.Value;
 
@@ -351,7 +314,7 @@ namespace Win.Movimientos
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
 
-            ventaComboBox.SelectedIndex = -1;
+            ventaTextBox.Text = String.Empty;
             almacenComboBox.SelectedIndex = -1;
             clienteComboBox.SelectedIndex = -1;
             fechaDevolucionDateTimePicker.Value = DateTime.Now;
@@ -370,7 +333,7 @@ namespace Win.Movimientos
             PersonalizarDisponibles();
             PersonalizarDevueltos();
 
-            ventaComboBox.Focus();
+            ventaTextBox.Focus();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -426,6 +389,70 @@ namespace Win.Movimientos
         {
             dgvDatosDevuelto.DataSource = null;
             dgvDatosDevuelto.DataSource = misDevueltos;
+        }
+
+        private void btnBuscarVenta_Click(object sender, EventArgs e)
+        {
+            frmBusquedaVentas miBusqueda = new frmBusquedaVentas();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            ventaTextBox.Text = miBusqueda.IDElegido.ToString();
+            ventaTextBox.Focus();
+            productoComboBox.Focus();
+        }
+
+        private void ventaTextBox_Validating(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (ventaTextBox.Text == string.Empty) return;
+            CADVenta miVenta = CADVenta.VentasGetVentaByIDVenta(Convert.ToInt32(ventaTextBox.Text));
+            if (miVenta == null)
+            {
+                fechaTextBox.Text = string.Empty;
+                clienteComboBox.SelectedIndex = -1;
+                almacenComboBox.SelectedIndex = -1;
+                misDisponibles.Clear();
+                misDevueltos.Clear();
+                dgvDatosDisponible.DataSource = null;
+                dgvDatosDevuelto.DataSource = null;
+                dgvDatosDisponible.DataSource = misDisponibles;
+                dgvDatosDevuelto.DataSource = misDevueltos;
+                PersonalizarDisponibles();
+                PersonalizarDevueltos();
+                errorProvider1.SetError(ventaTextBox, "No existe esta Venta");
+                return;
+            }
+            fechaTextBox.Text = miVenta.Fecha.ToString();
+            clienteComboBox.SelectedValue = miVenta.IDCliente;
+            almacenComboBox.SelectedValue = miVenta.IDAlmacen;
+            misDisponibles.Clear();
+            misDevueltos.Clear();
+            productoComboBox.SelectedIndex = -1;
+
+            CAD.DSMiAppComercial.VentaDetalleDataTable miTabla = CADVentaDetalle.VentaDetalleGetVentaDetalleByIDVenta(miVenta.IDVenta);
+            foreach (CAD.DSMiAppComercial.VentaDetalleRow miRegistro in miTabla.Rows)
+            {
+                DevolucionClienteDisponible miDisponible = new DevolucionClienteDisponible();
+                miDisponible.CantidadDevuelta = (float)CADDevolucionClienteDetalle.DevolucionClienteGetHistoria(miRegistro.IDVenta, miRegistro.Codigo);
+                miDisponible.CantidadOriginal = (float)miRegistro.Cantidad;
+                miDisponible.Descripcion = miRegistro.Descripcion;
+                miDisponible.Codigo = miRegistro.Codigo;
+                miDisponible.PorcentajeDescuento = (float)miRegistro.PorcentajeDescuento;
+                miDisponible.PorcentajeIVA = (float)miRegistro.PorcentajeIVA;
+                miDisponible.Precio = miRegistro.Precio;
+                misDisponibles.Add(miDisponible);
+            }
+            dgvDatosDisponible.DataSource = null;
+            dgvDatosDisponible.DataSource = misDisponibles;
+            PersonalizarDisponibles();
+            PersonalizarDevueltos();
+
+            productoComboBox.DataSource = null;
+            productoComboBox.DataSource = misDisponibles;
+            productoComboBox.DisplayMember = "Descripcion";
+            productoComboBox.ValueMember = "Codigo";
+            productoComboBox.SelectedIndex = -1;
+
+            dgvDatosDisponible.AutoResizeColumns();
         }
     }
 }
