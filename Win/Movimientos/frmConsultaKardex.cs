@@ -34,6 +34,8 @@ namespace Win.Movimientos
             almacenTableAdapter.Fill(this.dSMiAppComercial.Almacen);
             almacenComboBox.SelectedIndex = -1;
             productoLabel.Text = string.Empty;
+            hastaDateTimePicker.Value = DateTime.Now;
+            desdeDateTimePicker.Value = DateTime.Now.AddDays(-30);
             dgvDatos.AutoResizeColumns();
         }
 
@@ -121,7 +123,34 @@ namespace Win.Movimientos
         {
             if (almacenComboBox.SelectedIndex == -1 || productoTextBox.Text == string.Empty) return;
 
-            this.kardexTableAdapter.FillBy(this.dSMiAppComercial.Kardex, ((int)(System.Convert.ChangeType(almacenComboBox.SelectedValue, typeof(int)))), (productoTextBox.Text));
+
+            string diaDesde = desdeDateTimePicker.Value.Day.ToString();
+            if (diaDesde.Length == 1)
+            {
+                diaDesde = '0' + diaDesde;
+            }
+            string mesDesde = desdeDateTimePicker.Value.Month.ToString();
+            if (mesDesde.Length == 1)
+            {
+                mesDesde = '0' + mesDesde;
+            }
+            string anoDesde = desdeDateTimePicker.Value.Year.ToString();
+            string fechaDesde = diaDesde + '-' + mesDesde + '-' + anoDesde;
+
+            string diaHasta = hastaDateTimePicker.Value.AddDays(1).Day.ToString();
+            if (diaHasta.Length == 1)
+            {
+                diaHasta = '0' + diaHasta;
+            }
+            string mesHasta = hastaDateTimePicker.Value.AddDays(1).Month.ToString();
+            if (mesHasta.Length == 1)
+            {
+                mesHasta = '0' + mesHasta;
+            }
+            string anoHasta = hastaDateTimePicker.Value.AddDays(1).Year.ToString();
+            string fechaHasta = diaHasta + '-' + mesHasta + '-' + anoHasta;
+
+            this.kardexTableAdapter.FillBy(this.dSMiAppComercial.Kardex, ((int)(System.Convert.ChangeType(almacenComboBox.SelectedValue, typeof(int)))), (productoTextBox.Text), Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
             dgvDatos.AutoResizeColumns();
         }
 
@@ -138,6 +167,26 @@ namespace Win.Movimientos
         private void btnExcel_Click(object sender, EventArgs e)
         {
             ExportarDatosAExcel.ExportarDatos(dgvDatos);
+        }
+
+        private void desdeDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarDatos();
+        }
+
+        private void hastaDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            ActualizarDatos();
+        }
+
+        private void resetDesdeButton_Click(object sender, EventArgs e)
+        {
+            desdeDateTimePicker.Value=DateTime.Now.AddDays(-30);
+        }
+
+        private void resetHastaButton_Click(object sender, EventArgs e)
+        {
+            hastaDateTimePicker.Value = DateTime.Now;
         }
     }
 }

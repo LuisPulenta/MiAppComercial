@@ -16185,10 +16185,12 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ult" +
                 "imoCosto, CostoPromedio \r\nFROM dbo.Kardex\r\nWHERE IDAlmacen=@IDAlmacen AND Codigo" +
-                "=@Codigo\r\nORDER BY Fecha";
+                "=@Codigo AND Fecha >=@Desde AND Fecha<=@Hasta\r\nORDER BY Fecha";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Codigo", global::System.Data.SqlDbType.NVarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "Codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16219,7 +16221,7 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DSMiAppComercial.KardexDataTable dataTable, global::System.Nullable<int> IDAlmacen, string Codigo) {
+        public virtual int FillBy(DSMiAppComercial.KardexDataTable dataTable, global::System.Nullable<int> IDAlmacen, string Codigo, global::System.Nullable<global::System.DateTime> Desde, global::System.Nullable<global::System.DateTime> Hasta) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((IDAlmacen.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDAlmacen.Value));
@@ -16232,6 +16234,18 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Codigo));
+            }
+            if ((Desde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(Desde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Hasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(Hasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -16244,7 +16258,7 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DSMiAppComercial.KardexDataTable GetDataBy(global::System.Nullable<int> IDAlmacen, string Codigo) {
+        public virtual DSMiAppComercial.KardexDataTable GetDataBy(global::System.Nullable<int> IDAlmacen, string Codigo, global::System.Nullable<global::System.DateTime> Desde, global::System.Nullable<global::System.DateTime> Hasta) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((IDAlmacen.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDAlmacen.Value));
@@ -16257,6 +16271,18 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
             }
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(Codigo));
+            }
+            if ((Desde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(Desde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Hasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(Hasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             DSMiAppComercial.KardexDataTable dataTable = new DSMiAppComercial.KardexDataTable();
             this.Adapter.Fill(dataTable);

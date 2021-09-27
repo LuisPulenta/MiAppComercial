@@ -30,11 +30,11 @@ namespace Win.Busqueda
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBusquedaCompras));
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.iDCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,6 +62,8 @@ namespace Win.Busqueda
             this.hastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.dSMiAppComercialBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorTableAdapter = new Win.DSMiAppComercialTableAdapters.ProveedorTableAdapter();
+            this.resetDesdeButton = new System.Windows.Forms.Button();
+            this.resetHastaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.compraBusquedaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
@@ -75,9 +77,9 @@ namespace Win.Busqueda
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -88,27 +90,27 @@ namespace Win.Busqueda
             this.itemsDataGridViewTextBoxColumn,
             this.valorNetoDataGridViewTextBoxColumn});
             this.dgvDatos.DataSource = this.compraBusquedaBindingSource;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvDatos.Location = new System.Drawing.Point(4, 108);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDatos.Location = new System.Drawing.Point(4, 131);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(935, 561);
-            this.dgvDatos.TabIndex = 0;
+            this.dgvDatos.Size = new System.Drawing.Size(935, 538);
+            this.dgvDatos.TabIndex = 11;
             // 
             // iDCompraDataGridViewTextBoxColumn
             // 
             this.iDCompraDataGridViewTextBoxColumn.DataPropertyName = "IDCompra";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDCompraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDCompraDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.iDCompraDataGridViewTextBoxColumn.HeaderText = "Compra";
             this.iDCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDCompraDataGridViewTextBoxColumn.Name = "iDCompraDataGridViewTextBoxColumn";
@@ -145,8 +147,8 @@ namespace Win.Busqueda
             // itemsDataGridViewTextBoxColumn
             // 
             this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
             this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
@@ -156,10 +158,10 @@ namespace Win.Busqueda
             // valorNetoDataGridViewTextBoxColumn
             // 
             this.valorNetoDataGridViewTextBoxColumn.DataPropertyName = "Valor Neto";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorNetoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorNetoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.valorNetoDataGridViewTextBoxColumn.HeaderText = "Valor Neto";
             this.valorNetoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.valorNetoDataGridViewTextBoxColumn.Name = "valorNetoDataGridViewTextBoxColumn";
@@ -188,7 +190,7 @@ namespace Win.Busqueda
             this.btnCancelar.Location = new System.Drawing.Point(846, 16);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(93, 60);
-            this.btnCancelar.TabIndex = 32;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -201,7 +203,7 @@ namespace Win.Busqueda
             this.btnAceptar.Location = new System.Drawing.Point(728, 16);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(93, 60);
-            this.btnAceptar.TabIndex = 31;
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -215,7 +217,7 @@ namespace Win.Busqueda
             this.almacenComboBox.Location = new System.Drawing.Point(90, 12);
             this.almacenComboBox.Name = "almacenComboBox";
             this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
-            this.almacenComboBox.TabIndex = 46;
+            this.almacenComboBox.TabIndex = 1;
             this.almacenComboBox.ValueMember = "IDAlmacen";
             this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
             // 
@@ -230,7 +232,7 @@ namespace Win.Busqueda
             this.label3.Location = new System.Drawing.Point(20, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
-            this.label3.TabIndex = 45;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Almacén:";
             // 
             // almacenTableAdapter
@@ -242,7 +244,7 @@ namespace Win.Busqueda
             this.btnBuscarProveedor.Location = new System.Drawing.Point(429, 42);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(45, 24);
-            this.btnBuscarProveedor.TabIndex = 49;
+            this.btnBuscarProveedor.TabIndex = 4;
             this.btnBuscarProveedor.Text = "...";
             this.btnBuscarProveedor.UseVisualStyleBackColor = true;
             this.btnBuscarProveedor.Click += new System.EventHandler(this.btnBuscarProveedor_Click);
@@ -255,7 +257,7 @@ namespace Win.Busqueda
             this.proveedorComboBox.Location = new System.Drawing.Point(90, 42);
             this.proveedorComboBox.Name = "proveedorComboBox";
             this.proveedorComboBox.Size = new System.Drawing.Size(323, 24);
-            this.proveedorComboBox.TabIndex = 48;
+            this.proveedorComboBox.TabIndex = 3;
             this.proveedorComboBox.ValueMember = "IDProveedor";
             this.proveedorComboBox.SelectedIndexChanged += new System.EventHandler(this.proveedorComboBox_SelectedIndexChanged);
             // 
@@ -270,7 +272,7 @@ namespace Win.Busqueda
             this.label2.Location = new System.Drawing.Point(8, 46);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 17);
-            this.label2.TabIndex = 47;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Proveedor:";
             // 
             // label1
@@ -279,7 +281,7 @@ namespace Win.Busqueda
             this.label1.Location = new System.Drawing.Point(33, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 50;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Desde:";
             // 
             // desdeDateTimePicker
@@ -287,24 +289,24 @@ namespace Win.Busqueda
             this.desdeDateTimePicker.Location = new System.Drawing.Point(90, 73);
             this.desdeDateTimePicker.Name = "desdeDateTimePicker";
             this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.desdeDateTimePicker.TabIndex = 51;
+            this.desdeDateTimePicker.TabIndex = 6;
             this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(372, 76);
+            this.label4.Location = new System.Drawing.Point(33, 105);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 52;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Hasta:";
             // 
             // hastaDateTimePicker
             // 
-            this.hastaDateTimePicker.Location = new System.Drawing.Point(429, 73);
+            this.hastaDateTimePicker.Location = new System.Drawing.Point(90, 102);
             this.hastaDateTimePicker.Name = "hastaDateTimePicker";
             this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.hastaDateTimePicker.TabIndex = 53;
+            this.hastaDateTimePicker.TabIndex = 9;
             this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
             // 
             // dSMiAppComercialBindingSource
@@ -316,12 +318,38 @@ namespace Win.Busqueda
             // 
             this.proveedorTableAdapter.ClearBeforeFill = true;
             // 
+            // resetDesdeButton
+            // 
+            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetDesdeButton.Location = new System.Drawing.Point(359, 72);
+            this.resetDesdeButton.Name = "resetDesdeButton";
+            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
+            this.resetDesdeButton.TabIndex = 7;
+            this.resetDesdeButton.Text = "RESET";
+            this.resetDesdeButton.UseVisualStyleBackColor = true;
+            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
+            // 
+            // resetHastaButton
+            // 
+            this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetHastaButton.Location = new System.Drawing.Point(359, 101);
+            this.resetHastaButton.Name = "resetHastaButton";
+            this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
+            this.resetHastaButton.TabIndex = 10;
+            this.resetHastaButton.Text = "RESET";
+            this.resetHastaButton.UseVisualStyleBackColor = true;
+            this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
+            // 
             // frmBusquedaCompras
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(950, 689);
+            this.Controls.Add(this.resetDesdeButton);
+            this.Controls.Add(this.resetHastaButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.hastaDateTimePicker);
             this.Controls.Add(this.label1);
@@ -381,5 +409,7 @@ namespace Win.Busqueda
         private System.Windows.Forms.DataGridViewTextBoxColumn almacénDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorNetoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button resetDesdeButton;
+        private System.Windows.Forms.Button resetHastaButton;
     }
 }

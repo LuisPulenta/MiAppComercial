@@ -121,5 +121,15 @@ namespace Win.Busqueda
                 dgvDatos.AutoResizeColumns();
             }
         }
+
+        private void resetDesdeButton_Click(object sender, EventArgs e)
+        {
+            desdeDateTimePicker.Value = DateTime.Now.AddDays(-30);
+        }
+
+        private void resetHastaButton_Click(object sender, EventArgs e)
+        {
+            hastaDateTimePicker.Value = DateTime.Now;
+        }
     }
 }

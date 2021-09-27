@@ -62,6 +62,8 @@ namespace Win.Busqueda
             this.clienteTableAdapter = new Win.DSMiAppComercialTableAdapters.ClienteTableAdapter();
             this.ventaBusquedaTableAdapter = new Win.DSMiAppComercialTableAdapters.VentaBusquedaTableAdapter();
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
+            this.resetDesdeButton = new System.Windows.Forms.Button();
+            this.resetHastaButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercialBindingSource)).BeginInit();
@@ -73,35 +75,35 @@ namespace Win.Busqueda
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 80);
+            this.label4.Location = new System.Drawing.Point(37, 111);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 64;
+            this.label4.TabIndex = 8;
             this.label4.Text = "Hasta:";
             // 
             // hastaDateTimePicker
             // 
-            this.hastaDateTimePicker.Location = new System.Drawing.Point(433, 77);
+            this.hastaDateTimePicker.Location = new System.Drawing.Point(94, 108);
             this.hastaDateTimePicker.Name = "hastaDateTimePicker";
             this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.hastaDateTimePicker.TabIndex = 65;
+            this.hastaDateTimePicker.TabIndex = 9;
             this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 80);
+            this.label1.Location = new System.Drawing.Point(37, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 62;
+            this.label1.TabIndex = 5;
             this.label1.Text = "Desde:";
             // 
             // desdeDateTimePicker
             // 
-            this.desdeDateTimePicker.Location = new System.Drawing.Point(94, 77);
+            this.desdeDateTimePicker.Location = new System.Drawing.Point(94, 79);
             this.desdeDateTimePicker.Name = "desdeDateTimePicker";
             this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.desdeDateTimePicker.TabIndex = 63;
+            this.desdeDateTimePicker.TabIndex = 6;
             this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
             // 
             // label2
@@ -110,7 +112,7 @@ namespace Win.Busqueda
             this.label2.Location = new System.Drawing.Point(35, 50);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
-            this.label2.TabIndex = 59;
+            this.label2.TabIndex = 2;
             this.label2.Text = "Cliente:";
             // 
             // dSMiAppComercial
@@ -123,7 +125,7 @@ namespace Win.Busqueda
             this.btnBuscarCliente.Location = new System.Drawing.Point(433, 46);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(45, 24);
-            this.btnBuscarCliente.TabIndex = 61;
+            this.btnBuscarCliente.TabIndex = 4;
             this.btnBuscarCliente.Text = "...";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
@@ -136,7 +138,7 @@ namespace Win.Busqueda
             this.clienteComboBox.Location = new System.Drawing.Point(94, 46);
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(323, 24);
-            this.clienteComboBox.TabIndex = 60;
+            this.clienteComboBox.TabIndex = 3;
             this.clienteComboBox.ValueMember = "IDCliente";
             this.clienteComboBox.SelectedIndexChanged += new System.EventHandler(this.clienteComboBox_SelectedIndexChanged);
             // 
@@ -158,7 +160,7 @@ namespace Win.Busqueda
             this.almacenComboBox.Location = new System.Drawing.Point(94, 16);
             this.almacenComboBox.Name = "almacenComboBox";
             this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
-            this.almacenComboBox.TabIndex = 58;
+            this.almacenComboBox.TabIndex = 1;
             this.almacenComboBox.ValueMember = "IDAlmacen";
             this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
             // 
@@ -173,7 +175,7 @@ namespace Win.Busqueda
             this.label3.Location = new System.Drawing.Point(24, 20);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
-            this.label3.TabIndex = 57;
+            this.label3.TabIndex = 0;
             this.label3.Text = "Almacén:";
             // 
             // btnCancelar
@@ -184,7 +186,7 @@ namespace Win.Busqueda
             this.btnCancelar.Location = new System.Drawing.Point(850, 20);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(93, 60);
-            this.btnCancelar.TabIndex = 56;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -197,7 +199,7 @@ namespace Win.Busqueda
             this.btnAceptar.Location = new System.Drawing.Point(732, 20);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(93, 60);
-            this.btnAceptar.TabIndex = 55;
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "&Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAceptar.UseVisualStyleBackColor = true;
@@ -229,13 +231,13 @@ namespace Win.Busqueda
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDatos.Location = new System.Drawing.Point(8, 112);
+            this.dgvDatos.Location = new System.Drawing.Point(2, 137);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(935, 561);
-            this.dgvDatos.TabIndex = 54;
+            this.dgvDatos.Size = new System.Drawing.Size(949, 544);
+            this.dgvDatos.TabIndex = 11;
             // 
             // iDVentaDataGridViewTextBoxColumn
             // 
@@ -316,12 +318,38 @@ namespace Win.Busqueda
             // 
             this.almacenTableAdapter.ClearBeforeFill = true;
             // 
+            // resetDesdeButton
+            // 
+            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetDesdeButton.Location = new System.Drawing.Point(363, 78);
+            this.resetDesdeButton.Name = "resetDesdeButton";
+            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
+            this.resetDesdeButton.TabIndex = 7;
+            this.resetDesdeButton.Text = "RESET";
+            this.resetDesdeButton.UseVisualStyleBackColor = true;
+            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
+            // 
+            // resetHastaButton
+            // 
+            this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetHastaButton.Location = new System.Drawing.Point(363, 107);
+            this.resetHastaButton.Name = "resetHastaButton";
+            this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
+            this.resetHastaButton.TabIndex = 10;
+            this.resetHastaButton.Text = "RESET";
+            this.resetHastaButton.UseVisualStyleBackColor = true;
+            this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
+            // 
             // frmBusquedaVentas
             // 
+            this.AcceptButton = this.btnAceptar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
+            this.CancelButton = this.btnCancelar;
             this.ClientSize = new System.Drawing.Size(963, 693);
+            this.Controls.Add(this.resetDesdeButton);
+            this.Controls.Add(this.resetHastaButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.hastaDateTimePicker);
             this.Controls.Add(this.label1);
@@ -380,5 +408,7 @@ namespace Win.Busqueda
         private DSMiAppComercialTableAdapters.VentaBusquedaTableAdapter ventaBusquedaTableAdapter;
         private System.Windows.Forms.BindingSource almacenBindingSource;
         private DSMiAppComercialTableAdapters.AlmacenTableAdapter almacenTableAdapter;
+        private System.Windows.Forms.Button resetDesdeButton;
+        private System.Windows.Forms.Button resetHastaButton;
     }
 }
