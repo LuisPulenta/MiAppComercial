@@ -19,5 +19,15 @@ namespace CAD
         {
             adaptador.InventarioUpdatePaso(Paso, IDInventario);
         }
+
+        public static int InventarioGetIDAlmacenByIDInventario(int IDInventario)
+        {
+            return (int) adaptador.InventarioGetIDAlmacenByIDInventario(IDInventario);
+        }
+
+        public static void InventarioDelete(int IDInventario)
+        {
+            adaptador.InventarioDelete(IDInventario);
+        }
     }
 }

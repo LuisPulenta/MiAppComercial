@@ -164,6 +164,12 @@
     <Compile Include="Maestros\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\frmCancelarInventariosNoTerminados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmCancelarInventariosNoTerminados.Designer.cs">
+      <DependentUpon>frmCancelarInventariosNoTerminados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimientos\frmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,18 @@
     </Compile>
     <Compile Include="Movimientos\frmInventarioFisicoPaso2.Designer.cs">
       <DependentUpon>frmInventarioFisicoPaso2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmInventarioFisicoPaso3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmInventarioFisicoPaso3.Designer.cs">
+      <DependentUpon>frmInventarioFisicoPaso3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmInventarioFisicoPaso4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmInventarioFisicoPaso4.Designer.cs">
+      <DependentUpon>frmInventarioFisicoPaso4.cs</DependentUpon>
     </Compile>
     <Compile Include="Movimientos\frmSalidas.cs">
       <SubType>Form</SubType>
@@ -286,6 +304,9 @@
     <EmbeddedResource Include="Maestros\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmCancelarInventariosNoTerminados.resx">
+      <DependentUpon>frmCancelarInventariosNoTerminados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -303,6 +324,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmInventarioFisicoPaso2.resx">
       <DependentUpon>frmInventarioFisicoPaso2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmInventarioFisicoPaso3.resx">
+      <DependentUpon>frmInventarioFisicoPaso3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmInventarioFisicoPaso4.resx">
+      <DependentUpon>frmInventarioFisicoPaso4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmSalidas.resx">
       <DependentUpon>frmSalidas.cs</DependentUpon>

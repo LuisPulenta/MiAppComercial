@@ -289,5 +289,29 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void paso3IngresarSegundoConteoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventarioFisicoPaso3 miForm = new frmInventarioFisicoPaso3();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void paso4IngresarCOnteoFinalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventarioFisicoPaso4 miForm = new frmInventarioFisicoPaso4();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void cancelarInventariosNoTerminadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCancelarInventariosNoTerminados miForm = new frmCancelarInventariosNoTerminados();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
     }
 }

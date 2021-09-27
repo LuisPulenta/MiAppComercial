@@ -64,6 +64,9 @@
     <Compile Include="CADUsuario.cs" />
     <Compile Include="CADVenta.cs" />
     <Compile Include="CADVentaDetalle.cs" />
+    <Compile Include="DSCAD.cs">
+      <DependentUpon>DSCAD.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSCAD.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

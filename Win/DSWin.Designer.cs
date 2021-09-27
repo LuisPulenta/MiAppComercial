@@ -6234,7 +6234,7 @@ namespace Win {
                 this.columnIDInventario.ReadOnly = true;
                 this.columnIDInventario.Unique = true;
                 this.columnInventario.ReadOnly = true;
-                this.columnInventario.MaxLength = 225;
+                this.columnInventario.MaxLength = 266;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15840,16 +15840,43 @@ ORDER BY Compra.Fecha DESC
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT TOP (100) PERCENT dbo.Inventario.IDInventario, 'Almacén: ' + dbo.Almacen.Descripcion + ' - Categoría: ' + dbo.Inventario.Categoría + ' - Fecha: ' + CONVERT(nvarchar, DAY(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, 
+            this._commandCollection[0].CommandText = @"SELECT TOP (100) PERCENT dbo.Inventario.IDInventario, 'Inv. N° '+CONVERT(nvarchar,dbo.Inventario.IDInventario) + ' - ' + 'Almacén: ' + dbo.Almacen.Descripcion + ' - Categoría: ' + dbo.Inventario.Categoría + ' - Fecha: ' + CONVERT(nvarchar, DAY(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, 
                   MONTH(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, YEAR(dbo.Inventario.Fecha)) AS Inventario
 FROM     dbo.Inventario INNER JOIN
                   dbo.Almacen ON dbo.Inventario.IDAlmacen = dbo.Almacen.IDAlmacen
 WHERE  (dbo.Inventario.Paso = 1)
 ORDER BY dbo.Inventario.Fecha";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT TOP (100) PERCENT dbo.Inventario.IDInventario, 'Inv. N° '+CONVERT(nvarchar,dbo.Inventario.IDInventario) + ' - ' + 'Almacén: ' + dbo.Almacen.Descripcion + ' - Categoría: ' + dbo.Inventario.Categoría + ' - Fecha: ' + CONVERT(nvarchar, DAY(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, 
+                  MONTH(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, YEAR(dbo.Inventario.Fecha)) AS Inventario
+FROM     dbo.Inventario INNER JOIN
+                  dbo.Almacen ON dbo.Inventario.IDAlmacen = dbo.Almacen.IDAlmacen
+WHERE  (dbo.Inventario.Paso = 2)
+ORDER BY dbo.Inventario.Fecha";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT TOP (100) PERCENT dbo.Inventario.IDInventario, 'Inv. N° '+CONVERT(nvarchar,dbo.Inventario.IDInventario) + ' - ' + 'Almacén: ' + dbo.Almacen.Descripcion + ' - Categoría: ' + dbo.Inventario.Categoría + ' - Fecha: ' + CONVERT(nvarchar, DAY(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, 
+                  MONTH(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, YEAR(dbo.Inventario.Fecha)) AS Inventario
+FROM     dbo.Inventario INNER JOIN
+                  dbo.Almacen ON dbo.Inventario.IDAlmacen = dbo.Almacen.IDAlmacen
+WHERE  (dbo.Inventario.Paso = 3)
+ORDER BY dbo.Inventario.Fecha";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = @"SELECT TOP (100) PERCENT dbo.Inventario.IDInventario, 'Inv. N° '+CONVERT(nvarchar,dbo.Inventario.IDInventario) + ' - ' + 'Almacén: ' + dbo.Almacen.Descripcion + ' - Categoría: ' + dbo.Inventario.Categoría + ' - Fecha: ' + CONVERT(nvarchar, DAY(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, 
+                  MONTH(dbo.Inventario.Fecha)) + '/' + CONVERT(nvarchar, YEAR(dbo.Inventario.Fecha)) AS Inventario
+FROM     dbo.Inventario INNER JOIN
+                  dbo.Almacen ON dbo.Inventario.IDAlmacen = dbo.Almacen.IDAlmacen
+WHERE  (dbo.Inventario.Paso <> 4)
+ORDER BY dbo.Inventario.Fecha";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15871,6 +15898,78 @@ ORDER BY dbo.Inventario.Fecha";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DSMiAppComercial.InventarioDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DSMiAppComercial.InventarioDataTable dataTable = new DSMiAppComercial.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill2(DSMiAppComercial.InventarioDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.InventarioDataTable GetData2() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DSMiAppComercial.InventarioDataTable dataTable = new DSMiAppComercial.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill3(DSMiAppComercial.InventarioDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.InventarioDataTable GetData3() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            DSMiAppComercial.InventarioDataTable dataTable = new DSMiAppComercial.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill4(DSMiAppComercial.InventarioDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.InventarioDataTable GetData4() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
             DSMiAppComercial.InventarioDataTable dataTable = new DSMiAppComercial.InventarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -16020,7 +16119,7 @@ ORDER BY dbo.Inventario.Fecha";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT dbo.InventarioDetalle.IDLinea,dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, 
@@ -16030,6 +16129,24 @@ FROM     dbo.InventarioDetalle INNER JOIN
 WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT dbo.InventarioDetalle.IDLinea,dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, 
+                  dbo.InventarioDetalle.Conteo3
+FROM     dbo.InventarioDetalle INNER JOIN
+                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo
+WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario) AND (dbo.InventarioDetalle.Stock<>dbo.InventarioDetalle.Conteo1)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT dbo.InventarioDetalle.IDLinea,dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, 
+                  dbo.InventarioDetalle.Conteo3
+FROM     dbo.InventarioDetalle INNER JOIN
+                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo
+WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario) AND (dbo.InventarioDetalle.Stock<>dbo.InventarioDetalle.Conteo1) AND (dbo.InventarioDetalle.Stock<>dbo.InventarioDetalle.Conteo2)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16052,6 +16169,58 @@ WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario)";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DSMiAppComercial.InventarioDetalleDataTable GetData(int IDInventario) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDInventario));
+            DSMiAppComercial.InventarioDetalleDataTable dataTable = new DSMiAppComercial.InventarioDetalleDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill2(DSMiAppComercial.InventarioDetalleDataTable dataTable, int IDInventario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDInventario));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.InventarioDetalleDataTable GetData2(int IDInventario) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDInventario));
+            DSMiAppComercial.InventarioDetalleDataTable dataTable = new DSMiAppComercial.InventarioDetalleDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill3(DSMiAppComercial.InventarioDetalleDataTable dataTable, int IDInventario) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDInventario));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.InventarioDetalleDataTable GetData3(int IDInventario) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDInventario));
             DSMiAppComercial.InventarioDetalleDataTable dataTable = new DSMiAppComercial.InventarioDetalleDataTable();
             this.Adapter.Fill(dataTable);

@@ -12,5 +12,15 @@ namespace CAD
         {
             return adaptador.GetData(IDInventario);
         }
+
+        public static DSMiAppComercial.MaterialAContarDataTable GetData2(int IDInventario)
+        {
+            return adaptador.GetData2(IDInventario);
+        }
+
+        public static DSMiAppComercial.MaterialAContarDataTable GetData3(int IDInventario)
+        {
+            return adaptador.GetData3(IDInventario);
+        }
     }
 }
