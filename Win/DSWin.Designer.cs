@@ -17945,7 +17945,7 @@ ORDER BY dbo.Compra.IDCompra DESC";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial AS Cliente, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT(dbo.VentaDetalle.IDVenta) AS Items, 
@@ -17965,6 +17965,24 @@ ORDER BY dbo.Venta.IDVenta DESC";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial AS Cliente, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT(dbo.VentaDetalle.IDVenta) AS Items, 
+                  SUM(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad - dbo.VentaDetalle.PorcentajeDescuento * ((dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA))) AS [Valor Neto]
+FROM     dbo.Venta INNER JOIN
+                  dbo.VentaDetalle ON dbo.Venta.IDVenta = dbo.VentaDetalle.IDVenta INNER JOIN
+                  dbo.Cliente ON dbo.Venta.IDCliente = dbo.Cliente.IDCliente INNER JOIN
+                  dbo.Almacen ON dbo.Venta.IDAlmacen = dbo.Almacen.IDAlmacen
+
+GROUP BY dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion
+
+HAVING dbo.Venta.IDAlmacen=@IDAlmacen AND dbo.Venta.Fecha >=@Desde AND dbo.Venta.Fecha<=@Hasta
+
+ORDER BY dbo.Venta.IDVenta DESC";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17994,6 +18012,36 @@ ORDER BY dbo.Venta.IDVenta DESC";
             this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IDCliente));
             this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(Desde));
             this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(Hasta));
+            DSMiAppComercial.VentaBusquedaDataTable dataTable = new DSMiAppComercial.VentaBusquedaDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Fill2(DSMiAppComercial.VentaBusquedaDataTable dataTable, int IDAlmacen, System.DateTime Desde, System.DateTime Hasta) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDAlmacen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Desde));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(Hasta));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.VentaBusquedaDataTable GetData2(int IDAlmacen, System.DateTime Desde, System.DateTime Hasta) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDAlmacen));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Desde));
+            this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(Hasta));
             DSMiAppComercial.VentaBusquedaDataTable dataTable = new DSMiAppComercial.VentaBusquedaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

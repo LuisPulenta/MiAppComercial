@@ -30,9 +30,9 @@ namespace Win.Consultas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaCompras));
             this.resetDesdeButton = new System.Windows.Forms.Button();
             this.resetHastaButton = new System.Windows.Forms.Button();
@@ -149,9 +149,9 @@ namespace Win.Consultas
             this.proveedorComboBox.DisplayMember = "Nombre";
             this.proveedorComboBox.Enabled = false;
             this.proveedorComboBox.FormattingEnabled = true;
-            this.proveedorComboBox.Location = new System.Drawing.Point(170, 48);
+            this.proveedorComboBox.Location = new System.Drawing.Point(172, 48);
             this.proveedorComboBox.Name = "proveedorComboBox";
-            this.proveedorComboBox.Size = new System.Drawing.Size(323, 24);
+            this.proveedorComboBox.Size = new System.Drawing.Size(321, 24);
             this.proveedorComboBox.TabIndex = 17;
             this.proveedorComboBox.ValueMember = "IDProveedor";
             this.proveedorComboBox.SelectedIndexChanged += new System.EventHandler(this.proveedorComboBox_SelectedIndexChanged);
@@ -206,9 +206,9 @@ namespace Win.Consultas
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -219,14 +219,14 @@ namespace Win.Consultas
             this.itemsDataGridViewTextBoxColumn,
             this.valorNetoDataGridViewTextBoxColumn});
             this.dgvDatos.DataSource = this.compraBusquedaBindingSource;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDatos.Location = new System.Drawing.Point(1, 135);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
@@ -283,10 +283,10 @@ namespace Win.Consultas
             // valorNetoDataGridViewTextBoxColumn
             // 
             this.valorNetoDataGridViewTextBoxColumn.DataPropertyName = "Valor Neto";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "C2";
-            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorNetoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorNetoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.valorNetoDataGridViewTextBoxColumn.HeaderText = "Valor Neto";
             this.valorNetoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.valorNetoDataGridViewTextBoxColumn.Name = "valorNetoDataGridViewTextBoxColumn";

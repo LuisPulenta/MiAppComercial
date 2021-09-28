@@ -600,9 +600,12 @@ namespace Win
             // 
             // ventasToolStripMenuItem2
             // 
+            this.ventasToolStripMenuItem2.Image = ((System.Drawing.Image)(resources.GetObject("ventasToolStripMenuItem2.Image")));
+            this.ventasToolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ventasToolStripMenuItem2.Name = "ventasToolStripMenuItem2";
             this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(291, 38);
             this.ventasToolStripMenuItem2.Text = "&Ventas";
+            this.ventasToolStripMenuItem2.Click += new System.EventHandler(this.ventasToolStripMenuItem2_Click);
             // 
             // listadosToolStripMenuItem
             // 
