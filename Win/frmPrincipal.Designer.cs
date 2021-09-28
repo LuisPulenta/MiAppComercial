@@ -522,8 +522,8 @@ namespace Win
             // 
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kardexToolStripMenuItem,
-            this.stockToolStripMenuItem,
-            this.movimientosToolStripMenuItem1});
+            this.movimientosToolStripMenuItem1,
+            this.stockToolStripMenuItem});
             this.consultasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasToolStripMenuItem.Image")));
             this.consultasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
@@ -555,6 +555,8 @@ namespace Win
             this.salidasToolStripMenuItem1,
             this.trasladosToolStripMenuItem1,
             this.ventasToolStripMenuItem2});
+            this.movimientosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem1.Image")));
+            this.movimientosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.movimientosToolStripMenuItem1.Name = "movimientosToolStripMenuItem1";
             this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
             this.movimientosToolStripMenuItem1.Text = "&Movimientos";
@@ -570,21 +572,30 @@ namespace Win
             // 
             // devolucionesDeClientesToolStripMenuItem
             // 
+            this.devolucionesDeClientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("devolucionesDeClientesToolStripMenuItem.Image")));
+            this.devolucionesDeClientesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.devolucionesDeClientesToolStripMenuItem.Name = "devolucionesDeClientesToolStripMenuItem";
             this.devolucionesDeClientesToolStripMenuItem.Size = new System.Drawing.Size(291, 38);
             this.devolucionesDeClientesToolStripMenuItem.Text = "&Devoluciones de Clientes";
+            this.devolucionesDeClientesToolStripMenuItem.Click += new System.EventHandler(this.devolucionesDeClientesToolStripMenuItem_Click);
             // 
             // devolucionesAProveedoresToolStripMenuItem
             // 
+            this.devolucionesAProveedoresToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("devolucionesAProveedoresToolStripMenuItem.Image")));
+            this.devolucionesAProveedoresToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.devolucionesAProveedoresToolStripMenuItem.Name = "devolucionesAProveedoresToolStripMenuItem";
             this.devolucionesAProveedoresToolStripMenuItem.Size = new System.Drawing.Size(291, 38);
             this.devolucionesAProveedoresToolStripMenuItem.Text = "D&evoluciones a Proveedores";
+            this.devolucionesAProveedoresToolStripMenuItem.Click += new System.EventHandler(this.devolucionesAProveedoresToolStripMenuItem_Click);
             // 
             // inventariosFísicosToolStripMenuItem
             // 
+            this.inventariosFísicosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("inventariosFísicosToolStripMenuItem.Image")));
+            this.inventariosFísicosToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.inventariosFísicosToolStripMenuItem.Name = "inventariosFísicosToolStripMenuItem";
             this.inventariosFísicosToolStripMenuItem.Size = new System.Drawing.Size(291, 38);
             this.inventariosFísicosToolStripMenuItem.Text = "&Inventarios Físicos";
+            this.inventariosFísicosToolStripMenuItem.Click += new System.EventHandler(this.inventariosFísicosToolStripMenuItem_Click);
             // 
             // salidasToolStripMenuItem1
             // 

@@ -96,6 +96,24 @@
     <Compile Include="Consultas\frmConsultaCompras.Designer.cs">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmConsultaDevolucionAClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaDevolucionAClientes.Designer.cs">
+      <DependentUpon>frmConsultaDevolucionAClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaDevolucionAProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaDevolucionAProveedores.Designer.cs">
+      <DependentUpon>frmConsultaDevolucionAProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaInventarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaInventarios.Designer.cs">
+      <DependentUpon>frmConsultaInventarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmConsultaSalidas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +131,12 @@
     </Compile>
     <Compile Include="Consultas\frmConsultaVentas.Designer.cs">
       <DependentUpon>frmConsultaVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmUnaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmUnaCompra.Designer.cs">
+      <DependentUpon>frmUnaCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="DSWin.cs">
       <DependentUpon>DSWin.xsd</DependentUpon>
@@ -310,6 +334,15 @@
     <EmbeddedResource Include="Consultas\frmConsultaCompras.resx">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaDevolucionAClientes.resx">
+      <DependentUpon>frmConsultaDevolucionAClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaDevolucionAProveedores.resx">
+      <DependentUpon>frmConsultaDevolucionAProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaInventarios.resx">
+      <DependentUpon>frmConsultaInventarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaSalidas.resx">
       <DependentUpon>frmConsultaSalidas.cs</DependentUpon>
     </EmbeddedResource>
@@ -318,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaVentas.resx">
       <DependentUpon>frmConsultaVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmUnaCompra.resx">
+      <DependentUpon>frmUnaCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>

@@ -1,7 +1,7 @@
 ﻿
 namespace Win.Consultas
 {
-    partial class frmConsultaVentas
+    partial class frmConsultaDevolucionAClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,69 +30,116 @@ namespace Win.Consultas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaVentas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaDevolucionAClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.totalNetoTextBox = new System.Windows.Forms.TextBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.totalUltimoCostoTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.totalCostoPromedioTextBox = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.clientesCheckBox = new System.Windows.Forms.CheckBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.ventaBusquedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.label2 = new System.Windows.Forms.Label();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
             this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label13 = new System.Windows.Forms.Label();
-            this.resetDesdeButton = new System.Windows.Forms.Button();
+            this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.resetHastaButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.hastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.desdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.resetDesdeButton = new System.Windows.Forms.Button();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
             this.clienteTableAdapter = new Win.DSMiAppComercialTableAdapters.ClienteTableAdapter();
-            this.ventaBusquedaTableAdapter = new Win.DSMiAppComercialTableAdapters.VentaBusquedaTableAdapter();
-            this.label5 = new System.Windows.Forms.Label();
-            this.iDVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devolucionAClientesConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.devolucionAClientesConsultaTableAdapter = new Win.DSMiAppComercialTableAdapters.DevolucionAClientesConsultaTableAdapter();
+            this.devoluciónDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorNetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventaBusquedaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devolucionAClientesConsultaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // totalNetoTextBox
+            // totalUltimoCostoTextBox
             // 
-            this.totalNetoTextBox.Location = new System.Drawing.Point(800, 661);
-            this.totalNetoTextBox.Name = "totalNetoTextBox";
-            this.totalNetoTextBox.ReadOnly = true;
-            this.totalNetoTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalNetoTextBox.TabIndex = 87;
-            this.totalNetoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(1030, 670);
+            this.totalUltimoCostoTextBox.Name = "totalUltimoCostoTextBox";
+            this.totalUltimoCostoTextBox.ReadOnly = true;
+            this.totalUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalUltimoCostoTextBox.TabIndex = 113;
+            this.totalUltimoCostoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(878, 673);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(146, 17);
+            this.label6.TabIndex = 114;
+            this.label6.Text = "Total Último Costo:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(499, 673);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(169, 17);
+            this.label13.TabIndex = 112;
+            this.label13.Text = "Total Costo Promedio:";
+            // 
+            // totalCostoPromedioTextBox
+            // 
+            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(674, 670);
+            this.totalCostoPromedioTextBox.Name = "totalCostoPromedioTextBox";
+            this.totalCostoPromedioTextBox.ReadOnly = true;
+            this.totalCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalCostoPromedioTextBox.TabIndex = 111;
+            this.totalCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(22, 143);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(438, 15);
+            this.label5.TabIndex = 110;
+            this.label5.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de una Devolución de Cliente";
             // 
             // clientesCheckBox
             // 
             this.clientesCheckBox.AutoSize = true;
             this.clientesCheckBox.Checked = true;
             this.clientesCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.clientesCheckBox.Location = new System.Drawing.Point(97, 52);
+            this.clientesCheckBox.Location = new System.Drawing.Point(106, 53);
             this.clientesCheckBox.Name = "clientesCheckBox";
             this.clientesCheckBox.Size = new System.Drawing.Size(70, 21);
-            this.clientesCheckBox.TabIndex = 86;
+            this.clientesCheckBox.TabIndex = 109;
             this.clientesCheckBox.Text = "Todos";
             this.clientesCheckBox.UseVisualStyleBackColor = true;
             this.clientesCheckBox.CheckedChanged += new System.EventHandler(this.clientesCheckBox_CheckedChanged);
@@ -100,10 +147,10 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(920, 91);
+            this.btnExcel.Location = new System.Drawing.Point(1147, 101);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
-            this.btnExcel.TabIndex = 85;
+            this.btnExcel.TabIndex = 108;
             this.btnExcel.UseVisualStyleBackColor = true;
             this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
@@ -111,19 +158,19 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(876, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(1103, 19);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
-            this.pictureBox1.TabIndex = 84;
+            this.pictureBox1.TabIndex = 107;
             this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 22);
+            this.label3.Location = new System.Drawing.Point(34, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(66, 17);
-            this.label3.TabIndex = 72;
+            this.label3.TabIndex = 95;
             this.label3.Text = "Almacén:";
             // 
             // dgvDatos
@@ -137,46 +184,39 @@ namespace Win.Consultas
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDVentaDataGridViewTextBoxColumn,
+            this.devoluciónDataGridViewTextBoxColumn,
             this.fechaDataGridViewTextBoxColumn,
+            this.ventaDataGridViewTextBoxColumn,
+            this.fechaVentaDataGridViewTextBoxColumn,
             this.clienteDataGridViewTextBoxColumn,
             this.almacénDataGridViewTextBoxColumn,
             this.itemsDataGridViewTextBoxColumn,
-            this.valorNetoDataGridViewTextBoxColumn});
-            this.dgvDatos.DataSource = this.ventaBusquedaBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDatos.Location = new System.Drawing.Point(2, 152);
+            this.valorCostoPromedioDataGridViewTextBoxColumn,
+            this.valorUltimoCostoDataGridViewTextBoxColumn});
+            this.dgvDatos.DataSource = this.devolucionAClientesConsultaBindingSource;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvDatos.Location = new System.Drawing.Point(11, 162);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(958, 503);
-            this.dgvDatos.TabIndex = 83;
-            // 
-            // ventaBusquedaBindingSource
-            // 
-            this.ventaBusquedaBindingSource.DataMember = "VentaBusqueda";
-            this.ventaBusquedaBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // dSMiAppComercial
-            // 
-            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
-            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dgvDatos.Size = new System.Drawing.Size(1179, 494);
+            this.dgvDatos.TabIndex = 106;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 54);
+            this.label2.Location = new System.Drawing.Point(45, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
-            this.label2.TabIndex = 74;
+            this.label2.TabIndex = 97;
             this.label2.Text = "Cliente:";
             // 
             // almacenComboBox
@@ -184,10 +224,10 @@ namespace Win.Consultas
             this.almacenComboBox.DataSource = this.almacenBindingSource;
             this.almacenComboBox.DisplayMember = "Descripcion";
             this.almacenComboBox.FormattingEnabled = true;
-            this.almacenComboBox.Location = new System.Drawing.Point(95, 18);
+            this.almacenComboBox.Location = new System.Drawing.Point(104, 19);
             this.almacenComboBox.Name = "almacenComboBox";
             this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
-            this.almacenComboBox.TabIndex = 73;
+            this.almacenComboBox.TabIndex = 96;
             this.almacenComboBox.ValueMember = "IDAlmacen";
             this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
             // 
@@ -196,34 +236,18 @@ namespace Win.Consultas
             this.almacenBindingSource.DataMember = "Almacen";
             this.almacenBindingSource.DataSource = this.dSMiAppComercial;
             // 
-            // label13
+            // dSMiAppComercial
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(654, 664);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 17);
-            this.label13.TabIndex = 88;
-            this.label13.Text = "Total Valor Neto:";
-            // 
-            // resetDesdeButton
-            // 
-            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.resetDesdeButton.Location = new System.Drawing.Point(364, 78);
-            this.resetDesdeButton.Name = "resetDesdeButton";
-            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
-            this.resetDesdeButton.TabIndex = 79;
-            this.resetDesdeButton.Text = "RESET";
-            this.resetDesdeButton.UseVisualStyleBackColor = true;
-            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
+            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
+            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // resetHastaButton
             // 
             this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.resetHastaButton.Location = new System.Drawing.Point(364, 107);
+            this.resetHastaButton.Location = new System.Drawing.Point(373, 108);
             this.resetHastaButton.Name = "resetHastaButton";
             this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
-            this.resetHastaButton.TabIndex = 82;
+            this.resetHastaButton.TabIndex = 105;
             this.resetHastaButton.Text = "RESET";
             this.resetHastaButton.UseVisualStyleBackColor = true;
             this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
@@ -231,47 +255,58 @@ namespace Win.Consultas
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 111);
+            this.label4.Location = new System.Drawing.Point(51, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 80;
+            this.label4.TabIndex = 103;
             this.label4.Text = "Hasta:";
             // 
             // hastaDateTimePicker
             // 
-            this.hastaDateTimePicker.Location = new System.Drawing.Point(95, 108);
+            this.hastaDateTimePicker.Location = new System.Drawing.Point(104, 109);
             this.hastaDateTimePicker.Name = "hastaDateTimePicker";
             this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.hastaDateTimePicker.TabIndex = 81;
+            this.hastaDateTimePicker.TabIndex = 104;
             this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 82);
+            this.label1.Location = new System.Drawing.Point(47, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 77;
+            this.label1.TabIndex = 100;
             this.label1.Text = "Desde:";
             // 
             // desdeDateTimePicker
             // 
-            this.desdeDateTimePicker.Location = new System.Drawing.Point(95, 79);
+            this.desdeDateTimePicker.Location = new System.Drawing.Point(104, 80);
             this.desdeDateTimePicker.Name = "desdeDateTimePicker";
             this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.desdeDateTimePicker.TabIndex = 78;
+            this.desdeDateTimePicker.TabIndex = 101;
             this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
             // 
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Enabled = false;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(521, 50);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(530, 51);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(45, 24);
-            this.btnBuscarCliente.TabIndex = 76;
+            this.btnBuscarCliente.TabIndex = 99;
             this.btnBuscarCliente.Text = "...";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // resetDesdeButton
+            // 
+            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetDesdeButton.Location = new System.Drawing.Point(373, 79);
+            this.resetDesdeButton.Name = "resetDesdeButton";
+            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
+            this.resetDesdeButton.TabIndex = 102;
+            this.resetDesdeButton.Text = "RESET";
+            this.resetDesdeButton.UseVisualStyleBackColor = true;
+            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
             // 
             // clienteComboBox
             // 
@@ -279,10 +314,10 @@ namespace Win.Consultas
             this.clienteComboBox.DisplayMember = "NombreComercial";
             this.clienteComboBox.Enabled = false;
             this.clienteComboBox.FormattingEnabled = true;
-            this.clienteComboBox.Location = new System.Drawing.Point(173, 50);
+            this.clienteComboBox.Location = new System.Drawing.Point(182, 51);
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(321, 24);
-            this.clienteComboBox.TabIndex = 75;
+            this.clienteComboBox.TabIndex = 98;
             this.clienteComboBox.ValueMember = "IDCliente";
             this.clienteComboBox.SelectedIndexChanged += new System.EventHandler(this.clienteComboBox_SelectedIndexChanged);
             // 
@@ -299,31 +334,25 @@ namespace Win.Consultas
             // 
             this.clienteTableAdapter.ClearBeforeFill = true;
             // 
-            // ventaBusquedaTableAdapter
+            // devolucionAClientesConsultaBindingSource
             // 
-            this.ventaBusquedaTableAdapter.ClearBeforeFill = true;
+            this.devolucionAClientesConsultaBindingSource.DataMember = "DevolucionAClientesConsulta";
+            this.devolucionAClientesConsultaBindingSource.DataSource = this.dSMiAppComercial;
             // 
-            // label5
+            // devolucionAClientesConsultaTableAdapter
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Blue;
-            this.label5.Location = new System.Drawing.Point(12, 134);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(348, 15);
-            this.label5.TabIndex = 91;
-            this.label5.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de una Venta";
+            this.devolucionAClientesConsultaTableAdapter.ClearBeforeFill = true;
             // 
-            // iDVentaDataGridViewTextBoxColumn
+            // devoluciónDataGridViewTextBoxColumn
             // 
-            this.iDVentaDataGridViewTextBoxColumn.DataPropertyName = "IDVenta";
+            this.devoluciónDataGridViewTextBoxColumn.DataPropertyName = "Devolución";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDVentaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.iDVentaDataGridViewTextBoxColumn.HeaderText = "Venta";
-            this.iDVentaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDVentaDataGridViewTextBoxColumn.Name = "iDVentaDataGridViewTextBoxColumn";
-            this.iDVentaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDVentaDataGridViewTextBoxColumn.Width = 125;
+            this.devoluciónDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.devoluciónDataGridViewTextBoxColumn.HeaderText = "Devolución";
+            this.devoluciónDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.devoluciónDataGridViewTextBoxColumn.Name = "devoluciónDataGridViewTextBoxColumn";
+            this.devoluciónDataGridViewTextBoxColumn.ReadOnly = true;
+            this.devoluciónDataGridViewTextBoxColumn.Width = 125;
             // 
             // fechaDataGridViewTextBoxColumn
             // 
@@ -333,6 +362,26 @@ namespace Win.Consultas
             this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
             this.fechaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ventaDataGridViewTextBoxColumn
+            // 
+            this.ventaDataGridViewTextBoxColumn.DataPropertyName = "Venta";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ventaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.ventaDataGridViewTextBoxColumn.HeaderText = "Venta";
+            this.ventaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ventaDataGridViewTextBoxColumn.Name = "ventaDataGridViewTextBoxColumn";
+            this.ventaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.ventaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaVentaDataGridViewTextBoxColumn
+            // 
+            this.fechaVentaDataGridViewTextBoxColumn.DataPropertyName = "Fecha Venta";
+            this.fechaVentaDataGridViewTextBoxColumn.HeaderText = "Fecha Venta";
+            this.fechaVentaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaVentaDataGridViewTextBoxColumn.Name = "fechaVentaDataGridViewTextBoxColumn";
+            this.fechaVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaVentaDataGridViewTextBoxColumn.Width = 125;
             // 
             // clienteDataGridViewTextBoxColumn
             // 
@@ -355,35 +404,51 @@ namespace Win.Consultas
             // itemsDataGridViewTextBoxColumn
             // 
             this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
             this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
             this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
             this.itemsDataGridViewTextBoxColumn.Width = 125;
             // 
-            // valorNetoDataGridViewTextBoxColumn
+            // valorCostoPromedioDataGridViewTextBoxColumn
             // 
-            this.valorNetoDataGridViewTextBoxColumn.DataPropertyName = "Valor Neto";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorNetoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.valorNetoDataGridViewTextBoxColumn.HeaderText = "Valor Neto";
-            this.valorNetoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorNetoDataGridViewTextBoxColumn.Name = "valorNetoDataGridViewTextBoxColumn";
-            this.valorNetoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorNetoDataGridViewTextBoxColumn.Width = 125;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.DataPropertyName = "ValorCostoPromedio";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorCostoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.HeaderText = "Costo Promedio";
+            this.valorCostoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.Name = "valorCostoPromedioDataGridViewTextBoxColumn";
+            this.valorCostoPromedioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.Width = 125;
             // 
-            // frmConsultaVentas
+            // valorUltimoCostoDataGridViewTextBoxColumn
+            // 
+            this.valorUltimoCostoDataGridViewTextBoxColumn.DataPropertyName = "ValorUltimoCosto";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorUltimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.valorUltimoCostoDataGridViewTextBoxColumn.HeaderText = "Último Costo";
+            this.valorUltimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valorUltimoCostoDataGridViewTextBoxColumn.Name = "valorUltimoCostoDataGridViewTextBoxColumn";
+            this.valorUltimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorUltimoCostoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // frmConsultaDevolucionAClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(980, 703);
+            this.ClientSize = new System.Drawing.Size(1210, 712);
+            this.Controls.Add(this.totalUltimoCostoTextBox);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.totalCostoPromedioTextBox);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.totalNetoTextBox);
             this.Controls.Add(this.clientesCheckBox);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.pictureBox1);
@@ -391,29 +456,28 @@ namespace Win.Consultas
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.almacenComboBox);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.resetDesdeButton);
             this.Controls.Add(this.resetHastaButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.hastaDateTimePicker);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.desdeDateTimePicker);
             this.Controls.Add(this.btnBuscarCliente);
+            this.Controls.Add(this.resetDesdeButton);
             this.Controls.Add(this.clienteComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmConsultaVentas";
+            this.Name = "frmConsultaDevolucionAClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "---Consulta de Ventas---";
-            this.Load += new System.EventHandler(this.frmConsultaVentas_Load);
+            this.Text = "---Consulta Devolución de Clientes---";
+            this.Load += new System.EventHandler(this.frmConsultaDevolucionAClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventaBusquedaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.devolucionAClientesConsultaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,7 +485,11 @@ namespace Win.Consultas
 
         #endregion
 
-        private System.Windows.Forms.TextBox totalNetoTextBox;
+        private System.Windows.Forms.TextBox totalUltimoCostoTextBox;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox totalCostoPromedioTextBox;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox clientesCheckBox;
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -429,28 +497,29 @@ namespace Win.Consultas
         private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox almacenComboBox;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button resetDesdeButton;
         private System.Windows.Forms.Button resetHastaButton;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker hastaDateTimePicker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker desdeDateTimePicker;
         private System.Windows.Forms.Button btnBuscarCliente;
+        private System.Windows.Forms.Button resetDesdeButton;
         private System.Windows.Forms.ComboBox clienteComboBox;
         private DSMiAppComercial dSMiAppComercial;
         private System.Windows.Forms.BindingSource almacenBindingSource;
         private DSMiAppComercialTableAdapters.AlmacenTableAdapter almacenTableAdapter;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private DSMiAppComercialTableAdapters.ClienteTableAdapter clienteTableAdapter;
-        private System.Windows.Forms.BindingSource ventaBusquedaBindingSource;
-        private DSMiAppComercialTableAdapters.VentaBusquedaTableAdapter ventaBusquedaTableAdapter;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDVentaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource devolucionAClientesConsultaBindingSource;
+        private DSMiAppComercialTableAdapters.DevolucionAClientesConsultaTableAdapter devolucionAClientesConsultaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn devoluciónDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ventaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaVentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacénDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorNetoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorCostoPromedioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorUltimoCostoDataGridViewTextBoxColumn;
     }
 }

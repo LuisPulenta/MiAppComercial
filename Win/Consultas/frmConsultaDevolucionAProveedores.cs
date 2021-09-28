@@ -6,7 +6,7 @@ using Win.Clases;
 
 namespace Win.Consultas
 {
-    public partial class frmConsultaCompras : Form
+    public partial class frmConsultaDevolucionAProveedores : Form
     {
         private CADUsuario usuarioLogueado;
 
@@ -17,14 +17,16 @@ namespace Win.Consultas
             set => usuarioLogueado = value;
         }
 
-        private decimal totalNeto = 0;
+        private decimal totalCostoPromedio = 0;
+        private decimal totalUltimoCosto = 0;
 
-        public frmConsultaCompras()
+
+        public frmConsultaDevolucionAProveedores()
         {
             InitializeComponent();
         }
 
-        private void frmConsultaCompras_Load(object sender, EventArgs e)
+        private void frmConsultaDevolucionAProveedores_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'dSMiAppComercial.Proveedor' Puede moverla o quitarla según sea necesario.
             this.proveedorTableAdapter.FillBy2(this.dSMiAppComercial.Proveedor);
@@ -46,11 +48,6 @@ namespace Win.Consultas
             LlenarGrilla();
         }
 
-        private void proveedorComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            LlenarGrilla();
-        }
-
         private void desdeDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             LlenarGrilla();
@@ -61,9 +58,38 @@ namespace Win.Consultas
             LlenarGrilla();
         }
 
+        private void proveedorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LlenarGrilla();
+        }
+
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProveedor miBusqueda = new frmBusquedaProveedor();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            proveedorComboBox.SelectedValue = miBusqueda.IDElegido;
+        }
+
+        private void resetDesdeButton_Click(object sender, EventArgs e)
+        {
+            desdeDateTimePicker.Value = DateTime.Now.AddDays(-30);
+        }
+
+        private void resetHastaButton_Click(object sender, EventArgs e)
+        {
+            hastaDateTimePicker.Value = DateTime.Now;
+        }
+
+        private void btnExcel_Click(object sender, EventArgs e)
+        {
+            ExportarDatosAExcel.ExportarDatos(dgvDatos);
+        }
+
         private void LlenarGrilla()
         {
-            totalNeto = 0;
+            totalCostoPromedio = 0;
+            totalUltimoCosto = 0;
 
             if (almacenComboBox.SelectedIndex != -1)
             {
@@ -95,81 +121,50 @@ namespace Win.Consultas
 
                 if (proveedoresCheckBox.Checked)
                 {
-                    this.compraBusquedaTableAdapter.Fill2(this.dSMiAppComercial.CompraBusqueda, (int)almacenComboBox.SelectedValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
+                    this.devolucionAProveedoresConsultaTableAdapter.Fill2(this.dSMiAppComercial.DevolucionAProveedoresConsulta, (int)almacenComboBox.SelectedValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
                 }
                 else
                 {
-                    if(proveedorComboBox.SelectedIndex == -1)
+                    if (proveedorComboBox.SelectedIndex == -1)
                     {
                         proveedorComboBox.Focus();
-                        this.compraBusquedaTableAdapter.Fill(this.dSMiAppComercial.CompraBusqueda, (int)almacenComboBox.SelectedValue, int.MaxValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
-                        totalNeto = 0;
-                        totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
+                        this.devolucionAProveedoresConsultaTableAdapter.Fill(this.dSMiAppComercial.DevolucionAProveedoresConsulta, (int)almacenComboBox.SelectedValue, int.MaxValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
+                        totalCostoPromedio = 0;
+                        totalUltimoCosto = 0;
+                        totalCostoPromedioTextBox.Text = string.Format("{0:C2}", totalCostoPromedio);
+                        totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
                         return;
                     }
-                    this.compraBusquedaTableAdapter.Fill(this.dSMiAppComercial.CompraBusqueda, (int)almacenComboBox.SelectedValue, (int)proveedorComboBox.SelectedValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
+                    this.devolucionAProveedoresConsultaTableAdapter.Fill(this.dSMiAppComercial.DevolucionAProveedoresConsulta, (int)almacenComboBox.SelectedValue, (int)proveedorComboBox.SelectedValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
                 }
 
                 foreach (DataGridViewRow row in dgvDatos.Rows)
                 {
-                    totalNeto = totalNeto + Convert.ToDecimal(row.Cells[5].Value);
+                    totalCostoPromedio = totalCostoPromedio + Convert.ToDecimal(row.Cells[7].Value);
+                    totalUltimoCosto = totalUltimoCosto + Convert.ToDecimal(row.Cells[8].Value);
                 }
 
 
                 dgvDatos.AutoResizeColumns();
-                totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
+                totalCostoPromedioTextBox.Text = string.Format("{0:C2}", totalCostoPromedio);
+                totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
             }
-        }
-
-        private void btnExcel_Click(object sender, EventArgs e)
-        {
-          ExportarDatosAExcel.ExportarDatos(dgvDatos);
         }
 
         private void proveedoresCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if(proveedoresCheckBox.Checked)
+            if (proveedoresCheckBox.Checked)
             {
                 proveedorComboBox.SelectedIndex = -1;
                 proveedorComboBox.Enabled = false;
-                btnBuscarProveedor.Enabled = false;
+                btnBuscarCliente.Enabled = false;
             }
             else
             {
                 proveedorComboBox.Enabled = true;
-                btnBuscarProveedor.Enabled = true;
+                btnBuscarCliente.Enabled = true;
             }
             LlenarGrilla();
-        }
-
-        private void resetDesdeButton_Click(object sender, EventArgs e)
-        {
-            desdeDateTimePicker.Value = DateTime.Now.AddDays(-30);
-        }
-
-        private void resetHastaButton_Click(object sender, EventArgs e)
-        {
-            hastaDateTimePicker.Value = DateTime.Now;
-        }
-
-        private void btnBuscarProveedor_Click(object sender, EventArgs e)
-        {
-            frmBusquedaProveedor miBusqueda = new frmBusquedaProveedor();
-            miBusqueda.ShowDialog();
-            if (miBusqueda.IDElegido == 0) return;
-            proveedorComboBox.SelectedValue = miBusqueda.IDElegido;
-        }
-
-        private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            frmUnaCompra miCompra = new frmUnaCompra();
-            int selectedrowindex = dgvDatos.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = dgvDatos.Rows[selectedrowindex];
-            miCompra.IDCompra = (int)selectedRow.Cells[0].Value;
-            miCompra.Fecha = (DateTime) selectedRow.Cells[1].Value;
-            miCompra.Proveedor = selectedRow.Cells[2].Value.ToString();
-            miCompra.Almacen = selectedRow.Cells[3].Value.ToString();
-            miCompra.ShowDialog();
         }
     }
 }

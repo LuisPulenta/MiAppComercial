@@ -31,11 +31,12 @@ namespace Win.Consultas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaTraslados));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.resetDesdeButton = new System.Windows.Forms.Button();
@@ -52,13 +53,14 @@ namespace Win.Consultas
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.trasladosConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.totalCostoPromedioTextBox = new System.Windows.Forms.TextBox();
             this.almacenDestinoComboBox = new System.Windows.Forms.ComboBox();
             this.almacenBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label5 = new System.Windows.Forms.Label();
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
-            this.trasladosConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trasladosConsultaTableAdapter = new Win.DSMiAppComercialTableAdapters.TrasladosConsultaTableAdapter();
+            this.label6 = new System.Windows.Forms.Label();
             this.iDTrasladoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacénOrigenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,8 +72,8 @@ namespace Win.Consultas
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trasladosConsultaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -215,9 +217,9 @@ namespace Win.Consultas
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.AutoGenerateColumns = false;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -229,21 +231,26 @@ namespace Win.Consultas
             this.valorCostoPromedioDataGridViewTextBoxColumn,
             this.valorUltimoCostoDataGridViewTextBoxColumn});
             this.dgvDatos.DataSource = this.trasladosConsultaBindingSource;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle15;
-            this.dgvDatos.Location = new System.Drawing.Point(2, 137);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvDatos.Location = new System.Drawing.Point(2, 150);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(958, 518);
+            this.dgvDatos.Size = new System.Drawing.Size(958, 505);
             this.dgvDatos.TabIndex = 10;
+            // 
+            // trasladosConsultaBindingSource
+            // 
+            this.trasladosConsultaBindingSource.DataMember = "TrasladosConsulta";
+            this.trasladosConsultaBindingSource.DataSource = this.dSMiAppComercial;
             // 
             // totalCostoPromedioTextBox
             // 
@@ -284,20 +291,26 @@ namespace Win.Consultas
             // 
             this.almacenTableAdapter.ClearBeforeFill = true;
             // 
-            // trasladosConsultaBindingSource
-            // 
-            this.trasladosConsultaBindingSource.DataMember = "TrasladosConsulta";
-            this.trasladosConsultaBindingSource.DataSource = this.dSMiAppComercial;
-            // 
             // trasladosConsultaTableAdapter
             // 
             this.trasladosConsultaTableAdapter.ClearBeforeFill = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(12, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(360, 15);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de un Traslado";
+            // 
             // iDTrasladoDataGridViewTextBoxColumn
             // 
             this.iDTrasladoDataGridViewTextBoxColumn.DataPropertyName = "IDTraslado";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDTrasladoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDTrasladoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.iDTrasladoDataGridViewTextBoxColumn.HeaderText = "Traslado";
             this.iDTrasladoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.iDTrasladoDataGridViewTextBoxColumn.Name = "iDTrasladoDataGridViewTextBoxColumn";
@@ -334,6 +347,8 @@ namespace Win.Consultas
             // itemsDataGridViewTextBoxColumn
             // 
             this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
             this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
@@ -343,10 +358,10 @@ namespace Win.Consultas
             // valorCostoPromedioDataGridViewTextBoxColumn
             // 
             this.valorCostoPromedioDataGridViewTextBoxColumn.DataPropertyName = "ValorCostoPromedio";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorCostoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorCostoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.valorCostoPromedioDataGridViewTextBoxColumn.HeaderText = "Costo Promedio";
             this.valorCostoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.valorCostoPromedioDataGridViewTextBoxColumn.Name = "valorCostoPromedioDataGridViewTextBoxColumn";
@@ -356,10 +371,10 @@ namespace Win.Consultas
             // valorUltimoCostoDataGridViewTextBoxColumn
             // 
             this.valorUltimoCostoDataGridViewTextBoxColumn.DataPropertyName = "ValorUltimoCosto";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorUltimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorUltimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.valorUltimoCostoDataGridViewTextBoxColumn.HeaderText = "Último Costo";
             this.valorUltimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.valorUltimoCostoDataGridViewTextBoxColumn.Name = "valorUltimoCostoDataGridViewTextBoxColumn";
@@ -372,6 +387,7 @@ namespace Win.Consultas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(963, 693);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.almacenDestinoComboBox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -401,8 +417,8 @@ namespace Win.Consultas
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trasladosConsultaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -431,6 +447,9 @@ namespace Win.Consultas
         private System.Windows.Forms.BindingSource almacenBindingSource;
         private DSMiAppComercialTableAdapters.AlmacenTableAdapter almacenTableAdapter;
         private System.Windows.Forms.BindingSource almacenBindingSource1;
+        private System.Windows.Forms.BindingSource trasladosConsultaBindingSource;
+        private DSMiAppComercialTableAdapters.TrasladosConsultaTableAdapter trasladosConsultaTableAdapter;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDTrasladoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacénOrigenDataGridViewTextBoxColumn;
@@ -438,7 +457,5 @@ namespace Win.Consultas
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorCostoPromedioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorUltimoCostoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource trasladosConsultaBindingSource;
-        private DSMiAppComercialTableAdapters.TrasladosConsultaTableAdapter trasladosConsultaTableAdapter;
     }
 }
