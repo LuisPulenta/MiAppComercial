@@ -400,7 +400,7 @@ namespace Win.Consultas
             this.MinimizeBox = false;
             this.Name = "frmConsultaCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "---Consulta Compras---";
+            this.Text = "---Consulta de Compras---";
             this.Load += new System.EventHandler(this.frmConsultaCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();

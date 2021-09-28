@@ -96,6 +96,18 @@
     <Compile Include="Consultas\frmConsultaCompras.Designer.cs">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmConsultaSalidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaSalidas.Designer.cs">
+      <DependentUpon>frmConsultaSalidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaTraslados.Designer.cs">
+      <DependentUpon>frmConsultaTraslados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmConsultaVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +309,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaCompras.resx">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaSalidas.resx">
+      <DependentUpon>frmConsultaSalidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaTraslados.resx">
+      <DependentUpon>frmConsultaTraslados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaVentas.resx">
       <DependentUpon>frmConsultaVentas.cs</DependentUpon>

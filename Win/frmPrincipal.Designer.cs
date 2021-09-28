@@ -588,15 +588,21 @@ namespace Win
             // 
             // salidasToolStripMenuItem1
             // 
+            this.salidasToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("salidasToolStripMenuItem1.Image")));
+            this.salidasToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.salidasToolStripMenuItem1.Name = "salidasToolStripMenuItem1";
             this.salidasToolStripMenuItem1.Size = new System.Drawing.Size(291, 38);
             this.salidasToolStripMenuItem1.Text = "&Salidas";
+            this.salidasToolStripMenuItem1.Click += new System.EventHandler(this.salidasToolStripMenuItem1_Click);
             // 
             // trasladosToolStripMenuItem1
             // 
+            this.trasladosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("trasladosToolStripMenuItem1.Image")));
+            this.trasladosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.trasladosToolStripMenuItem1.Name = "trasladosToolStripMenuItem1";
             this.trasladosToolStripMenuItem1.Size = new System.Drawing.Size(291, 38);
             this.trasladosToolStripMenuItem1.Text = "&Traslados";
+            this.trasladosToolStripMenuItem1.Click += new System.EventHandler(this.trasladosToolStripMenuItem1_Click);
             // 
             // ventasToolStripMenuItem2
             // 

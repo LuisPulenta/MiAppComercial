@@ -330,5 +330,21 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void salidasToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultaSalidas miForm = new frmConsultaSalidas();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void trasladosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmConsultaTraslados miForm = new frmConsultaTraslados();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
     }
 }
