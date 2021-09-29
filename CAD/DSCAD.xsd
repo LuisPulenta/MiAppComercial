@@ -918,7 +918,7 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="KardexInsert" Modifier="Public" Name="KardexInsert" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="KardexInsert">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="KardexInsert" Modifier="Public" Name="KardexInsert" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="KardexInsert">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.KardexInsert</CommandText>
@@ -1961,7 +1961,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
               <Mapping SourceColumn="IDKardex" DataSetColumn="IDKardex" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleDelete" Modifier="Public" Name="InventarioDetalleDelete" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InventarioDetalleDelete">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleDelete" Modifier="Public" Name="InventarioDetalleDelete" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InventarioDetalleDelete">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioDetalleDelete</CommandText>
@@ -1972,7 +1972,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="MiAppComercial.dbo.InventarioDetalleInsert" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleInsert" Modifier="Public" Name="InventarioDetalleInsert" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InventarioDetalleInsert">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="MiAppComercial.dbo.InventarioDetalleInsert" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleInsert" Modifier="Public" Name="InventarioDetalleInsert" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InventarioDetalleInsert">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioDetalleInsert</CommandText>
@@ -1990,7 +1990,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleUpdateConteo1" Modifier="Public" Name="InventarioDetalleUpdateConteo1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InventarioDetalleUpdateConteo1">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleUpdateConteo1" Modifier="Public" Name="InventarioDetalleUpdateConteo1" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InventarioDetalleUpdateConteo1">
                 <UpdateCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioDetalleUpdateConteo1</CommandText>
@@ -2002,7 +2002,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleUpdateConteo2" Modifier="Public" Name="InventarioDetalleUpdateConteo2" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InventarioDetalleUpdateConteo2">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleUpdateConteo2" Modifier="Public" Name="InventarioDetalleUpdateConteo2" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InventarioDetalleUpdateConteo2">
                 <UpdateCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioDetalleUpdateConteo2</CommandText>
@@ -2014,13 +2014,14 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
                   </DbCommand>
                 </UpdateCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleUpdateConteo3" Modifier="Public" Name="InventarioDetalleUpdateConteo3" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InventarioDetalleUpdateConteo3">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDetalleUpdateConteo3" Modifier="Public" Name="InventarioDetalleUpdateConteo3" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InventarioDetalleUpdateConteo3">
                 <UpdateCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioDetalleUpdateConteo3</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="float" DbType="Double" Direction="Input" ParameterName="@Conteo3" Precision="53" ProviderType="Float" Scale="0" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDKardex" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IDLinea" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -2089,7 +2090,7 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
               <Mapping SourceColumn="Categoría" DataSetColumn="Categoría" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDelete" Modifier="Public" Name="InventarioDelete" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InventarioDelete">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioDelete" Modifier="Public" Name="InventarioDelete" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InventarioDelete">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioDelete</CommandText>
@@ -2100,7 +2101,7 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="MiAppComercial.dbo.InventarioGetIDAlmacenByIDInventario" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InventarioGetIDAlmacenByIDInventario" Modifier="Public" Name="InventarioGetIDAlmacenByIDInventario" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InventarioGetIDAlmacenByIDInventario">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="MiAppComercial.dbo.InventarioGetIDAlmacenByIDInventario" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InventarioGetIDAlmacenByIDInventario" Modifier="Public" Name="InventarioGetIDAlmacenByIDInventario" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InventarioGetIDAlmacenByIDInventario">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioGetIDAlmacenByIDInventario</CommandText>
@@ -2111,7 +2112,7 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioInsert" Modifier="Public" Name="InventarioInsert" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InventarioInsert">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioInsert" Modifier="Public" Name="InventarioInsert" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InventarioInsert">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioInsert</CommandText>
@@ -2125,7 +2126,7 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
                   </DbCommand>
                 </InsertCommand>
               </DbSource>
-              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioUpdatePaso" Modifier="Public" Name="InventarioUpdatePaso" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InventarioUpdatePaso">
+              <DbSource ConnectionRef="MiAppComercialConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InventarioUpdatePaso" Modifier="Public" Name="InventarioUpdatePaso" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="InventarioUpdatePaso">
                 <UpdateCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InventarioUpdatePaso</CommandText>

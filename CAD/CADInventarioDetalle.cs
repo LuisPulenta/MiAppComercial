@@ -29,9 +29,9 @@ namespace CAD
             adaptador.InventarioDetalleUpdateConteo2(Conteo2, IDLinea);
         }
 
-        public static void InventarioDetalleUpDateConteo3(double Conteo3, int IDLinea)
+        public static void InventarioDetalleUpDateConteo3(double Conteo3,int IDKardex, int IDLinea)
         {
-            adaptador.InventarioDetalleUpdateConteo3(Conteo3, IDLinea);
+            adaptador.InventarioDetalleUpdateConteo3(Conteo3,IDKardex,IDLinea);
         }
 
         public static void InventarioDetalleDelete(int IDInventario)

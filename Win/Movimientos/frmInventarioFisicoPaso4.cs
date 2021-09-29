@@ -125,7 +125,6 @@ namespace Win.Movimientos
 
             foreach (MaterialAContar miMaterialAContar in misMaterialesAContar)
             {
-                CADInventarioDetalle.InventarioDetalleUpDateConteo3(miMaterialAContar.Conteo3, miMaterialAContar.IDLinea);
 
                 if (miMaterialAContar.Conteo3 != miMaterialAContar.Stock)
                 {
@@ -167,7 +166,7 @@ namespace Win.Movimientos
                             IDAlmacen,
                             miMaterialAContar.Codigo,
                             fecha,
-                            string.Format("AJ-{0}", IDInventario),
+                            string.Format("AI-{0}", IDInventario),
                             (float) miMaterialAContar.Conteo3 - (float) miMaterialAContar.Stock,
                             0,
                             nuevoSaldo,
@@ -187,6 +186,7 @@ namespace Win.Movimientos
                            nuevoUltimoCosto,
                            nuevoCostoPromedio);
                     }
+                    CADInventarioDetalle.InventarioDetalleUpDateConteo3(miMaterialAContar.Conteo3,IDKardex, miMaterialAContar.IDLinea);
                 }
             }
 

@@ -18220,7 +18220,7 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int KardexInsert(global::System.Nullable<int> IDAlmacen, string Codigo, global::System.Nullable<global::System.DateTime> Fecha, string Documento, global::System.Nullable<double> Entrada, global::System.Nullable<double> Salida, global::System.Nullable<double> Saldo, global::System.Nullable<decimal> UltimoCosto, global::System.Nullable<decimal> CostoPromedio) {
+        public virtual object KardexInsert(global::System.Nullable<int> IDAlmacen, string Codigo, global::System.Nullable<global::System.DateTime> Fecha, string Documento, global::System.Nullable<double> Entrada, global::System.Nullable<double> Salida, global::System.Nullable<double> Saldo, global::System.Nullable<decimal> UltimoCosto, global::System.Nullable<decimal> CostoPromedio) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((IDAlmacen.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(IDAlmacen.Value));
@@ -18281,16 +18281,22 @@ SELECT IDKardex, IDAlmacen, Codigo, Fecha, Documento, Entrada, Salida, Saldo, Ul
                         != global::System.Data.ConnectionState.Open)) {
                 command.Connection.Open();
             }
-            int returnValue;
+            object returnValue;
             try {
-                returnValue = command.ExecuteNonQuery();
+                returnValue = command.ExecuteScalar();
             }
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     command.Connection.Close();
                 }
             }
-            return returnValue;
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23223,6 +23229,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
             this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Conteo3", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 53, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDKardex", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDLinea", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -23641,7 +23648,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int InventarioDetalleUpdateConteo3(global::System.Nullable<double> Conteo3, global::System.Nullable<int> IDLinea) {
+        public virtual int InventarioDetalleUpdateConteo3(global::System.Nullable<double> Conteo3, global::System.Nullable<int> IDKardex, global::System.Nullable<int> IDLinea) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Conteo3.HasValue == true)) {
                 command.Parameters[1].Value = ((double)(Conteo3.Value));
@@ -23649,11 +23656,17 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((IDLinea.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(IDLinea.Value));
+            if ((IDKardex.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(IDKardex.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((IDLinea.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(IDLinea.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
