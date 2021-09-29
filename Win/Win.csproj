@@ -138,6 +138,12 @@
     <Compile Include="Consultas\frmUnaCompra.Designer.cs">
       <DependentUpon>frmUnaCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmUnaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmUnaVenta.Designer.cs">
+      <DependentUpon>frmUnaVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSWin.cs">
       <DependentUpon>DSWin.xsd</DependentUpon>
     </Compile>
@@ -354,6 +360,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnaCompra.resx">
       <DependentUpon>frmUnaCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmUnaVenta.resx">
+      <DependentUpon>frmUnaVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>

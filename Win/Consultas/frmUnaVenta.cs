@@ -6,7 +6,7 @@ using Win.Clases;
 
 namespace Win.Consultas
 {
-    public partial class frmUnaCompra : Form
+    public partial class frmUnaVenta : Form
     {
         private CADUsuario usuarioLogueado;
 
@@ -17,12 +17,12 @@ namespace Win.Consultas
             set => usuarioLogueado = value;
         }
 
-        private int iDCompra;
-        public int IDCompra
+        private int iDVenta;
+        public int IDVenta
 
         {
-            get => iDCompra;
-            set => iDCompra = value;
+            get => iDVenta;
+            set => iDVenta = value;
         }
 
         private DateTime fecha;
@@ -33,12 +33,12 @@ namespace Win.Consultas
             set => fecha = value;
         }
 
-        private string proveedor;
-        public string Proveedor
+        private string cliente;
+        public string Cliente
 
         {
-            get => proveedor;
-            set => proveedor = value;
+            get => cliente;
+            set => cliente = value;
         }
 
         private string almacen;
@@ -49,7 +49,7 @@ namespace Win.Consultas
             set => almacen = value;
         }
 
-        private List<DetalleCompra> misDetalles = new List<DetalleCompra>();
+        private List<DetalleVenta> misDetalles = new List<DetalleVenta>();
 
         private int totalItems = 0;
         private decimal totalBruto = 0;
@@ -57,52 +57,52 @@ namespace Win.Consultas
         private decimal totalDescuento = 0;
         private decimal totalNeto = 0;
 
-        public frmUnaCompra()
+        public frmUnaVenta()
         {
             InitializeComponent();
         }
 
-        private void frmUnaCompra_Load(object sender, EventArgs e)
+        private void frmUnaVenta_Load(object sender, EventArgs e)
         {
-            iDCompraTextBox.Text = IDCompra.ToString();
+            iDVentaTextBox.Text = IDVenta.ToString();
             fechaTextBox.Text = Fecha.ToString();
-            proveedorTextBox.Text = Proveedor;
+            clienteTextBox.Text = Cliente;
             almacenTextBox.Text = Almacen;
-            iDCompraTextBox_Validating(sender, e);
+            iDVentaTextBox_Validating(sender, e);
         }
 
-        private void iDCompraTextBox_Validating(object sender, EventArgs e)
+        private void iDVentaTextBox_Validating(object sender, EventArgs e)
         {
-            if (iDCompraTextBox.Text == null) return;
-            CADCompra miCompra = CADCompra.ComprasGetCompraByIDCompra(Convert.ToInt32(iDCompraTextBox.Text));
-            if (miCompra == null)
+            if (iDVentaTextBox.Text == null) return;
+            CADVenta miVenta = CADVenta.VentasGetVentaByIDVenta(Convert.ToInt32(iDVentaTextBox.Text));
+            if (miVenta == null)
             {
                 fechaTextBox.Text = string.Empty;
-                proveedorTextBox.Text = string.Empty;
+                clienteTextBox.Text = string.Empty;
                 almacenTextBox.Text = string.Empty;
                 misDetalles.Clear();
                 dgvDatos.DataSource = null;
                 dgvDatos.DataSource = misDetalles;
                 PersonalizarGrilla();
-                errorProvider1.SetError(iDCompraTextBox, "No existe esta Compra");
+                errorProvider1.SetError(iDVentaTextBox, "No existe esta Venta");
                 return;
             }
 
-            fechaTextBox.Text = miCompra.Fecha.ToString();
-            proveedorTextBox.Text = Proveedor;
+            fechaTextBox.Text = miVenta.Fecha.ToString();
+            clienteTextBox.Text = Cliente;
             almacenTextBox.Text = Almacen;
-            
-            CAD.DSMiAppComercial.CompraDetalleDataTable miTabla = CADCompraDetalle.CompraDetalleGetCompraDetalleByIDCompra(miCompra.IDCompra);
-            foreach (CAD.DSMiAppComercial.CompraDetalleRow miRegistro in miTabla.Rows)
+
+            CAD.DSMiAppComercial.VentaDetalleDataTable miTabla = CADVentaDetalle.VentaDetalleGetVentaDetalleByIDVenta(miVenta.IDVenta);
+            foreach (CAD.DSMiAppComercial.VentaDetalleRow miRegistro in miTabla.Rows)
             {
-                DetalleCompra miDetalle = new DetalleCompra();
+                DetalleVenta miDetalle = new DetalleVenta();
                 miDetalle.Cantidad = (float)miRegistro.Cantidad;
                 miDetalle.Codigo = miRegistro.Codigo;
-                miDetalle.Costo = miRegistro.Costo;
+                miDetalle.Precio = miRegistro.Precio;
                 miDetalle.Descripcion = miRegistro.Descripcion;
                 miDetalle.PorcentajeDescuento = (float)miRegistro.PorcentajeDescuento;
                 miDetalle.PorcentajeIVA = (float)miRegistro.PorcentajeIVA;
- 
+
                 misDetalles.Add(miDetalle);
             }
             dgvDatos.DataSource = null;
@@ -118,9 +118,9 @@ namespace Win.Consultas
 
             dgvDatos.Columns["Descripcion"].HeaderText = "Descripción";
 
-            dgvDatos.Columns["Costo"].HeaderText = "Costo";
-            dgvDatos.Columns["Costo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgvDatos.Columns["Costo"].DefaultCellStyle.Format = "C2";
+            dgvDatos.Columns["Precio"].HeaderText = "Precio";
+            dgvDatos.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgvDatos.Columns["Precio"].DefaultCellStyle.Format = "C2";
 
             dgvDatos.Columns["Cantidad"].HeaderText = "Cantidad";
             dgvDatos.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -156,7 +156,7 @@ namespace Win.Consultas
             totalDescuento = 0;
             totalNeto = 0;
 
-            foreach (DetalleCompra miDetalle in misDetalles)
+            foreach (DetalleVenta miDetalle in misDetalles)
             {
                 totalItems += 1;
                 totalBruto += miDetalle.valorBruto;

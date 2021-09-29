@@ -172,5 +172,17 @@ namespace Win.Consultas
         {
             ExportarDatosAExcel.ExportarDatos(dgvDatos);
         }
+
+        private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmUnaVenta miVenta = new frmUnaVenta();
+            int selectedrowindex = dgvDatos.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgvDatos.Rows[selectedrowindex];
+            miVenta.IDVenta = (int)selectedRow.Cells[0].Value;
+            miVenta.Fecha = (DateTime)selectedRow.Cells[1].Value;
+            miVenta.Cliente = selectedRow.Cells[2].Value.ToString();
+            miVenta.Almacen = selectedRow.Cells[3].Value.ToString();
+            miVenta.ShowDialog();
+        }
     }
 }
