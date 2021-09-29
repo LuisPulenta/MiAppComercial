@@ -59,6 +59,7 @@
     <Compile Include="CADProductosAInventariar.cs" />
     <Compile Include="CADSalida.cs" />
     <Compile Include="CADSalidaDetalle.cs" />
+    <Compile Include="CADSalidaDetalle2.cs" />
     <Compile Include="CADTraslado.cs" />
     <Compile Include="CADTrasladoDetalle.cs" />
     <Compile Include="CADUsuario.cs" />

@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="Clases\DetalleCompra.cs" />
     <Compile Include="Clases\DetalleSalida.cs" />
+    <Compile Include="Clases\DetalleSalida2.cs" />
     <Compile Include="Clases\DetalleTraslado.cs" />
     <Compile Include="Clases\DetalleVenta.cs" />
     <Compile Include="Clases\DevolucionClienteDevuelto.cs" />
@@ -137,6 +138,12 @@
     </Compile>
     <Compile Include="Consultas\frmUnaCompra.Designer.cs">
       <DependentUpon>frmUnaCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmUnaSalida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmUnaSalida.Designer.cs">
+      <DependentUpon>frmUnaSalida.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\frmUnaVenta.cs">
       <SubType>Form</SubType>
@@ -360,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnaCompra.resx">
       <DependentUpon>frmUnaCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmUnaSalida.resx">
+      <DependentUpon>frmUnaSalida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnaVenta.resx">
       <DependentUpon>frmUnaVenta.cs</DependentUpon>

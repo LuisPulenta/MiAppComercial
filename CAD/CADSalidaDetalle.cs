@@ -15,5 +15,7 @@ namespace CAD
         {
             adaptador.SalidaDetalleInsert(IDSalida, Codigo, Descripcion, Cantidad, IDKardex);
         }
+
+        
     }
 }

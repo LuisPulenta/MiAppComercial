@@ -42,6 +42,13 @@ namespace Win.Consultas
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.iDSalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salidasConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
@@ -58,13 +65,6 @@ namespace Win.Consultas
             this.totalUltimoCostoTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.iDSalidaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conceptoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salidasConsultaBindingSource)).BeginInit();
@@ -144,6 +144,82 @@ namespace Win.Consultas
             this.dgvDatos.RowTemplate.Height = 24;
             this.dgvDatos.Size = new System.Drawing.Size(958, 518);
             this.dgvDatos.TabIndex = 83;
+            this.dgvDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentDoubleClick);
+            // 
+            // iDSalidaDataGridViewTextBoxColumn
+            // 
+            this.iDSalidaDataGridViewTextBoxColumn.DataPropertyName = "IDSalida";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDSalidaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.iDSalidaDataGridViewTextBoxColumn.HeaderText = "Salida";
+            this.iDSalidaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDSalidaDataGridViewTextBoxColumn.Name = "iDSalidaDataGridViewTextBoxColumn";
+            this.iDSalidaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDSalidaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // conceptoDataGridViewTextBoxColumn
+            // 
+            this.conceptoDataGridViewTextBoxColumn.DataPropertyName = "Concepto";
+            this.conceptoDataGridViewTextBoxColumn.HeaderText = "Concepto";
+            this.conceptoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.conceptoDataGridViewTextBoxColumn.Name = "conceptoDataGridViewTextBoxColumn";
+            this.conceptoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.conceptoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // almacénDataGridViewTextBoxColumn
+            // 
+            this.almacénDataGridViewTextBoxColumn.DataPropertyName = "Almacén";
+            this.almacénDataGridViewTextBoxColumn.HeaderText = "Almacén";
+            this.almacénDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.almacénDataGridViewTextBoxColumn.Name = "almacénDataGridViewTextBoxColumn";
+            this.almacénDataGridViewTextBoxColumn.ReadOnly = true;
+            this.almacénDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // itemsDataGridViewTextBoxColumn
+            // 
+            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
+            this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // valorCostoPromedioDataGridViewTextBoxColumn
+            // 
+            this.valorCostoPromedioDataGridViewTextBoxColumn.DataPropertyName = "ValorCostoPromedio";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorCostoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.HeaderText = "Costo Promedio";
+            this.valorCostoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.Name = "valorCostoPromedioDataGridViewTextBoxColumn";
+            this.valorCostoPromedioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorCostoPromedioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // valorUltimoCostoDataGridViewTextBoxColumn
+            // 
+            this.valorUltimoCostoDataGridViewTextBoxColumn.DataPropertyName = "ValorUltimoCosto";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.valorUltimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.valorUltimoCostoDataGridViewTextBoxColumn.HeaderText = "Último Costo";
+            this.valorUltimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.valorUltimoCostoDataGridViewTextBoxColumn.Name = "valorUltimoCostoDataGridViewTextBoxColumn";
+            this.valorUltimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.valorUltimoCostoDataGridViewTextBoxColumn.Width = 125;
             // 
             // salidasConsultaBindingSource
             // 
@@ -275,81 +351,6 @@ namespace Win.Consultas
             this.label5.Size = new System.Drawing.Size(353, 15);
             this.label5.TabIndex = 91;
             this.label5.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de una Salida";
-            // 
-            // iDSalidaDataGridViewTextBoxColumn
-            // 
-            this.iDSalidaDataGridViewTextBoxColumn.DataPropertyName = "IDSalida";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDSalidaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.iDSalidaDataGridViewTextBoxColumn.HeaderText = "Salida";
-            this.iDSalidaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDSalidaDataGridViewTextBoxColumn.Name = "iDSalidaDataGridViewTextBoxColumn";
-            this.iDSalidaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDSalidaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // conceptoDataGridViewTextBoxColumn
-            // 
-            this.conceptoDataGridViewTextBoxColumn.DataPropertyName = "Concepto";
-            this.conceptoDataGridViewTextBoxColumn.HeaderText = "Concepto";
-            this.conceptoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.conceptoDataGridViewTextBoxColumn.Name = "conceptoDataGridViewTextBoxColumn";
-            this.conceptoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.conceptoDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // almacénDataGridViewTextBoxColumn
-            // 
-            this.almacénDataGridViewTextBoxColumn.DataPropertyName = "Almacén";
-            this.almacénDataGridViewTextBoxColumn.HeaderText = "Almacén";
-            this.almacénDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.almacénDataGridViewTextBoxColumn.Name = "almacénDataGridViewTextBoxColumn";
-            this.almacénDataGridViewTextBoxColumn.ReadOnly = true;
-            this.almacénDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // itemsDataGridViewTextBoxColumn
-            // 
-            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
-            this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
-            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valorCostoPromedioDataGridViewTextBoxColumn
-            // 
-            this.valorCostoPromedioDataGridViewTextBoxColumn.DataPropertyName = "ValorCostoPromedio";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorCostoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.valorCostoPromedioDataGridViewTextBoxColumn.HeaderText = "Costo Promedio";
-            this.valorCostoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorCostoPromedioDataGridViewTextBoxColumn.Name = "valorCostoPromedioDataGridViewTextBoxColumn";
-            this.valorCostoPromedioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorCostoPromedioDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valorUltimoCostoDataGridViewTextBoxColumn
-            // 
-            this.valorUltimoCostoDataGridViewTextBoxColumn.DataPropertyName = "ValorUltimoCosto";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorUltimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.valorUltimoCostoDataGridViewTextBoxColumn.HeaderText = "Último Costo";
-            this.valorUltimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorUltimoCostoDataGridViewTextBoxColumn.Name = "valorUltimoCostoDataGridViewTextBoxColumn";
-            this.valorUltimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorUltimoCostoDataGridViewTextBoxColumn.Width = 125;
             // 
             // frmConsultaSalidas
             // 
