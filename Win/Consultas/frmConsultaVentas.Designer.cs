@@ -32,22 +32,19 @@ namespace Win.Consultas
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaVentas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.totalNetoTextBox = new System.Windows.Forms.TextBox();
             this.clientesCheckBox = new System.Windows.Forms.CheckBox();
             this.btnExcel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.iDVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorNetoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventaBusquedaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.label2 = new System.Windows.Forms.Label();
@@ -67,6 +64,15 @@ namespace Win.Consultas
             this.clienteTableAdapter = new Win.DSMiAppComercialTableAdapters.ClienteTableAdapter();
             this.ventaBusquedaTableAdapter = new Win.DSMiAppComercialTableAdapters.VentaBusquedaTableAdapter();
             this.label5 = new System.Windows.Forms.Label();
+            this.iDVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBusquedaBindingSource)).BeginInit();
@@ -77,7 +83,7 @@ namespace Win.Consultas
             // 
             // totalNetoTextBox
             // 
-            this.totalNetoTextBox.Location = new System.Drawing.Point(800, 661);
+            this.totalNetoTextBox.Location = new System.Drawing.Point(1133, 659);
             this.totalNetoTextBox.Name = "totalNetoTextBox";
             this.totalNetoTextBox.ReadOnly = true;
             this.totalNetoTextBox.Size = new System.Drawing.Size(160, 22);
@@ -100,7 +106,7 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(920, 91);
+            this.btnExcel.Location = new System.Drawing.Point(1257, 94);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 85;
@@ -111,7 +117,7 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(876, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(1213, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 84;
@@ -142,86 +148,27 @@ namespace Win.Consultas
             this.clienteDataGridViewTextBoxColumn,
             this.almacénDataGridViewTextBoxColumn,
             this.itemsDataGridViewTextBoxColumn,
-            this.valorNetoDataGridViewTextBoxColumn});
+            this.ValorBruto,
+            this.ValorIVA,
+            this.ValorDescuento,
+            this.ValorNeto});
             this.dgvDatos.DataSource = this.ventaBusquedaBindingSource;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvDatos.Location = new System.Drawing.Point(2, 152);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(958, 503);
+            this.dgvDatos.Size = new System.Drawing.Size(1291, 501);
             this.dgvDatos.TabIndex = 83;
             this.dgvDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellDoubleClick);
-            // 
-            // iDVentaDataGridViewTextBoxColumn
-            // 
-            this.iDVentaDataGridViewTextBoxColumn.DataPropertyName = "IDVenta";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.iDVentaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.iDVentaDataGridViewTextBoxColumn.HeaderText = "Venta";
-            this.iDVentaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.iDVentaDataGridViewTextBoxColumn.Name = "iDVentaDataGridViewTextBoxColumn";
-            this.iDVentaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDVentaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // clienteDataGridViewTextBoxColumn
-            // 
-            this.clienteDataGridViewTextBoxColumn.DataPropertyName = "Cliente";
-            this.clienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
-            this.clienteDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
-            this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.clienteDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // almacénDataGridViewTextBoxColumn
-            // 
-            this.almacénDataGridViewTextBoxColumn.DataPropertyName = "Almacén";
-            this.almacénDataGridViewTextBoxColumn.HeaderText = "Almacén";
-            this.almacénDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.almacénDataGridViewTextBoxColumn.Name = "almacénDataGridViewTextBoxColumn";
-            this.almacénDataGridViewTextBoxColumn.ReadOnly = true;
-            this.almacénDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // itemsDataGridViewTextBoxColumn
-            // 
-            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
-            this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
-            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
-            this.itemsDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // valorNetoDataGridViewTextBoxColumn
-            // 
-            this.valorNetoDataGridViewTextBoxColumn.DataPropertyName = "Valor Neto";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorNetoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.valorNetoDataGridViewTextBoxColumn.HeaderText = "Valor Neto";
-            this.valorNetoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorNetoDataGridViewTextBoxColumn.Name = "valorNetoDataGridViewTextBoxColumn";
-            this.valorNetoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorNetoDataGridViewTextBoxColumn.Width = 125;
             // 
             // ventaBusquedaBindingSource
             // 
@@ -263,7 +210,7 @@ namespace Win.Consultas
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(654, 664);
+            this.label13.Location = new System.Drawing.Point(987, 662);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(132, 17);
             this.label13.TabIndex = 88;
@@ -377,12 +324,113 @@ namespace Win.Consultas
             this.label5.TabIndex = 91;
             this.label5.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de una Venta";
             // 
+            // iDVentaDataGridViewTextBoxColumn
+            // 
+            this.iDVentaDataGridViewTextBoxColumn.DataPropertyName = "IDVenta";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.iDVentaDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.iDVentaDataGridViewTextBoxColumn.HeaderText = "Venta";
+            this.iDVentaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.iDVentaDataGridViewTextBoxColumn.Name = "iDVentaDataGridViewTextBoxColumn";
+            this.iDVentaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDVentaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // clienteDataGridViewTextBoxColumn
+            // 
+            this.clienteDataGridViewTextBoxColumn.DataPropertyName = "Cliente";
+            this.clienteDataGridViewTextBoxColumn.HeaderText = "Cliente";
+            this.clienteDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
+            this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.clienteDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // almacénDataGridViewTextBoxColumn
+            // 
+            this.almacénDataGridViewTextBoxColumn.DataPropertyName = "Almacén";
+            this.almacénDataGridViewTextBoxColumn.HeaderText = "Almacén";
+            this.almacénDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.almacénDataGridViewTextBoxColumn.Name = "almacénDataGridViewTextBoxColumn";
+            this.almacénDataGridViewTextBoxColumn.ReadOnly = true;
+            this.almacénDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // itemsDataGridViewTextBoxColumn
+            // 
+            this.itemsDataGridViewTextBoxColumn.DataPropertyName = "Items";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.itemsDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.itemsDataGridViewTextBoxColumn.HeaderText = "Items";
+            this.itemsDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.itemsDataGridViewTextBoxColumn.Name = "itemsDataGridViewTextBoxColumn";
+            this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
+            this.itemsDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ValorBruto
+            // 
+            this.ValorBruto.DataPropertyName = "ValorBruto";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.ValorBruto.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ValorBruto.HeaderText = "Valor Bruto";
+            this.ValorBruto.MinimumWidth = 6;
+            this.ValorBruto.Name = "ValorBruto";
+            this.ValorBruto.ReadOnly = true;
+            this.ValorBruto.Width = 125;
+            // 
+            // ValorIVA
+            // 
+            this.ValorIVA.DataPropertyName = "ValorIVA";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
+            this.ValorIVA.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ValorIVA.HeaderText = "Valor IVA";
+            this.ValorIVA.MinimumWidth = 6;
+            this.ValorIVA.Name = "ValorIVA";
+            this.ValorIVA.ReadOnly = true;
+            this.ValorIVA.Width = 125;
+            // 
+            // ValorDescuento
+            // 
+            this.ValorDescuento.DataPropertyName = "ValorDescuento";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.ValorDescuento.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ValorDescuento.HeaderText = "Valor Descuento";
+            this.ValorDescuento.MinimumWidth = 6;
+            this.ValorDescuento.Name = "ValorDescuento";
+            this.ValorDescuento.ReadOnly = true;
+            this.ValorDescuento.Width = 125;
+            // 
+            // ValorNeto
+            // 
+            this.ValorNeto.DataPropertyName = "ValorNeto";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.ValorNeto.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ValorNeto.HeaderText = "Valor Neto";
+            this.ValorNeto.MinimumWidth = 6;
+            this.ValorNeto.Name = "ValorNeto";
+            this.ValorNeto.ReadOnly = true;
+            this.ValorNeto.Width = 125;
+            // 
             // frmConsultaVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(980, 703);
+            this.ClientSize = new System.Drawing.Size(1305, 693);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.totalNetoTextBox);
             this.Controls.Add(this.clientesCheckBox);
@@ -447,11 +495,15 @@ namespace Win.Consultas
         private System.Windows.Forms.BindingSource ventaBusquedaBindingSource;
         private DSMiAppComercialTableAdapters.VentaBusquedaTableAdapter ventaBusquedaTableAdapter;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorNetoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDVentaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacénDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorNetoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorBruto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorNeto;
     }
 }

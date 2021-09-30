@@ -7085,7 +7085,13 @@ namespace Win {
             
             private global::System.Data.DataColumn columnItems;
             
-            private global::System.Data.DataColumn columnValor_Neto;
+            private global::System.Data.DataColumn columnValorBruto;
+            
+            private global::System.Data.DataColumn columnValorIVA;
+            
+            private global::System.Data.DataColumn columnValorDescuento;
+            
+            private global::System.Data.DataColumn columnValorNeto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -7178,9 +7184,33 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Valor_NetoColumn {
+            public global::System.Data.DataColumn ValorBrutoColumn {
                 get {
-                    return this.columnValor_Neto;
+                    return this.columnValorBruto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorIVAColumn {
+                get {
+                    return this.columnValorIVA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorDescuentoColumn {
+                get {
+                    return this.columnValorDescuento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorNetoColumn {
+                get {
+                    return this.columnValorNeto;
                 }
             }
             
@@ -7221,7 +7251,7 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CompraBusquedaRow AddCompraBusquedaRow(System.DateTime Fecha, int IDProveedor, string Proveedor, int IDAlmacen, string Almacén, int Items, double Valor_Neto) {
+            public CompraBusquedaRow AddCompraBusquedaRow(System.DateTime Fecha, int IDProveedor, string Proveedor, int IDAlmacen, string Almacén, int Items, double ValorBruto, double ValorIVA, double ValorDescuento, double ValorNeto) {
                 CompraBusquedaRow rowCompraBusquedaRow = ((CompraBusquedaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7231,7 +7261,10 @@ namespace Win {
                         IDAlmacen,
                         Almacén,
                         Items,
-                        Valor_Neto};
+                        ValorBruto,
+                        ValorIVA,
+                        ValorDescuento,
+                        ValorNeto};
                 rowCompraBusquedaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCompraBusquedaRow);
                 return rowCompraBusquedaRow;
@@ -7268,7 +7301,10 @@ namespace Win {
                 this.columnIDAlmacen = base.Columns["IDAlmacen"];
                 this.columnAlmacén = base.Columns["Almacén"];
                 this.columnItems = base.Columns["Items"];
-                this.columnValor_Neto = base.Columns["Valor Neto"];
+                this.columnValorBruto = base.Columns["ValorBruto"];
+                this.columnValorIVA = base.Columns["ValorIVA"];
+                this.columnValorDescuento = base.Columns["ValorDescuento"];
+                this.columnValorNeto = base.Columns["ValorNeto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7288,8 +7324,14 @@ namespace Win {
                 base.Columns.Add(this.columnAlmacén);
                 this.columnItems = new global::System.Data.DataColumn("Items", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItems);
-                this.columnValor_Neto = new global::System.Data.DataColumn("Valor Neto", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValor_Neto);
+                this.columnValorBruto = new global::System.Data.DataColumn("ValorBruto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorBruto);
+                this.columnValorIVA = new global::System.Data.DataColumn("ValorIVA", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorIVA);
+                this.columnValorDescuento = new global::System.Data.DataColumn("ValorDescuento", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorDescuento);
+                this.columnValorNeto = new global::System.Data.DataColumn("ValorNeto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorNeto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDCompra}, true));
                 this.columnIDCompra.AutoIncrement = true;
@@ -7306,7 +7348,10 @@ namespace Win {
                 this.columnAlmacén.AllowDBNull = false;
                 this.columnAlmacén.MaxLength = 50;
                 this.columnItems.ReadOnly = true;
-                this.columnValor_Neto.ReadOnly = true;
+                this.columnValorBruto.ReadOnly = true;
+                this.columnValorIVA.ReadOnly = true;
+                this.columnValorDescuento.ReadOnly = true;
+                this.columnValorNeto.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7454,7 +7499,13 @@ namespace Win {
             
             private global::System.Data.DataColumn columnItems;
             
-            private global::System.Data.DataColumn columnValor_Neto;
+            private global::System.Data.DataColumn columnValorBruto;
+            
+            private global::System.Data.DataColumn columnValorIVA;
+            
+            private global::System.Data.DataColumn columnValorDescuento;
+            
+            private global::System.Data.DataColumn columnValorNeto;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -7547,9 +7598,33 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Valor_NetoColumn {
+            public global::System.Data.DataColumn ValorBrutoColumn {
                 get {
-                    return this.columnValor_Neto;
+                    return this.columnValorBruto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorIVAColumn {
+                get {
+                    return this.columnValorIVA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorDescuentoColumn {
+                get {
+                    return this.columnValorDescuento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorNetoColumn {
+                get {
+                    return this.columnValorNeto;
                 }
             }
             
@@ -7590,7 +7665,7 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VentaBusquedaRow AddVentaBusquedaRow(System.DateTime Fecha, int IDCliente, string Cliente, int IDAlmacen, string Almacén, int Items, double Valor_Neto) {
+            public VentaBusquedaRow AddVentaBusquedaRow(System.DateTime Fecha, int IDCliente, string Cliente, int IDAlmacen, string Almacén, int Items, double ValorBruto, double ValorIVA, double ValorDescuento, double ValorNeto) {
                 VentaBusquedaRow rowVentaBusquedaRow = ((VentaBusquedaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -7600,7 +7675,10 @@ namespace Win {
                         IDAlmacen,
                         Almacén,
                         Items,
-                        Valor_Neto};
+                        ValorBruto,
+                        ValorIVA,
+                        ValorDescuento,
+                        ValorNeto};
                 rowVentaBusquedaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVentaBusquedaRow);
                 return rowVentaBusquedaRow;
@@ -7637,7 +7715,10 @@ namespace Win {
                 this.columnIDAlmacen = base.Columns["IDAlmacen"];
                 this.columnAlmacén = base.Columns["Almacén"];
                 this.columnItems = base.Columns["Items"];
-                this.columnValor_Neto = base.Columns["Valor Neto"];
+                this.columnValorBruto = base.Columns["ValorBruto"];
+                this.columnValorIVA = base.Columns["ValorIVA"];
+                this.columnValorDescuento = base.Columns["ValorDescuento"];
+                this.columnValorNeto = base.Columns["ValorNeto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7657,8 +7738,14 @@ namespace Win {
                 base.Columns.Add(this.columnAlmacén);
                 this.columnItems = new global::System.Data.DataColumn("Items", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItems);
-                this.columnValor_Neto = new global::System.Data.DataColumn("Valor Neto", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValor_Neto);
+                this.columnValorBruto = new global::System.Data.DataColumn("ValorBruto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorBruto);
+                this.columnValorIVA = new global::System.Data.DataColumn("ValorIVA", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorIVA);
+                this.columnValorDescuento = new global::System.Data.DataColumn("ValorDescuento", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorDescuento);
+                this.columnValorNeto = new global::System.Data.DataColumn("ValorNeto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorNeto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIDVenta}, true));
                 this.columnIDVenta.AutoIncrement = true;
@@ -7675,7 +7762,10 @@ namespace Win {
                 this.columnAlmacén.AllowDBNull = false;
                 this.columnAlmacén.MaxLength = 50;
                 this.columnItems.ReadOnly = true;
-                this.columnValor_Neto.ReadOnly = true;
+                this.columnValorBruto.ReadOnly = true;
+                this.columnValorIVA.ReadOnly = true;
+                this.columnValorDescuento.ReadOnly = true;
+                this.columnValorNeto.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8591,13 +8681,17 @@ namespace Win {
             
             private global::System.Data.DataColumn columnItems;
             
-            private global::System.Data.DataColumn columnValorCostoPromedio;
-            
-            private global::System.Data.DataColumn columnValorUltimoCosto;
-            
             private global::System.Data.DataColumn columnIDProveedor;
             
             private global::System.Data.DataColumn columnIDAlmacen;
+            
+            private global::System.Data.DataColumn columnValorNeto;
+            
+            private global::System.Data.DataColumn columnValorBruto;
+            
+            private global::System.Data.DataColumn columnValorIVA;
+            
+            private global::System.Data.DataColumn columnValorDescuento;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -8690,22 +8784,6 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ValorCostoPromedioColumn {
-                get {
-                    return this.columnValorCostoPromedio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ValorUltimoCostoColumn {
-                get {
-                    return this.columnValorUltimoCosto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn IDProveedorColumn {
                 get {
                     return this.columnIDProveedor;
@@ -8717,6 +8795,38 @@ namespace Win {
             public global::System.Data.DataColumn IDAlmacenColumn {
                 get {
                     return this.columnIDAlmacen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorNetoColumn {
+                get {
+                    return this.columnValorNeto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorBrutoColumn {
+                get {
+                    return this.columnValorBruto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorIVAColumn {
+                get {
+                    return this.columnValorIVA;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ValorDescuentoColumn {
+                get {
+                    return this.columnValorDescuento;
                 }
             }
             
@@ -8757,7 +8867,7 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DevolucionAProveedoresConsultaRow AddDevolucionAProveedoresConsultaRow(System.DateTime Fecha, int Compra, System.DateTime Fecha_Compra, string Proveedor, string Almacén, int Items, double ValorCostoPromedio, double ValorUltimoCosto, int IDProveedor, int IDAlmacen) {
+            public DevolucionAProveedoresConsultaRow AddDevolucionAProveedoresConsultaRow(System.DateTime Fecha, int Compra, System.DateTime Fecha_Compra, string Proveedor, string Almacén, int Items, int IDProveedor, int IDAlmacen, double ValorNeto, double ValorBruto, double ValorIVA, double ValorDescuento) {
                 DevolucionAProveedoresConsultaRow rowDevolucionAProveedoresConsultaRow = ((DevolucionAProveedoresConsultaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -8767,10 +8877,12 @@ namespace Win {
                         Proveedor,
                         Almacén,
                         Items,
-                        ValorCostoPromedio,
-                        ValorUltimoCosto,
                         IDProveedor,
-                        IDAlmacen};
+                        IDAlmacen,
+                        ValorNeto,
+                        ValorBruto,
+                        ValorIVA,
+                        ValorDescuento};
                 rowDevolucionAProveedoresConsultaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDevolucionAProveedoresConsultaRow);
                 return rowDevolucionAProveedoresConsultaRow;
@@ -8807,10 +8919,12 @@ namespace Win {
                 this.columnProveedor = base.Columns["Proveedor"];
                 this.columnAlmacén = base.Columns["Almacén"];
                 this.columnItems = base.Columns["Items"];
-                this.columnValorCostoPromedio = base.Columns["ValorCostoPromedio"];
-                this.columnValorUltimoCosto = base.Columns["ValorUltimoCosto"];
                 this.columnIDProveedor = base.Columns["IDProveedor"];
                 this.columnIDAlmacen = base.Columns["IDAlmacen"];
+                this.columnValorNeto = base.Columns["ValorNeto"];
+                this.columnValorBruto = base.Columns["ValorBruto"];
+                this.columnValorIVA = base.Columns["ValorIVA"];
+                this.columnValorDescuento = base.Columns["ValorDescuento"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8830,14 +8944,18 @@ namespace Win {
                 base.Columns.Add(this.columnAlmacén);
                 this.columnItems = new global::System.Data.DataColumn("Items", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnItems);
-                this.columnValorCostoPromedio = new global::System.Data.DataColumn("ValorCostoPromedio", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValorCostoPromedio);
-                this.columnValorUltimoCosto = new global::System.Data.DataColumn("ValorUltimoCosto", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValorUltimoCosto);
                 this.columnIDProveedor = new global::System.Data.DataColumn("IDProveedor", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDProveedor);
                 this.columnIDAlmacen = new global::System.Data.DataColumn("IDAlmacen", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDAlmacen);
+                this.columnValorNeto = new global::System.Data.DataColumn("ValorNeto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorNeto);
+                this.columnValorBruto = new global::System.Data.DataColumn("ValorBruto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorBruto);
+                this.columnValorIVA = new global::System.Data.DataColumn("ValorIVA", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorIVA);
+                this.columnValorDescuento = new global::System.Data.DataColumn("ValorDescuento", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorDescuento);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnDevolución}, true));
                 this.columnDevolución.AutoIncrement = true;
@@ -8854,10 +8972,12 @@ namespace Win {
                 this.columnAlmacén.AllowDBNull = false;
                 this.columnAlmacén.MaxLength = 50;
                 this.columnItems.ReadOnly = true;
-                this.columnValorCostoPromedio.ReadOnly = true;
-                this.columnValorUltimoCosto.ReadOnly = true;
                 this.columnIDProveedor.AllowDBNull = false;
                 this.columnIDAlmacen.AllowDBNull = false;
+                this.columnValorNeto.ReadOnly = true;
+                this.columnValorBruto.ReadOnly = true;
+                this.columnValorIVA.ReadOnly = true;
+                this.columnValorDescuento.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11951,17 +12071,65 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Valor_Neto {
+            public double ValorBruto {
                 get {
                     try {
-                        return ((double)(this[this.tableCompraBusqueda.Valor_NetoColumn]));
+                        return ((double)(this[this.tableCompraBusqueda.ValorBrutoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Valor Neto\' de la tabla \'CompraBusqueda\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorBruto\' de la tabla \'CompraBusqueda\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableCompraBusqueda.Valor_NetoColumn] = value;
+                    this[this.tableCompraBusqueda.ValorBrutoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorIVA {
+                get {
+                    try {
+                        return ((double)(this[this.tableCompraBusqueda.ValorIVAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorIVA\' de la tabla \'CompraBusqueda\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompraBusqueda.ValorIVAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorDescuento {
+                get {
+                    try {
+                        return ((double)(this[this.tableCompraBusqueda.ValorDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorDescuento\' de la tabla \'CompraBusqueda\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompraBusqueda.ValorDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorNeto {
+                get {
+                    try {
+                        return ((double)(this[this.tableCompraBusqueda.ValorNetoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorNeto\' de la tabla \'CompraBusqueda\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCompraBusqueda.ValorNetoColumn] = value;
                 }
             }
             
@@ -11979,14 +12147,50 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsValor_NetoNull() {
-                return this.IsNull(this.tableCompraBusqueda.Valor_NetoColumn);
+            public bool IsValorBrutoNull() {
+                return this.IsNull(this.tableCompraBusqueda.ValorBrutoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetValor_NetoNull() {
-                this[this.tableCompraBusqueda.Valor_NetoColumn] = global::System.Convert.DBNull;
+            public void SetValorBrutoNull() {
+                this[this.tableCompraBusqueda.ValorBrutoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorIVANull() {
+                return this.IsNull(this.tableCompraBusqueda.ValorIVAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorIVANull() {
+                this[this.tableCompraBusqueda.ValorIVAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorDescuentoNull() {
+                return this.IsNull(this.tableCompraBusqueda.ValorDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorDescuentoNull() {
+                this[this.tableCompraBusqueda.ValorDescuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorNetoNull() {
+                return this.IsNull(this.tableCompraBusqueda.ValorNetoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorNetoNull() {
+                this[this.tableCompraBusqueda.ValorNetoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12110,17 +12314,65 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double Valor_Neto {
+            public double ValorBruto {
                 get {
                     try {
-                        return ((double)(this[this.tableVentaBusqueda.Valor_NetoColumn]));
+                        return ((double)(this[this.tableVentaBusqueda.ValorBrutoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Valor Neto\' de la tabla \'VentaBusqueda\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorBruto\' de la tabla \'VentaBusqueda\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVentaBusqueda.Valor_NetoColumn] = value;
+                    this[this.tableVentaBusqueda.ValorBrutoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorIVA {
+                get {
+                    try {
+                        return ((double)(this[this.tableVentaBusqueda.ValorIVAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorIVA\' de la tabla \'VentaBusqueda\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaBusqueda.ValorIVAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorDescuento {
+                get {
+                    try {
+                        return ((double)(this[this.tableVentaBusqueda.ValorDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorDescuento\' de la tabla \'VentaBusqueda\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaBusqueda.ValorDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorNeto {
+                get {
+                    try {
+                        return ((double)(this[this.tableVentaBusqueda.ValorNetoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorNeto\' de la tabla \'VentaBusqueda\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVentaBusqueda.ValorNetoColumn] = value;
                 }
             }
             
@@ -12138,14 +12390,50 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsValor_NetoNull() {
-                return this.IsNull(this.tableVentaBusqueda.Valor_NetoColumn);
+            public bool IsValorBrutoNull() {
+                return this.IsNull(this.tableVentaBusqueda.ValorBrutoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetValor_NetoNull() {
-                this[this.tableVentaBusqueda.Valor_NetoColumn] = global::System.Convert.DBNull;
+            public void SetValorBrutoNull() {
+                this[this.tableVentaBusqueda.ValorBrutoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorIVANull() {
+                return this.IsNull(this.tableVentaBusqueda.ValorIVAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorIVANull() {
+                this[this.tableVentaBusqueda.ValorIVAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorDescuentoNull() {
+                return this.IsNull(this.tableVentaBusqueda.ValorDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorDescuentoNull() {
+                this[this.tableVentaBusqueda.ValorDescuentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorNetoNull() {
+                return this.IsNull(this.tableVentaBusqueda.ValorNetoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorNetoNull() {
+                this[this.tableVentaBusqueda.ValorNetoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12626,40 +12914,6 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double ValorCostoPromedio {
-                get {
-                    try {
-                        return ((double)(this[this.tableDevolucionAProveedoresConsulta.ValorCostoPromedioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorCostoPromedio\' de la tabla \'DevolucionAProveedoresCo" +
-                                "nsulta\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevolucionAProveedoresConsulta.ValorCostoPromedioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double ValorUltimoCosto {
-                get {
-                    try {
-                        return ((double)(this[this.tableDevolucionAProveedoresConsulta.ValorUltimoCostoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorUltimoCosto\' de la tabla \'DevolucionAProveedoresCons" +
-                                "ulta\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDevolucionAProveedoresConsulta.ValorUltimoCostoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int IDProveedor {
                 get {
                     return ((int)(this[this.tableDevolucionAProveedoresConsulta.IDProveedorColumn]));
@@ -12682,6 +12936,74 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorNeto {
+                get {
+                    try {
+                        return ((double)(this[this.tableDevolucionAProveedoresConsulta.ValorNetoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorNeto\' de la tabla \'DevolucionAProveedoresConsulta\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevolucionAProveedoresConsulta.ValorNetoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorBruto {
+                get {
+                    try {
+                        return ((double)(this[this.tableDevolucionAProveedoresConsulta.ValorBrutoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorBruto\' de la tabla \'DevolucionAProveedoresConsulta\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevolucionAProveedoresConsulta.ValorBrutoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorIVA {
+                get {
+                    try {
+                        return ((double)(this[this.tableDevolucionAProveedoresConsulta.ValorIVAColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorIVA\' de la tabla \'DevolucionAProveedoresConsulta\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevolucionAProveedoresConsulta.ValorIVAColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double ValorDescuento {
+                get {
+                    try {
+                        return ((double)(this[this.tableDevolucionAProveedoresConsulta.ValorDescuentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorDescuento\' de la tabla \'DevolucionAProveedoresConsul" +
+                                "ta\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDevolucionAProveedoresConsulta.ValorDescuentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsItemsNull() {
                 return this.IsNull(this.tableDevolucionAProveedoresConsulta.ItemsColumn);
             }
@@ -12694,26 +13016,50 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsValorCostoPromedioNull() {
-                return this.IsNull(this.tableDevolucionAProveedoresConsulta.ValorCostoPromedioColumn);
+            public bool IsValorNetoNull() {
+                return this.IsNull(this.tableDevolucionAProveedoresConsulta.ValorNetoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetValorCostoPromedioNull() {
-                this[this.tableDevolucionAProveedoresConsulta.ValorCostoPromedioColumn] = global::System.Convert.DBNull;
+            public void SetValorNetoNull() {
+                this[this.tableDevolucionAProveedoresConsulta.ValorNetoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsValorUltimoCostoNull() {
-                return this.IsNull(this.tableDevolucionAProveedoresConsulta.ValorUltimoCostoColumn);
+            public bool IsValorBrutoNull() {
+                return this.IsNull(this.tableDevolucionAProveedoresConsulta.ValorBrutoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetValorUltimoCostoNull() {
-                this[this.tableDevolucionAProveedoresConsulta.ValorUltimoCostoColumn] = global::System.Convert.DBNull;
+            public void SetValorBrutoNull() {
+                this[this.tableDevolucionAProveedoresConsulta.ValorBrutoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorIVANull() {
+                return this.IsNull(this.tableDevolucionAProveedoresConsulta.ValorIVAColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorIVANull() {
+                this[this.tableDevolucionAProveedoresConsulta.ValorIVAColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsValorDescuentoNull() {
+                return this.IsNull(this.tableDevolucionAProveedoresConsulta.ValorDescuentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetValorDescuentoNull() {
+                this[this.tableDevolucionAProveedoresConsulta.ValorDescuentoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21255,7 +21601,10 @@ WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario) AND (dbo.InventarioD
             tableMapping.ColumnMappings.Add("IDAlmacen", "IDAlmacen");
             tableMapping.ColumnMappings.Add("Almacén", "Almacén");
             tableMapping.ColumnMappings.Add("Items", "Items");
-            tableMapping.ColumnMappings.Add("Valor Neto", "Valor Neto");
+            tableMapping.ColumnMappings.Add("ValorBruto", "ValorBruto");
+            tableMapping.ColumnMappings.Add("ValorIVA", "ValorIVA");
+            tableMapping.ColumnMappings.Add("ValorDescuento", "ValorDescuento");
+            tableMapping.ColumnMappings.Add("ValorNeto", "ValorNeto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21272,18 +21621,26 @@ WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario) AND (dbo.InventarioD
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveedor.Nombre AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT(dbo.CompraDetalle.IDCompra) AS Items, 
-                  SUM(dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad - dbo.CompraDetalle.PorcentajeDescuento * ((dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad) / (1 + dbo.CompraDetalle.PorcentajeIVA))) AS [Valor Neto]
-FROM     dbo.Compra INNER JOIN
-                  dbo.CompraDetalle ON dbo.Compra.IDCompra = dbo.CompraDetalle.IDCompra INNER JOIN
-                  dbo.Proveedor ON dbo.Compra.IDProveedor = dbo.Proveedor.IDProveedor INNER JOIN
-                  dbo.Almacen ON dbo.Compra.IDAlmacen = dbo.Almacen.IDAlmacen
-
-GROUP BY dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveedor.Nombre, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion
-
-HAVING dbo.Compra.IDAlmacen=@IDAlmacen AND dbo.Compra.IDProveedor=@IDProveedor AND dbo.Compra.Fecha >=@Desde AND dbo.Compra.Fecha<=@Hasta
-
-ORDER BY dbo.Compra.IDCompra DESC";
+            this._commandCollection[0].CommandText = "SELECT dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveed" +
+                "or.Nombre AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion AS Almacén" +
+                ", COUNT(dbo.CompraDetalle.IDCompra) AS Items, \r\n\r\n                  SUM((dbo.Com" +
+                "praDetalle.Costo * dbo.CompraDetalle.Cantidad) / (1 + dbo.CompraDetalle.Porcenta" +
+                "jeIVA)) AS ValorBruto, \r\n                  SUM(dbo.CompraDetalle.Costo * dbo.Com" +
+                "praDetalle.Cantidad - (dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad) / (" +
+                "1 + dbo.CompraDetalle.PorcentajeIVA)) \r\n                  AS ValorIVA, SUM((dbo." +
+                "CompraDetalle.Costo * dbo.CompraDetalle.Cantidad) / (1 + dbo.CompraDetalle.Porce" +
+                "ntajeIVA) * dbo.CompraDetalle.PorcentajeDescuento) \r\n                  AS ValorD" +
+                "escuento, SUM(dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad - (dbo.Compra" +
+                "Detalle.Costo * dbo.CompraDetalle.Cantidad) \r\n                  / (1 + dbo.Compr" +
+                "aDetalle.PorcentajeIVA) * dbo.CompraDetalle.PorcentajeDescuento) AS ValorNeto\r\n\r" +
+                "\nFROM     dbo.Compra INNER JOIN\r\n                  dbo.CompraDetalle ON dbo.Comp" +
+                "ra.IDCompra = dbo.CompraDetalle.IDCompra INNER JOIN\r\n                  dbo.Prove" +
+                "edor ON dbo.Compra.IDProveedor = dbo.Proveedor.IDProveedor INNER JOIN\r\n         " +
+                "         dbo.Almacen ON dbo.Compra.IDAlmacen = dbo.Almacen.IDAlmacen\r\n\r\nGROUP BY" +
+                " dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveedor.No" +
+                "mbre, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion\r\n\r\nHAVING dbo.Compra.IDAlmac" +
+                "en=@IDAlmacen AND dbo.Compra.IDProveedor=@IDProveedor AND dbo.Compra.Fecha >=@De" +
+                "sde AND dbo.Compra.Fecha<=@Hasta\r\n\r\nORDER BY dbo.Compra.IDCompra DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDProveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21291,18 +21648,26 @@ ORDER BY dbo.Compra.IDCompra DESC";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveedor.Nombre AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT(dbo.CompraDetalle.IDCompra) AS Items, 
-                  SUM(dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad - dbo.CompraDetalle.PorcentajeDescuento * ((dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad) / (1 + dbo.CompraDetalle.PorcentajeIVA))) AS [Valor Neto]
-FROM     dbo.Compra INNER JOIN
-                  dbo.CompraDetalle ON dbo.Compra.IDCompra = dbo.CompraDetalle.IDCompra INNER JOIN
-                  dbo.Proveedor ON dbo.Compra.IDProveedor = dbo.Proveedor.IDProveedor INNER JOIN
-                  dbo.Almacen ON dbo.Compra.IDAlmacen = dbo.Almacen.IDAlmacen
-
-GROUP BY dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveedor.Nombre, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion
-
-HAVING dbo.Compra.IDAlmacen=@IDAlmacen AND dbo.Compra.Fecha >=@Desde AND dbo.Compra.Fecha<=@Hasta
-
-ORDER BY dbo.Compra.IDCompra DESC";
+            this._commandCollection[1].CommandText = "SELECT dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveed" +
+                "or.Nombre AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion AS Almacén" +
+                ", COUNT(dbo.CompraDetalle.IDCompra) AS Items, \r\n\r\n                  SUM((dbo.Com" +
+                "praDetalle.Costo * dbo.CompraDetalle.Cantidad) / (1 + dbo.CompraDetalle.Porcenta" +
+                "jeIVA)) AS ValorBruto, \r\n                  SUM(dbo.CompraDetalle.Costo * dbo.Com" +
+                "praDetalle.Cantidad - (dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad) / (" +
+                "1 + dbo.CompraDetalle.PorcentajeIVA)) \r\n                  AS ValorIVA, SUM((dbo." +
+                "CompraDetalle.Costo * dbo.CompraDetalle.Cantidad) / (1 + dbo.CompraDetalle.Porce" +
+                "ntajeIVA) * dbo.CompraDetalle.PorcentajeDescuento) \r\n                  AS ValorD" +
+                "escuento, SUM(dbo.CompraDetalle.Costo * dbo.CompraDetalle.Cantidad - (dbo.Compra" +
+                "Detalle.Costo * dbo.CompraDetalle.Cantidad) \r\n                  / (1 + dbo.Compr" +
+                "aDetalle.PorcentajeIVA) * dbo.CompraDetalle.PorcentajeDescuento) AS ValorNeto\r\n\r" +
+                "\nFROM     dbo.Compra INNER JOIN\r\n                  dbo.CompraDetalle ON dbo.Comp" +
+                "ra.IDCompra = dbo.CompraDetalle.IDCompra INNER JOIN\r\n                  dbo.Prove" +
+                "edor ON dbo.Compra.IDProveedor = dbo.Proveedor.IDProveedor INNER JOIN\r\n         " +
+                "         dbo.Almacen ON dbo.Compra.IDAlmacen = dbo.Almacen.IDAlmacen\r\n\r\nGROUP BY" +
+                " dbo.Compra.IDCompra, dbo.Compra.Fecha, dbo.Compra.IDProveedor, dbo.Proveedor.No" +
+                "mbre, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion\r\n\r\nHAVING dbo.Compra.IDAlmac" +
+                "en=@IDAlmacen AND dbo.Compra.Fecha >=@Desde AND dbo.Compra.Fecha<=@Hasta\r\n\r\nORDE" +
+                "R BY dbo.Compra.IDCompra DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21500,7 +21865,10 @@ ORDER BY dbo.Compra.IDCompra DESC";
             tableMapping.ColumnMappings.Add("IDAlmacen", "IDAlmacen");
             tableMapping.ColumnMappings.Add("Almacén", "Almacén");
             tableMapping.ColumnMappings.Add("Items", "Items");
-            tableMapping.ColumnMappings.Add("Valor Neto", "Valor Neto");
+            tableMapping.ColumnMappings.Add("ValorBruto", "ValorBruto");
+            tableMapping.ColumnMappings.Add("ValorIVA", "ValorIVA");
+            tableMapping.ColumnMappings.Add("ValorDescuento", "ValorDescuento");
+            tableMapping.ColumnMappings.Add("ValorNeto", "ValorNeto");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -21517,18 +21885,26 @@ ORDER BY dbo.Compra.IDCompra DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial AS Cliente, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT(dbo.VentaDetalle.IDVenta) AS Items, 
-                  SUM(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad - dbo.VentaDetalle.PorcentajeDescuento * ((dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA))) AS [Valor Neto]
-FROM     dbo.Venta INNER JOIN
-                  dbo.VentaDetalle ON dbo.Venta.IDVenta = dbo.VentaDetalle.IDVenta INNER JOIN
-                  dbo.Cliente ON dbo.Venta.IDCliente = dbo.Cliente.IDCliente INNER JOIN
-                  dbo.Almacen ON dbo.Venta.IDAlmacen = dbo.Almacen.IDAlmacen
-
-GROUP BY dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion
-
-HAVING dbo.Venta.IDAlmacen=@IDAlmacen AND dbo.Venta.IDCliente=@IDCliente AND dbo.Venta.Fecha >=@Desde AND dbo.Venta.Fecha<=@Hasta
-
-ORDER BY dbo.Venta.IDVenta DESC";
+            this._commandCollection[0].CommandText = "SELECT dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.Nombr" +
+                "eComercial AS Cliente, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, " +
+                "COUNT(dbo.VentaDetalle.IDVenta) AS Items, \r\n\r\n   SUM((dbo.VentaDetalle.Precio * " +
+                "dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA)) AS ValorBruto" +
+                ", \r\n                  SUM(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad - " +
+                "(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.Po" +
+                "rcentajeIVA)) \r\n                  AS ValorIVA, SUM((dbo.VentaDetalle.Precio * db" +
+                "o.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA) * dbo.VentaDetal" +
+                "le.PorcentajeDescuento) \r\n                  AS ValorDescuento, SUM(dbo.VentaDeta" +
+                "lle.Precio * dbo.VentaDetalle.Cantidad - (dbo.VentaDetalle.Precio * dbo.VentaDet" +
+                "alle.Cantidad) \r\n                  / (1 + dbo.VentaDetalle.PorcentajeIVA) * dbo." +
+                "VentaDetalle.PorcentajeDescuento) AS ValorNeto\r\n                 \r\nFROM     dbo." +
+                "Venta INNER JOIN\r\n                  dbo.VentaDetalle ON dbo.Venta.IDVenta = dbo." +
+                "VentaDetalle.IDVenta INNER JOIN\r\n                  dbo.Cliente ON dbo.Venta.IDCl" +
+                "iente = dbo.Cliente.IDCliente INNER JOIN\r\n                  dbo.Almacen ON dbo.V" +
+                "enta.IDAlmacen = dbo.Almacen.IDAlmacen\r\n\r\nGROUP BY dbo.Venta.IDVenta, dbo.Venta." +
+                "Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial, dbo.Venta.IDAlmacen, db" +
+                "o.Almacen.Descripcion\r\n\r\nHAVING dbo.Venta.IDAlmacen=@IDAlmacen AND dbo.Venta.IDC" +
+                "liente=@IDCliente AND dbo.Venta.Fecha >=@Desde AND dbo.Venta.Fecha<=@Hasta\r\n\r\nOR" +
+                "DER BY dbo.Venta.IDVenta DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21536,18 +21912,25 @@ ORDER BY dbo.Venta.IDVenta DESC";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial AS Cliente, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT(dbo.VentaDetalle.IDVenta) AS Items, 
-                  SUM(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad - dbo.VentaDetalle.PorcentajeDescuento * ((dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA))) AS [Valor Neto]
-FROM     dbo.Venta INNER JOIN
-                  dbo.VentaDetalle ON dbo.Venta.IDVenta = dbo.VentaDetalle.IDVenta INNER JOIN
-                  dbo.Cliente ON dbo.Venta.IDCliente = dbo.Cliente.IDCliente INNER JOIN
-                  dbo.Almacen ON dbo.Venta.IDAlmacen = dbo.Almacen.IDAlmacen
-
-GROUP BY dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion
-
-HAVING dbo.Venta.IDAlmacen=@IDAlmacen AND dbo.Venta.Fecha >=@Desde AND dbo.Venta.Fecha<=@Hasta
-
-ORDER BY dbo.Venta.IDVenta DESC";
+            this._commandCollection[1].CommandText = "SELECT dbo.Venta.IDVenta, dbo.Venta.Fecha, dbo.Venta.IDCliente, dbo.Cliente.Nombr" +
+                "eComercial AS Cliente, dbo.Venta.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, " +
+                "COUNT(dbo.VentaDetalle.IDVenta) AS Items, \r\n\r\n   SUM((dbo.VentaDetalle.Precio * " +
+                "dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA)) AS ValorBruto" +
+                ", \r\n                  SUM(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad - " +
+                "(dbo.VentaDetalle.Precio * dbo.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.Po" +
+                "rcentajeIVA)) \r\n                  AS ValorIVA, SUM((dbo.VentaDetalle.Precio * db" +
+                "o.VentaDetalle.Cantidad) / (1 + dbo.VentaDetalle.PorcentajeIVA) * dbo.VentaDetal" +
+                "le.PorcentajeDescuento) \r\n                  AS ValorDescuento, SUM(dbo.VentaDeta" +
+                "lle.Precio * dbo.VentaDetalle.Cantidad - (dbo.VentaDetalle.Precio * dbo.VentaDet" +
+                "alle.Cantidad) \r\n                  / (1 + dbo.VentaDetalle.PorcentajeIVA) * dbo." +
+                "VentaDetalle.PorcentajeDescuento) AS ValorNeto\r\n                 \r\nFROM     dbo." +
+                "Venta INNER JOIN\r\n                  dbo.VentaDetalle ON dbo.Venta.IDVenta = dbo." +
+                "VentaDetalle.IDVenta INNER JOIN\r\n                  dbo.Cliente ON dbo.Venta.IDCl" +
+                "iente = dbo.Cliente.IDCliente INNER JOIN\r\n                  dbo.Almacen ON dbo.V" +
+                "enta.IDAlmacen = dbo.Almacen.IDAlmacen\r\n\r\nGROUP BY dbo.Venta.IDVenta, dbo.Venta." +
+                "Fecha, dbo.Venta.IDCliente, dbo.Cliente.NombreComercial, dbo.Venta.IDAlmacen, db" +
+                "o.Almacen.Descripcion\r\n\r\nHAVING dbo.Venta.IDAlmacen=@IDAlmacen AND dbo.Venta.Fec" +
+                "ha >=@Desde AND dbo.Venta.Fecha<=@Hasta\r\n\r\nORDER BY dbo.Venta.IDVenta DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22138,10 +22521,12 @@ ORDER BY dbo.Traslado.IDTraslado DESC";
             tableMapping.ColumnMappings.Add("Proveedor", "Proveedor");
             tableMapping.ColumnMappings.Add("Almacén", "Almacén");
             tableMapping.ColumnMappings.Add("Items", "Items");
-            tableMapping.ColumnMappings.Add("ValorCostoPromedio", "ValorCostoPromedio");
-            tableMapping.ColumnMappings.Add("ValorUltimoCosto", "ValorUltimoCosto");
             tableMapping.ColumnMappings.Add("IDProveedor", "IDProveedor");
             tableMapping.ColumnMappings.Add("IDAlmacen", "IDAlmacen");
+            tableMapping.ColumnMappings.Add("ValorNeto", "ValorNeto");
+            tableMapping.ColumnMappings.Add("ValorBruto", "ValorBruto");
+            tableMapping.ColumnMappings.Add("ValorIVA", "ValorIVA");
+            tableMapping.ColumnMappings.Add("ValorDescuento", "ValorDescuento");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -22158,27 +22543,36 @@ ORDER BY dbo.Traslado.IDTraslado DESC";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT dbo.DevolucionProveedor.IDDevolucionProveedor AS Devolución, dbo.Devolucio" +
-                "nProveedor.Fecha, dbo.DevolucionProveedor.IDCompra AS Compra, dbo.Compra.Fecha A" +
-                "S [Fecha Compra], dbo.Compra.IDProveedor, \r\n                  dbo.Proveedor.Nomb" +
-                "re AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT" +
-                "(dbo.DevolucionProveedorDetalle.IDDevolucionProveedor) AS Items, \r\n             " +
-                "     SUM(dbo.DevolucionProveedorDetalle.Cantidad * dbo.Kardex.CostoPromedio) AS " +
-                "ValorCostoPromedio, SUM(dbo.DevolucionProveedorDetalle.Cantidad * dbo.Kardex.Ult" +
-                "imoCosto) AS ValorUltimoCosto\r\nFROM     dbo.DevolucionProveedor INNER JOIN\r\n    " +
-                "              dbo.DevolucionProveedorDetalle ON dbo.DevolucionProveedor.IDDevolu" +
-                "cionProveedor = dbo.DevolucionProveedorDetalle.IDDevolucionProveedor INNER JOIN\r" +
-                "\n                  dbo.Compra ON dbo.DevolucionProveedor.IDCompra = dbo.Compra.I" +
-                "DCompra INNER JOIN\r\n                  dbo.Kardex ON dbo.DevolucionProveedorDetal" +
-                "le.IDKardex = dbo.Kardex.IDKardex INNER JOIN\r\n                  dbo.Proveedor ON" +
-                " dbo.Compra.IDProveedor = dbo.Proveedor.IDProveedor INNER JOIN\r\n                " +
-                "  dbo.Almacen ON dbo.Compra.IDAlmacen = dbo.Almacen.IDAlmacen\r\nGROUP BY dbo.Devo" +
-                "lucionProveedor.IDDevolucionProveedor, dbo.DevolucionProveedor.Fecha, dbo.Devolu" +
-                "cionProveedor.IDCompra, dbo.Compra.Fecha, dbo.Proveedor.Nombre, dbo.Almacen.Desc" +
-                "ripcion, dbo.Compra.IDAlmacen, \r\n                  dbo.Compra.IDProveedor\r\nHAVIN" +
-                "G dbo.Compra.IDAlmacen=@IDAlmacen AND dbo.Compra.IDProveedor=@IDProveedor AND db" +
-                "o.DevolucionProveedor.Fecha >=@Desde AND dbo.DevolucionProveedor.Fecha<=@Hasta\r\n" +
-                "ORDER BY dbo.DevolucionProveedor.IDDevolucionProveedor DESC";
+            this._commandCollection[0].CommandText = "SELECT TOP (100) PERCENT dbo.DevolucionProveedor.IDDevolucionProveedor AS Devoluc" +
+                "ión, dbo.DevolucionProveedor.Fecha, dbo.DevolucionProveedor.IDCompra AS Compra, " +
+                "dbo.Compra.Fecha AS [Fecha Compra], dbo.Compra.IDProveedor, \r\n                  " +
+                "dbo.Proveedor.Nombre AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion" +
+                " AS Almacén, COUNT(dbo.DevolucionProveedorDetalle.IDDevolucionProveedor) AS Item" +
+                "s, \r\n                  SUM((dbo.DevolucionProveedorDetalle.Precio * dbo.Devoluci" +
+                "onProveedorDetalle.Cantidad) / (1 + dbo.DevolucionProveedorDetalle.PorcentajeIVA" +
+                ")) AS ValorBruto, \r\n                  SUM(dbo.DevolucionProveedorDetalle.Precio " +
+                "* dbo.DevolucionProveedorDetalle.Cantidad - (dbo.DevolucionProveedorDetalle.Prec" +
+                "io * dbo.DevolucionProveedorDetalle.Cantidad) / (1 + dbo.DevolucionProveedorDeta" +
+                "lle.PorcentajeIVA)) \r\n                  AS ValorIVA, SUM((dbo.DevolucionProveedo" +
+                "rDetalle.Precio * dbo.DevolucionProveedorDetalle.Cantidad) / (1 + dbo.Devolucion" +
+                "ProveedorDetalle.PorcentajeIVA) * dbo.DevolucionProveedorDetalle.PorcentajeDescu" +
+                "ento) \r\n                  AS ValorDescuento, SUM(dbo.DevolucionProveedorDetalle." +
+                "Precio * dbo.DevolucionProveedorDetalle.Cantidad - (dbo.DevolucionProveedorDetal" +
+                "le.Precio * dbo.DevolucionProveedorDetalle.Cantidad) \r\n                  / (1 + " +
+                "dbo.DevolucionProveedorDetalle.PorcentajeIVA) * dbo.DevolucionProveedorDetalle.P" +
+                "orcentajeDescuento) AS ValorNeto\r\nFROM     dbo.DevolucionProveedor INNER JOIN\r\n " +
+                "                 dbo.DevolucionProveedorDetalle ON dbo.DevolucionProveedor.IDDev" +
+                "olucionProveedor = dbo.DevolucionProveedorDetalle.IDDevolucionProveedor INNER JO" +
+                "IN\r\n                  dbo.Compra ON dbo.DevolucionProveedor.IDCompra = dbo.Compr" +
+                "a.IDCompra INNER JOIN\r\n                  dbo.Proveedor ON dbo.Compra.IDProveedor" +
+                " = dbo.Proveedor.IDProveedor INNER JOIN\r\n                  dbo.Almacen ON dbo.Co" +
+                "mpra.IDAlmacen = dbo.Almacen.IDAlmacen\r\nGROUP BY dbo.DevolucionProveedor.IDDevol" +
+                "ucionProveedor, dbo.DevolucionProveedor.Fecha, dbo.DevolucionProveedor.IDCompra," +
+                " dbo.Compra.Fecha, dbo.Proveedor.Nombre, dbo.Almacen.Descripcion, dbo.Compra.IDA" +
+                "lmacen, \r\n                  dbo.Compra.IDProveedor\r\n\r\nHAVING dbo.Compra.IDAlmace" +
+                "n=@IDAlmacen AND dbo.Compra.IDProveedor=@IDProveedor AND dbo.DevolucionProveedor" +
+                ".Fecha >=@Desde AND dbo.DevolucionProveedor.Fecha<=@Hasta\r\nORDER BY dbo.Devoluci" +
+                "onProveedor.IDDevolucionProveedor DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDProveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22186,27 +22580,35 @@ ORDER BY dbo.Traslado.IDTraslado DESC";
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT dbo.DevolucionProveedor.IDDevolucionProveedor AS Devolución, dbo.Devolucio" +
-                "nProveedor.Fecha, dbo.DevolucionProveedor.IDCompra AS Compra, dbo.Compra.Fecha A" +
-                "S [Fecha Compra], dbo.Compra.IDProveedor, \r\n                  dbo.Proveedor.Nomb" +
-                "re AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, COUNT" +
-                "(dbo.DevolucionProveedorDetalle.IDDevolucionProveedor) AS Items, \r\n             " +
-                "     SUM(dbo.DevolucionProveedorDetalle.Cantidad * dbo.Kardex.CostoPromedio) AS " +
-                "ValorCostoPromedio, SUM(dbo.DevolucionProveedorDetalle.Cantidad * dbo.Kardex.Ult" +
-                "imoCosto) AS ValorUltimoCosto\r\nFROM     dbo.DevolucionProveedor INNER JOIN\r\n    " +
-                "              dbo.DevolucionProveedorDetalle ON dbo.DevolucionProveedor.IDDevolu" +
-                "cionProveedor = dbo.DevolucionProveedorDetalle.IDDevolucionProveedor INNER JOIN\r" +
-                "\n                  dbo.Compra ON dbo.DevolucionProveedor.IDCompra = dbo.Compra.I" +
-                "DCompra INNER JOIN\r\n                  dbo.Kardex ON dbo.DevolucionProveedorDetal" +
-                "le.IDKardex = dbo.Kardex.IDKardex INNER JOIN\r\n                  dbo.Proveedor ON" +
-                " dbo.Compra.IDProveedor = dbo.Proveedor.IDProveedor INNER JOIN\r\n                " +
-                "  dbo.Almacen ON dbo.Compra.IDAlmacen = dbo.Almacen.IDAlmacen\r\nGROUP BY dbo.Devo" +
-                "lucionProveedor.IDDevolucionProveedor, dbo.DevolucionProveedor.Fecha, dbo.Devolu" +
-                "cionProveedor.IDCompra, dbo.Compra.Fecha, dbo.Proveedor.Nombre, dbo.Almacen.Desc" +
-                "ripcion, dbo.Compra.IDAlmacen, \r\n                  dbo.Compra.IDProveedor\r\nHAVIN" +
-                "G dbo.Compra.IDAlmacen=@IDAlmacen AND dbo.DevolucionProveedor.Fecha >=@Desde AND" +
-                " dbo.DevolucionProveedor.Fecha<=@Hasta\r\nORDER BY dbo.DevolucionProveedor.IDDevol" +
-                "ucionProveedor DESC";
+            this._commandCollection[1].CommandText = "SELECT TOP (100) PERCENT dbo.DevolucionProveedor.IDDevolucionProveedor AS Devoluc" +
+                "ión, dbo.DevolucionProveedor.Fecha, dbo.DevolucionProveedor.IDCompra AS Compra, " +
+                "dbo.Compra.Fecha AS [Fecha Compra], dbo.Compra.IDProveedor, \r\n                  " +
+                "dbo.Proveedor.Nombre AS Proveedor, dbo.Compra.IDAlmacen, dbo.Almacen.Descripcion" +
+                " AS Almacén, COUNT(dbo.DevolucionProveedorDetalle.IDDevolucionProveedor) AS Item" +
+                "s, \r\n                  SUM((dbo.DevolucionProveedorDetalle.Precio * dbo.Devoluci" +
+                "onProveedorDetalle.Cantidad) / (1 + dbo.DevolucionProveedorDetalle.PorcentajeIVA" +
+                ")) AS ValorBruto, \r\n                  SUM(dbo.DevolucionProveedorDetalle.Precio " +
+                "* dbo.DevolucionProveedorDetalle.Cantidad - (dbo.DevolucionProveedorDetalle.Prec" +
+                "io * dbo.DevolucionProveedorDetalle.Cantidad) / (1 + dbo.DevolucionProveedorDeta" +
+                "lle.PorcentajeIVA)) \r\n                  AS ValorIVA, SUM((dbo.DevolucionProveedo" +
+                "rDetalle.Precio * dbo.DevolucionProveedorDetalle.Cantidad) / (1 + dbo.Devolucion" +
+                "ProveedorDetalle.PorcentajeIVA) * dbo.DevolucionProveedorDetalle.PorcentajeDescu" +
+                "ento) \r\n                  AS ValorDescuento, SUM(dbo.DevolucionProveedorDetalle." +
+                "Precio * dbo.DevolucionProveedorDetalle.Cantidad - (dbo.DevolucionProveedorDetal" +
+                "le.Precio * dbo.DevolucionProveedorDetalle.Cantidad) \r\n                  / (1 + " +
+                "dbo.DevolucionProveedorDetalle.PorcentajeIVA) * dbo.DevolucionProveedorDetalle.P" +
+                "orcentajeDescuento) AS ValorNeto\r\nFROM     dbo.DevolucionProveedor INNER JOIN\r\n " +
+                "                 dbo.DevolucionProveedorDetalle ON dbo.DevolucionProveedor.IDDev" +
+                "olucionProveedor = dbo.DevolucionProveedorDetalle.IDDevolucionProveedor INNER JO" +
+                "IN\r\n                  dbo.Compra ON dbo.DevolucionProveedor.IDCompra = dbo.Compr" +
+                "a.IDCompra INNER JOIN\r\n                  dbo.Proveedor ON dbo.Compra.IDProveedor" +
+                " = dbo.Proveedor.IDProveedor INNER JOIN\r\n                  dbo.Almacen ON dbo.Co" +
+                "mpra.IDAlmacen = dbo.Almacen.IDAlmacen\r\nGROUP BY dbo.DevolucionProveedor.IDDevol" +
+                "ucionProveedor, dbo.DevolucionProveedor.Fecha, dbo.DevolucionProveedor.IDCompra," +
+                " dbo.Compra.Fecha, dbo.Proveedor.Nombre, dbo.Almacen.Descripcion, dbo.Compra.IDA" +
+                "lmacen, \r\n                  dbo.Compra.IDProveedor\r\n\r\nHAVING dbo.Compra.IDAlmace" +
+                "n=@IDAlmacen AND dbo.DevolucionProveedor.Fecha >=@Desde AND dbo.DevolucionProvee" +
+                "dor.Fecha<=@Hasta\r\nORDER BY dbo.DevolucionProveedor.IDDevolucionProveedor DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDAlmacen", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDAlmacen", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

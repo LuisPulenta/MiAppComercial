@@ -17,9 +17,8 @@ namespace Win.Consultas
             set => usuarioLogueado = value;
         }
 
-        private decimal totalCostoPromedio = 0;
-        private decimal totalUltimoCosto = 0;
-
+        private decimal totalValorNeto = 0;
+        
 
         public frmConsultaDevolucionAProveedores()
         {
@@ -88,8 +87,7 @@ namespace Win.Consultas
 
         private void LlenarGrilla()
         {
-            totalCostoPromedio = 0;
-            totalUltimoCosto = 0;
+            totalValorNeto = 0;
 
             if (almacenComboBox.SelectedIndex != -1)
             {
@@ -129,10 +127,8 @@ namespace Win.Consultas
                     {
                         proveedorComboBox.Focus();
                         this.devolucionAProveedoresConsultaTableAdapter.Fill(this.dSMiAppComercial.DevolucionAProveedoresConsulta, (int)almacenComboBox.SelectedValue, int.MaxValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
-                        totalCostoPromedio = 0;
-                        totalUltimoCosto = 0;
-                        totalCostoPromedioTextBox.Text = string.Format("{0:C2}", totalCostoPromedio);
-                        totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
+                        totalValorNeto = 0;
+                        totalValorNetoTextBox.Text = string.Format("{0:C2}", totalValorNeto);
                         return;
                     }
                     this.devolucionAProveedoresConsultaTableAdapter.Fill(this.dSMiAppComercial.DevolucionAProveedoresConsulta, (int)almacenComboBox.SelectedValue, (int)proveedorComboBox.SelectedValue, Convert.ToDateTime(fechaDesde), Convert.ToDateTime(fechaHasta));
@@ -140,14 +136,13 @@ namespace Win.Consultas
 
                 foreach (DataGridViewRow row in dgvDatos.Rows)
                 {
-                    totalCostoPromedio = totalCostoPromedio + Convert.ToDecimal(row.Cells[7].Value);
-                    totalUltimoCosto = totalUltimoCosto + Convert.ToDecimal(row.Cells[8].Value);
+                    totalValorNeto = totalValorNeto + Convert.ToDecimal(row.Cells[7].Value);
                 }
 
 
                 dgvDatos.AutoResizeColumns();
-                totalCostoPromedioTextBox.Text = string.Format("{0:C2}", totalCostoPromedio);
-                totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
+                totalValorNetoTextBox.Text = string.Format("{0:C2}", totalValorNeto);
+
             }
         }
 
@@ -165,6 +160,18 @@ namespace Win.Consultas
                 btnBuscarCliente.Enabled = true;
             }
             LlenarGrilla();
+        }
+
+        private void dgvDatos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmUnaDevolucionAProveedor miCompra = new frmUnaDevolucionAProveedor();
+            int selectedrowindex = dgvDatos.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgvDatos.Rows[selectedrowindex];
+            miCompra.IDDevolucionAProveedor = (int)selectedRow.Cells[0].Value;
+            miCompra.Fecha = (DateTime)selectedRow.Cells[1].Value;
+            miCompra.Proveedor = selectedRow.Cells[4].Value.ToString();
+            miCompra.Almacen = selectedRow.Cells[3].Value.ToString();
+            miCompra.ShowDialog();
         }
     }
 }

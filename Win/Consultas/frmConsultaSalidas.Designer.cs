@@ -74,7 +74,7 @@ namespace Win.Consultas
             // 
             // totalCostoPromedioTextBox
             // 
-            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(444, 661);
+            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(783, 661);
             this.totalCostoPromedioTextBox.Name = "totalCostoPromedioTextBox";
             this.totalCostoPromedioTextBox.ReadOnly = true;
             this.totalCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
@@ -84,7 +84,7 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(920, 91);
+            this.btnExcel.Location = new System.Drawing.Point(1257, 94);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 85;
@@ -95,7 +95,7 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(876, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(1213, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 84;
@@ -142,7 +142,7 @@ namespace Win.Consultas
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(958, 518);
+            this.dgvDatos.Size = new System.Drawing.Size(1297, 518);
             this.dgvDatos.TabIndex = 83;
             this.dgvDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentDoubleClick);
             // 
@@ -252,7 +252,7 @@ namespace Win.Consultas
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(269, 664);
+            this.label13.Location = new System.Drawing.Point(608, 664);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 17);
             this.label13.TabIndex = 88;
@@ -324,7 +324,7 @@ namespace Win.Consultas
             // 
             // totalUltimoCostoTextBox
             // 
-            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(800, 661);
+            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(1139, 661);
             this.totalUltimoCostoTextBox.Name = "totalUltimoCostoTextBox";
             this.totalUltimoCostoTextBox.ReadOnly = true;
             this.totalUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
@@ -335,7 +335,7 @@ namespace Win.Consultas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(648, 664);
+            this.label2.Location = new System.Drawing.Point(987, 664);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 17);
             this.label2.TabIndex = 90;
@@ -357,7 +357,7 @@ namespace Win.Consultas
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(963, 693);
+            this.ClientSize = new System.Drawing.Size(1305, 693);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.totalUltimoCostoTextBox);
             this.Controls.Add(this.label2);

@@ -31,5 +31,10 @@ namespace CAD
                 return 0;
             }
         }
+
+        public static DSMiAppComercial.DevolucionProveedorDetalleDataTable DevolucionProveedorDetalleGetDevolucionProveedorDetalleByIDDevolucionProveedor(int IDDevolucionProveedor)
+        {
+            return adaptador.DevolucionProveedorDetalleGetDevolucionProveedorDetalleByIDDevolucionProveedor(IDDevolucionProveedor);
+        }
     }
 }

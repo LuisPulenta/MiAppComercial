@@ -47,6 +47,18 @@ namespace Win.Consultas
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.Inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoríaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemsOk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemsConSobrante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemsConFaltantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SobranteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FaltanteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SobranteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FaltanteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventariosConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
@@ -67,18 +79,6 @@ namespace Win.Consultas
             this.label6 = new System.Windows.Forms.Label();
             this.totalSobranteCostoPromedioTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoríaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemsOk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemsConSobrante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemsConFaltantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SobranteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaltanteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SobranteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaltanteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventariosConsultaBindingSource)).BeginInit();
@@ -100,7 +100,7 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(1246, 94);
+            this.btnExcel.Location = new System.Drawing.Point(1257, 94);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 86;
@@ -111,7 +111,7 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1202, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(1213, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 85;
@@ -163,175 +163,8 @@ namespace Win.Consultas
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(1291, 496);
+            this.dgvDatos.Size = new System.Drawing.Size(1303, 496);
             this.dgvDatos.TabIndex = 84;
-            // 
-            // inventariosConsultaBindingSource
-            // 
-            this.inventariosConsultaBindingSource.DataMember = "InventariosConsulta";
-            this.inventariosConsultaBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // dSMiAppComercial
-            // 
-            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
-            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // almacenComboBox
-            // 
-            this.almacenComboBox.DataSource = this.almacenBindingSource;
-            this.almacenComboBox.DisplayMember = "Descripcion";
-            this.almacenComboBox.FormattingEnabled = true;
-            this.almacenComboBox.Location = new System.Drawing.Point(95, 18);
-            this.almacenComboBox.Name = "almacenComboBox";
-            this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
-            this.almacenComboBox.TabIndex = 74;
-            this.almacenComboBox.ValueMember = "IDAlmacen";
-            this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
-            // 
-            // almacenBindingSource
-            // 
-            this.almacenBindingSource.DataMember = "Almacen";
-            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // resetHastaButton
-            // 
-            this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.resetHastaButton.Location = new System.Drawing.Point(364, 76);
-            this.resetHastaButton.Name = "resetHastaButton";
-            this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
-            this.resetHastaButton.TabIndex = 83;
-            this.resetHastaButton.Text = "RESET";
-            this.resetHastaButton.UseVisualStyleBackColor = true;
-            this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 80);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 81;
-            this.label4.Text = "Hasta:";
-            // 
-            // hastaDateTimePicker
-            // 
-            this.hastaDateTimePicker.Location = new System.Drawing.Point(95, 77);
-            this.hastaDateTimePicker.Name = "hastaDateTimePicker";
-            this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.hastaDateTimePicker.TabIndex = 82;
-            this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 78;
-            this.label1.Text = "Desde:";
-            // 
-            // desdeDateTimePicker
-            // 
-            this.desdeDateTimePicker.Location = new System.Drawing.Point(95, 48);
-            this.desdeDateTimePicker.Name = "desdeDateTimePicker";
-            this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.desdeDateTimePicker.TabIndex = 79;
-            this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
-            // 
-            // resetDesdeButton
-            // 
-            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.resetDesdeButton.Location = new System.Drawing.Point(364, 47);
-            this.resetDesdeButton.Name = "resetDesdeButton";
-            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
-            this.resetDesdeButton.TabIndex = 80;
-            this.resetDesdeButton.Text = "RESET";
-            this.resetDesdeButton.UseVisualStyleBackColor = true;
-            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
-            // 
-            // almacenTableAdapter
-            // 
-            this.almacenTableAdapter.ClearBeforeFill = true;
-            // 
-            // totalFaltanteUltimoCostoTextBox
-            // 
-            this.totalFaltanteUltimoCostoTextBox.Location = new System.Drawing.Point(1133, 639);
-            this.totalFaltanteUltimoCostoTextBox.Name = "totalFaltanteUltimoCostoTextBox";
-            this.totalFaltanteUltimoCostoTextBox.ReadOnly = true;
-            this.totalFaltanteUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalFaltanteUltimoCostoTextBox.TabIndex = 93;
-            this.totalFaltanteUltimoCostoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(917, 642);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 17);
-            this.label2.TabIndex = 94;
-            this.label2.Text = "Total Faltante Último Costo:";
-            // 
-            // totalFaltanteCostoPromedioTextBox
-            // 
-            this.totalFaltanteCostoPromedioTextBox.Location = new System.Drawing.Point(1133, 665);
-            this.totalFaltanteCostoPromedioTextBox.Name = "totalFaltanteCostoPromedioTextBox";
-            this.totalFaltanteCostoPromedioTextBox.ReadOnly = true;
-            this.totalFaltanteCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalFaltanteCostoPromedioTextBox.TabIndex = 91;
-            this.totalFaltanteCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(894, 668);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(233, 17);
-            this.label13.TabIndex = 92;
-            this.label13.Text = "Total Faltante Costo Promedio:";
-            // 
-            // inventariosConsultaTableAdapter
-            // 
-            this.inventariosConsultaTableAdapter.ClearBeforeFill = true;
-            // 
-            // totalSobranteUltimoCostoTextBox
-            // 
-            this.totalSobranteUltimoCostoTextBox.Location = new System.Drawing.Point(719, 639);
-            this.totalSobranteUltimoCostoTextBox.Name = "totalSobranteUltimoCostoTextBox";
-            this.totalSobranteUltimoCostoTextBox.ReadOnly = true;
-            this.totalSobranteUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalSobranteUltimoCostoTextBox.TabIndex = 95;
-            this.totalSobranteUltimoCostoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(503, 642);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(217, 17);
-            this.label6.TabIndex = 96;
-            this.label6.Text = "Total Sobrante Último Costo:";
-            // 
-            // totalSobranteCostoPromedioTextBox
-            // 
-            this.totalSobranteCostoPromedioTextBox.Location = new System.Drawing.Point(719, 665);
-            this.totalSobranteCostoPromedioTextBox.Name = "totalSobranteCostoPromedioTextBox";
-            this.totalSobranteCostoPromedioTextBox.ReadOnly = true;
-            this.totalSobranteCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalSobranteCostoPromedioTextBox.TabIndex = 97;
-            this.totalSobranteCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(480, 668);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 17);
-            this.label7.TabIndex = 98;
-            this.label7.Text = "Total Sobrante Costo Promedio:";
             // 
             // Inventario
             // 
@@ -466,6 +299,173 @@ namespace Win.Consultas
             this.FaltanteACostoPromedio.Name = "FaltanteACostoPromedio";
             this.FaltanteACostoPromedio.ReadOnly = true;
             this.FaltanteACostoPromedio.Width = 125;
+            // 
+            // inventariosConsultaBindingSource
+            // 
+            this.inventariosConsultaBindingSource.DataMember = "InventariosConsulta";
+            this.inventariosConsultaBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // dSMiAppComercial
+            // 
+            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
+            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // almacenComboBox
+            // 
+            this.almacenComboBox.DataSource = this.almacenBindingSource;
+            this.almacenComboBox.DisplayMember = "Descripcion";
+            this.almacenComboBox.FormattingEnabled = true;
+            this.almacenComboBox.Location = new System.Drawing.Point(95, 18);
+            this.almacenComboBox.Name = "almacenComboBox";
+            this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
+            this.almacenComboBox.TabIndex = 74;
+            this.almacenComboBox.ValueMember = "IDAlmacen";
+            this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
+            // 
+            // almacenBindingSource
+            // 
+            this.almacenBindingSource.DataMember = "Almacen";
+            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // resetHastaButton
+            // 
+            this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetHastaButton.Location = new System.Drawing.Point(364, 76);
+            this.resetHastaButton.Name = "resetHastaButton";
+            this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
+            this.resetHastaButton.TabIndex = 83;
+            this.resetHastaButton.Text = "RESET";
+            this.resetHastaButton.UseVisualStyleBackColor = true;
+            this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(38, 80);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 81;
+            this.label4.Text = "Hasta:";
+            // 
+            // hastaDateTimePicker
+            // 
+            this.hastaDateTimePicker.Location = new System.Drawing.Point(95, 77);
+            this.hastaDateTimePicker.Name = "hastaDateTimePicker";
+            this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
+            this.hastaDateTimePicker.TabIndex = 82;
+            this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(38, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 78;
+            this.label1.Text = "Desde:";
+            // 
+            // desdeDateTimePicker
+            // 
+            this.desdeDateTimePicker.Location = new System.Drawing.Point(95, 48);
+            this.desdeDateTimePicker.Name = "desdeDateTimePicker";
+            this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
+            this.desdeDateTimePicker.TabIndex = 79;
+            this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
+            // 
+            // resetDesdeButton
+            // 
+            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetDesdeButton.Location = new System.Drawing.Point(364, 47);
+            this.resetDesdeButton.Name = "resetDesdeButton";
+            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
+            this.resetDesdeButton.TabIndex = 80;
+            this.resetDesdeButton.Text = "RESET";
+            this.resetDesdeButton.UseVisualStyleBackColor = true;
+            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
+            // 
+            // almacenTableAdapter
+            // 
+            this.almacenTableAdapter.ClearBeforeFill = true;
+            // 
+            // totalFaltanteUltimoCostoTextBox
+            // 
+            this.totalFaltanteUltimoCostoTextBox.Location = new System.Drawing.Point(1145, 639);
+            this.totalFaltanteUltimoCostoTextBox.Name = "totalFaltanteUltimoCostoTextBox";
+            this.totalFaltanteUltimoCostoTextBox.ReadOnly = true;
+            this.totalFaltanteUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalFaltanteUltimoCostoTextBox.TabIndex = 93;
+            this.totalFaltanteUltimoCostoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(929, 642);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 17);
+            this.label2.TabIndex = 94;
+            this.label2.Text = "Total Faltante Último Costo:";
+            // 
+            // totalFaltanteCostoPromedioTextBox
+            // 
+            this.totalFaltanteCostoPromedioTextBox.Location = new System.Drawing.Point(1145, 665);
+            this.totalFaltanteCostoPromedioTextBox.Name = "totalFaltanteCostoPromedioTextBox";
+            this.totalFaltanteCostoPromedioTextBox.ReadOnly = true;
+            this.totalFaltanteCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalFaltanteCostoPromedioTextBox.TabIndex = 91;
+            this.totalFaltanteCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(906, 668);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(233, 17);
+            this.label13.TabIndex = 92;
+            this.label13.Text = "Total Faltante Costo Promedio:";
+            // 
+            // inventariosConsultaTableAdapter
+            // 
+            this.inventariosConsultaTableAdapter.ClearBeforeFill = true;
+            // 
+            // totalSobranteUltimoCostoTextBox
+            // 
+            this.totalSobranteUltimoCostoTextBox.Location = new System.Drawing.Point(719, 639);
+            this.totalSobranteUltimoCostoTextBox.Name = "totalSobranteUltimoCostoTextBox";
+            this.totalSobranteUltimoCostoTextBox.ReadOnly = true;
+            this.totalSobranteUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalSobranteUltimoCostoTextBox.TabIndex = 95;
+            this.totalSobranteUltimoCostoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(503, 642);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(217, 17);
+            this.label6.TabIndex = 96;
+            this.label6.Text = "Total Sobrante Último Costo:";
+            // 
+            // totalSobranteCostoPromedioTextBox
+            // 
+            this.totalSobranteCostoPromedioTextBox.Location = new System.Drawing.Point(719, 665);
+            this.totalSobranteCostoPromedioTextBox.Name = "totalSobranteCostoPromedioTextBox";
+            this.totalSobranteCostoPromedioTextBox.ReadOnly = true;
+            this.totalSobranteCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalSobranteCostoPromedioTextBox.TabIndex = 97;
+            this.totalSobranteCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(480, 668);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(240, 17);
+            this.label7.TabIndex = 98;
+            this.label7.Text = "Total Sobrante Costo Promedio:";
             // 
             // frmConsultaInventarios
             // 

@@ -32,12 +32,14 @@ namespace Win.Consultas
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaDevolucionAProveedores));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.proveedoresCheckBox = new System.Windows.Forms.CheckBox();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -51,8 +53,10 @@ namespace Win.Consultas
             this.proveedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorBruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorIVA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorNeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.devolucionAProveedoresConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.label2 = new System.Windows.Forms.Label();
@@ -70,9 +74,7 @@ namespace Win.Consultas
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
             this.proveedorTableAdapter = new Win.DSMiAppComercialTableAdapters.ProveedorTableAdapter();
             this.devolucionAProveedoresConsultaTableAdapter = new Win.DSMiAppComercialTableAdapters.DevolucionAProveedoresConsultaTableAdapter();
-            this.totalUltimoCostoTextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.totalCostoPromedioTextBox = new System.Windows.Forms.TextBox();
+            this.totalValorNetoTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
@@ -109,7 +111,7 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(1138, 100);
+            this.btnExcel.Location = new System.Drawing.Point(1257, 104);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 86;
@@ -120,7 +122,7 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1094, 18);
+            this.pictureBox1.Location = new System.Drawing.Point(1213, 22);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 85;
@@ -153,24 +155,27 @@ namespace Win.Consultas
             this.proveedorDataGridViewTextBoxColumn,
             this.almacénDataGridViewTextBoxColumn,
             this.itemsDataGridViewTextBoxColumn,
-            this.valorCostoPromedioDataGridViewTextBoxColumn,
-            this.valorUltimoCostoDataGridViewTextBoxColumn});
+            this.ValorBruto,
+            this.ValorIVA,
+            this.ValorDescuento,
+            this.ValorNeto});
             this.dgvDatos.DataSource = this.devolucionAProveedoresConsultaBindingSource;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvDatos.Location = new System.Drawing.Point(2, 161);
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvDatos.Location = new System.Drawing.Point(4, 160);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(1179, 494);
+            this.dgvDatos.Size = new System.Drawing.Size(1294, 495);
             this.dgvDatos.TabIndex = 84;
+            this.dgvDatos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellDoubleClick);
             // 
             // devoluciónDataGridViewTextBoxColumn
             // 
@@ -241,31 +246,57 @@ namespace Win.Consultas
             this.itemsDataGridViewTextBoxColumn.ReadOnly = true;
             this.itemsDataGridViewTextBoxColumn.Width = 125;
             // 
-            // valorCostoPromedioDataGridViewTextBoxColumn
+            // ValorBruto
             // 
-            this.valorCostoPromedioDataGridViewTextBoxColumn.DataPropertyName = "ValorCostoPromedio";
+            this.ValorBruto.DataPropertyName = "ValorBruto";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "C2";
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorCostoPromedioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.valorCostoPromedioDataGridViewTextBoxColumn.HeaderText = "Costo Promedio";
-            this.valorCostoPromedioDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorCostoPromedioDataGridViewTextBoxColumn.Name = "valorCostoPromedioDataGridViewTextBoxColumn";
-            this.valorCostoPromedioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorCostoPromedioDataGridViewTextBoxColumn.Width = 125;
+            this.ValorBruto.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ValorBruto.HeaderText = "Valor Bruto";
+            this.ValorBruto.MinimumWidth = 6;
+            this.ValorBruto.Name = "ValorBruto";
+            this.ValorBruto.ReadOnly = true;
+            this.ValorBruto.Width = 125;
             // 
-            // valorUltimoCostoDataGridViewTextBoxColumn
+            // ValorIVA
             // 
-            this.valorUltimoCostoDataGridViewTextBoxColumn.DataPropertyName = "ValorUltimoCosto";
+            this.ValorIVA.DataPropertyName = "ValorIVA";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle6.Format = "C2";
             dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.valorUltimoCostoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.valorUltimoCostoDataGridViewTextBoxColumn.HeaderText = "Último Costo";
-            this.valorUltimoCostoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.valorUltimoCostoDataGridViewTextBoxColumn.Name = "valorUltimoCostoDataGridViewTextBoxColumn";
-            this.valorUltimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.valorUltimoCostoDataGridViewTextBoxColumn.Width = 125;
+            this.ValorIVA.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ValorIVA.HeaderText = "Valor IVA";
+            this.ValorIVA.MinimumWidth = 6;
+            this.ValorIVA.Name = "ValorIVA";
+            this.ValorIVA.ReadOnly = true;
+            this.ValorIVA.Width = 125;
+            // 
+            // ValorDescuento
+            // 
+            this.ValorDescuento.DataPropertyName = "ValorDescuento";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.ValorDescuento.DefaultCellStyle = dataGridViewCellStyle7;
+            this.ValorDescuento.HeaderText = "Valor Descuento";
+            this.ValorDescuento.MinimumWidth = 6;
+            this.ValorDescuento.Name = "ValorDescuento";
+            this.ValorDescuento.ReadOnly = true;
+            this.ValorDescuento.Width = 125;
+            // 
+            // ValorNeto
+            // 
+            this.ValorNeto.DataPropertyName = "ValorNeto";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.ValorNeto.DefaultCellStyle = dataGridViewCellStyle8;
+            this.ValorNeto.HeaderText = "Valor Neto";
+            this.ValorNeto.MinimumWidth = 6;
+            this.ValorNeto.Name = "ValorNeto";
+            this.ValorNeto.ReadOnly = true;
+            this.ValorNeto.Width = 125;
             // 
             // devolucionAProveedoresConsultaBindingSource
             // 
@@ -400,53 +431,32 @@ namespace Win.Consultas
             // 
             this.devolucionAProveedoresConsultaTableAdapter.ClearBeforeFill = true;
             // 
-            // totalUltimoCostoTextBox
+            // totalValorNetoTextBox
             // 
-            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(1021, 669);
-            this.totalUltimoCostoTextBox.Name = "totalUltimoCostoTextBox";
-            this.totalUltimoCostoTextBox.ReadOnly = true;
-            this.totalUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalUltimoCostoTextBox.TabIndex = 93;
-            this.totalUltimoCostoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(869, 672);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(146, 17);
-            this.label6.TabIndex = 94;
-            this.label6.Text = "Total Último Costo:";
-            // 
-            // totalCostoPromedioTextBox
-            // 
-            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(665, 669);
-            this.totalCostoPromedioTextBox.Name = "totalCostoPromedioTextBox";
-            this.totalCostoPromedioTextBox.ReadOnly = true;
-            this.totalCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalCostoPromedioTextBox.TabIndex = 91;
-            this.totalCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totalValorNetoTextBox.Location = new System.Drawing.Point(1138, 661);
+            this.totalValorNetoTextBox.Name = "totalValorNetoTextBox";
+            this.totalValorNetoTextBox.ReadOnly = true;
+            this.totalValorNetoTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalValorNetoTextBox.TabIndex = 91;
+            this.totalValorNetoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(490, 672);
+            this.label13.Location = new System.Drawing.Point(998, 664);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(169, 17);
+            this.label13.Size = new System.Drawing.Size(132, 17);
             this.label13.TabIndex = 92;
-            this.label13.Text = "Total Costo Promedio:";
+            this.label13.Text = "Total Valor Neto:";
             // 
             // frmConsultaDevolucionAProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1201, 711);
-            this.Controls.Add(this.totalUltimoCostoTextBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.totalCostoPromedioTextBox);
+            this.ClientSize = new System.Drawing.Size(1305, 693);
+            this.Controls.Add(this.totalValorNetoTextBox);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.proveedoresCheckBox);
@@ -506,6 +516,12 @@ namespace Win.Consultas
         private DSMiAppComercialTableAdapters.AlmacenTableAdapter almacenTableAdapter;
         private System.Windows.Forms.BindingSource proveedorBindingSource;
         private DSMiAppComercialTableAdapters.ProveedorTableAdapter proveedorTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorCostoPromedioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorUltimoCostoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource devolucionAProveedoresConsultaBindingSource;
+        private DSMiAppComercialTableAdapters.DevolucionAProveedoresConsultaTableAdapter devolucionAProveedoresConsultaTableAdapter;
+        private System.Windows.Forms.TextBox totalValorNetoTextBox;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridViewTextBoxColumn devoluciónDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn compraDataGridViewTextBoxColumn;
@@ -513,13 +529,9 @@ namespace Win.Consultas
         private System.Windows.Forms.DataGridViewTextBoxColumn proveedorDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn almacénDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorCostoPromedioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valorUltimoCostoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource devolucionAProveedoresConsultaBindingSource;
-        private DSMiAppComercialTableAdapters.DevolucionAProveedoresConsultaTableAdapter devolucionAProveedoresConsultaTableAdapter;
-        private System.Windows.Forms.TextBox totalUltimoCostoTextBox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox totalCostoPromedioTextBox;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorBruto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorIVA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorDescuento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorNeto;
     }
 }

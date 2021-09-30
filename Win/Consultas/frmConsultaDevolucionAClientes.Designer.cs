@@ -48,10 +48,20 @@ namespace Win.Consultas
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.devoluciónDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.devolucionAClientesConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.label2 = new System.Windows.Forms.Label();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
             this.almacenBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.resetHastaButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.hastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -63,28 +73,18 @@ namespace Win.Consultas
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
             this.clienteTableAdapter = new Win.DSMiAppComercialTableAdapters.ClienteTableAdapter();
-            this.devolucionAClientesConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.devolucionAClientesConsultaTableAdapter = new Win.DSMiAppComercialTableAdapters.DevolucionAClientesConsultaTableAdapter();
-            this.devoluciónDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaVentaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionAClientesConsultaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // totalUltimoCostoTextBox
             // 
-            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(1030, 670);
+            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(1140, 671);
             this.totalUltimoCostoTextBox.Name = "totalUltimoCostoTextBox";
             this.totalUltimoCostoTextBox.ReadOnly = true;
             this.totalUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
@@ -95,7 +95,7 @@ namespace Win.Consultas
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(878, 673);
+            this.label6.Location = new System.Drawing.Point(988, 674);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(146, 17);
             this.label6.TabIndex = 114;
@@ -105,7 +105,7 @@ namespace Win.Consultas
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(499, 673);
+            this.label13.Location = new System.Drawing.Point(609, 674);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 17);
             this.label13.TabIndex = 112;
@@ -113,7 +113,7 @@ namespace Win.Consultas
             // 
             // totalCostoPromedioTextBox
             // 
-            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(674, 670);
+            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(784, 671);
             this.totalCostoPromedioTextBox.Name = "totalCostoPromedioTextBox";
             this.totalCostoPromedioTextBox.ReadOnly = true;
             this.totalCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
@@ -147,7 +147,7 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(1147, 101);
+            this.btnExcel.Location = new System.Drawing.Point(1257, 114);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 108;
@@ -158,7 +158,7 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1103, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(1213, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 107;
@@ -207,141 +207,8 @@ namespace Win.Consultas
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(1179, 494);
+            this.dgvDatos.Size = new System.Drawing.Size(1289, 494);
             this.dgvDatos.TabIndex = 106;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(45, 55);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 17);
-            this.label2.TabIndex = 97;
-            this.label2.Text = "Cliente:";
-            // 
-            // almacenComboBox
-            // 
-            this.almacenComboBox.DataSource = this.almacenBindingSource;
-            this.almacenComboBox.DisplayMember = "Descripcion";
-            this.almacenComboBox.FormattingEnabled = true;
-            this.almacenComboBox.Location = new System.Drawing.Point(104, 19);
-            this.almacenComboBox.Name = "almacenComboBox";
-            this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
-            this.almacenComboBox.TabIndex = 96;
-            this.almacenComboBox.ValueMember = "IDAlmacen";
-            this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
-            // 
-            // almacenBindingSource
-            // 
-            this.almacenBindingSource.DataMember = "Almacen";
-            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // dSMiAppComercial
-            // 
-            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
-            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // resetHastaButton
-            // 
-            this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.resetHastaButton.Location = new System.Drawing.Point(373, 108);
-            this.resetHastaButton.Name = "resetHastaButton";
-            this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
-            this.resetHastaButton.TabIndex = 105;
-            this.resetHastaButton.Text = "RESET";
-            this.resetHastaButton.UseVisualStyleBackColor = true;
-            this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 112);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 17);
-            this.label4.TabIndex = 103;
-            this.label4.Text = "Hasta:";
-            // 
-            // hastaDateTimePicker
-            // 
-            this.hastaDateTimePicker.Location = new System.Drawing.Point(104, 109);
-            this.hastaDateTimePicker.Name = "hastaDateTimePicker";
-            this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.hastaDateTimePicker.TabIndex = 104;
-            this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
-            this.label1.TabIndex = 100;
-            this.label1.Text = "Desde:";
-            // 
-            // desdeDateTimePicker
-            // 
-            this.desdeDateTimePicker.Location = new System.Drawing.Point(104, 80);
-            this.desdeDateTimePicker.Name = "desdeDateTimePicker";
-            this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
-            this.desdeDateTimePicker.TabIndex = 101;
-            this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Enabled = false;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(530, 51);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(45, 24);
-            this.btnBuscarCliente.TabIndex = 99;
-            this.btnBuscarCliente.Text = "...";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
-            // 
-            // resetDesdeButton
-            // 
-            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
-            this.resetDesdeButton.Location = new System.Drawing.Point(373, 79);
-            this.resetDesdeButton.Name = "resetDesdeButton";
-            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
-            this.resetDesdeButton.TabIndex = 102;
-            this.resetDesdeButton.Text = "RESET";
-            this.resetDesdeButton.UseVisualStyleBackColor = true;
-            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
-            // 
-            // clienteComboBox
-            // 
-            this.clienteComboBox.DataSource = this.clienteBindingSource;
-            this.clienteComboBox.DisplayMember = "NombreComercial";
-            this.clienteComboBox.Enabled = false;
-            this.clienteComboBox.FormattingEnabled = true;
-            this.clienteComboBox.Location = new System.Drawing.Point(182, 51);
-            this.clienteComboBox.Name = "clienteComboBox";
-            this.clienteComboBox.Size = new System.Drawing.Size(321, 24);
-            this.clienteComboBox.TabIndex = 98;
-            this.clienteComboBox.ValueMember = "IDCliente";
-            this.clienteComboBox.SelectedIndexChanged += new System.EventHandler(this.clienteComboBox_SelectedIndexChanged);
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataMember = "Cliente";
-            this.clienteBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // almacenTableAdapter
-            // 
-            this.almacenTableAdapter.ClearBeforeFill = true;
-            // 
-            // clienteTableAdapter
-            // 
-            this.clienteTableAdapter.ClearBeforeFill = true;
-            // 
-            // devolucionAClientesConsultaBindingSource
-            // 
-            this.devolucionAClientesConsultaBindingSource.DataMember = "DevolucionAClientesConsulta";
-            this.devolucionAClientesConsultaBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // devolucionAClientesConsultaTableAdapter
-            // 
-            this.devolucionAClientesConsultaTableAdapter.ClearBeforeFill = true;
             // 
             // devoluciónDataGridViewTextBoxColumn
             // 
@@ -438,12 +305,145 @@ namespace Win.Consultas
             this.valorUltimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
             this.valorUltimoCostoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // devolucionAClientesConsultaBindingSource
+            // 
+            this.devolucionAClientesConsultaBindingSource.DataMember = "DevolucionAClientesConsulta";
+            this.devolucionAClientesConsultaBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // dSMiAppComercial
+            // 
+            this.dSMiAppComercial.DataSetName = "DSMiAppComercial";
+            this.dSMiAppComercial.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(45, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 17);
+            this.label2.TabIndex = 97;
+            this.label2.Text = "Cliente:";
+            // 
+            // almacenComboBox
+            // 
+            this.almacenComboBox.DataSource = this.almacenBindingSource;
+            this.almacenComboBox.DisplayMember = "Descripcion";
+            this.almacenComboBox.FormattingEnabled = true;
+            this.almacenComboBox.Location = new System.Drawing.Point(104, 19);
+            this.almacenComboBox.Name = "almacenComboBox";
+            this.almacenComboBox.Size = new System.Drawing.Size(263, 24);
+            this.almacenComboBox.TabIndex = 96;
+            this.almacenComboBox.ValueMember = "IDAlmacen";
+            this.almacenComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenComboBox_SelectedIndexChanged);
+            // 
+            // almacenBindingSource
+            // 
+            this.almacenBindingSource.DataMember = "Almacen";
+            this.almacenBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // resetHastaButton
+            // 
+            this.resetHastaButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetHastaButton.Location = new System.Drawing.Point(373, 108);
+            this.resetHastaButton.Name = "resetHastaButton";
+            this.resetHastaButton.Size = new System.Drawing.Size(56, 24);
+            this.resetHastaButton.TabIndex = 105;
+            this.resetHastaButton.Text = "RESET";
+            this.resetHastaButton.UseVisualStyleBackColor = true;
+            this.resetHastaButton.Click += new System.EventHandler(this.resetHastaButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 112);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 17);
+            this.label4.TabIndex = 103;
+            this.label4.Text = "Hasta:";
+            // 
+            // hastaDateTimePicker
+            // 
+            this.hastaDateTimePicker.Location = new System.Drawing.Point(104, 109);
+            this.hastaDateTimePicker.Name = "hastaDateTimePicker";
+            this.hastaDateTimePicker.Size = new System.Drawing.Size(263, 22);
+            this.hastaDateTimePicker.TabIndex = 104;
+            this.hastaDateTimePicker.ValueChanged += new System.EventHandler(this.hastaDateTimePicker_ValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(47, 83);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.TabIndex = 100;
+            this.label1.Text = "Desde:";
+            // 
+            // desdeDateTimePicker
+            // 
+            this.desdeDateTimePicker.Location = new System.Drawing.Point(104, 80);
+            this.desdeDateTimePicker.Name = "desdeDateTimePicker";
+            this.desdeDateTimePicker.Size = new System.Drawing.Size(263, 22);
+            this.desdeDateTimePicker.TabIndex = 101;
+            this.desdeDateTimePicker.ValueChanged += new System.EventHandler(this.desdeDateTimePicker_ValueChanged);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Enabled = false;
+            this.btnBuscarCliente.Location = new System.Drawing.Point(530, 51);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(45, 24);
+            this.btnBuscarCliente.TabIndex = 99;
+            this.btnBuscarCliente.Text = "...";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // resetDesdeButton
+            // 
+            this.resetDesdeButton.Font = new System.Drawing.Font("Arial Narrow", 7F);
+            this.resetDesdeButton.Location = new System.Drawing.Point(373, 79);
+            this.resetDesdeButton.Name = "resetDesdeButton";
+            this.resetDesdeButton.Size = new System.Drawing.Size(56, 24);
+            this.resetDesdeButton.TabIndex = 102;
+            this.resetDesdeButton.Text = "RESET";
+            this.resetDesdeButton.UseVisualStyleBackColor = true;
+            this.resetDesdeButton.Click += new System.EventHandler(this.resetDesdeButton_Click);
+            // 
+            // clienteComboBox
+            // 
+            this.clienteComboBox.DataSource = this.clienteBindingSource;
+            this.clienteComboBox.DisplayMember = "NombreComercial";
+            this.clienteComboBox.Enabled = false;
+            this.clienteComboBox.FormattingEnabled = true;
+            this.clienteComboBox.Location = new System.Drawing.Point(182, 51);
+            this.clienteComboBox.Name = "clienteComboBox";
+            this.clienteComboBox.Size = new System.Drawing.Size(321, 24);
+            this.clienteComboBox.TabIndex = 98;
+            this.clienteComboBox.ValueMember = "IDCliente";
+            this.clienteComboBox.SelectedIndexChanged += new System.EventHandler(this.clienteComboBox_SelectedIndexChanged);
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataMember = "Cliente";
+            this.clienteBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // almacenTableAdapter
+            // 
+            this.almacenTableAdapter.ClearBeforeFill = true;
+            // 
+            // clienteTableAdapter
+            // 
+            this.clienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // devolucionAClientesConsultaTableAdapter
+            // 
+            this.devolucionAClientesConsultaTableAdapter.ClearBeforeFill = true;
+            // 
             // frmConsultaDevolucionAClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1210, 712);
+            this.ClientSize = new System.Drawing.Size(1305, 693);
             this.Controls.Add(this.totalUltimoCostoTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label13);
@@ -474,10 +474,10 @@ namespace Win.Consultas
             this.Load += new System.EventHandler(this.frmConsultaDevolucionAClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.devolucionAClientesConsultaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

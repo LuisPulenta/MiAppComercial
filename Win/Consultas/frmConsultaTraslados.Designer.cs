@@ -53,6 +53,13 @@ namespace Win.Consultas
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
+            this.iDTrasladoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacénOrigenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.trasladosConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.totalCostoPromedioTextBox = new System.Windows.Forms.TextBox();
             this.almacenDestinoComboBox = new System.Windows.Forms.ComboBox();
@@ -61,13 +68,6 @@ namespace Win.Consultas
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
             this.trasladosConsultaTableAdapter = new Win.DSMiAppComercialTableAdapters.TrasladosConsultaTableAdapter();
             this.label6 = new System.Windows.Forms.Label();
-            this.iDTrasladoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacénOrigenDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.itemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorCostoPromedioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorUltimoCostoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,7 +80,7 @@ namespace Win.Consultas
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(648, 664);
+            this.label2.Location = new System.Drawing.Point(981, 664);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 17);
             this.label2.TabIndex = 14;
@@ -90,7 +90,7 @@ namespace Win.Consultas
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(269, 664);
+            this.label13.Location = new System.Drawing.Point(602, 664);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(169, 17);
             this.label13.TabIndex = 12;
@@ -154,7 +154,7 @@ namespace Win.Consultas
             // 
             // totalUltimoCostoTextBox
             // 
-            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(800, 661);
+            this.totalUltimoCostoTextBox.Location = new System.Drawing.Point(1133, 661);
             this.totalUltimoCostoTextBox.Name = "totalUltimoCostoTextBox";
             this.totalUltimoCostoTextBox.ReadOnly = true;
             this.totalUltimoCostoTextBox.Size = new System.Drawing.Size(160, 22);
@@ -186,7 +186,7 @@ namespace Win.Consultas
             // btnExcel
             // 
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.Location = new System.Drawing.Point(920, 91);
+            this.btnExcel.Location = new System.Drawing.Point(1247, 100);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(40, 40);
             this.btnExcel.TabIndex = 11;
@@ -197,7 +197,7 @@ namespace Win.Consultas
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(876, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(1203, 18);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 80);
             this.pictureBox1.TabIndex = 100;
@@ -244,67 +244,8 @@ namespace Win.Consultas
             this.dgvDatos.ReadOnly = true;
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(958, 505);
+            this.dgvDatos.Size = new System.Drawing.Size(1291, 505);
             this.dgvDatos.TabIndex = 10;
-            // 
-            // trasladosConsultaBindingSource
-            // 
-            this.trasladosConsultaBindingSource.DataMember = "TrasladosConsulta";
-            this.trasladosConsultaBindingSource.DataSource = this.dSMiAppComercial;
-            // 
-            // totalCostoPromedioTextBox
-            // 
-            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(444, 661);
-            this.totalCostoPromedioTextBox.Name = "totalCostoPromedioTextBox";
-            this.totalCostoPromedioTextBox.ReadOnly = true;
-            this.totalCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
-            this.totalCostoPromedioTextBox.TabIndex = 13;
-            this.totalCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // almacenDestinoComboBox
-            // 
-            this.almacenDestinoComboBox.DataSource = this.almacenBindingSource1;
-            this.almacenDestinoComboBox.DisplayMember = "Descripcion";
-            this.almacenDestinoComboBox.FormattingEnabled = true;
-            this.almacenDestinoComboBox.Location = new System.Drawing.Point(140, 47);
-            this.almacenDestinoComboBox.Name = "almacenDestinoComboBox";
-            this.almacenDestinoComboBox.Size = new System.Drawing.Size(263, 24);
-            this.almacenDestinoComboBox.TabIndex = 3;
-            this.almacenDestinoComboBox.ValueMember = "IDAlmacen";
-            this.almacenDestinoComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenDestinoComboBox_SelectedIndexChanged);
-            // 
-            // almacenBindingSource1
-            // 
-            this.almacenBindingSource1.DataMember = "Almacen";
-            this.almacenBindingSource1.DataSource = this.dSMiAppComercial;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 17);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Almacén Destino:";
-            // 
-            // almacenTableAdapter
-            // 
-            this.almacenTableAdapter.ClearBeforeFill = true;
-            // 
-            // trasladosConsultaTableAdapter
-            // 
-            this.trasladosConsultaTableAdapter.ClearBeforeFill = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Blue;
-            this.label6.Location = new System.Drawing.Point(12, 132);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(360, 15);
-            this.label6.TabIndex = 101;
-            this.label6.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de un Traslado";
             // 
             // iDTrasladoDataGridViewTextBoxColumn
             // 
@@ -381,12 +322,71 @@ namespace Win.Consultas
             this.valorUltimoCostoDataGridViewTextBoxColumn.ReadOnly = true;
             this.valorUltimoCostoDataGridViewTextBoxColumn.Width = 125;
             // 
+            // trasladosConsultaBindingSource
+            // 
+            this.trasladosConsultaBindingSource.DataMember = "TrasladosConsulta";
+            this.trasladosConsultaBindingSource.DataSource = this.dSMiAppComercial;
+            // 
+            // totalCostoPromedioTextBox
+            // 
+            this.totalCostoPromedioTextBox.Location = new System.Drawing.Point(777, 661);
+            this.totalCostoPromedioTextBox.Name = "totalCostoPromedioTextBox";
+            this.totalCostoPromedioTextBox.ReadOnly = true;
+            this.totalCostoPromedioTextBox.Size = new System.Drawing.Size(160, 22);
+            this.totalCostoPromedioTextBox.TabIndex = 13;
+            this.totalCostoPromedioTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // almacenDestinoComboBox
+            // 
+            this.almacenDestinoComboBox.DataSource = this.almacenBindingSource1;
+            this.almacenDestinoComboBox.DisplayMember = "Descripcion";
+            this.almacenDestinoComboBox.FormattingEnabled = true;
+            this.almacenDestinoComboBox.Location = new System.Drawing.Point(140, 47);
+            this.almacenDestinoComboBox.Name = "almacenDestinoComboBox";
+            this.almacenDestinoComboBox.Size = new System.Drawing.Size(263, 24);
+            this.almacenDestinoComboBox.TabIndex = 3;
+            this.almacenDestinoComboBox.ValueMember = "IDAlmacen";
+            this.almacenDestinoComboBox.SelectedIndexChanged += new System.EventHandler(this.almacenDestinoComboBox_SelectedIndexChanged);
+            // 
+            // almacenBindingSource1
+            // 
+            this.almacenBindingSource1.DataMember = "Almacen";
+            this.almacenBindingSource1.DataSource = this.dSMiAppComercial;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(17, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(118, 17);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Almacén Destino:";
+            // 
+            // almacenTableAdapter
+            // 
+            this.almacenTableAdapter.ClearBeforeFill = true;
+            // 
+            // trasladosConsultaTableAdapter
+            // 
+            this.trasladosConsultaTableAdapter.ClearBeforeFill = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 7.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Blue;
+            this.label6.Location = new System.Drawing.Point(12, 132);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(360, 15);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Haga DOBLE CLIC en una fila para ver el Detalle de un Traslado";
+            // 
             // frmConsultaTraslados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(963, 693);
+            this.ClientSize = new System.Drawing.Size(1305, 693);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.almacenDestinoComboBox);
             this.Controls.Add(this.label5);

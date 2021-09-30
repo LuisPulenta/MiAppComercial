@@ -13,25 +13,25 @@
     <Shape ID="DesignTable:AlmacenProducto" ZOrder="45" X="341" Y="438" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
     <Shape ID="DesignTable:Producto" ZOrder="48" X="808" Y="46" Height="342" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:IVA" ZOrder="47" X="1093" Y="43" Height="90" Width="158" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="0" />
-    <Shape ID="DesignTable:Compra" ZOrder="3" X="67" Y="804" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:CompraDetalle" ZOrder="22" X="417" Y="807" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:Kardex" ZOrder="6" X="777" Y="757" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
+    <Shape ID="DesignTable:Compra" ZOrder="5" X="67" Y="804" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
+    <Shape ID="DesignTable:CompraDetalle" ZOrder="24" X="417" Y="807" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
+    <Shape ID="DesignTable:Kardex" ZOrder="8" X="777" Y="757" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
     <Shape ID="DesignTable:Venta" ZOrder="42" X="1091" Y="708" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:VentaDetalle" ZOrder="41" X="1098" Y="355" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:Salida" ZOrder="4" X="51" Y="1111" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:SalidaDetalle" ZOrder="2" X="392" Y="1167" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
-    <Shape ID="DesignTable:DevolucionCliente" ZOrder="24" X="84" Y="1443" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:DevolucionProveedor" ZOrder="23" X="80" Y="1817" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:DevolucionProveedorDetalle" ZOrder="25" X="438" Y="1821" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
+    <Shape ID="DesignTable:Salida" ZOrder="6" X="51" Y="1111" Height="227" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
+    <Shape ID="DesignTable:SalidaDetalle" ZOrder="4" X="392" Y="1167" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
+    <Shape ID="DesignTable:DevolucionCliente" ZOrder="25" X="84" Y="1443" Height="181" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:DevolucionProveedor" ZOrder="2" X="71" Y="1764" Height="204" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:DevolucionProveedorDetalle" ZOrder="1" X="438" Y="1821" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:DevolucionClienteDetalle" ZOrder="29" X="437" Y="1445" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:Traslado" ZOrder="16" X="88" Y="2201" Height="204" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
-    <Shape ID="DesignTable:TrasladoDetalle" ZOrder="21" X="454" Y="2208" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
-    <Shape ID="DesignTable:ProductosAInventariar" ZOrder="15" X="899" Y="1255" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:InventarioDetalle" ZOrder="5" X="478" Y="2540" Height="411" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
-    <Shape ID="DesignTable:Inventario" ZOrder="11" X="127" Y="2519" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
-    <Shape ID="DesignTable:Categoria" ZOrder="10" X="31" Y="2014" Height="135" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
-    <Shape ID="DesignTable:MaterialAContar" ZOrder="7" X="803" Y="2574" Height="342" Width="285" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:SalidaDetalle2" ZOrder="1" X="1053" Y="1686" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
+    <Shape ID="DesignTable:Traslado" ZOrder="18" X="88" Y="2201" Height="204" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
+    <Shape ID="DesignTable:TrasladoDetalle" ZOrder="23" X="454" Y="2208" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
+    <Shape ID="DesignTable:ProductosAInventariar" ZOrder="17" X="899" Y="1255" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
+    <Shape ID="DesignTable:InventarioDetalle" ZOrder="7" X="478" Y="2540" Height="411" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="260" />
+    <Shape ID="DesignTable:Inventario" ZOrder="13" X="127" Y="2519" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
+    <Shape ID="DesignTable:Categoria" ZOrder="12" X="31" Y="2014" Height="135" Width="235" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
+    <Shape ID="DesignTable:MaterialAContar" ZOrder="9" X="803" Y="2574" Height="342" Width="285" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
+    <Shape ID="DesignTable:SalidaDetalle2" ZOrder="3" X="1053" Y="1686" Height="273" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_Usuario_Rol" ZOrder="54" LineWidth="11">
@@ -245,24 +245,24 @@
     <Connector ID="DesignRelation:FK_DevolucionProveedor_Compra" ZOrder="33" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>152</X>
+          <X>143</X>
           <Y>1031</Y>
         </Point>
         <Point>
-          <X>152</X>
-          <Y>1817</Y>
+          <X>143</X>
+          <Y>1764</Y>
         </Point>
       </RoutePoints>
     </Connector>
     <Connector ID="DesignRelation:FK_DevolucionProveedorDetalle_DevolucionProveedor" ZOrder="32" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>380</X>
-          <Y>1988</Y>
+          <X>371</X>
+          <Y>1935</Y>
         </Point>
         <Point>
           <X>438</X>
-          <Y>1988</Y>
+          <Y>1935</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -342,7 +342,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_TrasladoDetalle_Kardex" ZOrder="20" LineWidth="11">
+    <Connector ID="DesignRelation:FK_TrasladoDetalle_Kardex" ZOrder="22" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>810</X>
@@ -358,7 +358,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_TrasladoDetalle_Kardex1" ZOrder="19" LineWidth="11">
+    <Connector ID="DesignRelation:FK_TrasladoDetalle_Kardex1" ZOrder="21" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>857</X>
@@ -374,7 +374,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_TrasladoDetalle_Producto" ZOrder="18" LineWidth="11">
+    <Connector ID="DesignRelation:FK_TrasladoDetalle_Producto" ZOrder="20" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>879</X>
@@ -390,7 +390,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_TrasladoDetalle_Traslado" ZOrder="17" LineWidth="11">
+    <Connector ID="DesignRelation:FK_TrasladoDetalle_Traslado" ZOrder="19" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>388</X>
@@ -402,7 +402,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_InventarioDetalle_Kardex" ZOrder="14" LineWidth="11">
+    <Connector ID="DesignRelation:FK_InventarioDetalle_Kardex" ZOrder="16" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>887</X>
@@ -418,7 +418,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_InventarioDetalle_Producto" ZOrder="13" LineWidth="11">
+    <Connector ID="DesignRelation:FK_InventarioDetalle_Producto" ZOrder="15" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>895</X>
@@ -434,7 +434,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_InventarioDetalle_Inventario" ZOrder="12" LineWidth="11">
+    <Connector ID="DesignRelation:FK_InventarioDetalle_Inventario" ZOrder="14" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>427</X>
@@ -446,7 +446,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Producto_Categoria" ZOrder="9" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Producto_Categoria" ZOrder="11" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>172</X>
@@ -462,7 +462,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_InventarioDetalle_Producto1" ZOrder="8" LineWidth="11">
+    <Connector ID="DesignRelation:FK_InventarioDetalle_Producto1" ZOrder="10" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>822</X>
