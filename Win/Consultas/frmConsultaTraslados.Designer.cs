@@ -246,6 +246,7 @@ namespace Win.Consultas
             this.dgvDatos.RowTemplate.Height = 24;
             this.dgvDatos.Size = new System.Drawing.Size(1291, 505);
             this.dgvDatos.TabIndex = 10;
+            this.dgvDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentDoubleClick);
             // 
             // iDTrasladoDataGridViewTextBoxColumn
             // 

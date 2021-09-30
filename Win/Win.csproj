@@ -82,6 +82,7 @@
     <Compile Include="Clases\DetalleSalida.cs" />
     <Compile Include="Clases\DetalleSalida2.cs" />
     <Compile Include="Clases\DetalleTraslado.cs" />
+    <Compile Include="Clases\DetalleTraslado2.cs" />
     <Compile Include="Clases\DetalleVenta.cs" />
     <Compile Include="Clases\DevolucionClienteDevuelto.cs" />
     <Compile Include="Clases\DevolucionClienteDisponible.cs" />
@@ -162,6 +163,12 @@
     </Compile>
     <Compile Include="Consultas\frmUnaVenta.Designer.cs">
       <DependentUpon>frmUnaVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmUnTraslado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmUnTraslado.Designer.cs">
+      <DependentUpon>frmUnTraslado.cs</DependentUpon>
     </Compile>
     <Compile Include="DSWin.cs">
       <DependentUpon>DSWin.xsd</DependentUpon>
@@ -391,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnaVenta.resx">
       <DependentUpon>frmUnaVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmUnTraslado.resx">
+      <DependentUpon>frmUnTraslado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>

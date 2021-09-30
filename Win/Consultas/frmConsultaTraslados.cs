@@ -123,5 +123,17 @@ namespace Win.Consultas
         {
             hastaDateTimePicker.Value = DateTime.Now;
         }
+
+        private void dgvDatos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmUnTraslado miTraslado = new frmUnTraslado();
+            int selectedrowindex = dgvDatos.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgvDatos.Rows[selectedrowindex];
+            miTraslado.IDTraslado = (int)selectedRow.Cells[0].Value;
+            miTraslado.Fecha = (DateTime)selectedRow.Cells[1].Value;
+            miTraslado.AlmacenOrigen = selectedRow.Cells[2].Value.ToString();
+            miTraslado.AlmacenDestino = selectedRow.Cells[3].Value.ToString();
+            miTraslado.ShowDialog();
+        }
     }
 }

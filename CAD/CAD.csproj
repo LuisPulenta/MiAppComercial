@@ -62,6 +62,7 @@
     <Compile Include="CADSalidaDetalle2.cs" />
     <Compile Include="CADTraslado.cs" />
     <Compile Include="CADTrasladoDetalle.cs" />
+    <Compile Include="CADTrasladoDetalle2.cs" />
     <Compile Include="CADUsuario.cs" />
     <Compile Include="CADVenta.cs" />
     <Compile Include="CADVentaDetalle.cs" />
