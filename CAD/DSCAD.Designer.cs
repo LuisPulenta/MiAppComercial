@@ -78,6 +78,8 @@ namespace CAD {
         
         private TrasladoDetalle2DataTable tableTrasladoDetalle2;
         
+        private InventarioDetalle2DataTable tableInventarioDetalle2;
+        
         private global::System.Data.DataRelation relationFK_Usuario_Rol;
         
         private global::System.Data.DataRelation relationFK_Barra_Producto;
@@ -137,6 +139,22 @@ namespace CAD {
         private global::System.Data.DataRelation relationFK_Producto_Categoria;
         
         private global::System.Data.DataRelation relationFK_InventarioDetalle_Producto1;
+        
+        private global::System.Data.DataRelation relationFK_AlmacenProducto_Almacen;
+        
+        private global::System.Data.DataRelation relationFK_Compra_Almacen;
+        
+        private global::System.Data.DataRelation relationFK_Kardex_Almacen;
+        
+        private global::System.Data.DataRelation relationFK_Venta_Almacen;
+        
+        private global::System.Data.DataRelation relationFK_Salida_Almacen;
+        
+        private global::System.Data.DataRelation relationFK_Traslado_Almacen;
+        
+        private global::System.Data.DataRelation relationFK_Traslado_Almacen1;
+        
+        private global::System.Data.DataRelation relationFK_Inventario_Almacen;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -246,6 +264,9 @@ namespace CAD {
                 }
                 if ((ds.Tables["TrasladoDetalle2"] != null)) {
                     base.Tables.Add(new TrasladoDetalle2DataTable(ds.Tables["TrasladoDetalle2"]));
+                }
+                if ((ds.Tables["InventarioDetalle2"] != null)) {
+                    base.Tables.Add(new InventarioDetalle2DataTable(ds.Tables["InventarioDetalle2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -537,6 +558,16 @@ namespace CAD {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public InventarioDetalle2DataTable InventarioDetalle2 {
+            get {
+                return this.tableInventarioDetalle2;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -682,6 +713,9 @@ namespace CAD {
                 }
                 if ((ds.Tables["TrasladoDetalle2"] != null)) {
                     base.Tables.Add(new TrasladoDetalle2DataTable(ds.Tables["TrasladoDetalle2"]));
+                }
+                if ((ds.Tables["InventarioDetalle2"] != null)) {
+                    base.Tables.Add(new InventarioDetalle2DataTable(ds.Tables["InventarioDetalle2"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -878,6 +912,12 @@ namespace CAD {
                     this.tableTrasladoDetalle2.InitVars();
                 }
             }
+            this.tableInventarioDetalle2 = ((InventarioDetalle2DataTable)(base.Tables["InventarioDetalle2"]));
+            if ((initTable == true)) {
+                if ((this.tableInventarioDetalle2 != null)) {
+                    this.tableInventarioDetalle2.InitVars();
+                }
+            }
             this.relationFK_Usuario_Rol = this.Relations["FK_Usuario_Rol"];
             this.relationFK_Barra_Producto = this.Relations["FK_Barra_Producto"];
             this.relationFK_AlmacenProducto_Producto = this.Relations["FK_AlmacenProducto_Producto"];
@@ -908,6 +948,14 @@ namespace CAD {
             this.relationFK_InventarioDetalle_Inventario = this.Relations["FK_InventarioDetalle_Inventario"];
             this.relationFK_Producto_Categoria = this.Relations["FK_Producto_Categoria"];
             this.relationFK_InventarioDetalle_Producto1 = this.Relations["FK_InventarioDetalle_Producto1"];
+            this.relationFK_AlmacenProducto_Almacen = this.Relations["FK_AlmacenProducto_Almacen"];
+            this.relationFK_Compra_Almacen = this.Relations["FK_Compra_Almacen"];
+            this.relationFK_Kardex_Almacen = this.Relations["FK_Kardex_Almacen"];
+            this.relationFK_Venta_Almacen = this.Relations["FK_Venta_Almacen"];
+            this.relationFK_Salida_Almacen = this.Relations["FK_Salida_Almacen"];
+            this.relationFK_Traslado_Almacen = this.Relations["FK_Traslado_Almacen"];
+            this.relationFK_Traslado_Almacen1 = this.Relations["FK_Traslado_Almacen1"];
+            this.relationFK_Inventario_Almacen = this.Relations["FK_Inventario_Almacen"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -972,6 +1020,8 @@ namespace CAD {
             base.Tables.Add(this.tableSalidaDetalle2);
             this.tableTrasladoDetalle2 = new TrasladoDetalle2DataTable();
             base.Tables.Add(this.tableTrasladoDetalle2);
+            this.tableInventarioDetalle2 = new InventarioDetalle2DataTable();
+            base.Tables.Add(this.tableInventarioDetalle2);
             this.relationFK_Usuario_Rol = new global::System.Data.DataRelation("FK_Usuario_Rol", new global::System.Data.DataColumn[] {
                         this.tableRol.IdRolColumn}, new global::System.Data.DataColumn[] {
                         this.tableUsuario.IDRolColumn}, false);
@@ -1092,6 +1142,38 @@ namespace CAD {
                         this.tableProducto.CodigoColumn}, new global::System.Data.DataColumn[] {
                         this.tableMaterialAContar.CodigoColumn}, false);
             this.Relations.Add(this.relationFK_InventarioDetalle_Producto1);
+            this.relationFK_AlmacenProducto_Almacen = new global::System.Data.DataRelation("FK_AlmacenProducto_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAlmacenProducto.IDAlmacenColumn}, false);
+            this.Relations.Add(this.relationFK_AlmacenProducto_Almacen);
+            this.relationFK_Compra_Almacen = new global::System.Data.DataRelation("FK_Compra_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCompra.IDAlmacenColumn}, false);
+            this.Relations.Add(this.relationFK_Compra_Almacen);
+            this.relationFK_Kardex_Almacen = new global::System.Data.DataRelation("FK_Kardex_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableKardex.IDAlmacenColumn}, false);
+            this.Relations.Add(this.relationFK_Kardex_Almacen);
+            this.relationFK_Venta_Almacen = new global::System.Data.DataRelation("FK_Venta_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableVenta.IDAlmacenColumn}, false);
+            this.Relations.Add(this.relationFK_Venta_Almacen);
+            this.relationFK_Salida_Almacen = new global::System.Data.DataRelation("FK_Salida_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableSalida.IDAlmacenColumn}, false);
+            this.Relations.Add(this.relationFK_Salida_Almacen);
+            this.relationFK_Traslado_Almacen = new global::System.Data.DataRelation("FK_Traslado_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTraslado.IDAlmacenOrigenColumn}, false);
+            this.Relations.Add(this.relationFK_Traslado_Almacen);
+            this.relationFK_Traslado_Almacen1 = new global::System.Data.DataRelation("FK_Traslado_Almacen1", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTraslado.IDAlmacenDestinoColumn}, false);
+            this.Relations.Add(this.relationFK_Traslado_Almacen1);
+            this.relationFK_Inventario_Almacen = new global::System.Data.DataRelation("FK_Inventario_Almacen", new global::System.Data.DataColumn[] {
+                        this.tableInventarioDetalle2.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
+                        this.tableInventario.IDAlmacenColumn}, false);
+            this.Relations.Add(this.relationFK_Inventario_Almacen);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1258,6 +1340,12 @@ namespace CAD {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeInventarioDetalle2() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1391,6 +1479,9 @@ namespace CAD {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void TrasladoDetalle2RowChangeEventHandler(object sender, TrasladoDetalle2RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void InventarioDetalle2RowChangeEventHandler(object sender, InventarioDetalle2RowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2726,16 +2817,19 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AlmacenProductoRow AddAlmacenProductoRow(int IDAlmacen, ProductoRow parentProductoRowByFK_AlmacenProducto_Producto, double Stock, double Minimo, double Maximo, int DiasReposicion, double CantidadMinima) {
+            public AlmacenProductoRow AddAlmacenProductoRow(InventarioDetalle2Row parentInventarioDetalle2RowByFK_AlmacenProducto_Almacen, ProductoRow parentProductoRowByFK_AlmacenProducto_Producto, double Stock, double Minimo, double Maximo, int DiasReposicion, double CantidadMinima) {
                 AlmacenProductoRow rowAlmacenProductoRow = ((AlmacenProductoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        IDAlmacen,
+                        null,
                         null,
                         Stock,
                         Minimo,
                         Maximo,
                         DiasReposicion,
                         CantidadMinima};
+                if ((parentInventarioDetalle2RowByFK_AlmacenProducto_Almacen != null)) {
+                    columnValuesArray[0] = parentInventarioDetalle2RowByFK_AlmacenProducto_Almacen[3];
+                }
                 if ((parentProductoRowByFK_AlmacenProducto_Producto != null)) {
                     columnValuesArray[1] = parentProductoRowByFK_AlmacenProducto_Producto[0];
                 }
@@ -3732,13 +3826,16 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CompraRow AddCompraRow(System.DateTime Fecha, int IDProveedor, int IDAlmacen) {
+            public CompraRow AddCompraRow(System.DateTime Fecha, int IDProveedor, InventarioDetalle2Row parentInventarioDetalle2RowByFK_Compra_Almacen) {
                 CompraRow rowCompraRow = ((CompraRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
                         IDProveedor,
-                        IDAlmacen};
+                        null};
+                if ((parentInventarioDetalle2RowByFK_Compra_Almacen != null)) {
+                    columnValuesArray[3] = parentInventarioDetalle2RowByFK_Compra_Almacen[3];
+                }
                 rowCompraRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCompraRow);
                 return rowCompraRow;
@@ -4489,11 +4586,11 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KardexRow AddKardexRow(int IDAlmacen, string Codigo, System.DateTime Fecha, string Documento, double Entrada, double Salida, double Saldo, decimal UltimoCosto, decimal CostoPromedio) {
+            public KardexRow AddKardexRow(InventarioDetalle2Row parentInventarioDetalle2RowByFK_Kardex_Almacen, string Codigo, System.DateTime Fecha, string Documento, double Entrada, double Salida, double Saldo, decimal UltimoCosto, decimal CostoPromedio) {
                 KardexRow rowKardexRow = ((KardexRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        IDAlmacen,
+                        null,
                         Codigo,
                         Fecha,
                         Documento,
@@ -4502,6 +4599,9 @@ namespace CAD {
                         Saldo,
                         UltimoCosto,
                         CostoPromedio};
+                if ((parentInventarioDetalle2RowByFK_Kardex_Almacen != null)) {
+                    columnValuesArray[1] = parentInventarioDetalle2RowByFK_Kardex_Almacen[3];
+                }
                 rowKardexRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowKardexRow);
                 return rowKardexRow;
@@ -4819,13 +4919,16 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VentaRow AddVentaRow(System.DateTime Fecha, int IDCliente, int IDAlmacen) {
+            public VentaRow AddVentaRow(System.DateTime Fecha, int IDCliente, InventarioDetalle2Row parentInventarioDetalle2RowByFK_Venta_Almacen) {
                 VentaRow rowVentaRow = ((VentaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
                         IDCliente,
-                        IDAlmacen};
+                        null};
+                if ((parentInventarioDetalle2RowByFK_Venta_Almacen != null)) {
+                    columnValuesArray[3] = parentInventarioDetalle2RowByFK_Venta_Almacen[3];
+                }
                 rowVentaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVentaRow);
                 return rowVentaRow;
@@ -5519,13 +5622,16 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SalidaRow AddSalidaRow(System.DateTime Fecha, int IDConcepto, int IDAlmacen) {
+            public SalidaRow AddSalidaRow(System.DateTime Fecha, int IDConcepto, InventarioDetalle2Row parentInventarioDetalle2RowByFK_Salida_Almacen) {
                 SalidaRow rowSalidaRow = ((SalidaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
                         IDConcepto,
-                        IDAlmacen};
+                        null};
+                if ((parentInventarioDetalle2RowByFK_Salida_Almacen != null)) {
+                    columnValuesArray[3] = parentInventarioDetalle2RowByFK_Salida_Almacen[3];
+                }
                 rowSalidaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSalidaRow);
                 return rowSalidaRow;
@@ -7550,13 +7656,19 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TrasladoRow AddTrasladoRow(System.DateTime Fecha, int IDAlmacenOrigen, int IDAlmacenDestino) {
+            public TrasladoRow AddTrasladoRow(System.DateTime Fecha, InventarioDetalle2Row parentInventarioDetalle2RowByFK_Traslado_Almacen, InventarioDetalle2Row parentInventarioDetalle2RowByFK_Traslado_Almacen1) {
                 TrasladoRow rowTrasladoRow = ((TrasladoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
-                        IDAlmacenOrigen,
-                        IDAlmacenDestino};
+                        null,
+                        null};
+                if ((parentInventarioDetalle2RowByFK_Traslado_Almacen != null)) {
+                    columnValuesArray[2] = parentInventarioDetalle2RowByFK_Traslado_Almacen[3];
+                }
+                if ((parentInventarioDetalle2RowByFK_Traslado_Almacen1 != null)) {
+                    columnValuesArray[3] = parentInventarioDetalle2RowByFK_Traslado_Almacen1[3];
+                }
                 rowTrasladoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTrasladoRow);
                 return rowTrasladoRow;
@@ -8590,9 +8702,11 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InventarioDetalleRow FindByIDLinea(int IDLinea) {
+            public InventarioDetalleRow FindByIDLineaIDInventarioCodigo(int IDLinea, int IDInventario, string Codigo) {
                 return ((InventarioDetalleRow)(this.Rows.Find(new object[] {
-                            IDLinea})));
+                            IDLinea,
+                            IDInventario,
+                            Codigo})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8648,13 +8762,14 @@ namespace CAD {
                 this.columnIDKardex = new global::System.Data.DataColumn("IDKardex", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDKardex);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIDLinea}, true));
+                                this.columnIDLinea,
+                                this.columnIDInventario,
+                                this.columnCodigo}, true));
                 this.columnIDLinea.AutoIncrement = true;
                 this.columnIDLinea.AutoIncrementSeed = -1;
                 this.columnIDLinea.AutoIncrementStep = -1;
                 this.columnIDLinea.AllowDBNull = false;
                 this.columnIDLinea.ReadOnly = true;
-                this.columnIDLinea.Unique = true;
                 this.columnIDInventario.AllowDBNull = false;
                 this.columnCodigo.AllowDBNull = false;
                 this.columnCodigo.MaxLength = 12;
@@ -8919,14 +9034,17 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InventarioRow AddInventarioRow(System.DateTime Fecha, int Paso, int IDAlmacen, string Categoría) {
+            public InventarioRow AddInventarioRow(System.DateTime Fecha, int Paso, InventarioDetalle2Row parentInventarioDetalle2RowByFK_Inventario_Almacen, string Categoría) {
                 InventarioRow rowInventarioRow = ((InventarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
                         Paso,
-                        IDAlmacen,
+                        null,
                         Categoría};
+                if ((parentInventarioDetalle2RowByFK_Inventario_Almacen != null)) {
+                    columnValuesArray[3] = parentInventarioDetalle2RowByFK_Inventario_Almacen[3];
+                }
                 rowInventarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventarioRow);
                 return rowInventarioRow;
@@ -10488,6 +10606,568 @@ namespace CAD {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class InventarioDetalle2DataTable : global::System.Data.TypedTableBase<InventarioDetalle2Row> {
+            
+            private global::System.Data.DataColumn columnIDInventario;
+            
+            private global::System.Data.DataColumn columnFecha;
+            
+            private global::System.Data.DataColumn columnPaso;
+            
+            private global::System.Data.DataColumn columnIDAlmacen;
+            
+            private global::System.Data.DataColumn columnAlmacén;
+            
+            private global::System.Data.DataColumn columnCategoría;
+            
+            private global::System.Data.DataColumn columnCodigo;
+            
+            private global::System.Data.DataColumn columnDescripcion;
+            
+            private global::System.Data.DataColumn columnStock;
+            
+            private global::System.Data.DataColumn columnConteo1;
+            
+            private global::System.Data.DataColumn columnConteo2;
+            
+            private global::System.Data.DataColumn columnConteo3;
+            
+            private global::System.Data.DataColumn columnAjuste;
+            
+            private global::System.Data.DataColumn columnSobranteUltimoCosto;
+            
+            private global::System.Data.DataColumn columnFaltanteUltimoCosto;
+            
+            private global::System.Data.DataColumn columnSobranteCostoPromedio;
+            
+            private global::System.Data.DataColumn columnUnidad;
+            
+            private global::System.Data.DataColumn columnMedida;
+            
+            private global::System.Data.DataColumn columnFaltanteCostoPromedio;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2DataTable() {
+                this.TableName = "InventarioDetalle2";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal InventarioDetalle2DataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected InventarioDetalle2DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDInventarioColumn {
+                get {
+                    return this.columnIDInventario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FechaColumn {
+                get {
+                    return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PasoColumn {
+                get {
+                    return this.columnPaso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDAlmacenColumn {
+                get {
+                    return this.columnIDAlmacen;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AlmacénColumn {
+                get {
+                    return this.columnAlmacén;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CategoríaColumn {
+                get {
+                    return this.columnCategoría;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CodigoColumn {
+                get {
+                    return this.columnCodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescripcionColumn {
+                get {
+                    return this.columnDescripcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn StockColumn {
+                get {
+                    return this.columnStock;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Conteo1Column {
+                get {
+                    return this.columnConteo1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Conteo2Column {
+                get {
+                    return this.columnConteo2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Conteo3Column {
+                get {
+                    return this.columnConteo3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AjusteColumn {
+                get {
+                    return this.columnAjuste;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SobranteUltimoCostoColumn {
+                get {
+                    return this.columnSobranteUltimoCosto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FaltanteUltimoCostoColumn {
+                get {
+                    return this.columnFaltanteUltimoCosto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SobranteCostoPromedioColumn {
+                get {
+                    return this.columnSobranteCostoPromedio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn UnidadColumn {
+                get {
+                    return this.columnUnidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MedidaColumn {
+                get {
+                    return this.columnMedida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FaltanteCostoPromedioColumn {
+                get {
+                    return this.columnFaltanteCostoPromedio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row this[int index] {
+                get {
+                    return ((InventarioDetalle2Row)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InventarioDetalle2RowChangeEventHandler InventarioDetalle2RowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InventarioDetalle2RowChangeEventHandler InventarioDetalle2RowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InventarioDetalle2RowChangeEventHandler InventarioDetalle2RowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event InventarioDetalle2RowChangeEventHandler InventarioDetalle2RowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddInventarioDetalle2Row(InventarioDetalle2Row row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row AddInventarioDetalle2Row(
+                        System.DateTime Fecha, 
+                        int Paso, 
+                        int IDAlmacen, 
+                        string Almacén, 
+                        string Categoría, 
+                        string Codigo, 
+                        string Descripcion, 
+                        double Stock, 
+                        double Conteo1, 
+                        double Conteo2, 
+                        double Conteo3, 
+                        double Ajuste, 
+                        double SobranteUltimoCosto, 
+                        double FaltanteUltimoCosto, 
+                        double SobranteCostoPromedio, 
+                        string Unidad, 
+                        double Medida, 
+                        double FaltanteCostoPromedio) {
+                InventarioDetalle2Row rowInventarioDetalle2Row = ((InventarioDetalle2Row)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Fecha,
+                        Paso,
+                        IDAlmacen,
+                        Almacén,
+                        Categoría,
+                        Codigo,
+                        Descripcion,
+                        Stock,
+                        Conteo1,
+                        Conteo2,
+                        Conteo3,
+                        Ajuste,
+                        SobranteUltimoCosto,
+                        FaltanteUltimoCosto,
+                        SobranteCostoPromedio,
+                        Unidad,
+                        Medida,
+                        FaltanteCostoPromedio};
+                rowInventarioDetalle2Row.ItemArray = columnValuesArray;
+                this.Rows.Add(rowInventarioDetalle2Row);
+                return rowInventarioDetalle2Row;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row FindByIDInventarioPasoIDAlmacenCodigoStock(int IDInventario, int Paso, int IDAlmacen, string Codigo, double Stock) {
+                return ((InventarioDetalle2Row)(this.Rows.Find(new object[] {
+                            IDInventario,
+                            Paso,
+                            IDAlmacen,
+                            Codigo,
+                            Stock})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                InventarioDetalle2DataTable cln = ((InventarioDetalle2DataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new InventarioDetalle2DataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnIDInventario = base.Columns["IDInventario"];
+                this.columnFecha = base.Columns["Fecha"];
+                this.columnPaso = base.Columns["Paso"];
+                this.columnIDAlmacen = base.Columns["IDAlmacen"];
+                this.columnAlmacén = base.Columns["Almacén"];
+                this.columnCategoría = base.Columns["Categoría"];
+                this.columnCodigo = base.Columns["Codigo"];
+                this.columnDescripcion = base.Columns["Descripcion"];
+                this.columnStock = base.Columns["Stock"];
+                this.columnConteo1 = base.Columns["Conteo1"];
+                this.columnConteo2 = base.Columns["Conteo2"];
+                this.columnConteo3 = base.Columns["Conteo3"];
+                this.columnAjuste = base.Columns["Ajuste"];
+                this.columnSobranteUltimoCosto = base.Columns["SobranteUltimoCosto"];
+                this.columnFaltanteUltimoCosto = base.Columns["FaltanteUltimoCosto"];
+                this.columnSobranteCostoPromedio = base.Columns["SobranteCostoPromedio"];
+                this.columnUnidad = base.Columns["Unidad"];
+                this.columnMedida = base.Columns["Medida"];
+                this.columnFaltanteCostoPromedio = base.Columns["FaltanteCostoPromedio"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnIDInventario = new global::System.Data.DataColumn("IDInventario", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDInventario);
+                this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFecha);
+                this.columnPaso = new global::System.Data.DataColumn("Paso", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaso);
+                this.columnIDAlmacen = new global::System.Data.DataColumn("IDAlmacen", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDAlmacen);
+                this.columnAlmacén = new global::System.Data.DataColumn("Almacén", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAlmacén);
+                this.columnCategoría = new global::System.Data.DataColumn("Categoría", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoría);
+                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCodigo);
+                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripcion);
+                this.columnStock = new global::System.Data.DataColumn("Stock", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnStock);
+                this.columnConteo1 = new global::System.Data.DataColumn("Conteo1", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConteo1);
+                this.columnConteo2 = new global::System.Data.DataColumn("Conteo2", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConteo2);
+                this.columnConteo3 = new global::System.Data.DataColumn("Conteo3", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConteo3);
+                this.columnAjuste = new global::System.Data.DataColumn("Ajuste", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAjuste);
+                this.columnSobranteUltimoCosto = new global::System.Data.DataColumn("SobranteUltimoCosto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSobranteUltimoCosto);
+                this.columnFaltanteUltimoCosto = new global::System.Data.DataColumn("FaltanteUltimoCosto", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFaltanteUltimoCosto);
+                this.columnSobranteCostoPromedio = new global::System.Data.DataColumn("SobranteCostoPromedio", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSobranteCostoPromedio);
+                this.columnUnidad = new global::System.Data.DataColumn("Unidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnUnidad);
+                this.columnMedida = new global::System.Data.DataColumn("Medida", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMedida);
+                this.columnFaltanteCostoPromedio = new global::System.Data.DataColumn("FaltanteCostoPromedio", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFaltanteCostoPromedio);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIDInventario,
+                                this.columnPaso,
+                                this.columnIDAlmacen,
+                                this.columnCodigo,
+                                this.columnStock}, true));
+                this.columnIDInventario.AutoIncrement = true;
+                this.columnIDInventario.AutoIncrementSeed = -1;
+                this.columnIDInventario.AutoIncrementStep = -1;
+                this.columnIDInventario.AllowDBNull = false;
+                this.columnIDInventario.ReadOnly = true;
+                this.columnFecha.AllowDBNull = false;
+                this.columnPaso.AllowDBNull = false;
+                this.columnIDAlmacen.AllowDBNull = false;
+                this.columnAlmacén.AllowDBNull = false;
+                this.columnAlmacén.MaxLength = 50;
+                this.columnCategoría.AllowDBNull = false;
+                this.columnCategoría.MaxLength = 50;
+                this.columnCodigo.AllowDBNull = false;
+                this.columnCodigo.MaxLength = 12;
+                this.columnDescripcion.AllowDBNull = false;
+                this.columnDescripcion.MaxLength = 50;
+                this.columnStock.AllowDBNull = false;
+                this.columnConteo1.AllowDBNull = false;
+                this.columnConteo2.AllowDBNull = false;
+                this.columnConteo3.AllowDBNull = false;
+                this.columnAjuste.AllowDBNull = false;
+                this.columnSobranteUltimoCosto.ReadOnly = true;
+                this.columnFaltanteUltimoCosto.ReadOnly = true;
+                this.columnSobranteCostoPromedio.ReadOnly = true;
+                this.columnUnidad.AllowDBNull = false;
+                this.columnUnidad.MaxLength = 3;
+                this.columnMedida.AllowDBNull = false;
+                this.columnFaltanteCostoPromedio.ReadOnly = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row NewInventarioDetalle2Row() {
+                return ((InventarioDetalle2Row)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new InventarioDetalle2Row(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(InventarioDetalle2Row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.InventarioDetalle2RowChanged != null)) {
+                    this.InventarioDetalle2RowChanged(this, new InventarioDetalle2RowChangeEvent(((InventarioDetalle2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.InventarioDetalle2RowChanging != null)) {
+                    this.InventarioDetalle2RowChanging(this, new InventarioDetalle2RowChangeEvent(((InventarioDetalle2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.InventarioDetalle2RowDeleted != null)) {
+                    this.InventarioDetalle2RowDeleted(this, new InventarioDetalle2RowChangeEvent(((InventarioDetalle2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.InventarioDetalle2RowDeleting != null)) {
+                    this.InventarioDetalle2RowDeleting(this, new InventarioDetalle2RowChangeEvent(((InventarioDetalle2Row)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveInventarioDetalle2Row(InventarioDetalle2Row row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DSMiAppComercial ds = new DSMiAppComercial();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "InventarioDetalle2DataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class RolRow : global::System.Data.DataRow {
@@ -10833,6 +11513,17 @@ namespace CAD {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_AlmacenProducto_Producto"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2Row {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_AlmacenProducto_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_AlmacenProducto_Almacen"]);
                 }
             }
         }
@@ -11236,6 +11927,17 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2Row {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Compra_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Compra_Almacen"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CompraDetalleRow[] GetCompraDetalleRows() {
                 if ((this.Table.ChildRelations["FK_CompraDetalle_Compra"] == null)) {
                     return new CompraDetalleRow[0];
@@ -11564,6 +12266,17 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2Row {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Kardex_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Kardex_Almacen"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsIDAlmacenNull() {
                 return this.IsNull(this.tableKardex.IDAlmacenColumn);
             }
@@ -11819,6 +12532,17 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2Row {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Venta_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Venta_Almacen"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public VentaDetalleRow[] GetVentaDetalleRows() {
                 if ((this.Table.ChildRelations["FK_VentaDetalle_Venta"] == null)) {
                     return new VentaDetalleRow[0];
@@ -12042,6 +12766,17 @@ namespace CAD {
                 }
                 set {
                     this[this.tableSalida.IDAlmacenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2Row {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Salida_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Salida_Almacen"]);
                 }
             }
             
@@ -12665,6 +13400,28 @@ namespace CAD {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2RowByFK_Traslado_Almacen {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Traslado_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Traslado_Almacen"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2RowByFK_Traslado_Almacen1 {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Traslado_Almacen1"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Traslado_Almacen1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TrasladoDetalleRow[] GetTrasladoDetalleRows() {
                 if ((this.Table.ChildRelations["FK_TrasladoDetalle_Traslado"] == null)) {
                     return new TrasladoDetalleRow[0];
@@ -13117,6 +13874,17 @@ namespace CAD {
                 }
                 set {
                     this[this.tableInventario.CategoríaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row InventarioDetalle2Row {
+                get {
+                    return ((InventarioDetalle2Row)(this.GetParentRow(this.Table.ParentRelations["FK_Inventario_Almacen"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Inventario_Almacen"]);
                 }
             }
             
@@ -13648,6 +14416,390 @@ namespace CAD {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetValorCostoPromedioNull() {
                 this[this.tableTrasladoDetalle2.ValorCostoPromedioColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class InventarioDetalle2Row : global::System.Data.DataRow {
+            
+            private InventarioDetalle2DataTable tableInventarioDetalle2;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal InventarioDetalle2Row(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableInventarioDetalle2 = ((InventarioDetalle2DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int IDInventario {
+                get {
+                    return ((int)(this[this.tableInventarioDetalle2.IDInventarioColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.IDInventarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Fecha {
+                get {
+                    return ((global::System.DateTime)(this[this.tableInventarioDetalle2.FechaColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.FechaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Paso {
+                get {
+                    return ((int)(this[this.tableInventarioDetalle2.PasoColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.PasoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int IDAlmacen {
+                get {
+                    return ((int)(this[this.tableInventarioDetalle2.IDAlmacenColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.IDAlmacenColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Almacén {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle2.AlmacénColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.AlmacénColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Categoría {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle2.CategoríaColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.CategoríaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Codigo {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle2.CodigoColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.CodigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Descripcion {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle2.DescripcionColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.DescripcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Stock {
+                get {
+                    return ((double)(this[this.tableInventarioDetalle2.StockColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.StockColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Conteo1 {
+                get {
+                    return ((double)(this[this.tableInventarioDetalle2.Conteo1Column]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.Conteo1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Conteo2 {
+                get {
+                    return ((double)(this[this.tableInventarioDetalle2.Conteo2Column]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.Conteo2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Conteo3 {
+                get {
+                    return ((double)(this[this.tableInventarioDetalle2.Conteo3Column]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.Conteo3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Ajuste {
+                get {
+                    return ((double)(this[this.tableInventarioDetalle2.AjusteColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.AjusteColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double SobranteUltimoCosto {
+                get {
+                    try {
+                        return ((double)(this[this.tableInventarioDetalle2.SobranteUltimoCostoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SobranteUltimoCosto\' de la tabla \'InventarioDetalle2\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventarioDetalle2.SobranteUltimoCostoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double FaltanteUltimoCosto {
+                get {
+                    try {
+                        return ((double)(this[this.tableInventarioDetalle2.FaltanteUltimoCostoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FaltanteUltimoCosto\' de la tabla \'InventarioDetalle2\' es " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventarioDetalle2.FaltanteUltimoCostoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double SobranteCostoPromedio {
+                get {
+                    try {
+                        return ((double)(this[this.tableInventarioDetalle2.SobranteCostoPromedioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'SobranteCostoPromedio\' de la tabla \'InventarioDetalle2\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventarioDetalle2.SobranteCostoPromedioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Unidad {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle2.UnidadColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.UnidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double Medida {
+                get {
+                    return ((double)(this[this.tableInventarioDetalle2.MedidaColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle2.MedidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double FaltanteCostoPromedio {
+                get {
+                    try {
+                        return ((double)(this[this.tableInventarioDetalle2.FaltanteCostoPromedioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'FaltanteCostoPromedio\' de la tabla \'InventarioDetalle2\' e" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInventarioDetalle2.FaltanteCostoPromedioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSobranteUltimoCostoNull() {
+                return this.IsNull(this.tableInventarioDetalle2.SobranteUltimoCostoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSobranteUltimoCostoNull() {
+                this[this.tableInventarioDetalle2.SobranteUltimoCostoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFaltanteUltimoCostoNull() {
+                return this.IsNull(this.tableInventarioDetalle2.FaltanteUltimoCostoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFaltanteUltimoCostoNull() {
+                this[this.tableInventarioDetalle2.FaltanteUltimoCostoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSobranteCostoPromedioNull() {
+                return this.IsNull(this.tableInventarioDetalle2.SobranteCostoPromedioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSobranteCostoPromedioNull() {
+                this[this.tableInventarioDetalle2.SobranteCostoPromedioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFaltanteCostoPromedioNull() {
+                return this.IsNull(this.tableInventarioDetalle2.FaltanteCostoPromedioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFaltanteCostoPromedioNull() {
+                this[this.tableInventarioDetalle2.FaltanteCostoPromedioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public AlmacenProductoRow[] GetAlmacenProductoRows() {
+                if ((this.Table.ChildRelations["FK_AlmacenProducto_Almacen"] == null)) {
+                    return new AlmacenProductoRow[0];
+                }
+                else {
+                    return ((AlmacenProductoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_AlmacenProducto_Almacen"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CompraRow[] GetCompraRows() {
+                if ((this.Table.ChildRelations["FK_Compra_Almacen"] == null)) {
+                    return new CompraRow[0];
+                }
+                else {
+                    return ((CompraRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Compra_Almacen"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public KardexRow[] GetKardexRows() {
+                if ((this.Table.ChildRelations["FK_Kardex_Almacen"] == null)) {
+                    return new KardexRow[0];
+                }
+                else {
+                    return ((KardexRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Kardex_Almacen"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public VentaRow[] GetVentaRows() {
+                if ((this.Table.ChildRelations["FK_Venta_Almacen"] == null)) {
+                    return new VentaRow[0];
+                }
+                else {
+                    return ((VentaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Venta_Almacen"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SalidaRow[] GetSalidaRows() {
+                if ((this.Table.ChildRelations["FK_Salida_Almacen"] == null)) {
+                    return new SalidaRow[0];
+                }
+                else {
+                    return ((SalidaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Salida_Almacen"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TrasladoRow[] GetTrasladoRowsByFK_Traslado_Almacen() {
+                if ((this.Table.ChildRelations["FK_Traslado_Almacen"] == null)) {
+                    return new TrasladoRow[0];
+                }
+                else {
+                    return ((TrasladoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Traslado_Almacen"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public TrasladoRow[] GetTrasladoRowsByFK_Traslado_Almacen1() {
+                if ((this.Table.ChildRelations["FK_Traslado_Almacen1"] == null)) {
+                    return new TrasladoRow[0];
+                }
+                else {
+                    return ((TrasladoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Traslado_Almacen1"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioRow[] GetInventarioRows() {
+                if ((this.Table.ChildRelations["FK_Inventario_Almacen"] == null)) {
+                    return new InventarioRow[0];
+                }
+                else {
+                    return ((InventarioRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Inventario_Almacen"])));
+                }
             }
         }
         
@@ -14555,6 +15707,40 @@ namespace CAD {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TrasladoDetalle2Row Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class InventarioDetalle2RowChangeEvent : global::System.EventArgs {
+            
+            private InventarioDetalle2Row eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2RowChangeEvent(InventarioDetalle2Row row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public InventarioDetalle2Row Row {
                 get {
                     return this.eventRow;
                 }
@@ -24576,6 +25762,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
             this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Conteo3", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 53, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Ajuste", global::System.Data.SqlDbType.Float, 8, global::System.Data.ParameterDirection.Input, 53, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDKardex", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDLinea", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -24800,8 +25987,6 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int IDInventario, 
-                    string Codigo, 
                     string Descripcion, 
                     double Stock, 
                     double Conteo1, 
@@ -24819,7 +26004,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
                     double Original_Conteo3, 
                     double Original_Ajuste, 
                     int Original_IDKardex) {
-            return this.Update(IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Conteo3, Ajuste, IDKardex, Original_IDLinea, Original_IDInventario, Original_Codigo, Original_Descripcion, Original_Stock, Original_Conteo1, Original_Conteo2, Original_Conteo3, Original_Ajuste, Original_IDKardex, Original_IDLinea);
+            return this.Update(Original_IDInventario, Original_Codigo, Descripcion, Stock, Conteo1, Conteo2, Conteo3, Ajuste, IDKardex, Original_IDLinea, Original_IDInventario, Original_Codigo, Original_Descripcion, Original_Stock, Original_Conteo1, Original_Conteo2, Original_Conteo3, Original_Ajuste, Original_IDKardex, Original_IDLinea);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -24995,7 +26180,7 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int InventarioDetalleUpdateConteo3(global::System.Nullable<double> Conteo3, global::System.Nullable<int> IDKardex, global::System.Nullable<int> IDLinea) {
+        public virtual int InventarioDetalleUpdateConteo3(global::System.Nullable<double> Conteo3, global::System.Nullable<double> Ajuste, global::System.Nullable<int> IDKardex, global::System.Nullable<int> IDLinea) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Conteo3.HasValue == true)) {
                 command.Parameters[1].Value = ((double)(Conteo3.Value));
@@ -25003,17 +26188,23 @@ SELECT IDLinea, IDInventario, Codigo, Descripcion, Stock, Conteo1, Conteo2, Cont
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((IDKardex.HasValue == true)) {
-                command.Parameters[2].Value = ((int)(IDKardex.Value));
+            if ((Ajuste.HasValue == true)) {
+                command.Parameters[2].Value = ((double)(Ajuste.Value));
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((IDLinea.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(IDLinea.Value));
+            if ((IDKardex.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(IDKardex.Value));
             }
             else {
                 command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((IDLinea.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IDLinea.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -25208,7 +26399,7 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM dbo.Inventario";
@@ -25236,11 +26427,17 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Categoría", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "dbo.InventarioUpdatePaso";
+            this._commandCollection[4].CommandText = "dbo.InventariosGetInventarioByIDInventario";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "dbo.InventarioUpdatePaso";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paso", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25262,6 +26459,23 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DSMiAppComercial.InventarioDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DSMiAppComercial.InventarioDataTable dataTable = new DSMiAppComercial.InventarioDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DSMiAppComercial.InventarioDataTable InventariosGetInventarioByIDInventario(global::System.Nullable<int> IDInventario) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((IDInventario.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IDInventario.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             DSMiAppComercial.InventarioDataTable dataTable = new DSMiAppComercial.InventarioDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -25527,7 +26741,7 @@ SELECT IDInventario, Fecha, Paso, IDAlmacen, Categoría FROM Inventario WHERE (I
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int InventarioUpdatePaso(global::System.Nullable<int> Paso, global::System.Nullable<int> IDInventario) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[5];
             if ((Paso.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(Paso.Value));
             }
@@ -26543,6 +27757,190 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class InventarioDetalle2TableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public InventarioDetalle2TableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "InventarioDetalle2";
+            tableMapping.ColumnMappings.Add("IDInventario", "IDInventario");
+            tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("Paso", "Paso");
+            tableMapping.ColumnMappings.Add("IDAlmacen", "IDAlmacen");
+            tableMapping.ColumnMappings.Add("Almacén", "Almacén");
+            tableMapping.ColumnMappings.Add("Categoría", "Categoría");
+            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
+            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
+            tableMapping.ColumnMappings.Add("Stock", "Stock");
+            tableMapping.ColumnMappings.Add("Conteo1", "Conteo1");
+            tableMapping.ColumnMappings.Add("Conteo2", "Conteo2");
+            tableMapping.ColumnMappings.Add("Conteo3", "Conteo3");
+            tableMapping.ColumnMappings.Add("Ajuste", "Ajuste");
+            tableMapping.ColumnMappings.Add("SobranteUltimoCosto", "SobranteUltimoCosto");
+            tableMapping.ColumnMappings.Add("FaltanteUltimoCosto", "FaltanteUltimoCosto");
+            tableMapping.ColumnMappings.Add("SobranteCostoPromedio", "SobranteCostoPromedio");
+            tableMapping.ColumnMappings.Add("Unidad", "Unidad");
+            tableMapping.ColumnMappings.Add("Medida", "Medida");
+            tableMapping.ColumnMappings.Add("FaltanteCostoPromedio", "FaltanteCostoPromedio");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CAD.Properties.Settings.Default.MiAppComercialConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT dbo.Inventario.IDInventario, dbo.Inventario.Fecha, dbo.Inventario.Paso, dbo.Inventario.IDAlmacen, dbo.Almacen.Descripcion AS Almacén, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.Inventario.Categoría, 
+                  dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, dbo.InventarioDetalle.Conteo3, dbo.InventarioDetalle.Ajuste, 
+                  (CASE WHEN (Ajuste > 0) THEN Ajuste * UltimoCosto ELSE 0 END) AS SobranteUltimoCosto, (CASE WHEN (Ajuste < 0) THEN Ajuste * UltimoCosto ELSE 0 END) AS FaltanteUltimoCosto, (CASE WHEN (Ajuste > 0) 
+                  THEN Ajuste * CostoPromedio ELSE 0 END) AS SobranteCostoPromedio, (CASE WHEN (Ajuste < 0) THEN Ajuste * CostoPromedio ELSE 0 END) AS FaltanteCostoPromedio
+FROM     dbo.Inventario INNER JOIN
+                  dbo.InventarioDetalle ON dbo.Inventario.IDInventario = dbo.InventarioDetalle.IDInventario INNER JOIN
+                  dbo.Almacen ON dbo.Inventario.IDAlmacen = dbo.Almacen.IDAlmacen INNER JOIN
+                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo LEFT OUTER JOIN
+                  dbo.Kardex ON dbo.InventarioDetalle.IDKardex = dbo.Kardex.IDKardex
+
+WHERE  (dbo.Inventario.IDInventario = @IDInventario)";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DSMiAppComercial.InventarioDetalle2DataTable InventarioDetalleGetInventarioDetalleByIDInventario(int IDInventario) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IDInventario));
+            DSMiAppComercial.InventarioDetalle2DataTable dataTable = new DSMiAppComercial.InventarioDetalle2DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -27141,15 +28539,6 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(DSMiAppComercial dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._unidadTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Unidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._unidadTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._categoriaTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -27159,12 +28548,12 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._ventaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._unidadTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Unidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._ventaTableAdapter.Update(updatedRows));
+                    result = (result + this._unidadTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27186,12 +28575,39 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rolTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._ventaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rolTableAdapter.Update(updatedRows));
+                    result = (result + this._ventaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._inventarioTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Inventario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._inventarioTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._trasladoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Traslado.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._trasladoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._devolucionProveedorTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DevolucionProveedor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._devolucionProveedorTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27213,6 +28629,15 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._rolTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._rolTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._kardexTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Kardex.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -27231,57 +28656,12 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._inventarioTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Inventario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._compraDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CompraDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._inventarioTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._devolucionProveedorTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DevolucionProveedor.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._devolucionProveedorTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._trasladoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Traslado.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._trasladoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._inventarioDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.InventarioDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._inventarioDetalleTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._trasladoDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TrasladoDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._trasladoDetalleTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._salidaDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SalidaDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._salidaDetalleTableAdapter.Update(updatedRows));
+                    result = (result + this._compraDetalleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27294,21 +28674,12 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._ventaDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.VentaDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._devolucionClienteDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DevolucionClienteDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._ventaDetalleTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._compraDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CompraDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._compraDetalleTableAdapter.Update(updatedRows));
+                    result = (result + this._devolucionClienteDetalleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27318,6 +28689,24 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._almacenProductoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._trasladoDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TrasladoDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._trasladoDetalleTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._inventarioDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.InventarioDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._inventarioDetalleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27339,12 +28728,21 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._devolucionClienteDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DevolucionClienteDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._ventaDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.VentaDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._devolucionClienteDetalleTableAdapter.Update(updatedRows));
+                    result = (result + this._ventaDetalleTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._salidaDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.SalidaDetalle.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._salidaDetalleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27358,14 +28756,6 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(DSMiAppComercial dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._unidadTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Unidad.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._unidadTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._categoriaTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Categoria.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -27374,11 +28764,11 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._ventaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._unidadTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Unidad.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._ventaTableAdapter.Update(addedRows));
+                    result = (result + this._unidadTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27398,11 +28788,35 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rolTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._ventaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rolTableAdapter.Update(addedRows));
+                    result = (result + this._ventaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._inventarioTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Inventario.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._inventarioTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._trasladoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Traslado.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._trasladoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._devolucionProveedorTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DevolucionProveedor.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._devolucionProveedorTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27422,6 +28836,14 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._rolTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._rolTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._kardexTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Kardex.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -27438,51 +28860,11 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._inventarioTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Inventario.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._compraDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CompraDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._inventarioTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._devolucionProveedorTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DevolucionProveedor.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._devolucionProveedorTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._trasladoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Traslado.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._trasladoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._inventarioDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.InventarioDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._inventarioDetalleTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._trasladoDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TrasladoDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._trasladoDetalleTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._salidaDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SalidaDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._salidaDetalleTableAdapter.Update(addedRows));
+                    result = (result + this._compraDetalleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27494,19 +28876,11 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._ventaDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.VentaDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._devolucionClienteDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DevolucionClienteDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._ventaDetalleTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._compraDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CompraDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._compraDetalleTableAdapter.Update(addedRows));
+                    result = (result + this._devolucionClienteDetalleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27515,6 +28889,22 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._almacenProductoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._trasladoDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TrasladoDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._trasladoDetalleTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._inventarioDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.InventarioDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._inventarioDetalleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27534,11 +28924,19 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._devolucionClienteDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DevolucionClienteDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._ventaDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.VentaDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._devolucionClienteDetalleTableAdapter.Update(addedRows));
+                    result = (result + this._ventaDetalleTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._salidaDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.SalidaDetalle.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._salidaDetalleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27552,11 +28950,19 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(DSMiAppComercial dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._devolucionClienteDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DevolucionClienteDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._salidaDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.SalidaDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._devolucionClienteDetalleTableAdapter.Update(deletedRows));
+                    result = (result + this._salidaDetalleTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._ventaDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.VentaDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ventaDetalleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27576,43 +28982,11 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._almacenProductoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AlmacenProducto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._inventarioDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.InventarioDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._almacenProductoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._compraDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CompraDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._compraDetalleTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._ventaDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.VentaDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._ventaDetalleTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._devolucionProveedorDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DevolucionProveedorDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._devolucionProveedorDetalleTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._salidaDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SalidaDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._salidaDetalleTableAdapter.Update(deletedRows));
+                    result = (result + this._inventarioDetalleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27624,35 +28998,35 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._inventarioDetalleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.InventarioDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._almacenProductoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AlmacenProducto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._inventarioDetalleTableAdapter.Update(deletedRows));
+                    result = (result + this._almacenProductoTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._trasladoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Traslado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._devolucionClienteDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DevolucionClienteDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._trasladoTableAdapter.Update(deletedRows));
+                    result = (result + this._devolucionClienteDetalleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._devolucionProveedorTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DevolucionProveedor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._devolucionProveedorDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DevolucionProveedorDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._devolucionProveedorTableAdapter.Update(deletedRows));
+                    result = (result + this._devolucionProveedorDetalleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._inventarioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Inventario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._compraDetalleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CompraDetalle.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._inventarioTableAdapter.Update(deletedRows));
+                    result = (result + this._compraDetalleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27672,6 +29046,14 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._rolTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rolTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._salidaTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Salida.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -27688,11 +29070,35 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rolTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Rol.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._devolucionProveedorTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DevolucionProveedor.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rolTableAdapter.Update(deletedRows));
+                    result = (result + this._devolucionProveedorTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._trasladoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Traslado.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._trasladoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._inventarioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Inventario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._inventarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._ventaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._ventaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27712,11 +29118,11 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._ventaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Venta.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._unidadTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Unidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._ventaTableAdapter.Update(deletedRows));
+                    result = (result + this._unidadTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27725,14 +29131,6 @@ WHERE ( TrasladoDetalle.IDTraslado = @IDTraslado)";
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._categoriaTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._unidadTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Unidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._unidadTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

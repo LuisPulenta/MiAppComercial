@@ -47,18 +47,6 @@ namespace Win.Consultas
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
-            this.Inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoríaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemsOk = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemsConSobrante = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ItemsConFaltantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SobranteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaltanteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SobranteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FaltanteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventariosConsultaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.almacenComboBox = new System.Windows.Forms.ComboBox();
@@ -79,6 +67,18 @@ namespace Win.Consultas
             this.label6 = new System.Windows.Forms.Label();
             this.totalSobranteCostoPromedioTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.almacénDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoríaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Items = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemsOk = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemsConSobrante = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ItemsConFaltantes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SobranteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FaltanteAÚltimoCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SobranteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FaltanteACostoPromedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventariosConsultaBindingSource)).BeginInit();
@@ -165,140 +165,7 @@ namespace Win.Consultas
             this.dgvDatos.RowTemplate.Height = 24;
             this.dgvDatos.Size = new System.Drawing.Size(1303, 496);
             this.dgvDatos.TabIndex = 84;
-            // 
-            // Inventario
-            // 
-            this.Inventario.DataPropertyName = "IDInventario";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Inventario.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Inventario.HeaderText = "Inventario";
-            this.Inventario.MinimumWidth = 6;
-            this.Inventario.Name = "Inventario";
-            this.Inventario.ReadOnly = true;
-            this.Inventario.Width = 125;
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // almacénDataGridViewTextBoxColumn
-            // 
-            this.almacénDataGridViewTextBoxColumn.DataPropertyName = "Almacén";
-            this.almacénDataGridViewTextBoxColumn.HeaderText = "Almacén";
-            this.almacénDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.almacénDataGridViewTextBoxColumn.Name = "almacénDataGridViewTextBoxColumn";
-            this.almacénDataGridViewTextBoxColumn.ReadOnly = true;
-            this.almacénDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // categoríaDataGridViewTextBoxColumn
-            // 
-            this.categoríaDataGridViewTextBoxColumn.DataPropertyName = "Categoría";
-            this.categoríaDataGridViewTextBoxColumn.HeaderText = "Categoría";
-            this.categoríaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.categoríaDataGridViewTextBoxColumn.Name = "categoríaDataGridViewTextBoxColumn";
-            this.categoríaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.categoríaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // Items
-            // 
-            this.Items.DataPropertyName = "Items";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Items.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Items.HeaderText = "Items";
-            this.Items.MinimumWidth = 6;
-            this.Items.Name = "Items";
-            this.Items.ReadOnly = true;
-            this.Items.Width = 125;
-            // 
-            // ItemsOk
-            // 
-            this.ItemsOk.DataPropertyName = "Items Ok";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ItemsOk.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ItemsOk.HeaderText = "Items Ok";
-            this.ItemsOk.MinimumWidth = 6;
-            this.ItemsOk.Name = "ItemsOk";
-            this.ItemsOk.ReadOnly = true;
-            this.ItemsOk.Width = 125;
-            // 
-            // ItemsConSobrante
-            // 
-            this.ItemsConSobrante.DataPropertyName = "Items con Sobrante";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ItemsConSobrante.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ItemsConSobrante.HeaderText = "Items con Sobrante";
-            this.ItemsConSobrante.MinimumWidth = 6;
-            this.ItemsConSobrante.Name = "ItemsConSobrante";
-            this.ItemsConSobrante.ReadOnly = true;
-            this.ItemsConSobrante.Width = 125;
-            // 
-            // ItemsConFaltantes
-            // 
-            this.ItemsConFaltantes.DataPropertyName = "Items con Faltantes";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.BottomCenter;
-            this.ItemsConFaltantes.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ItemsConFaltantes.HeaderText = "Items con Faltantes";
-            this.ItemsConFaltantes.MinimumWidth = 6;
-            this.ItemsConFaltantes.Name = "ItemsConFaltantes";
-            this.ItemsConFaltantes.ReadOnly = true;
-            this.ItemsConFaltantes.Width = 125;
-            // 
-            // SobranteAÚltimoCosto
-            // 
-            this.SobranteAÚltimoCosto.DataPropertyName = "SobranteValorUltimoCosto";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.SobranteAÚltimoCosto.DefaultCellStyle = dataGridViewCellStyle7;
-            this.SobranteAÚltimoCosto.HeaderText = "Sobrante a Último Costo";
-            this.SobranteAÚltimoCosto.MinimumWidth = 6;
-            this.SobranteAÚltimoCosto.Name = "SobranteAÚltimoCosto";
-            this.SobranteAÚltimoCosto.ReadOnly = true;
-            this.SobranteAÚltimoCosto.Width = 125;
-            // 
-            // FaltanteAÚltimoCosto
-            // 
-            this.FaltanteAÚltimoCosto.DataPropertyName = "FaltanteValorUltimoCosto";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.FaltanteAÚltimoCosto.DefaultCellStyle = dataGridViewCellStyle8;
-            this.FaltanteAÚltimoCosto.HeaderText = "Faltante a Último Costo";
-            this.FaltanteAÚltimoCosto.MinimumWidth = 6;
-            this.FaltanteAÚltimoCosto.Name = "FaltanteAÚltimoCosto";
-            this.FaltanteAÚltimoCosto.ReadOnly = true;
-            this.FaltanteAÚltimoCosto.Width = 125;
-            // 
-            // SobranteACostoPromedio
-            // 
-            this.SobranteACostoPromedio.DataPropertyName = "SobranteValorCostoPromedio";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.SobranteACostoPromedio.DefaultCellStyle = dataGridViewCellStyle9;
-            this.SobranteACostoPromedio.HeaderText = "Sobrante a Costo Promedio";
-            this.SobranteACostoPromedio.MinimumWidth = 6;
-            this.SobranteACostoPromedio.Name = "SobranteACostoPromedio";
-            this.SobranteACostoPromedio.ReadOnly = true;
-            this.SobranteACostoPromedio.Width = 125;
-            // 
-            // FaltanteACostoPromedio
-            // 
-            this.FaltanteACostoPromedio.DataPropertyName = "FaltanteValorCostoPromedio";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
-            this.FaltanteACostoPromedio.DefaultCellStyle = dataGridViewCellStyle10;
-            this.FaltanteACostoPromedio.HeaderText = "Faltante a Costo Promedio";
-            this.FaltanteACostoPromedio.MinimumWidth = 6;
-            this.FaltanteACostoPromedio.Name = "FaltanteACostoPromedio";
-            this.FaltanteACostoPromedio.ReadOnly = true;
-            this.FaltanteACostoPromedio.Width = 125;
+            this.dgvDatos.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatos_CellContentDoubleClick);
             // 
             // inventariosConsultaBindingSource
             // 
@@ -466,6 +333,140 @@ namespace Win.Consultas
             this.label7.Size = new System.Drawing.Size(240, 17);
             this.label7.TabIndex = 98;
             this.label7.Text = "Total Sobrante Costo Promedio:";
+            // 
+            // Inventario
+            // 
+            this.Inventario.DataPropertyName = "IDInventario";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Inventario.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Inventario.HeaderText = "Inventario";
+            this.Inventario.MinimumWidth = 6;
+            this.Inventario.Name = "Inventario";
+            this.Inventario.ReadOnly = true;
+            this.Inventario.Width = 125;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // almacénDataGridViewTextBoxColumn
+            // 
+            this.almacénDataGridViewTextBoxColumn.DataPropertyName = "Almacén";
+            this.almacénDataGridViewTextBoxColumn.HeaderText = "Almacén";
+            this.almacénDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.almacénDataGridViewTextBoxColumn.Name = "almacénDataGridViewTextBoxColumn";
+            this.almacénDataGridViewTextBoxColumn.ReadOnly = true;
+            this.almacénDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // categoríaDataGridViewTextBoxColumn
+            // 
+            this.categoríaDataGridViewTextBoxColumn.DataPropertyName = "Categoría";
+            this.categoríaDataGridViewTextBoxColumn.HeaderText = "Categoría";
+            this.categoríaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.categoríaDataGridViewTextBoxColumn.Name = "categoríaDataGridViewTextBoxColumn";
+            this.categoríaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.categoríaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // Items
+            // 
+            this.Items.DataPropertyName = "Items";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Items.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Items.HeaderText = "Items";
+            this.Items.MinimumWidth = 6;
+            this.Items.Name = "Items";
+            this.Items.ReadOnly = true;
+            this.Items.Width = 125;
+            // 
+            // ItemsOk
+            // 
+            this.ItemsOk.DataPropertyName = "Items Ok";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ItemsOk.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ItemsOk.HeaderText = "Items Ok";
+            this.ItemsOk.MinimumWidth = 6;
+            this.ItemsOk.Name = "ItemsOk";
+            this.ItemsOk.ReadOnly = true;
+            this.ItemsOk.Width = 125;
+            // 
+            // ItemsConSobrante
+            // 
+            this.ItemsConSobrante.DataPropertyName = "Items con Sobrante";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ItemsConSobrante.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ItemsConSobrante.HeaderText = "Items con Sobrante";
+            this.ItemsConSobrante.MinimumWidth = 6;
+            this.ItemsConSobrante.Name = "ItemsConSobrante";
+            this.ItemsConSobrante.ReadOnly = true;
+            this.ItemsConSobrante.Width = 125;
+            // 
+            // ItemsConFaltantes
+            // 
+            this.ItemsConFaltantes.DataPropertyName = "Items con Faltantes";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ItemsConFaltantes.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ItemsConFaltantes.HeaderText = "Items con Faltantes";
+            this.ItemsConFaltantes.MinimumWidth = 6;
+            this.ItemsConFaltantes.Name = "ItemsConFaltantes";
+            this.ItemsConFaltantes.ReadOnly = true;
+            this.ItemsConFaltantes.Width = 125;
+            // 
+            // SobranteAÚltimoCosto
+            // 
+            this.SobranteAÚltimoCosto.DataPropertyName = "SobranteValorUltimoCosto";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.SobranteAÚltimoCosto.DefaultCellStyle = dataGridViewCellStyle7;
+            this.SobranteAÚltimoCosto.HeaderText = "Sobrante a Último Costo";
+            this.SobranteAÚltimoCosto.MinimumWidth = 6;
+            this.SobranteAÚltimoCosto.Name = "SobranteAÚltimoCosto";
+            this.SobranteAÚltimoCosto.ReadOnly = true;
+            this.SobranteAÚltimoCosto.Width = 125;
+            // 
+            // FaltanteAÚltimoCosto
+            // 
+            this.FaltanteAÚltimoCosto.DataPropertyName = "FaltanteValorUltimoCosto";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.FaltanteAÚltimoCosto.DefaultCellStyle = dataGridViewCellStyle8;
+            this.FaltanteAÚltimoCosto.HeaderText = "Faltante a Último Costo";
+            this.FaltanteAÚltimoCosto.MinimumWidth = 6;
+            this.FaltanteAÚltimoCosto.Name = "FaltanteAÚltimoCosto";
+            this.FaltanteAÚltimoCosto.ReadOnly = true;
+            this.FaltanteAÚltimoCosto.Width = 125;
+            // 
+            // SobranteACostoPromedio
+            // 
+            this.SobranteACostoPromedio.DataPropertyName = "SobranteValorCostoPromedio";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.SobranteACostoPromedio.DefaultCellStyle = dataGridViewCellStyle9;
+            this.SobranteACostoPromedio.HeaderText = "Sobrante a Costo Promedio";
+            this.SobranteACostoPromedio.MinimumWidth = 6;
+            this.SobranteACostoPromedio.Name = "SobranteACostoPromedio";
+            this.SobranteACostoPromedio.ReadOnly = true;
+            this.SobranteACostoPromedio.Width = 125;
+            // 
+            // FaltanteACostoPromedio
+            // 
+            this.FaltanteACostoPromedio.DataPropertyName = "FaltanteValorCostoPromedio";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 5, 0);
+            this.FaltanteACostoPromedio.DefaultCellStyle = dataGridViewCellStyle10;
+            this.FaltanteACostoPromedio.HeaderText = "Faltante a Costo Promedio";
+            this.FaltanteACostoPromedio.MinimumWidth = 6;
+            this.FaltanteACostoPromedio.Name = "FaltanteACostoPromedio";
+            this.FaltanteACostoPromedio.ReadOnly = true;
+            this.FaltanteACostoPromedio.Width = 125;
             // 
             // frmConsultaInventarios
             // 

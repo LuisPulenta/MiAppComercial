@@ -126,7 +126,7 @@ namespace Win.Movimientos
             foreach (MaterialAContar miMaterialAContar in misMaterialesAContar)
             {
 
-                if (miMaterialAContar.Conteo3 != miMaterialAContar.Stock)
+                if (miMaterialAContar.Conteo3 != miMaterialAContar.Stock && miMaterialAContar.Conteo1 != miMaterialAContar.Stock && miMaterialAContar.Conteo2 != miMaterialAContar.Stock)
                 {
 
                     //Actualizamos la Tabla BodegaProducto
@@ -186,7 +186,9 @@ namespace Win.Movimientos
                            nuevoUltimoCosto,
                            nuevoCostoPromedio);
                     }
-                    CADInventarioDetalle.InventarioDetalleUpDateConteo3(miMaterialAContar.Conteo3,IDKardex, miMaterialAContar.IDLinea);
+                    var A = 1;
+                    
+                    CADInventarioDetalle.InventarioDetalleUpDateConteo3(miMaterialAContar.Conteo3, miMaterialAContar.Conteo3 - miMaterialAContar.Stock, IDKardex, miMaterialAContar.IDLinea);
                 }
             }
 
