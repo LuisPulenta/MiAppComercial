@@ -177,5 +177,17 @@ namespace Win.Consultas
                 totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
             }
         }
+
+        private void dgvDatos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmUnaDevolucionDeCliente miVenta = new frmUnaDevolucionDeCliente();
+            int selectedrowindex = dgvDatos.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = dgvDatos.Rows[selectedrowindex];
+            miVenta.IDDevolucionDeCliente = (int)selectedRow.Cells[0].Value;
+            miVenta.Fecha = (DateTime)selectedRow.Cells[1].Value;
+            miVenta.Cliente = selectedRow.Cells[4].Value.ToString();
+            miVenta.Almacen = selectedRow.Cells[3].Value.ToString();
+            miVenta.ShowDialog();
+        }
     }
 }

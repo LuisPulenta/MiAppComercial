@@ -24,13 +24,13 @@
     <Shape ID="DesignTable:Compra" ZOrder="22" X="949" Y="554" Height="135" Width="222" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:Inventario" ZOrder="19" X="723" Y="952" Height="204" Width="240" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
     <Shape ID="DesignTable:InventarioDetalle" ZOrder="20" X="985" Y="726" Height="342" Width="291" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:CompraBusqueda" ZOrder="2" X="98" Y="1122" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
-    <Shape ID="DesignTable:VentaBusqueda" ZOrder="1" X="445" Y="1129" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
+    <Shape ID="DesignTable:CompraBusqueda" ZOrder="3" X="98" Y="1122" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
+    <Shape ID="DesignTable:VentaBusqueda" ZOrder="2" X="445" Y="1129" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
     <Shape ID="DesignTable:SalidasConsulta" ZOrder="13" X="779" Y="1161" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
     <Shape ID="DesignTable:TrasladosConsulta" ZOrder="10" X="1114" Y="1125" Height="296" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:DevolucionAProveedoresConsulta" ZOrder="3" X="97" Y="1496" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
-    <Shape ID="DesignTable:DevolucionAClientesConsulta" ZOrder="7" X="438" Y="1453" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="283" />
-    <Shape ID="DesignTable:InventariosConsulta" ZOrder="4" X="776" Y="1474" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:DevolucionAProveedoresConsulta" ZOrder="4" X="97" Y="1496" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:DevolucionAClientesConsulta" ZOrder="1" X="438" Y="1503" Height="388" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
+    <Shape ID="DesignTable:InventariosConsulta" ZOrder="5" X="776" Y="1474" Height="365" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="306" />
   </Shapes>
   <Connectors>
     <Connector ID="DesignRelation:FK_Usuario_Rol" ZOrder="45" LineWidth="11">
@@ -305,15 +305,15 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_AlmacenProducto_Almacen5" ZOrder="6" LineWidth="11">
+    <Connector ID="DesignRelation:FK_AlmacenProducto_Almacen5" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>438</X>
-          <Y>1470</Y>
+          <Y>1520</Y>
         </Point>
         <Point>
           <X>294</X>
-          <Y>1470</Y>
+          <Y>1520</Y>
         </Point>
         <Point>
           <X>294</X>
@@ -321,11 +321,11 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Kardex_Almacen5" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Kardex_Almacen5" ZOrder="6" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>669</X>
-          <Y>1453</Y>
+          <Y>1503</Y>
         </Point>
         <Point>
           <X>669</X>

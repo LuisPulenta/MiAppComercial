@@ -145,6 +145,12 @@
     <Compile Include="Consultas\frmUnaDevolucionAProveedor.Designer.cs">
       <DependentUpon>frmUnaDevolucionAProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmUnaDevolucionDeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmUnaDevolucionDeCliente.Designer.cs">
+      <DependentUpon>frmUnaDevolucionDeCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmUnaSalida.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -376,6 +382,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnaDevolucionAProveedor.resx">
       <DependentUpon>frmUnaDevolucionAProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmUnaDevolucionDeCliente.resx">
+      <DependentUpon>frmUnaDevolucionDeCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnaSalida.resx">
       <DependentUpon>frmUnaSalida.cs</DependentUpon>
