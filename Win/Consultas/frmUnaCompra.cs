@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Consultas
@@ -73,25 +74,30 @@ namespace Win.Consultas
 
         private void iDCompraTextBox_Validating(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            fechaTextBox.Text = string.Empty;
+            proveedorTextBox.Text = string.Empty;
+            almacenTextBox.Text = string.Empty;
+            misDetalles.Clear();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizarGrilla();
+
             if (iDCompraTextBox.Text == null) return;
+
             CADCompra miCompra = CADCompra.ComprasGetCompraByIDCompra(Convert.ToInt32(iDCompraTextBox.Text));
+            
             if (miCompra == null)
             {
-                fechaTextBox.Text = string.Empty;
-                proveedorTextBox.Text = string.Empty;
-                almacenTextBox.Text = string.Empty;
-                misDetalles.Clear();
-                dgvDatos.DataSource = null;
-                dgvDatos.DataSource = misDetalles;
-                PersonalizarGrilla();
                 errorProvider1.SetError(iDCompraTextBox, "No existe esta Compra");
+                iDCompraTextBox.Focus();
                 return;
             }
 
             fechaTextBox.Text = miCompra.Fecha.ToString();
             proveedorTextBox.Text = Proveedor;
             almacenTextBox.Text = Almacen;
-            
+
             CAD.DSMiAppComercial.CompraDetalleDataTable miTabla = CADCompraDetalle.CompraDetalleGetCompraDetalleByIDCompra(miCompra.IDCompra);
             foreach (CAD.DSMiAppComercial.CompraDetalleRow miRegistro in miTabla.Rows)
             {
@@ -102,7 +108,7 @@ namespace Win.Consultas
                 miDetalle.Descripcion = miRegistro.Descripcion;
                 miDetalle.PorcentajeDescuento = (float)miRegistro.PorcentajeDescuento;
                 miDetalle.PorcentajeIVA = (float)miRegistro.PorcentajeIVA;
- 
+
                 misDetalles.Add(miDetalle);
             }
             dgvDatos.DataSource = null;
@@ -170,6 +176,21 @@ namespace Win.Consultas
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalDescuentoTextBox.Text = string.Format("{0:C2}", totalDescuento);
             totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
+        }
+
+        private void iDCompraTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            iDCompraTextBox_Validating(sender, e);
+        }
+
+        private void btnBuscarCompra_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCompras miBusqueda = new frmBusquedaCompras();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            iDCompraTextBox.Text = miBusqueda.IDElegido.ToString();
+            iDCompraTextBox_Validating(sender, e);
         }
     }
 }

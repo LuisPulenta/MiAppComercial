@@ -30,8 +30,8 @@ namespace Win.Consultas
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUnaVenta));
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@ namespace Win.Consultas
             this.label4 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnBuscarVenta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -180,18 +181,18 @@ namespace Win.Consultas
             // 
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatos.Location = new System.Drawing.Point(7, 134);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
@@ -256,12 +257,12 @@ namespace Win.Consultas
             // 
             // iDVentaTextBox
             // 
-            this.iDVentaTextBox.BackColor = System.Drawing.Color.Aquamarine;
+            this.iDVentaTextBox.BackColor = System.Drawing.Color.White;
             this.iDVentaTextBox.Location = new System.Drawing.Point(133, 12);
             this.iDVentaTextBox.Name = "iDVentaTextBox";
-            this.iDVentaTextBox.ReadOnly = true;
             this.iDVentaTextBox.Size = new System.Drawing.Size(100, 22);
             this.iDVentaTextBox.TabIndex = 85;
+            this.iDVentaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.iDVentaTextBox_KeyPress);
             this.iDVentaTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.iDVentaTextBox_Validating);
             // 
             // label4
@@ -287,12 +288,23 @@ namespace Win.Consultas
             this.pictureBox1.TabIndex = 83;
             this.pictureBox1.TabStop = false;
             // 
+            // btnBuscarVenta
+            // 
+            this.btnBuscarVenta.Location = new System.Drawing.Point(271, 11);
+            this.btnBuscarVenta.Name = "btnBuscarVenta";
+            this.btnBuscarVenta.Size = new System.Drawing.Size(45, 24);
+            this.btnBuscarVenta.TabIndex = 105;
+            this.btnBuscarVenta.Text = "...";
+            this.btnBuscarVenta.UseVisualStyleBackColor = true;
+            this.btnBuscarVenta.Click += new System.EventHandler(this.btnBuscarVenta_Click);
+            // 
             // frmUnaVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1179, 693);
+            this.Controls.Add(this.btnBuscarVenta);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
@@ -356,5 +368,6 @@ namespace Win.Consultas
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnBuscarVenta;
     }
 }

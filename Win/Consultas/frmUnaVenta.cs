@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Win.Busqueda;
 using Win.Clases;
 
 namespace Win.Consultas
@@ -73,18 +74,21 @@ namespace Win.Consultas
 
         private void iDVentaTextBox_Validating(object sender, EventArgs e)
         {
+            fechaTextBox.Text = string.Empty;
+            clienteTextBox.Text = string.Empty;
+            almacenTextBox.Text = string.Empty;
+            misDetalles.Clear();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizarGrilla();
+
             if (iDVentaTextBox.Text == null) return;
             CADVenta miVenta = CADVenta.VentasGetVentaByIDVenta(Convert.ToInt32(iDVentaTextBox.Text));
             if (miVenta == null)
             {
-                fechaTextBox.Text = string.Empty;
-                clienteTextBox.Text = string.Empty;
-                almacenTextBox.Text = string.Empty;
-                misDetalles.Clear();
-                dgvDatos.DataSource = null;
-                dgvDatos.DataSource = misDetalles;
-                PersonalizarGrilla();
+               
                 errorProvider1.SetError(iDVentaTextBox, "No existe esta Venta");
+                iDVentaTextBox.Focus();
                 return;
             }
 
@@ -170,6 +174,22 @@ namespace Win.Consultas
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalDescuentoTextBox.Text = string.Format("{0:C2}", totalDescuento);
             totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
+        }
+
+        private void btnBuscarVenta_Click(object sender, EventArgs e)
+        {
+            frmBusquedaVentas miBusqueda = new frmBusquedaVentas();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDElegido == 0) return;
+            iDVentaTextBox.Text = miBusqueda.IDElegido.ToString();
+            iDVentaTextBox.Focus();
+            iDVentaTextBox_Validating(sender, e);
+        }
+
+        private void iDVentaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                iDVentaTextBox_Validating(sender, e);
         }
     }
 }
