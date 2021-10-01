@@ -76,7 +76,6 @@ namespace Win
             this.verificarConsistenciaDeKardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kardexToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.movimientosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.devolucionesDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,6 +84,7 @@ namespace Win
             this.salidasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.trasladosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,6 +102,7 @@ namespace Win
             this.tsbProductos = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbKardex = new System.Windows.Forms.ToolStripButton();
+            this.tsbStock = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCompras = new System.Windows.Forms.ToolStripButton();
             this.tsbDevolucionProveedores = new System.Windows.Forms.ToolStripButton();
@@ -535,15 +536,9 @@ namespace Win
             this.kardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kardexToolStripMenuItem.Image")));
             this.kardexToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
-            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
             this.kardexToolStripMenuItem.Text = "&Kardex";
             this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
-            // 
-            // stockToolStripMenuItem
-            // 
-            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
-            this.stockToolStripMenuItem.Text = "&Stock";
             // 
             // movimientosToolStripMenuItem1
             // 
@@ -558,7 +553,7 @@ namespace Win
             this.movimientosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem1.Image")));
             this.movimientosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.movimientosToolStripMenuItem1.Name = "movimientosToolStripMenuItem1";
-            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
+            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(190, 38);
             this.movimientosToolStripMenuItem1.Text = "&Movimientos";
             // 
             // comprasToolStripMenuItem1
@@ -623,6 +618,15 @@ namespace Win
             this.ventasToolStripMenuItem2.Size = new System.Drawing.Size(291, 38);
             this.ventasToolStripMenuItem2.Text = "&Ventas";
             this.ventasToolStripMenuItem2.Click += new System.EventHandler(this.ventasToolStripMenuItem2_Click);
+            // 
+            // stockToolStripMenuItem
+            // 
+            this.stockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockToolStripMenuItem.Image")));
+            this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
+            this.stockToolStripMenuItem.Text = "&Stock";
+            this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
             // listadosToolStripMenuItem
             // 
@@ -719,6 +723,7 @@ namespace Win
             this.tsbProductos,
             this.toolStripSeparator2,
             this.tsbKardex,
+            this.tsbStock,
             this.toolStripSeparator1,
             this.tsbCompras,
             this.tsbDevolucionProveedores,
@@ -784,6 +789,17 @@ namespace Win
             this.tsbKardex.Text = "Kardex";
             this.tsbKardex.ToolTipText = "Kardex";
             this.tsbKardex.Click += new System.EventHandler(this.tsbKardex_Click);
+            // 
+            // tsbStock
+            // 
+            this.tsbStock.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsbStock.Image = ((System.Drawing.Image)(resources.GetObject("tsbStock.Image")));
+            this.tsbStock.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsbStock.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbStock.Name = "tsbStock";
+            this.tsbStock.Size = new System.Drawing.Size(36, 36);
+            this.tsbStock.Text = "Stocks";
+            this.tsbStock.Click += new System.EventHandler(this.tsbStock_Click);
             // 
             // toolStripSeparator1
             // 
@@ -984,5 +1000,6 @@ namespace Win
         private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem trasladosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripButton tsbStock;
     }
 }

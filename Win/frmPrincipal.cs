@@ -370,5 +370,18 @@ namespace Win
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
+
+        private void stockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmStock miForm = new frmStock();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void tsbStock_Click(object sender, EventArgs e)
+        {
+            stockToolStripMenuItem_Click(sender, e);
+        }
     }
 }
