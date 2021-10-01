@@ -73,18 +73,20 @@ namespace Win.Consultas
 
         private void iDInventarioTextBox_Validating(object sender, EventArgs e)
         {
+            fechaTextBox.Text = string.Empty;
+            categoriaTextBox.Text = string.Empty;
+            almacenTextBox.Text = string.Empty;
+            misDetalles.Clear();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizarGrilla();
+
             if (iDInventarioTextBox.Text == null) return;
             CADInventario miInventario = CADInventario.InventariosGetInventarioByIDInventario(Convert.ToInt32(iDInventarioTextBox.Text));
             if (miInventario == null)
             {
-                fechaTextBox.Text = string.Empty;
-                categoriaTextBox.Text = string.Empty;
-                almacenTextBox.Text = string.Empty;
-                misDetalles.Clear();
-                dgvDatos.DataSource = null;
-                dgvDatos.DataSource = misDetalles;
-                PersonalizarGrilla();
                 errorProvider1.SetError(iDInventarioTextBox, "No existe este Inventario");
+                iDInventarioTextBox.Focus();
                 return;
             }
 
@@ -203,6 +205,12 @@ namespace Win.Consultas
             totalFaltanteUltimoCostoTextBox.Text = string.Format("{0:C2}", totalFaltanteUltimoCosto);
             totalSobranteCostoPromedioTextBox.Text = string.Format("{0:C2}", totalSobranteCostoPromedio);
             totalFaltanteCostoPromedioTextBox.Text = string.Format("{0:C2}", totalFaltanteCostoPromedio);
+        }
+
+        private void iDInventarioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                iDInventarioTextBox_Validating(sender, e);
         }
     }
 }

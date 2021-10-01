@@ -158,12 +158,12 @@ namespace Win.Consultas
             // 
             // iDInventarioTextBox
             // 
-            this.iDInventarioTextBox.BackColor = System.Drawing.Color.Aquamarine;
+            this.iDInventarioTextBox.BackColor = System.Drawing.Color.White;
             this.iDInventarioTextBox.Location = new System.Drawing.Point(133, 8);
             this.iDInventarioTextBox.Name = "iDInventarioTextBox";
-            this.iDInventarioTextBox.ReadOnly = true;
             this.iDInventarioTextBox.Size = new System.Drawing.Size(100, 22);
             this.iDInventarioTextBox.TabIndex = 115;
+            this.iDInventarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.iDInventarioTextBox_KeyPress);
             this.iDInventarioTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.iDInventarioTextBox_Validating);
             // 
             // label4

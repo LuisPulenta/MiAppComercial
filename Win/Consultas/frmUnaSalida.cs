@@ -71,18 +71,20 @@ namespace Win.Consultas
 
         private void iDSalidaTextBox_Validating(object sender, EventArgs e)
         {
+            fechaTextBox.Text = string.Empty;
+            conceptoTextBox.Text = string.Empty;
+            almacenTextBox.Text = string.Empty;
+            misDetalles.Clear();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizarGrilla();
+
             if (iDSalidaTextBox.Text == null) return;
             CADSalida miSalida = CADSalida.SalidasGetSalidaByIDSalida(Convert.ToInt32(iDSalidaTextBox.Text));
             if (miSalida == null)
             {
-                fechaTextBox.Text = string.Empty;
-                conceptoTextBox.Text = string.Empty;
-                almacenTextBox.Text = string.Empty;
-                misDetalles.Clear();
-                dgvDatos.DataSource = null;
-                dgvDatos.DataSource = misDetalles;
-                PersonalizarGrilla();
                 errorProvider1.SetError(iDSalidaTextBox, "No existe esta Salida");
+                iDSalidaTextBox.Focus();
                 return;
             }
 
@@ -149,6 +151,12 @@ namespace Win.Consultas
             totalItemsTextBox.Text = string.Format("{0:N0}", totalItems);
             totalCostoPromedioTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
             totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalCostoPromedio);
+        }
+
+        private void iDSalidaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                iDSalidaTextBox_Validating(sender, e);
         }
     }
 }

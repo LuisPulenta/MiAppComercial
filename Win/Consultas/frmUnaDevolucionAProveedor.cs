@@ -73,17 +73,19 @@ namespace Win.Consultas
 
         private void iDDevolucionAProveedorTextBox_Validating(object sender, EventArgs e)
         {
+            fechaTextBox.Text = string.Empty;
+            proveedorTextBox.Text = string.Empty;
+            misDetalles.Clear();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizarGrilla();
+
             if (iDDevolucionAProveedorTextBox.Text == null) return;
             CADDevolucionProveedor miDevolucionAProveedor = CADDevolucionProveedor.DevolucionProveedorGetDevolucionProveedorByIDDevolucionProveedor(Convert.ToInt32(iDDevolucionAProveedorTextBox.Text));
             if (miDevolucionAProveedor == null)
             {
-                fechaTextBox.Text = string.Empty;
-                proveedorTextBox.Text = string.Empty;
-                misDetalles.Clear();
-                dgvDatos.DataSource = null;
-                dgvDatos.DataSource = misDetalles;
-                PersonalizarGrilla();
                 errorProvider1.SetError(iDDevolucionAProveedorTextBox, "No existe esta Devolución a Proveedor");
+                iDDevolucionAProveedorTextBox.Focus();
                 return;
             }
 
@@ -169,6 +171,12 @@ namespace Win.Consultas
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalDescuentoTextBox.Text = string.Format("{0:C2}", totalDescuento);
             totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
+        }
+
+        private void iDDevolucionAProveedorTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                iDDevolucionAProveedorTextBox_Validating(sender, e);
         }
     }
 }

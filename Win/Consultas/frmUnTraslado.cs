@@ -71,18 +71,21 @@ namespace Win.Consultas
 
         private void iDTrasladoTextBox_Validating(object sender, EventArgs e)
         {
+            fechaTextBox.Text = string.Empty;
+            almacenOrigenTextBox.Text = string.Empty;
+            almacenDestinoTextBox.Text = string.Empty;
+            misDetalles.Clear();
+            dgvDatos.DataSource = null;
+            dgvDatos.DataSource = misDetalles;
+            PersonalizarGrilla();
+
             if (iDTrasladoTextBox.Text == null) return;
             CADTraslado miTraslado = CADTraslado.TrasladosGetTrasladoByIDTraslado(Convert.ToInt32(iDTrasladoTextBox.Text));
             if (miTraslado == null)
             {
-                fechaTextBox.Text = string.Empty;
-                almacenOrigenTextBox.Text = string.Empty;
-                almacenDestinoTextBox.Text = string.Empty;
-                misDetalles.Clear();
-                dgvDatos.DataSource = null;
-                dgvDatos.DataSource = misDetalles;
-                PersonalizarGrilla();
+               
                 errorProvider1.SetError(iDTrasladoTextBox, "No existe este Traslado");
+                iDTrasladoTextBox.Focus();
                 return;
             }
 
@@ -149,6 +152,12 @@ namespace Win.Consultas
             totalItemsTextBox.Text = string.Format("{0:N0}", totalItems);
             totalCostoPromedioTextBox.Text = string.Format("{0:C2}", totalUltimoCosto);
             totalUltimoCostoTextBox.Text = string.Format("{0:C2}", totalCostoPromedio);
+        }
+
+        private void iDTrasladoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+                iDTrasladoTextBox_Validating(sender, e);
         }
     }
 }
