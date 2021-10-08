@@ -135,5 +135,16 @@ namespace Win.Movimientos
 
             this.Close();
         }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if(IDInventarioComboBox.SelectedIndex==-1)
+            {
+                return;
+            }
+            frmConteo1 frm = new frmConteo1();
+            frm.IdInventario = Convert.ToInt32(IDInventarioComboBox.SelectedValue);
+            frm.ShowDialog();
+        }
     }
 }

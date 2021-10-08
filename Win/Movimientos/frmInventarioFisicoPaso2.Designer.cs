@@ -30,20 +30,21 @@ namespace Win.Movimientos
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInventarioFisicoPaso2));
             this.IDInventarioComboBox = new System.Windows.Forms.ComboBox();
+            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSMiAppComercial = new Win.DSMiAppComercial();
             this.label1 = new System.Windows.Forms.Label();
             this.inventarioDetalleTableAdapter = new Win.DSMiAppComercialTableAdapters.InventarioDetalleTableAdapter();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.inventarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inventarioTableAdapter = new Win.DSMiAppComercialTableAdapters.InventarioTableAdapter();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // IDInventarioComboBox
@@ -57,6 +58,11 @@ namespace Win.Movimientos
             this.IDInventarioComboBox.TabIndex = 26;
             this.IDInventarioComboBox.ValueMember = "IDInventario";
             this.IDInventarioComboBox.SelectedIndexChanged += new System.EventHandler(this.IDInventarioComboBox_SelectedIndexChanged);
+            // 
+            // inventarioBindingSource
+            // 
+            this.inventarioBindingSource.DataMember = "Inventario";
+            this.inventarioBindingSource.DataSource = this.dSMiAppComercial;
             // 
             // dSMiAppComercial
             // 
@@ -81,23 +87,23 @@ namespace Win.Movimientos
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
             this.dgvDatos.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvDatos.Location = new System.Drawing.Point(6, 46);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDatos.Location = new System.Drawing.Point(6, 58);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(821, 604);
+            this.dgvDatos.Size = new System.Drawing.Size(821, 592);
             this.dgvDatos.TabIndex = 27;
             // 
             // btnGuardar
@@ -115,14 +121,19 @@ namespace Win.Movimientos
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // inventarioBindingSource
-            // 
-            this.inventarioBindingSource.DataMember = "Inventario";
-            this.inventarioBindingSource.DataSource = this.dSMiAppComercial;
-            // 
             // inventarioTableAdapter
             // 
             this.inventarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(713, 2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(53, 50);
+            this.btnImprimir.TabIndex = 29;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmInventarioFisicoPaso2
             // 
@@ -130,6 +141,7 @@ namespace Win.Movimientos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(831, 712);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.IDInventarioComboBox);
@@ -142,9 +154,9 @@ namespace Win.Movimientos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---Inventario Físico Paso 2: Ingresar Primer Conteo---";
             this.Load += new System.EventHandler(this.frmInventarioFisicoPaso2_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,5 +172,6 @@ namespace Win.Movimientos
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.BindingSource inventarioBindingSource;
         private DSMiAppComercialTableAdapters.InventarioTableAdapter inventarioTableAdapter;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

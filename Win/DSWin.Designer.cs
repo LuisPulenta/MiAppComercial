@@ -96,8 +96,6 @@ namespace Win {
         
         private global::System.Data.DataRelation relationFK_Kardex_Almacen;
         
-        private global::System.Data.DataRelation relationFK_InventarioDetalle_Producto;
-        
         private global::System.Data.DataRelation relationFK_AlmacenProducto_Almacen1;
         
         private global::System.Data.DataRelation relationFK_Kardex_Almacen1;
@@ -850,7 +848,6 @@ namespace Win {
             this.relationFK_AlmacenProducto_Almacen = this.Relations["FK_AlmacenProducto_Almacen"];
             this.relationFK_AlmacenProducto_Producto = this.Relations["FK_AlmacenProducto_Producto"];
             this.relationFK_Kardex_Almacen = this.Relations["FK_Kardex_Almacen"];
-            this.relationFK_InventarioDetalle_Producto = this.Relations["FK_InventarioDetalle_Producto"];
             this.relationFK_AlmacenProducto_Almacen1 = this.Relations["FK_AlmacenProducto_Almacen1"];
             this.relationFK_Kardex_Almacen1 = this.Relations["FK_Kardex_Almacen1"];
             this.relationFK_AlmacenProducto_Almacen2 = this.Relations["FK_AlmacenProducto_Almacen2"];
@@ -965,10 +962,6 @@ namespace Win {
                         this.tableAlmacen.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
                         this.tableKardex.IDAlmacenColumn}, false);
             this.Relations.Add(this.relationFK_Kardex_Almacen);
-            this.relationFK_InventarioDetalle_Producto = new global::System.Data.DataRelation("FK_InventarioDetalle_Producto", new global::System.Data.DataColumn[] {
-                        this.tableProducto.CodigoColumn}, new global::System.Data.DataColumn[] {
-                        this.tableInventarioDetalle.CodigoColumn}, false);
-            this.Relations.Add(this.relationFK_InventarioDetalle_Producto);
             this.relationFK_AlmacenProducto_Almacen1 = new global::System.Data.DataRelation("FK_AlmacenProducto_Almacen1", new global::System.Data.DataColumn[] {
                         this.tableCompraBusqueda.IDAlmacenColumn}, new global::System.Data.DataColumn[] {
                         this.tableAlmacenProducto.IDAlmacenColumn}, false);
@@ -6734,15 +6727,19 @@ namespace Win {
             
             private global::System.Data.DataColumn columnIDLinea;
             
-            private global::System.Data.DataColumn columnCodigo;
-            
-            private global::System.Data.DataColumn columnDescripcion;
-            
             private global::System.Data.DataColumn columnUnidad;
             
             private global::System.Data.DataColumn columnMedida;
             
             private global::System.Data.DataColumn columnStock;
+            
+            private global::System.Data.DataColumn columnCódigo;
+            
+            private global::System.Data.DataColumn columnDescripción;
+            
+            private global::System.Data.DataColumn columnIDInventario;
+            
+            private global::System.Data.DataColumn columnCategoría;
             
             private global::System.Data.DataColumn columnConteo1;
             
@@ -6793,22 +6790,6 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CodigoColumn {
-                get {
-                    return this.columnCodigo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescripcionColumn {
-                get {
-                    return this.columnDescripcion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn UnidadColumn {
                 get {
                     return this.columnUnidad;
@@ -6828,6 +6809,38 @@ namespace Win {
             public global::System.Data.DataColumn StockColumn {
                 get {
                     return this.columnStock;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CódigoColumn {
+                get {
+                    return this.columnCódigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DescripciónColumn {
+                get {
+                    return this.columnDescripción;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IDInventarioColumn {
+                get {
+                    return this.columnIDInventario;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CategoríaColumn {
+                get {
+                    return this.columnCategoría;
                 }
             }
             
@@ -6892,21 +6905,20 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InventarioDetalleRow AddInventarioDetalleRow(ProductoRow parentProductoRowByFK_InventarioDetalle_Producto, string Descripcion, string Unidad, double Medida, double Stock, double Conteo1, double Conteo2, double Conteo3) {
+            public InventarioDetalleRow AddInventarioDetalleRow(string Unidad, double Medida, double Stock, string Código, string Descripción, int IDInventario, string Categoría, double Conteo1, double Conteo2, double Conteo3) {
                 InventarioDetalleRow rowInventarioDetalleRow = ((InventarioDetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        null,
-                        Descripcion,
                         Unidad,
                         Medida,
                         Stock,
+                        Código,
+                        Descripción,
+                        IDInventario,
+                        Categoría,
                         Conteo1,
                         Conteo2,
                         Conteo3};
-                if ((parentProductoRowByFK_InventarioDetalle_Producto != null)) {
-                    columnValuesArray[1] = parentProductoRowByFK_InventarioDetalle_Producto[0];
-                }
                 rowInventarioDetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInventarioDetalleRow);
                 return rowInventarioDetalleRow;
@@ -6937,11 +6949,13 @@ namespace Win {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnIDLinea = base.Columns["IDLinea"];
-                this.columnCodigo = base.Columns["Codigo"];
-                this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnUnidad = base.Columns["Unidad"];
                 this.columnMedida = base.Columns["Medida"];
                 this.columnStock = base.Columns["Stock"];
+                this.columnCódigo = base.Columns["Código"];
+                this.columnDescripción = base.Columns["Descripción"];
+                this.columnIDInventario = base.Columns["IDInventario"];
+                this.columnCategoría = base.Columns["Categoría"];
                 this.columnConteo1 = base.Columns["Conteo1"];
                 this.columnConteo2 = base.Columns["Conteo2"];
                 this.columnConteo3 = base.Columns["Conteo3"];
@@ -6952,16 +6966,20 @@ namespace Win {
             private void InitClass() {
                 this.columnIDLinea = new global::System.Data.DataColumn("IDLinea", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIDLinea);
-                this.columnCodigo = new global::System.Data.DataColumn("Codigo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCodigo);
-                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcion);
                 this.columnUnidad = new global::System.Data.DataColumn("Unidad", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUnidad);
                 this.columnMedida = new global::System.Data.DataColumn("Medida", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMedida);
                 this.columnStock = new global::System.Data.DataColumn("Stock", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStock);
+                this.columnCódigo = new global::System.Data.DataColumn("Código", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCódigo);
+                this.columnDescripción = new global::System.Data.DataColumn("Descripción", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescripción);
+                this.columnIDInventario = new global::System.Data.DataColumn("IDInventario", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIDInventario);
+                this.columnCategoría = new global::System.Data.DataColumn("Categoría", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCategoría);
                 this.columnConteo1 = new global::System.Data.DataColumn("Conteo1", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnConteo1);
                 this.columnConteo2 = new global::System.Data.DataColumn("Conteo2", typeof(double), null, global::System.Data.MappingType.Element);
@@ -6976,14 +6994,17 @@ namespace Win {
                 this.columnIDLinea.AllowDBNull = false;
                 this.columnIDLinea.ReadOnly = true;
                 this.columnIDLinea.Unique = true;
-                this.columnCodigo.AllowDBNull = false;
-                this.columnCodigo.MaxLength = 12;
-                this.columnDescripcion.AllowDBNull = false;
-                this.columnDescripcion.MaxLength = 50;
                 this.columnUnidad.AllowDBNull = false;
                 this.columnUnidad.MaxLength = 3;
                 this.columnMedida.AllowDBNull = false;
                 this.columnStock.AllowDBNull = false;
+                this.columnCódigo.AllowDBNull = false;
+                this.columnCódigo.MaxLength = 12;
+                this.columnDescripción.AllowDBNull = false;
+                this.columnDescripción.MaxLength = 50;
+                this.columnIDInventario.AllowDBNull = false;
+                this.columnCategoría.AllowDBNull = false;
+                this.columnCategoría.MaxLength = 50;
                 this.columnConteo1.AllowDBNull = false;
                 this.columnConteo2.AllowDBNull = false;
                 this.columnConteo3.AllowDBNull = false;
@@ -11638,17 +11659,6 @@ namespace Win {
                     return ((AlmacenProductoRow[])(base.GetChildRows(this.Table.ChildRelations["FK_AlmacenProducto_Producto"])));
                 }
             }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public InventarioDetalleRow[] GetInventarioDetalleRows() {
-                if ((this.Table.ChildRelations["FK_InventarioDetalle_Producto"] == null)) {
-                    return new InventarioDetalleRow[0];
-                }
-                else {
-                    return ((InventarioDetalleRow[])(base.GetChildRows(this.Table.ChildRelations["FK_InventarioDetalle_Producto"])));
-                }
-            }
         }
         
         /// <summary>
@@ -12423,28 +12433,6 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Codigo {
-                get {
-                    return ((string)(this[this.tableInventarioDetalle.CodigoColumn]));
-                }
-                set {
-                    this[this.tableInventarioDetalle.CodigoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Descripcion {
-                get {
-                    return ((string)(this[this.tableInventarioDetalle.DescripcionColumn]));
-                }
-                set {
-                    this[this.tableInventarioDetalle.DescripcionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Unidad {
                 get {
                     return ((string)(this[this.tableInventarioDetalle.UnidadColumn]));
@@ -12478,6 +12466,50 @@ namespace Win {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Código {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle.CódigoColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle.CódigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Descripción {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle.DescripciónColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle.DescripciónColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int IDInventario {
+                get {
+                    return ((int)(this[this.tableInventarioDetalle.IDInventarioColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle.IDInventarioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Categoría {
+                get {
+                    return ((string)(this[this.tableInventarioDetalle.CategoríaColumn]));
+                }
+                set {
+                    this[this.tableInventarioDetalle.CategoríaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public double Conteo1 {
                 get {
                     return ((double)(this[this.tableInventarioDetalle.Conteo1Column]));
@@ -12506,17 +12538,6 @@ namespace Win {
                 }
                 set {
                     this[this.tableInventarioDetalle.Conteo3Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ProductoRow ProductoRow {
-                get {
-                    return ((ProductoRow)(this.GetParentRow(this.Table.ParentRelations["FK_InventarioDetalle_Producto"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_InventarioDetalle_Producto"]);
                 }
             }
         }
@@ -22248,11 +22269,13 @@ ORDER BY dbo.Inventario.Fecha";
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "InventarioDetalle";
             tableMapping.ColumnMappings.Add("IDLinea", "IDLinea");
-            tableMapping.ColumnMappings.Add("Codigo", "Codigo");
-            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Unidad", "Unidad");
             tableMapping.ColumnMappings.Add("Medida", "Medida");
             tableMapping.ColumnMappings.Add("Stock", "Stock");
+            tableMapping.ColumnMappings.Add("Código", "Código");
+            tableMapping.ColumnMappings.Add("Descripción", "Descripción");
+            tableMapping.ColumnMappings.Add("IDInventario", "IDInventario");
+            tableMapping.ColumnMappings.Add("Categoría", "Categoría");
             tableMapping.ColumnMappings.Add("Conteo1", "Conteo1");
             tableMapping.ColumnMappings.Add("Conteo2", "Conteo2");
             tableMapping.ColumnMappings.Add("Conteo3", "Conteo3");
@@ -22272,28 +22295,31 @@ ORDER BY dbo.Inventario.Fecha";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT dbo.InventarioDetalle.IDLinea,dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, 
-                  dbo.InventarioDetalle.Conteo3
+            this._commandCollection[0].CommandText = @"SELECT TOP (100) PERCENT dbo.InventarioDetalle.IDLinea, dbo.InventarioDetalle.Codigo AS Código, dbo.InventarioDetalle.Descripcion AS Descripción, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, 
+                  dbo.InventarioDetalle.Conteo1 , dbo.InventarioDetalle.Conteo2 , dbo.InventarioDetalle.Conteo3  , dbo.InventarioDetalle.IDInventario, dbo.Inventario.Categoría
 FROM     dbo.InventarioDetalle INNER JOIN
-                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo
+                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo INNER JOIN
+                  dbo.Inventario ON dbo.InventarioDetalle.IDInventario = dbo.Inventario.IDInventario
 WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = @"SELECT dbo.InventarioDetalle.IDLinea,dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, 
-                  dbo.InventarioDetalle.Conteo3
+            this._commandCollection[1].CommandText = @"SELECT TOP (100) PERCENT dbo.InventarioDetalle.IDLinea, dbo.InventarioDetalle.Codigo AS Código, dbo.InventarioDetalle.Descripcion AS Descripción, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, 
+                  dbo.InventarioDetalle.Conteo1 , dbo.InventarioDetalle.Conteo2 , dbo.InventarioDetalle.Conteo3  , dbo.InventarioDetalle.IDInventario, dbo.Inventario.Categoría
 FROM     dbo.InventarioDetalle INNER JOIN
-                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo
+                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo INNER JOIN
+                  dbo.Inventario ON dbo.InventarioDetalle.IDInventario = dbo.Inventario.IDInventario
 WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario) AND (dbo.InventarioDetalle.Stock<>dbo.InventarioDetalle.Conteo1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = @"SELECT dbo.InventarioDetalle.IDLinea,dbo.InventarioDetalle.Codigo, dbo.InventarioDetalle.Descripcion, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, dbo.InventarioDetalle.Conteo1, dbo.InventarioDetalle.Conteo2, 
-                  dbo.InventarioDetalle.Conteo3
+            this._commandCollection[2].CommandText = @"SELECT TOP (100) PERCENT dbo.InventarioDetalle.IDLinea, dbo.InventarioDetalle.Codigo AS Código, dbo.InventarioDetalle.Descripcion AS Descripción, dbo.Producto.IDUnidad AS Unidad, dbo.Producto.Medida, dbo.InventarioDetalle.Stock, 
+                  dbo.InventarioDetalle.Conteo1 , dbo.InventarioDetalle.Conteo2 , dbo.InventarioDetalle.Conteo3  , dbo.InventarioDetalle.IDInventario, dbo.Inventario.Categoría
 FROM     dbo.InventarioDetalle INNER JOIN
-                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo
+                  dbo.Producto ON dbo.InventarioDetalle.Codigo = dbo.Producto.Codigo INNER JOIN
+                  dbo.Inventario ON dbo.InventarioDetalle.IDInventario = dbo.Inventario.IDInventario
 WHERE  (dbo.InventarioDetalle.IDInventario = @IDInventario) AND (dbo.InventarioDetalle.Stock<>dbo.InventarioDetalle.Conteo1) AND (dbo.InventarioDetalle.Stock<>dbo.InventarioDetalle.Conteo2)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDInventario", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IDInventario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
