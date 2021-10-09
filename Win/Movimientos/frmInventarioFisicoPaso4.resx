@@ -148,6 +148,19 @@
   <metadata name="inventarioTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>281, 146</value>
   </metadata>
+  <data name="btnImprimir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAbJJREFUaEPt
+        2b8rhVEcx/GLGGRgwz/AhoWUHykTCf+ADKwmo0ExYWGilMFgEJvJpBiUiZIYJGWxi8Tx/j6dp245T85z
+        7/OcJ/X91Kt7u6fvOef7dH+ce29Jo9FoNIFjurCC3YytoscukmfMBG5hMnaHabtIntEGkmgDntEGkgRr
+        oA/bOMnYDvrtIlnH1KAuMNasOtFEbRjEOCYDkbVkzXawh4piGjAA+ZR8g+t5m6d37GEY7CVVTC2GcAnX
+        5CFdYQTsyTumEadwTZinb8iV/7D348fP0GQ355Po6n/a4lBkw+eYwywu8AUZk9tRuzmfmEVbGNILFlAP
+        efOYxzPi8SW7OZ9Ex+XyyUN4xIzdADFTeLBjYt0O+CQ6m5dPHoI8TQ7QihYc2sfi8Q27OZ8U0sBftIGi
+        5dbAPY5xlJLUSK1rTpfcGtiCvOiaU5KaTbjmdMmtAd7eKjk5RifcNTuHD20giTbgKVUDHRhLsIwnxBNn
+        1YCce+TCudYUnbaw2vz6Up9VA4X9KvHvG9iH/FLRm5LUSG3hDbziBtcpSY3UFt5AVrQBz5hu/Oc/ODQa
+        jUYTp1T6AVP53F+KXTgKAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIACgKgAAZgAAABAQAAABACAAaAQAAAYrAAAwMAAAAQAgAKglAABuLwAAICAAAAEA

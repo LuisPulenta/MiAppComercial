@@ -222,6 +222,18 @@
     <Compile Include="Listados\frmConteo1.Designer.cs">
       <DependentUpon>frmConteo1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\frmConteo2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmConteo2.Designer.cs">
+      <DependentUpon>frmConteo2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmConteo3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmConteo3.Designer.cs">
+      <DependentUpon>frmConteo3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestros\frmAlmacenes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -456,7 +468,15 @@
     <EmbeddedResource Include="Listados\frmConteo1.resx">
       <DependentUpon>frmConteo1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmConteo2.resx">
+      <DependentUpon>frmConteo2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmConteo3.resx">
+      <DependentUpon>frmConteo3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\rptConteo1.rdlc" />
+    <EmbeddedResource Include="Listados\rptConteo2.rdlc" />
+    <EmbeddedResource Include="Listados\rptConteo3.rdlc" />
     <EmbeddedResource Include="Maestros\frmAlmacenes.resx">
       <DependentUpon>frmAlmacenes.cs</DependentUpon>
     </EmbeddedResource>

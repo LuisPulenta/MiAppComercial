@@ -42,6 +42,7 @@ namespace Win.Movimientos
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.inventarioTableAdapter = new Win.DSMiAppComercialTableAdapters.InventarioTableAdapter();
+            this.btnImprimir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inventarioDetalleBindingSource)).BeginInit();
@@ -120,16 +121,26 @@ namespace Win.Movimientos
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Location = new System.Drawing.Point(5, 39);
+            this.dgvDatos.Location = new System.Drawing.Point(5, 65);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowHeadersWidth = 51;
             this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(914, 604);
+            this.dgvDatos.Size = new System.Drawing.Size(914, 578);
             this.dgvDatos.TabIndex = 35;
             // 
             // inventarioTableAdapter
             // 
             this.inventarioTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btnImprimir.Image")));
+            this.btnImprimir.Location = new System.Drawing.Point(713, 2);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(53, 50);
+            this.btnImprimir.TabIndex = 37;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // frmInventarioFisicoPaso4
             // 
@@ -137,6 +148,7 @@ namespace Win.Movimientos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(924, 712);
+            this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.IDInventarioComboBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGuardar);
@@ -169,5 +181,6 @@ namespace Win.Movimientos
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dgvDatos;
         private DSMiAppComercialTableAdapters.InventarioTableAdapter inventarioTableAdapter;
+        private System.Windows.Forms.Button btnImprimir;
     }
 }

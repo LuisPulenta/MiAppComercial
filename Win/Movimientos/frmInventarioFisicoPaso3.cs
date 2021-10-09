@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Win.Clases;
+using Win.Listados;
 
 namespace Win.Movimientos
 {
@@ -133,6 +134,17 @@ namespace Win.Movimientos
                 MessageBoxIcon.Information);
 
             this.Close();
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (IDInventarioComboBox.SelectedIndex == -1)
+            {
+                return;
+            }
+            frmConteo2 frm = new frmConteo2();
+            frm.IdInventario = Convert.ToInt32(IDInventarioComboBox.SelectedValue);
+            frm.ShowDialog();
         }
     }
 }
