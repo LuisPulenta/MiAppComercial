@@ -208,6 +208,12 @@
     <Compile Include="Consultas\frmUnTraslado.Designer.cs">
       <DependentUpon>frmUnTraslado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmUtilidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmUtilidad.Designer.cs">
+      <DependentUpon>frmUtilidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSWin.cs">
       <DependentUpon>DSWin.xsd</DependentUpon>
     </Compile>
@@ -464,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmUnTraslado.resx">
       <DependentUpon>frmUnTraslado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmUtilidad.resx">
+      <DependentUpon>frmUtilidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\frmConteo1.resx">
       <DependentUpon>frmConteo1.cs</DependentUpon>

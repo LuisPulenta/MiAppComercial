@@ -112,6 +112,7 @@ namespace Win
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
             this.tsbTraslados = new System.Windows.Forms.ToolStripButton();
+            this.utilidadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -524,7 +525,8 @@ namespace Win
             this.consultasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.kardexToolStripMenuItem,
             this.movimientosToolStripMenuItem1,
-            this.stockToolStripMenuItem});
+            this.stockToolStripMenuItem,
+            this.utilidadToolStripMenuItem1});
             this.consultasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("consultasToolStripMenuItem.Image")));
             this.consultasToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.consultasToolStripMenuItem.Name = "consultasToolStripMenuItem";
@@ -536,7 +538,7 @@ namespace Win
             this.kardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kardexToolStripMenuItem.Image")));
             this.kardexToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
-            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
             this.kardexToolStripMenuItem.Text = "&Kardex";
             this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
             // 
@@ -553,7 +555,7 @@ namespace Win
             this.movimientosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem1.Image")));
             this.movimientosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.movimientosToolStripMenuItem1.Name = "movimientosToolStripMenuItem1";
-            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(190, 38);
+            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
             this.movimientosToolStripMenuItem1.Text = "&Movimientos";
             // 
             // comprasToolStripMenuItem1
@@ -624,7 +626,7 @@ namespace Win
             this.stockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockToolStripMenuItem.Image")));
             this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
             this.stockToolStripMenuItem.Text = "&Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
@@ -888,6 +890,15 @@ namespace Win
             this.tsbTraslados.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.tsbTraslados.Click += new System.EventHandler(this.tsbTraslados_Click);
             // 
+            // utilidadToolStripMenuItem1
+            // 
+            this.utilidadToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("utilidadToolStripMenuItem1.Image")));
+            this.utilidadToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilidadToolStripMenuItem1.Name = "utilidadToolStripMenuItem1";
+            this.utilidadToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
+            this.utilidadToolStripMenuItem1.Text = "&Utilidad";
+            this.utilidadToolStripMenuItem1.Click += new System.EventHandler(this.utilidadToolStripMenuItem1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1001,5 +1012,6 @@ namespace Win
         private System.Windows.Forms.ToolStripMenuItem trasladosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem2;
         private System.Windows.Forms.ToolStripButton tsbStock;
+        private System.Windows.Forms.ToolStripMenuItem utilidadToolStripMenuItem1;
     }
 }

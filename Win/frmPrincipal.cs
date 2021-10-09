@@ -383,5 +383,13 @@ namespace Win
         {
             stockToolStripMenuItem_Click(sender, e);
         }
+
+        private void utilidadToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmUtilidad miForm = new frmUtilidad();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
     }
 }
