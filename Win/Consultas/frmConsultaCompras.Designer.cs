@@ -469,6 +469,7 @@ namespace Win.Consultas
             this.Name = "frmConsultaCompras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---Consulta de Compras---";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmConsultaCompras_FormClosing);
             this.Load += new System.EventHandler(this.frmConsultaCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();

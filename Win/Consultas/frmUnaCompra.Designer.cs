@@ -31,8 +31,8 @@ namespace Win.Consultas
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUnaCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iDCompraTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,6 +57,8 @@ namespace Win.Consultas
             this.totalItemTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnBuscarCompra = new System.Windows.Forms.Button();
+            this.btnEditarFecha = new System.Windows.Forms.Button();
+            this.btnActualizarFecha = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -149,18 +151,18 @@ namespace Win.Consultas
             // 
             this.dgvDatos.AllowUserToAddRows = false;
             this.dgvDatos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDatos.Location = new System.Drawing.Point(2, 134);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.ReadOnly = true;
@@ -298,12 +300,35 @@ namespace Win.Consultas
             this.btnBuscarCompra.UseVisualStyleBackColor = true;
             this.btnBuscarCompra.Click += new System.EventHandler(this.btnBuscarCompra_Click);
             // 
+            // btnEditarFecha
+            // 
+            this.btnEditarFecha.Location = new System.Drawing.Point(436, 36);
+            this.btnEditarFecha.Name = "btnEditarFecha";
+            this.btnEditarFecha.Size = new System.Drawing.Size(116, 28);
+            this.btnEditarFecha.TabIndex = 84;
+            this.btnEditarFecha.Text = "Editar Fecha";
+            this.btnEditarFecha.UseVisualStyleBackColor = true;
+            this.btnEditarFecha.Click += new System.EventHandler(this.btnEditarFecha_Click);
+            // 
+            // btnActualizarFecha
+            // 
+            this.btnActualizarFecha.Location = new System.Drawing.Point(436, 36);
+            this.btnActualizarFecha.Name = "btnActualizarFecha";
+            this.btnActualizarFecha.Size = new System.Drawing.Size(116, 28);
+            this.btnActualizarFecha.TabIndex = 85;
+            this.btnActualizarFecha.Text = "Guardar Fecha";
+            this.btnActualizarFecha.UseVisualStyleBackColor = true;
+            this.btnActualizarFecha.Visible = false;
+            this.btnActualizarFecha.Click += new System.EventHandler(this.btnActualizarFecha_Click);
+            // 
             // frmUnaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1179, 693);
+            this.Controls.Add(this.btnActualizarFecha);
+            this.Controls.Add(this.btnEditarFecha);
             this.Controls.Add(this.btnBuscarCompra);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -334,6 +359,7 @@ namespace Win.Consultas
             this.Name = "frmUnaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "---Compra---";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmUnaCompra_FormClosing);
             this.Load += new System.EventHandler(this.frmUnaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
@@ -369,5 +395,7 @@ namespace Win.Consultas
         private System.Windows.Forms.TextBox totalItemTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnBuscarCompra;
+        private System.Windows.Forms.Button btnActualizarFecha;
+        private System.Windows.Forms.Button btnEditarFecha;
     }
 }

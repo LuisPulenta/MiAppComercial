@@ -85,6 +85,7 @@ namespace Win
             this.trasladosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.stockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.utilidadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -112,7 +113,6 @@ namespace Win
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbSalidas = new System.Windows.Forms.ToolStripButton();
             this.tsbTraslados = new System.Windows.Forms.ToolStripButton();
-            this.utilidadToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -538,7 +538,7 @@ namespace Win
             this.kardexToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kardexToolStripMenuItem.Image")));
             this.kardexToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.kardexToolStripMenuItem.Name = "kardexToolStripMenuItem";
-            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.kardexToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
             this.kardexToolStripMenuItem.Text = "&Kardex";
             this.kardexToolStripMenuItem.Click += new System.EventHandler(this.kardexToolStripMenuItem_Click);
             // 
@@ -555,7 +555,7 @@ namespace Win
             this.movimientosToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("movimientosToolStripMenuItem1.Image")));
             this.movimientosToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.movimientosToolStripMenuItem1.Name = "movimientosToolStripMenuItem1";
-            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
+            this.movimientosToolStripMenuItem1.Size = new System.Drawing.Size(190, 38);
             this.movimientosToolStripMenuItem1.Text = "&Movimientos";
             // 
             // comprasToolStripMenuItem1
@@ -626,9 +626,18 @@ namespace Win
             this.stockToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stockToolStripMenuItem.Image")));
             this.stockToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(190, 38);
             this.stockToolStripMenuItem.Text = "&Stock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
+            // 
+            // utilidadToolStripMenuItem1
+            // 
+            this.utilidadToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("utilidadToolStripMenuItem1.Image")));
+            this.utilidadToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.utilidadToolStripMenuItem1.Name = "utilidadToolStripMenuItem1";
+            this.utilidadToolStripMenuItem1.Size = new System.Drawing.Size(190, 38);
+            this.utilidadToolStripMenuItem1.Text = "&Utilidad";
+            this.utilidadToolStripMenuItem1.Click += new System.EventHandler(this.utilidadToolStripMenuItem1_Click);
             // 
             // listadosToolStripMenuItem
             // 
@@ -689,15 +698,21 @@ namespace Win
             // 
             // acercaDeToolStripMenuItem
             // 
+            this.acercaDeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("acercaDeToolStripMenuItem.Image")));
+            this.acercaDeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
             this.acercaDeToolStripMenuItem.Text = "Acerca &de";
+            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem1
             // 
+            this.ayudaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ayudaToolStripMenuItem1.Image")));
+            this.ayudaToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(158, 26);
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
             this.ayudaToolStripMenuItem1.Text = "&Ayuda";
+            this.ayudaToolStripMenuItem1.Click += new System.EventHandler(this.ayudaToolStripMenuItem1_Click);
             // 
             // statusStrip1
             // 
@@ -889,15 +904,6 @@ namespace Win
             this.tsbTraslados.Text = "Traslados";
             this.tsbTraslados.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.tsbTraslados.Click += new System.EventHandler(this.tsbTraslados_Click);
-            // 
-            // utilidadToolStripMenuItem1
-            // 
-            this.utilidadToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("utilidadToolStripMenuItem1.Image")));
-            this.utilidadToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.utilidadToolStripMenuItem1.Name = "utilidadToolStripMenuItem1";
-            this.utilidadToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
-            this.utilidadToolStripMenuItem1.Text = "&Utilidad";
-            this.utilidadToolStripMenuItem1.Click += new System.EventHandler(this.utilidadToolStripMenuItem1_Click);
             // 
             // frmPrincipal
             // 

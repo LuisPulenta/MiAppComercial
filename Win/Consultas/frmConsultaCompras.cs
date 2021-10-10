@@ -19,6 +19,17 @@ namespace Win.Consultas
 
         private decimal totalNeto = 0;
 
+        private static frmConsultaCompras _Instancia;
+
+        public static frmConsultaCompras GetInstancia()
+        {
+            if (_Instancia == null)
+            {
+                _Instancia = new frmConsultaCompras();
+            }
+            return _Instancia;
+        }
+
         public frmConsultaCompras()
         {
             InitializeComponent();
@@ -34,7 +45,7 @@ namespace Win.Consultas
             proveedorComboBox.SelectedIndex = -1;
             hastaDateTimePicker.Value = DateTime.Now;
             desdeDateTimePicker.Value = DateTime.Now.AddDays(-30);
-
+            _Instancia = this;
             LlenarGrilla();
 
             dgvDatos.AutoResizeColumns();
@@ -61,7 +72,7 @@ namespace Win.Consultas
             LlenarGrilla();
         }
 
-        private void LlenarGrilla()
+        public void LlenarGrilla()
         {
             totalNeto = 0;
 
@@ -170,6 +181,11 @@ namespace Win.Consultas
             miCompra.Proveedor = selectedRow.Cells[2].Value.ToString();
             miCompra.Almacen = selectedRow.Cells[3].Value.ToString();
             miCompra.ShowDialog();
+        }
+
+        private void frmConsultaCompras_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
         }
     }
 }

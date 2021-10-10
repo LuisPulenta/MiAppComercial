@@ -58,6 +58,8 @@ namespace Win.Consultas
         private decimal totalDescuento = 0;
         private decimal totalNeto = 0;
 
+        private string fechaOriginal;
+
         public frmUnaCompra()
         {
             InitializeComponent();
@@ -70,6 +72,7 @@ namespace Win.Consultas
             proveedorTextBox.Text = Proveedor;
             almacenTextBox.Text = Almacen;
             iDCompraTextBox_Validating(sender, e);
+            fechaOriginal = fechaTextBox.Text;
         }
 
         private void iDCompraTextBox_Validating(object sender, EventArgs e)
@@ -191,6 +194,40 @@ namespace Win.Consultas
             if (miBusqueda.IDElegido == 0) return;
             iDCompraTextBox.Text = miBusqueda.IDElegido.ToString();
             iDCompraTextBox_Validating(sender, e);
+        }
+
+        private void btnEditarFecha_Click(object sender, EventArgs e)
+        {
+            fechaTextBox.ReadOnly = false;
+            fechaTextBox.BackColor = System.Drawing.Color.White;
+            fechaTextBox.Focus();
+            btnEditarFecha.Visible = false;
+            btnActualizarFecha.Visible = true;
+        }
+
+        private void btnActualizarFecha_Click(object sender, EventArgs e)
+        {
+            fechaTextBox.ReadOnly = true;
+            fechaTextBox.BackColor = System.Drawing.Color.Aquamarine;
+            btnEditarFecha.Visible = true;
+            btnActualizarFecha.Visible = false;
+            try
+            {
+                CADCompra.CompraUpdateFecha(Convert.ToDateTime(fechaTextBox.Text), Convert.ToInt32(iDCompraTextBox.Text));
+                CADKardex.CompraUpdateFecha(Convert.ToDateTime(fechaTextBox.Text), iDCompraTextBox.Text);
+                fechaOriginal = fechaTextBox.Text;
+            }
+            catch (Exception)
+            {
+                fechaTextBox.Text = fechaOriginal;
+            }
+            
+        }
+
+        private void frmUnaCompra_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmConsultaCompras miForm = frmConsultaCompras.GetInstancia();
+            miForm.LlenarGrilla();
         }
     }
 }

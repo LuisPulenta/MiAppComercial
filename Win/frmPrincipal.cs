@@ -317,7 +317,7 @@ namespace Win
 
         private void comprasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmConsultaCompras miForm = new frmConsultaCompras();
+            frmConsultaCompras miForm = frmConsultaCompras.GetInstancia();
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
@@ -387,6 +387,22 @@ namespace Win
         private void utilidadToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmUtilidad miForm = new frmUtilidad();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAcercaDe miForm = new frmAcercaDe();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void ayudaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmAyuda miForm = new frmAyuda();
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();

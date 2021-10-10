@@ -39,5 +39,10 @@ namespace CAD
                 return miCompra;
             }
         }
+
+        public static void CompraUpdateFecha(DateTime fecha,int IDCompra)
+        {
+            adaptador.CompraUpdateFecha(fecha,IDCompra);
+        }
     }
 }

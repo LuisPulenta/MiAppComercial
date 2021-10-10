@@ -318,6 +318,18 @@
     <Compile Include="Maestros\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movimientos\frmAcercaDe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmAcercaDe.Designer.cs">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimientos\frmAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Movimientos\frmAyuda.Designer.cs">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimientos\frmCancelarInventariosNoTerminados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -524,6 +536,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestros\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmAcercaDe.resx">
+      <DependentUpon>frmAcercaDe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Movimientos\frmAyuda.resx">
+      <DependentUpon>frmAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Movimientos\frmCancelarInventariosNoTerminados.resx">
       <DependentUpon>frmCancelarInventariosNoTerminados.cs</DependentUpon>

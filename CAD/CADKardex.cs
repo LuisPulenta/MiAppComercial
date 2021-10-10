@@ -99,5 +99,9 @@ namespace CAD
             }
         }
 
+        public static void CompraUpdateFecha(DateTime fecha, string IDCompra)
+        {
+            adaptador.KardexCompraUpdateFecha(fecha, IDCompra);
+        }
     }
 }
