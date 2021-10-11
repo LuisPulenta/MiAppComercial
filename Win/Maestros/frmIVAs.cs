@@ -69,14 +69,26 @@ namespace Win
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
+            if (rta == DialogResult.No) return;
+            
+            try
             {
+                Validate();
+                iVABindingSource.RemoveAt(iVABindingSource.Position);
+                tableAdapterManager.UpdateAll(dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                iVATableAdapter.Fill(dSMiAppComercial.IVA);
+                dgvDatos.AutoResizeColumns();
+
+                MessageBox.Show(
+                       "No se puede borrar el IVA porque tiene movimientos",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
                 return;
             }
-
-            Validate();
-            iVABindingSource.RemoveAt(iVABindingSource.Position);
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)

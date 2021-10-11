@@ -41,8 +41,8 @@ namespace Win.Movimientos
             almacenComboBox.SelectedIndex = -1;
             fechaDateTimePicker.Value = DateTime.Now;
             productoLabel.Text = string.Empty;
-            dgvDatos.DataSource = misDetalles;
-            PersonalizaGrid();
+            //dgvDatos.DataSource = misDetalles;
+            //PersonalizaGrid();
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
@@ -212,11 +212,6 @@ namespace Win.Movimientos
             misDetalles.Add(miDetalle);
 
             pbxImagen.Image = null;
-
-            
-            dgvDatos.DataSource = null;
-            dgvDatos.DataSource = misDetalles;
-
             RefrescaGrid();
             LimpiarControles();
         }
@@ -509,6 +504,11 @@ namespace Win.Movimientos
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var a = 1;
         }
     }
 }

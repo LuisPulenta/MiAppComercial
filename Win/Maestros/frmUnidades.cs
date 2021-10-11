@@ -136,11 +136,8 @@ namespace Win.Maestros
               MessageBoxIcon.Question,
               MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
-            {
-                return;
-            }
-
+            if (rta == DialogResult.No) return;
+            
             try
             {
                 Validate();

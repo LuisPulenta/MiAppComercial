@@ -14,7 +14,7 @@ namespace Win
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txtUsuario.Text = "lnunez";
-            txtClave.Text = "Espora2052";
+            txtClave.Text = "Espora2052*";
             this.toolTip1.SetToolTip(this.txtUsuario, "Ingrese su Usuario");
             this.toolTip1.SetToolTip(this.txtClave, "Ingrese su Clave");
         }

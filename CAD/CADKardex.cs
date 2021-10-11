@@ -103,5 +103,23 @@ namespace CAD
         {
             adaptador.KardexCompraUpdateFecha(fecha, IDCompra);
         }
+
+        public static bool KardexCodigoTieneMovimientos(string Codigo)
+        {
+            if (adaptador.KardexCodigoTieneMovimientos(Codigo) == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        public static bool KardexIDAlmacenTieneMovimientos(int IDAlmacen)
+        {
+            if (adaptador.KardexIDAlmacenTieneMovimientos(IDAlmacen) == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

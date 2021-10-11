@@ -361,7 +361,7 @@ namespace Win.Movimientos
             }
             else
             {
-                int Codigo = (int)dgvDatos.SelectedRows[0].Cells[0].Value;
+                string Codigo = dgvDatos.SelectedRows[0].Cells[0].Value.ToString();
                 for (int i = 0; i < misDetalles.Count; i++)
                 {
                     if (misDetalles[i].Codigo.Equals(Codigo))
@@ -485,6 +485,11 @@ namespace Win.Movimientos
                     e.Cancel = true;
                 }
             }
+        }
+
+        private void dgvDatos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var a = 1;
         }
     }
 }

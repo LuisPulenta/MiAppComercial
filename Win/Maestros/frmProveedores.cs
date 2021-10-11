@@ -51,19 +51,24 @@ namespace Win.Maestros
 
             if (rta == DialogResult.No) return;
 
-            //if (CADCompra.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
-            //{
-            //    MessageBox.Show(
-            //        "No se puede borrar Proveedor porque tiene movimientos",
-            //        "Error",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error);
-            //    return;
-            //}
+            try
+            {
+                Validate();
+                proveedorBindingSource.RemoveAt(proveedorBindingSource.Position);
+                tableAdapterManager.UpdateAll(this.dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                proveedorTableAdapter.Fill(dSMiAppComercial.Proveedor);
+                dgvDatos.AutoResizeColumns();
 
-            this.Validate();
-            this.proveedorBindingSource.RemoveAt(proveedorBindingSource.Position);
-            this.tableAdapterManager.UpdateAll(this.dSMiAppComercial);
+                MessageBox.Show(
+                       "No se puede borrar el Proveedor porque tiene movimientos",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)

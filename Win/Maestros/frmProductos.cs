@@ -229,14 +229,25 @@ namespace Win.Maestros
                 MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
+            if (rta == DialogResult.No) return;
+
+            if (CADKardex.KardexCodigoTieneMovimientos(codigoTextBox.Text))
             {
+                MessageBox.Show(
+                    "No se puede borrar el Producto porque tiene movimientos",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
-            Validate();
+            this.Validate();
+
+            CADBarra.DeleteBarraByCodigo(codigoTextBox.Text);
+            CADAlmacenProducto.DeleteAlmacenProductoByCodigo(codigoTextBox.Text);
             productoBindingSource.RemoveAt(productoBindingSource.Position);
             tableAdapterManager.UpdateAll(dSMiAppComercial);
+            CargarImagen();
         }
 
         private void btnBuscarImagen_Click(object sender, EventArgs e)

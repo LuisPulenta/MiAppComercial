@@ -30,5 +30,10 @@ namespace CAD
             adaptador.BarraDelete(Barra);
         }
 
+        public static void DeleteBarraByCodigo(string Codigo)
+        {
+            adaptador.DeleteBarraByCodigo(Codigo);
+        }
+
     }
 }

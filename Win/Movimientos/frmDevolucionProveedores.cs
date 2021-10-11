@@ -37,9 +37,9 @@ namespace Win.Movimientos
             productoComboBox.SelectedIndex = -1;
             fechaDevolucionDateTimePicker.Value = DateTime.Now;
             dgvDatosDisponible.DataSource = misDisponibles;
-            dgvDatosDevuelto.DataSource = misDevueltos;
+            //dgvDatosDevuelto.DataSource = misDevueltos;
             PersonalizarDisponibles();
-            PersonalizarDevueltos();
+            //PersonalizarDevueltos();
 
         }
 
@@ -446,7 +446,7 @@ namespace Win.Movimientos
             dgvDatosDisponible.DataSource = null;
             dgvDatosDisponible.DataSource = misDisponibles;
             PersonalizarDisponibles();
-            PersonalizarDevueltos();
+            //PersonalizarDevueltos();
 
             productoComboBox.DataSource = null;
             productoComboBox.DataSource = misDisponibles;

@@ -70,14 +70,26 @@ namespace Win.Maestros
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
+            if (rta == DialogResult.No) return;
+
+            try
             {
+                Validate();
+                tipoDocumentoBindingSource.RemoveAt(tipoDocumentoBindingSource.Position);
+                tableAdapterManager.UpdateAll(dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                tipoDocumentoTableAdapter.Fill(dSMiAppComercial.TipoDocumento);
+                dgvDatos.AutoResizeColumns();
+
+                MessageBox.Show(
+                       "No se puede borrar el Tipo de Documento porque tiene movimientos",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
                 return;
             }
-
-            Validate();
-            tipoDocumentoBindingSource.RemoveAt(tipoDocumentoBindingSource.Position);
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)

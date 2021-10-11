@@ -31,8 +31,8 @@ namespace Win.Movimientos
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentas));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.eliminarTodoButton = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGrabar = new System.Windows.Forms.Button();
@@ -51,7 +51,6 @@ namespace Win.Movimientos
             this.porcentajeDescuentoTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgvDatos = new System.Windows.Forms.DataGridView();
             this.eliminarLineaButton = new System.Windows.Forms.Button();
             this.agregarButton = new System.Windows.Forms.Button();
             this.precioTextBox = new System.Windows.Forms.TextBox();
@@ -76,12 +75,13 @@ namespace Win.Movimientos
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.clienteTableAdapter = new Win.DSMiAppComercialTableAdapters.ClienteTableAdapter();
             this.almacenTableAdapter = new Win.DSMiAppComercialTableAdapters.AlmacenTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
+            this.dgvDatos = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).BeginInit();
             this.SuspendLayout();
             // 
             // eliminarTodoButton
@@ -262,27 +262,6 @@ namespace Win.Movimientos
             this.label6.Size = new System.Drawing.Size(52, 17);
             this.label6.TabIndex = 84;
             this.label6.Text = "Precio:";
-            // 
-            // dgvDatos
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
-            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvDatos.Location = new System.Drawing.Point(10, 269);
-            this.dgvDatos.Name = "dgvDatos";
-            this.dgvDatos.RowHeadersWidth = 51;
-            this.dgvDatos.RowTemplate.Height = 24;
-            this.dgvDatos.Size = new System.Drawing.Size(1298, 328);
-            this.dgvDatos.TabIndex = 90;
             // 
             // eliminarLineaButton
             // 
@@ -482,6 +461,27 @@ namespace Win.Movimientos
             // 
             this.almacenTableAdapter.ClearBeforeFill = true;
             // 
+            // dgvDatos
+            // 
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
+            this.dgvDatos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial Narrow", 7.8F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDatos.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDatos.Location = new System.Drawing.Point(10, 269);
+            this.dgvDatos.Name = "dgvDatos";
+            this.dgvDatos.RowHeadersWidth = 51;
+            this.dgvDatos.RowTemplate.Height = 24;
+            this.dgvDatos.Size = new System.Drawing.Size(1298, 328);
+            this.dgvDatos.TabIndex = 104;
+            // 
             // frmVentas
             // 
             this.AcceptButton = this.agregarButton;
@@ -489,6 +489,7 @@ namespace Win.Movimientos
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1328, 664);
+            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.eliminarTodoButton);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGrabar);
@@ -507,7 +508,6 @@ namespace Win.Movimientos
             this.Controls.Add(this.porcentajeDescuentoTextBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dgvDatos);
             this.Controls.Add(this.eliminarLineaButton);
             this.Controls.Add(this.agregarButton);
             this.Controls.Add(this.precioTextBox);
@@ -534,12 +534,12 @@ namespace Win.Movimientos
             this.Text = "---Ventas---";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmVentas_FormClosing);
             this.Load += new System.EventHandler(this.frmVentas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxImagen)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSMiAppComercial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.almacenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDatos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,7 +565,6 @@ namespace Win.Movimientos
         private System.Windows.Forms.TextBox porcentajeDescuentoTextBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dgvDatos;
         private System.Windows.Forms.Button eliminarLineaButton;
         private System.Windows.Forms.Button agregarButton;
         private System.Windows.Forms.TextBox precioTextBox;
@@ -590,5 +589,6 @@ namespace Win.Movimientos
         private DSMiAppComercialTableAdapters.ClienteTableAdapter clienteTableAdapter;
         private System.Windows.Forms.BindingSource almacenBindingSource;
         private DSMiAppComercialTableAdapters.AlmacenTableAdapter almacenTableAdapter;
+        private System.Windows.Forms.DataGridView dgvDatos;
     }
 }

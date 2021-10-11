@@ -69,14 +69,21 @@ namespace Win
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
+            if (rta == DialogResult.No) return;
+
+            if (CADKardex.KardexIDAlmacenTieneMovimientos(Convert.ToInt32(iDAlmacenTextBox.Text)))
             {
+                MessageBox.Show(
+                    "No se puede borrar el Almacén porque tiene movimientos",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             Validate();
             almacenBindingSource.RemoveAt(almacenBindingSource.Position);
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
+            tableAdapterManager.UpdateAll(this.dSMiAppComercial);
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)

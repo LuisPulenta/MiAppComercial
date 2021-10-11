@@ -82,9 +82,17 @@ namespace Win.Maestros
 
             if (rta == DialogResult.No) return;
 
-            this.Validate();
-            this.usuarioBindingSource.RemoveAt(usuarioBindingSource.Position);
-            this.tableAdapterManager1.UpdateAll(this.dSMiAppComercial);
+            try
+            {
+                this.Validate();
+                this.usuarioBindingSource.RemoveAt(usuarioBindingSource.Position);
+                this.tableAdapterManager1.UpdateAll(this.dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Este Usuario no se puede eliminar porque tiene Registros Relacionados", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                usuarioTableAdapter.Fill(dSMiAppComercial.Usuario);
+            }
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)

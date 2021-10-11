@@ -69,14 +69,26 @@ namespace Win
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
+            if (rta == DialogResult.No) return;
+
+            try
             {
+                Validate();
+                conceptoBindingSource.RemoveAt(conceptoBindingSource.Position);
+                tableAdapterManager.UpdateAll(dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                conceptoTableAdapter.Fill(dSMiAppComercial.Concepto);
+                dgvDatos.AutoResizeColumns();
+
+                MessageBox.Show(
+                       "No se puede borrar el Concepto porque tiene movimientos",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
                 return;
             }
-
-            Validate();
-            conceptoBindingSource.RemoveAt(conceptoBindingSource.Position);
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
         }
 
         private void bindingNavigatorCancelItem_Click(object sender, EventArgs e)

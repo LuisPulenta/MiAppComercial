@@ -65,5 +65,10 @@ namespace CAD
         {
             return adaptador.GetData();
         }
+
+        public static void DeleteAlmacenProductoByCodigo(string codigo)
+        {
+            adaptador.DeleteAlmacenProductoByCodigo(codigo);
+        }
     }
 }

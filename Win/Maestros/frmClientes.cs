@@ -72,9 +72,24 @@ namespace Win.Maestros
 
             if (rta == DialogResult.No) return;
 
-            this.Validate();
-            this.clienteBindingSource.RemoveAt(clienteBindingSource.Position);
-            this.tableAdapterManager.UpdateAll(this.dSMiAppComercial);
+            try
+            {
+                Validate();
+                clienteBindingSource.RemoveAt(clienteBindingSource.Position);
+                tableAdapterManager.UpdateAll(this.dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                clienteTableAdapter.Fill(dSMiAppComercial.Cliente);
+                dgvDatos.AutoResizeColumns();
+
+                MessageBox.Show(
+                       "No se puede borrar el Cliente porque tiene movimientos",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
+                return;
+            }
         }
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)

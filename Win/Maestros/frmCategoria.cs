@@ -55,14 +55,26 @@ namespace Win.Maestros
             MessageBoxIcon.Question,
             MessageBoxDefaultButton.Button2);
 
-            if (rta == DialogResult.No)
+            if (rta == DialogResult.No) return;
+
+            try
             {
+                Validate();
+                categoriaBindingSource.RemoveAt(categoriaBindingSource.Position);
+                tableAdapterManager.UpdateAll(dSMiAppComercial);
+            }
+            catch (Exception)
+            {
+                categoriaTableAdapter.Fill(dSMiAppComercial.Categoria);
+                dgvDatos.AutoResizeColumns();
+
+                MessageBox.Show(
+                       "No se puede borrar la Categoría porque tiene movimientos",
+                       "Error",
+                       MessageBoxButtons.OK,
+                       MessageBoxIcon.Error);
                 return;
             }
-
-            Validate();
-            categoriaBindingSource.RemoveAt(categoriaBindingSource.Position);
-            tableAdapterManager.UpdateAll(dSMiAppComercial);
         }
 
         private void bindingNavigatorSaveItem_Click(object sender, EventArgs e)
