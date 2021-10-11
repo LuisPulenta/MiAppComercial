@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using Win.Consultas;
+using Win.Listados;
 using Win.Maestros;
 using Win.Movimientos;
 using Win.Seguridad;
@@ -406,6 +407,15 @@ namespace Win
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
+        }
+
+        private void productosToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos miForm = new frmListadoProductos();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+            
         }
     }
 }

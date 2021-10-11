@@ -651,9 +651,12 @@ namespace Win
             // 
             // productosToolStripMenuItem3
             // 
+            this.productosToolStripMenuItem3.Image = ((System.Drawing.Image)(resources.GetObject("productosToolStripMenuItem3.Image")));
+            this.productosToolStripMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.productosToolStripMenuItem3.Name = "productosToolStripMenuItem3";
-            this.productosToolStripMenuItem3.Size = new System.Drawing.Size(158, 26);
+            this.productosToolStripMenuItem3.Size = new System.Drawing.Size(236, 38);
             this.productosToolStripMenuItem3.Text = "&Productos";
+            this.productosToolStripMenuItem3.Click += new System.EventHandler(this.productosToolStripMenuItem3_Click);
             // 
             // reportesToolStripMenuItem
             // 
@@ -701,7 +704,7 @@ namespace Win
             this.acercaDeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("acercaDeToolStripMenuItem.Image")));
             this.acercaDeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(236, 38);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(170, 38);
             this.acercaDeToolStripMenuItem.Text = "Acerca &de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
@@ -710,7 +713,7 @@ namespace Win
             this.ayudaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("ayudaToolStripMenuItem1.Image")));
             this.ayudaToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ayudaToolStripMenuItem1.Name = "ayudaToolStripMenuItem1";
-            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(236, 38);
+            this.ayudaToolStripMenuItem1.Size = new System.Drawing.Size(170, 38);
             this.ayudaToolStripMenuItem1.Text = "&Ayuda";
             this.ayudaToolStripMenuItem1.Click += new System.EventHandler(this.ayudaToolStripMenuItem1_Click);
             // 

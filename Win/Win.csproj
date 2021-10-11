@@ -222,6 +222,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DSWin.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Listados\cryProductosListado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cryProductosListado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Listados\frmConteo1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -239,6 +245,12 @@
     </Compile>
     <Compile Include="Listados\frmConteo3.Designer.cs">
       <DependentUpon>frmConteo3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoProductos.Designer.cs">
+      <DependentUpon>frmListadoProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestros\frmAlmacenes.cs">
       <SubType>Form</SubType>
@@ -486,6 +498,10 @@
     <EmbeddedResource Include="Consultas\frmUtilidad.resx">
       <DependentUpon>frmUtilidad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\cryProductosListado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cryProductosListado.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\frmConteo1.resx">
       <DependentUpon>frmConteo1.cs</DependentUpon>
     </EmbeddedResource>
@@ -494,6 +510,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\frmConteo3.resx">
       <DependentUpon>frmConteo3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoProductos.resx">
+      <DependentUpon>frmListadoProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\rptConteo1.rdlc" />
     <EmbeddedResource Include="Listados\rptConteo2.rdlc" />

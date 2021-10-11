@@ -9,6 +9,10 @@
 
 namespace Win.DSMiAppComercialTableAdapters
 {
+    partial class ProductosListadoTableAdapter
+    {
+    }
+
     partial class StockTableAdapter
     {
     }

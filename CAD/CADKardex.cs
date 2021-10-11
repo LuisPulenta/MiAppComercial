@@ -77,7 +77,7 @@ namespace CAD
                     }
                     else
                     {
-                        saldo = (float)misKardex[0].Salida;
+                        saldo = -(float)misKardex[0].Salida;
                         ultimoCosto = 0;
                     }
                     adaptador.KardexUpdate(saldo, costoPromedio, ultimoCosto, misKardex[0].IDKardex);
@@ -85,7 +85,7 @@ namespace CAD
                     {
                         if (misKardex[i].Entrada > 0)
                         {
-                            costoPromedio = ((decimal)saldo * costoPromedio + (decimal)misKardex[i].Entrada * misKardex[i].UltimoCosto) / (decimal)(saldo + misKardex[i].Entrada);
+                            costoPromedio = (decimal)(saldo + misKardex[i].Entrada)==0 ? misKardex[i].UltimoCosto : ((decimal)saldo * costoPromedio + (decimal)misKardex[i].Entrada * misKardex[i].UltimoCosto) / (decimal)(saldo + misKardex[i].Entrada);
                             ultimoCosto = misKardex[i].UltimoCosto;
                             saldo += (float)misKardex[i].Entrada;
                         }
